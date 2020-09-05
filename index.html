@@ -6,7 +6,7 @@
     <title>Home</title>
 
     <!-- libraries -->
-    <script src="https://use.fontawesome.com/671492e9ce.js"></script> <!-- font awesome icons  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/671492e9ce.css"> <!-- font awesome icons  -->
     
 <!-- font awesome all styles -->
 </head>
@@ -20,15 +20,31 @@
             </a>
         </div>
         
-        <div class=nav-links> <!--box in which nav links rest -->
+        <div class=nav-box> <!--box in which nav links rest -->
             <span><a href="https://goo.gl/forms/42PxcOgwkW21OsGr2" class="btn-cta"></a></span> <!-- apply button-->
-            <span class="nav-btn"><a href="#section-1" class="nav-text">teach</a></span>
-            <span class="nav-btn"><a href="#section-2" class="nav-text">travel</a></span>
-            <span class="nav-btn"><a href="#section-3" class="nav-text">experience</a></span>
-            <span class="nav-btn"><a href="/contact.html" class="nav-text">contact</a></span>
-            <span class="nav-btn"><a href="/gallery.html" class="nav-text">gallery</a></span>
-            <span class="nav-btn"><a href="/blog_list.html" class="nav-text">blog</a></span>
-            <span class="nav-btn"><a href="/about.html" class="nav-text">about</a></span>
+            <ul class=nav-links>
+                <li>
+                    <span class="nav-btn"><a href="#section-1" class="nav-text">teach</a></span>
+                </li>
+                <li>
+                    <span class="nav-btn"><a href="#section-2" class="nav-text">travel</a></span>
+                </li>
+                <li>
+                    <span class="nav-btn"><a href="#section-3" class="nav-text">experience</a></span>
+                </li>
+                <li>
+                    <span class="nav-btn"><a href="/contact.html" class="nav-text">contact</a></span>
+                </li>
+                <li>
+                    <span class="nav-btn"><a href="/gallery.html" class="nav-text">gallery</a></span>
+                </li>
+                <li>
+                    <span class="nav-btn"><a href="/blog_list.html" class="nav-text">blog</a></span>
+                </li>
+                <li>
+                    <span class="nav-btn"><a href="/about.html" class="nav-text">about</a></span>
+                </li>
+            </ul>
         </div>
 
     </nav>
@@ -98,12 +114,21 @@
         <div class="item-box">
             <h1 class="heading">the <span class="color-primary">team</span></h1>
 
-            <div class="items"> <!-- team members -->
-                <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/hong.png" alt=""></span></a><!-- Director-->
-                <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/ly.png" alt=""></span></a><!-- Managing Director-->
-                <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/eva.png" alt=""></span></a><!-- Marketing -->
-                <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/fernando.png" alt=""></span></a><!-- IT -->
+            <div class="items"> <!-- team members row--> 
+                <div>
+                    <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/hong.png" alt=""></span></a><!-- Director-->
+                </div>
+                <div>
+                    <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/ly.png" alt=""></span></a><!-- Managing Director-->
+                </div>
+                <div>
+                    <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/eva.png" alt=""></span></a><!-- Marketing -->
+                </div>
+                <div>
+                    <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/fernando.png" alt=""></span></a><!-- IT -->
+                </div>
             </div>
+
         </div>
 
     </section> <!-- end section three -->
@@ -124,26 +149,121 @@
         <div class="item-box">
             <h1 class="heading">volunteer <span class="color-primary">reviews</span></h1>
 
-            <div class="items"> <!-- team members -->
-                <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/hong.png" alt=""></span></a> <!-- anne -->
-                <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/ly.png" alt=""></span></a>
-                <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/eva.png" alt=""></span></a>
-                <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/fernando.png" alt=""></span></a>
-                <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/fernando.png" alt=""></span></a>
-                <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/fernando.png" alt=""></span></a>
-                <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/fernando.png" alt=""></span></a>
-                <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/fernando.png" alt=""></span></a>
-                <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/fernando.png" alt=""></span></a>
-                <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/fernando.png" alt=""></span></a>
-                <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/fernando.png" alt=""></span></a>
-                <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/fernando.png" alt=""></span></a>
-                <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/fernando.png" alt=""></span></a>
-                <a href="#"><span class="item"><img src="/static/images/home/pngs/team/compressed/fernando.png" alt=""></span></a>
+            <div class="items"> <!-- reviews rows-->
+                <div>
+                    <a href="#"><span class="item"><img src="/static/images/home/pngs/reviews/compressed/anne.png" alt=""></span></a><!--Anne-->
+                </div>
+                <div>
+                    <a href="#"><span class="item"><img src="/static/images/home/pngs/reviews/compressed/tobias.png" alt=""></span></a><!-- Tobi -->
+                </div>
+                <div>
+                    <a href="#"><span class="item"><img src="/static/images/home/pngs/reviews/compressed/eva.png" alt=""></span></a><!-- Eva -->
+                </div>
+                <div>
+                    <a href="#"><span class="item"><img src="/static/images/home/pngs/reviews/daniella.png" alt=""></span></a><!-- Daniella -->
+                </div>
+                <div>
+                    <a href="#"><span class="item"><img src="/static/images/home/pngs/reviews/compressed/chuck.png" alt=""></span></a><!-- Chuck -->
+                </div>
+                <div>
+                    <a href="#"><span class="item"><img src="/static/images/home/pngs/reviews/compressed/johana.png" alt=""></span></a><!-- Johanna -->
+                </div>
+                <div>
+                    <a href="#"><span class="item"><img src="/static/images/home/pngs/reviews/compressed/karen.png" alt=""></span></a><!-- Karen  -->
+                </div>
+                <div>
+                    <a href="#"><span class="item"><img src="/static/images/home/pngs/reviews/compressed/marion.png" alt=""></span></a><!-- Marion -->
+                </div>
+                <div>
+                    <a href="#"><span class="item"><img src="/static/images/home/pngs/reviews/compressed/oksana.png" alt=""></span></a><!-- Oksana -->
+                </div>
             </div>
         </div>  
-    </section> <!-- end section 6-->
+    </section> <!-- end section 5 reviews-->
 
+    <section id="section-6"> <!-- section six  contact-->
+        <div>
+            <div> <!-- box for map-->
+                <img src="/static/images/home/svg_web/compressed/home_sh_location.svg" alt="" class=""> <!-- frame for location image -->
+            </div>
 
+            <div class="textbox">
 
+                <h1 class="heading">find us or shoot us a message</h1>
+
+                <form action="#"> <!-- send messages with this for -->
+                    <div>
+                        <input type="text" name="name" placeholder="Name">
+                    </div>
+                    <div>
+                        <input type="text" name="email" placeholder="Email" id="">
+                    </div>
+                    <div>
+                        <textarea name="text-area" id="contact" cols="150" rows="150"></textarea>
+                    </div>
+                    <button class="btn-cta xl"></button>
+
+                    <div><!-- phone one -->
+                        <h2 class="color-phone">(new world) +84-02273736222</h2>
+                        <span><i class="fas fa-phone"></i></span>
+                    </div>
+
+                    <div><!-- phone two -->
+                        <h2 class="color-phone">(hotline) +84-0912149201</h2>
+                        <span><i class="fas fa-phone"></i></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+
+        <div> <!-- sublinks -->
+            <div>
+                <ul>
+                    <li>
+                        <span>
+                            <a href="/about.html"><h3>About</h3></a>
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <a href="/gallery.html"><h3>Gallery</h3></a>
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <a href="https://goo.gl/forms/42PxcOgwkW21OsGr2"><h3>Join us</h3></a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div> <!-- social-media -->
+            <ul>
+                <li>
+                    <span>
+                        <i class="fab fa-facebook-f"></i>
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <i class="fab fa-youtube"></i>
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <i class="fab fa-instagram"></i>
+                    </span>
+                </li>
+                <li>
+                    <h3><span class="copyright">&copy;</span> 2020 New World Education .co .ltd - all rights reserved</h3>
+                </li>
+            </ul>
+        </div>
+        
+    </footer>
 </body>
 </html>
