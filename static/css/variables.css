@@ -1,0 +1,59 @@
+/* css variables used in for the new world website */
+
+/* global variables */
+    
+    /* opacities */
+    :root { 
+        --op-
+    }
+
+    /* colors  */
+    :root {
+        --color-p: #DA4A22;
+        --color-p-light: #FF7650;
+        --color-p-lighter: #FFBDAA; 
+        --color-s: #22B2DA;
+        --color-s-light: #AFE2EC;
+        --color-s-lighter: #EEF9FC;
+        --color-cta: #22DA4A; 
+        --color-cta-light: #77F993;
+        --color-cta-lighter: #D1FFDB;
+        --color-t: #FFFFFF;
+        --color-text: #0E1318; 
+    }
+
+    /* fonts */
+    :root {
+        --roboto: "Roboto";
+        --roboto-condensed: "Roboto Condensed";
+        --roboto-slab: "Roboto Slab";
+        --regular: 400;
+        --bold: 700;
+    }
+
+    /* button */
+
+        /* shadow */
+        :root {
+            --btn-cta-shadow: 2px 2px 3px var(--color-cta);
+            --btn-cta-shadow-sm: 1px 1px 2px var(--color-cta);
+            --btn-p-shadow: 2px 2px 3px var(--color-p);
+            --btn-p-shadow-sm: 1px 1px 2px var(--color-p);
+        }
+
+        /* sizes  */
+        :root {
+            --btn-small: 6px 19px;
+            --btn-normal: 9px 31px;
+            --btn-large: 9px 36px;
+            --btn-xl: 11px 43.5px;
+        }
+
+    /* borders */
+    :root {
+        --border-sm: 2.5px; 
+        --border-md: 5px; 
+        --border-bg: 15px; 
+    }
+
+    
