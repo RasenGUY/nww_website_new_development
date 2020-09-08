@@ -4,56 +4,152 @@
     
     /* opacities */
     :root { 
-        --op-
+        --opacity-normal: 0.16;
+        --opacity-lg: 0.25;
+        --opacity-xl: 0.30;
     }
 
     /* colors  */
     :root {
-        --color-p: #DA4A22;
-        --color-p-light: #FF7650;
-        --color-p-lighter: #FFBDAA; 
-        --color-s: #22B2DA;
-        --color-s-light: #AFE2EC;
-        --color-s-lighter: #EEF9FC;
-        --color-cta: #22DA4A; 
-        --color-cta-light: #77F993;
-        --color-cta-lighter: #D1FFDB;
+        
+        /* primary */
+        --color-p: rgba(218,74,34, 1);
+        --color-p-op-normal: rgba(218,74,34, var(--opacity-normal));
+        --color-p-op-lg: rgba(218,74,34, var(--opacity-lg));
+        --color-p-op-xl: rgba(218,74,34, var(--opacity-xl));
+        
+            /* light */
+            --color-p-light: rgba(255,118,80, 1);
+            --color-p-light-op-normal: rgba(255,118,80, var(--opacity-normal));
+            --color-p-light-op-lg: rgba(255,118,80, var(--opacity-lg));
+            --color-p-light-op-xl : rgba(255,118,80, var(--opacity-xl));
+            
+            /* lighter*/
+            --color-p-lighter:rgba(255,189,170, 1); 
+            --color-p-lighter-op-normal: rgba(255,189,170, var(--opacity-normal)); 
+            --color-p-lighter-op-lg: rgba(255,189,170, var(--opacity-lg)); 
+            --color-p-lighter-op-xl: rgba(255,189,170, var(--opacity-xl));
+        
+        /* secondary */
+        --color-s: rgba(34,178,218, 1);
+        --color-s-op-normal: rgba(34,178,218, var(--opacity-normal));
+        --color-s-op-lg: rgba(34,178,218, var(--opacity-lg));
+        --color-s-op-xl: rgba(34,178,218, var(--opacity-xl));
+        
+            /* light */
+            --color-s-light: rgba(175,226,236, 1);
+            --color-s-light-op-normal: rgba(175,226,236, var(--opacity-normal));
+            --color-s-light-op-lg: rgba(175,226,236, var(--opacity-lg));
+            --color-s-light-op-xl : rgba(175,226,236, var(--opacity-xl));
+        
+            /* lighter*/
+            --color-s-lighter:rgba(238,249,252, 1); 
+            --color-s-lighter-op-normal: rgba(238,249,252, var(--opacity-normal)); 
+            --color-s-lighter-op-lg: rgba(238,249,252, var(--opacity-lg)); 
+            --color-s-lighter-op-xl: rgba(238,249,252, var(--opacity-xl));
+
+
+        /* cta */
+        --color-cta: rgba(34,218,74, 1);
+        --color-cta-op-normal: rgba(34,218,74, var(--opacity-normal));
+        --color-cta-op-lg: rgba(34,218,74, var(--opacity-lg));
+        --color-cta-op-xl: rgba(34,218,74, var(--opacity-xl));
+        
+            /* light */
+            --color-cta-light: rgba(119,249,147, 1);
+            --color-cta-light-op-normal: rgba(119,249,147, var(--opacity-normal));
+            --color-cta-light-op-lg: rgba(119,249,147, var(--opacity-lg));
+            --color-cta-light-op-xl : rgba(119,249,147, var(--opacity-xl));
+        
+            /* lighter*/
+            --color-cta-lighter:rgba(209,255,219, 1); 
+            --color-cta-lighter-op-normal: rgba(209,255,219, var(--opacity-normal)); 
+            --color-cta-lighter-op-lg: rgba(209,255,219, var(--opacity-lg)); 
+            --color-cta-lighter-op-xl: rgba(209,255,219, var(--opacity-xl));  
+
+        /* text */
+        --color-text: #rgba(14,19,24, 1);
+        --color-text-op-normal: #rgba(14,19,24, var(--opacity-normal));
+        --color-text-op-lg: #rgba(14,19,24, var(--opacity-lg));
+        --color-text-op-xl: #rgba(14,19,24, var(--opacity-xl));
+        
+            /* light */
+            --color-text-light: rgba(52,46,46, 1);
+            --color-text-light-op-normal: #rgba(52,46,46, var(--opacity-normal));
+            --color-text-light-op-lg: #rgba(52,46,46, var(--opacity-lg));
+            --color-text-light-op-xl: #rgba(52,46,46, var(--opacity-xl));
+        
+        /* tertiary */
         --color-t: #FFFFFF;
-        --color-text: #0E1318; 
+        
     }
 
     /* fonts */
     :root {
+        
+        /* fonts */
         --roboto: "Roboto";
         --roboto-condensed: "Roboto Condensed";
         --roboto-slab: "Roboto Slab";
+        
+        /* font weights */
         --regular: 400;
         --bold: 700;
     }
 
-    /* button */
-
-        /* shadow */
-        :root {
-            --btn-cta-shadow: 2px 2px 3px var(--color-cta);
-            --btn-cta-shadow-sm: 1px 1px 2px var(--color-cta);
-            --btn-p-shadow: 2px 2px 3px var(--color-p);
-            --btn-p-shadow-sm: 1px 1px 2px var(--color-p);
-        }
+    /* buttons */
 
         /* sizes  */
         :root {
-            --btn-small: 6px 19px;
-            --btn-normal: 9px 31px;
-            --btn-large: 9px 36px;
-            --btn-xl: 11px 43.5px;
+            --btn-sm: 3px 10px;
+            --btn-normal: 5px 20px;
+            --btn-lg: 8.5px 20px;
+            --btn-xl: 10px 30px;
+        }
+
+    /* font_sizes */
+        :root {
+            --fnt-btn-sm: 11px;
+            --fnt-btn-normal: 15px;
+            --fnt-btn-lg: 18px;
+            --fnt-btn-xl: 22px;
         }
 
     /* borders */
     :root {
         --border-sm: 2.5px; 
         --border-md: 5px; 
-        --border-bg: 15px; 
+        --border-lg: 10px;
+        --border-xl: 15px;
     }
+    
+    /* corners */
+    :root {
+        --corner-normal: 20px;
+        --corner-lg: 22px;
+        --corner-xl: 28px; 
+        --corner-circle: 100px;
+    }
+
+    /* shadows */
+    :root {
+
+        --shadow-btn-cta: 2px 2px 3px var(--color-cta);
+        --shadow-smbtn-cta: 1px 1px 2px var(--color-cta);
+        --shadow-btn-p-: 2px 2px 3px var(--color-p);
+        --shadow-btn-p-: 1px 1px 2px var(--color-p);
+        --shadow-figure: 5px 5px 15px var(--color-text);
+        --shadow-figure-sm: none none none none;
+        --shadow-icon: 1px 1px 5px var(--color-text);
+        --shadow-text-bg: 2px 2px 1px var(--color-text);
+        --shadow-text-sm: 1px 1px 1px var(--color-text);
+    }
+
+    /* gradients */
+    :root {
+        --grad-btn-p: linear-gradient(90deg, var(--color-p), var(--color-p-lighter), var(--color-p) 105%); 
+        --grad-btn-cta: linear-gradient(90deg, var(--color-cta), var(--color-cta-lighter), var(--color-cta) 105%); 
+    }
+
 
     

@@ -1,0 +1,52 @@
+/* import other css files */
+@import './variables.css';
+@import './general-styles.css';
+
+/* main css for buttons used in newworld website */
+
+/* primary-button */
+.btn-p, .btn-cta {
+
+    padding: var(--btn-normal);
+    border-radius: var(--corner-normal);
+    font-family: var(--roboto-condensed);
+    font-size: var(--fnt-btn-normal);
+    font-weight: var(--bold);
+    text-transform: uppercase;
+    color: var(--text-color)
+}
+
+.btn-p {
+    background-image: var(--grad-btn-p);
+}
+
+.btn-cta {
+    
+    background-image: var(--grad-btn-cta);
+}
+
+.sm {
+    padding: var(--btn-sm);
+    font-size: var(--fnt-btn-sm);
+    border-radius: var(--corner-normal);
+}
+
+.lg {
+    padding: var(--btn-lg); 
+    font-size: var(--fnt-btn-lg);
+    border-radius: var(--corner-lg);
+}
+
+.xl {
+    padding: var(--btn-xl); 
+    font-size: var(--fnt-btn-xl);
+    border-radius: var(--corner-xl);
+}
+
+
+
+
+
+
+
+
