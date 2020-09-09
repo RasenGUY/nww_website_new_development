@@ -12,33 +12,73 @@
     font-family: var(--roboto-condensed);
     font-size: var(--fnt-btn-normal);
     font-weight: var(--bold);
-    text-transform: uppercase;
-    color: var(--text-color)
+    color: var(--text-color);
+    border-width: 20px;
+    border-color: transparent;
+
 }
 
 .btn-p {
+    
     background-image: var(--grad-btn-p);
+    box-shadow: var(--shadow-btn-p);
 }
 
 .btn-cta {
     
     background-image: var(--grad-btn-cta);
+    box-shadow: var(--shadow-btn-cta);
 }
 
+/* hover-state */
+.btn-cta:hover, .btn-p:hover {
+    color: var(--color-t)
+}
+.btn-p:hover {
+    background-image: var(--grad-btn-p-hover);
+}
+.btn-cta:hover {
+    background-image: var(--grad-btn-cta-hover);
+}
+
+/* click state */
+.btn-cta:active {
+    
+    border-radius: var(--corner-xl);
+    border-color: var(--color-cta-light-op-normal);
+
+}
+/* shadows */
+.btn-p.lg, .btn-p.xl {
+    box-shadow: var(--shadow-btn-p-lg);
+}
+
+.btn-cta.lg, .btn-cta.xl {
+
+    box-shadow: var(--shadow-btn-cta-lg);
+
+}
+
+
+
+/* button sizes */
 .sm {
+    
     padding: var(--btn-sm);
     font-size: var(--fnt-btn-sm);
     border-radius: var(--corner-normal);
 }
 
 .lg {
+    
     padding: var(--btn-lg); 
     font-size: var(--fnt-btn-lg);
     border-radius: var(--corner-lg);
 }
 
 .xl {
-    padding: var(--btn-xl); 
+
+    padding: var(--btn-xl);
     font-size: var(--fnt-btn-xl);
     border-radius: var(--corner-xl);
 }

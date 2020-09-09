@@ -1,7 +1,11 @@
 /* css variables used in for the new world website */
 
-/* global variables */
-    
+    /* global variables */
+    * {
+        box-sizing: border-box;
+        font-size: 17.25px;
+    }
+
     /* opacities */
     :root { 
         --opacity-normal: 0.16;
@@ -16,7 +20,7 @@
         --color-p: rgba(218,74,34, 1);
         --color-p-op-normal: rgba(218,74,34, var(--opacity-normal));
         --color-p-op-lg: rgba(218,74,34, var(--opacity-lg));
-        --color-p-op-xl: rgba(218,74,34, var(--opacity-xl));
+        --color-p-op-xl: rgba(218,74,34, var(--opacity-xl));     
         
             /* light */
             --color-p-light: rgba(255,118,80, 1);
@@ -29,6 +33,10 @@
             --color-p-lighter-op-normal: rgba(255,189,170, var(--opacity-normal)); 
             --color-p-lighter-op-lg: rgba(255,189,170, var(--opacity-lg)); 
             --color-p-lighter-op-xl: rgba(255,189,170, var(--opacity-xl));
+
+            /* hover */
+            --color-p-hover-1: #7B2D17;
+            --color-p-hover-2: #B16955;
         
         /* secondary */
         --color-s: rgba(34,178,218, 1);
@@ -65,7 +73,11 @@
             --color-cta-lighter:rgba(209,255,219, 1); 
             --color-cta-lighter-op-normal: rgba(209,255,219, var(--opacity-normal)); 
             --color-cta-lighter-op-lg: rgba(209,255,219, var(--opacity-lg)); 
-            --color-cta-lighter-op-xl: rgba(209,255,219, var(--opacity-xl));  
+            --color-cta-lighter-op-xl: rgba(209,255,219, var(--opacity-xl)); 
+            
+            /* hover */
+            --color-cta-hover-1: #21983B;
+            --color-cta-hover-2: #5ED578;
 
         /* text */
         --color-text: #rgba(14,19,24, 1);
@@ -91,32 +103,37 @@
         --roboto: "Roboto";
         --roboto-condensed: "Roboto Condensed";
         --roboto-slab: "Roboto Slab";
+
         
         /* font weights */
         --regular: 400;
         --bold: 700;
+
     }
 
     /* buttons */
 
         /* sizes  */
         :root {
-            --btn-sm: 3px 10px;
-            --btn-normal: 5px 20px;
-            --btn-lg: 8.5px 20px;
-            --btn-xl: 10px 30px;
+            
+            --btn-sm: calc(0.5em / 1.618) calc(1.5em / 1.618);
+            --btn-normal: calc(0.25em * 1.618) calc(0.5em * 1.618);
+            --btn-lg: calc(0.125em * 1.618) calc(0.4em * 1.618);
+            --btn-xl: calc(0.0825em * 1.618) calc(0.35em * 1.618);
         }
 
     /* font_sizes */
         :root {
-            --fnt-btn-sm: 11px;
-            --fnt-btn-normal: 15px;
-            --fnt-btn-lg: 18px;
-            --fnt-btn-xl: 22px;
+
+            --fnt-btn-sm: calc(1em / 1.618);
+            --fnt-btn-normal: 1em;
+            --fnt-btn-lg: calc(1em * 1.618);
+            --fnt-btn-xl: calc(1em * 1.618 * 1.618);
         }
 
     /* borders */
     :root {
+
         --border-sm: 2.5px; 
         --border-md: 5px; 
         --border-lg: 10px;
@@ -125,31 +142,40 @@
     
     /* corners */
     :root {
+
         --corner-normal: 20px;
         --corner-lg: 22px;
-        --corner-xl: 28px; 
+        --corner-xl: 34px; 
         --corner-circle: 100px;
     }
 
     /* shadows */
     :root {
-
-        --shadow-btn-cta: 2px 2px 3px var(--color-cta);
-        --shadow-smbtn-cta: 1px 1px 2px var(--color-cta);
-        --shadow-btn-p-: 2px 2px 3px var(--color-p);
-        --shadow-btn-p-: 1px 1px 2px var(--color-p);
+        
+        --shadow-btn-p: 2px 2px 3px var(--color-p-op-normal);
+        --shadow-btn-p-lg: 3px 3px 4px var(--color-p-op-normal);
+        --shadow-btn-cta: 2px 2px 3px var(--color-cta-op-normal);
+        --shadow-btn-cta-lg: 3px 3px 4px var(--color-cta-op-normal);
         --shadow-figure: 5px 5px 15px var(--color-text);
         --shadow-figure-sm: none none none none;
         --shadow-icon: 1px 1px 5px var(--color-text);
         --shadow-text-bg: 2px 2px 1px var(--color-text);
         --shadow-text-sm: 1px 1px 1px var(--color-text);
+
     }
 
     /* gradients */
     :root {
-        --grad-btn-p: linear-gradient(90deg, var(--color-p), var(--color-p-lighter), var(--color-p) 105%); 
-        --grad-btn-cta: linear-gradient(90deg, var(--color-cta), var(--color-cta-lighter), var(--color-cta) 105%); 
-    }
+
+        /* default state */
+        --grad-btn-p: linear-gradient(135deg, var(--color-p), var(--color-p-lighter), var(--color-p) 105%); 
+        --grad-btn-cta: linear-gradient(135deg, var(--color-cta), var(--color-cta-lighter), var(--color-cta) 105%);
+        
+        /* hover state */
+        --grad-btn-p-hover: linear-gradient(135deg, var(--color-p-hover-1), var(--color-p-hover-2), var(--color-p-hover-1) 105%);
+        --grad-btn-cta-hover: linear-gradient(135deg, var(--color-cta-hover-1), var(--color-cta-hover-2), var(--color-cta-hover-1) 105%);
+
+    }   
 
 
     

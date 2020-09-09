@@ -1,6 +1,40 @@
+ 
+/* global variables */
+* {
+
+    /* font-size-btn */
+    font-size: normal; 
+
+}
+
+
 /* all css for tweeking the legacy css attributes */
 
+/* standard */
 a {
     color: black;
     text-decoration: none;
 }
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+
+ /* Tekst transform */
+
+    /* uppercase */
+    .to-upper {
+        text-transform: uppercase;
+    }
+    
+    /* lowercase */
+    .to-lower {
+        text-transform: lowercase;
+    }
+
+    /* capitalize */
+    .capitalize { 
+        text-transform: capitalize;
+    }
