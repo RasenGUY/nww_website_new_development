@@ -14,7 +14,7 @@
     font-size: var(--fnt-btn-normal);
     font-weight: var(--bold);
     color: var(--text-color);
-
+    border-width: 0em;
 }
 
 .btn-p {
@@ -75,12 +75,9 @@
 }
 
 .btn-cta:active,  .btn-cta:focus, .btn-p:active, .btn-p:focus {
-    color: var(--color-t);
+    color: var(--color-t);  
     outline: none; 
 }
-
-
-
 
 
 /* button sizes */
