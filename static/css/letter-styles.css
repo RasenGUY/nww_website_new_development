@@ -1,0 +1,42 @@
+/* import css files */
+@import './variables.css'; 
+
+
+
+/* headers */
+h1 {
+
+}
+h2 {
+
+}
+h3 {
+    
+}
+h4 {
+
+}
+h5 {
+
+}
+h6 {
+
+}
+
+p {
+
+}
+
+/* normal state */
+a {
+
+}
+
+/* hover states */
+a:hover {
+
+}
+
+a:active, a:focus {
+
+}

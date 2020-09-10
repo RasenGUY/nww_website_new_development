@@ -138,7 +138,7 @@
     /* font_sizes */
         :root {
 
-            --fnt-btn-sm: calc(1em / 1.618);
+            --fnt-btn-sm: calc(1.25em / 1.618);
             --fnt-btn-normal: 1em;
             --fnt-btn-lg: calc(1em * 1.618);
             --fnt-btn-xl: calc(1em * 1.618 * 1.618);
