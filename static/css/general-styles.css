@@ -43,5 +43,12 @@ a:hover {
 
     /* span tag */
     span {
+        
+        /* as child of text element */
+        box-sizing: inherit;
         font-size: inherit;
+        line-height: inherit;
+        font-weight: inherit;
+        text-shadow: inherit;
+
     }

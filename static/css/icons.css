@@ -1,0 +1,21 @@
+/* css for styling icons in new world websites */
+
+/* libraries */
+@import './general-styles.css';
+@import './variables.css'; 
+
+/* tags */
+i.txt-color-p {
+    text-shadow: var(--shadow-icon-p);
+}
+i.txt-color-cta {
+    text-shadow: var(--shadow-icon-cta);
+}
+
+i.txt-color-s {
+    text-shadow: var(--shadow-icon-s);
+} 
+
+i.txt-color-t {
+    text-shadow: var(--shadow-icon-t);
+}

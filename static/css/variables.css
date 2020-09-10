@@ -189,6 +189,12 @@
         --shadow-text-cta-sm: 0.75px 1px 1px var(--color-cta-op-lg); 
         --shadow-text-t: 3px 2px 1px var(--color-t-op-lg);
         --shadow-text-t-sm: 0.75px 1px 1px var(--color-t-op-lg);
+
+        /* icon shadows */
+        --shadow-icon-p: 0.75px .75px 1px var(--color-p-op-lg);
+        --shadow-icon-cta: 0.75px .75px 1px var(--color-cta-op-lg);
+        --shadow-icon-s: 0.75px .75px 1px var(--color-s-op-lg);
+        --shadow-icon-t: 0.75px .75px 1px var(--color-t-op-lg);
     }
 
     /* gradients */

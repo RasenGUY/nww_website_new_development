@@ -79,6 +79,9 @@
     color: var(--color-t);  
     outline: none; 
 }
+p span.txt-color-cta, p span.txt-color-p, p span.txt-color-s, p span.txt-color-t, a span{
+    text-shadow: none;
+}
 
 
 /* button sizes */
