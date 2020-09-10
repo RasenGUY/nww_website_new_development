@@ -2,8 +2,10 @@
 /* global variables */
 * {
 
-    /* font-size-btn */
+    /* font-size */
     font-size: normal; 
+    padding: 0px;
+    margin: 0px;
 
 }
 
@@ -37,4 +39,9 @@ a:hover {
     /* capitalize */
     .capitalize { 
         text-transform: capitalize;
+    }
+
+    /* span tag */
+    span {
+        font-size: inherit;
     }

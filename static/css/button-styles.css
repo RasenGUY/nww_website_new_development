@@ -15,6 +15,7 @@
     font-weight: var(--bold);
     color: var(--text-color);
     border-width: 0em;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .btn-p {

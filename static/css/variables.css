@@ -172,13 +172,23 @@
         --shadow-figure: 5px 5px 15px var(--color-text);
         --shadow-figure-sm: none none none none;
         --shadow-icon: 1px 1px 5px var(--color-text);
-        --shadow-text-bg: 2px 2px 1px var(--color-text);
-        --shadow-text-sm: 1px 1px 1px var(--color-text);
-
+        
         /* active states */
         --shadow-active-btn-p: 0 0 0 3pt var(--color-p-op-xxl);
         --shadow-active-btn-cta: 0 0 0 3pt var(--color-cta-op-xxl);
-
+        
+        /* text shadows */
+        --shadow-text: 3px 2px 1px var(--color-text-op-lg);
+        --shadow-text-sm: 0.75px 1px 1px var(--color-text-op-lg);
+        
+        --shadow-text-p: 3px 2px 1px var(--color-p-op-lg);
+        --shadow-text-p-sm: 0.75px 1px 1px var(--color-p-op-lg);
+        --shadow-text-s: 3px 2px 1px var(--color-s-op-lg);
+        --shadow-text-s-sm: 0.75px 1px 1px var(--color-s-op-lg);
+        --shadow-text-cta: 3px 2px 1px var(--color-cta-op-lg); 
+        --shadow-text-cta-sm: 0.75px 1px 1px var(--color-cta-op-lg); 
+        --shadow-text-t: 3px 2px 1px var(--color-t-op-lg);
+        --shadow-text-t-sm: 0.75px 1px 1px var(--color-t-op-lg);
     }
 
     /* gradients */

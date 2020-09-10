@@ -6,6 +6,12 @@
     - roboto 
     - roboto slab (for blog page)
 
-doing this for the next two hours
-- finalize button styling <a> tags
-- add hover and click effect to <a> buttons
+- TODO
+    - animate button effects
+    - stylize the typography
+    - create masking styles for reviews and other pictures 
+    - create navigation menu
+        - mobile version
+        - web version 
+    - figure out how to create background blur on elements
+    

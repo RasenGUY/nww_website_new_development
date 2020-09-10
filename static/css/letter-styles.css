@@ -1,42 +1,120 @@
 /* import css files */
+@import './general-styles.css';
 @import './variables.css'; 
 
 
 
-/* headers */
+/* headers  web*/
+h1, h2, h3, h4, h5, h6, p {
+
+    font-family: var(--roboto-condensed);
+    font-weight: var(--regular);
+    margin: 0px 0px;
+
+}
+
+h1, h2 {
+    letter-spacing: 0.0203em;
+    line-height: calc(0.9em * 1.618);
+    text-shadow: var(--shadow-text); 
+}
+h3, h4, h5, h6 {
+    letter-spacing: 0.0406em; 
+    line-height: calc(0.75em * 1.618);
+    text-shadow: var(--shadow-text-sm);
+}
+
 h1 {
 
+    font-size: calc(1em * 1.618 * 1.618 * 1.618);
 }
-h2 {
 
+h2 {
+    
+    font-size: calc(1em * 1.618 * 1.618);
 }
+
 h3 {
     
+    font-size: calc(1em * 1.618);
 }
+
 h4 {
 
+    font-size: 1em;
+
 }
+
 h5 {
 
+    font-size: calc(1.25em / 1.618)
 }
-h6 {
 
+h6 {
+    
+    font-size: calc(1em / 1.618)
 }
+
 
 p {
-
+    font-size: 1em;
+    padding-left: 0.203em;
 }
 
 /* normal state */
 a {
-
+    color: var(--color-cta);
+    transition: color ease-in-out .15s;
 }
 
 /* hover states */
 a:hover {
-
+    color: var(--color-p-light)
 }
 
 a:active, a:focus {
 
+    outline: none; 
+    color: var(--color-p)
 }
+
+/* text-colors-with shadows */
+.txt-color-p {
+    color: var(--color-p);
+    text-shadow: var(--shadow-text-p);
+}
+.txt-color-p.txt-shadow-sm {
+    color: var(--color-p);
+    text-shadow: var(--shadow-text-p-sm);
+}
+
+.txt-color-cta {
+    color: var(--color-cta);
+    text-shadow: var(--shadow-text-cta);
+}
+.txt-color-cta.txt-shadow-sm {
+    color: var(--color-cta);
+    text-shadow: var(--shadow-text-cta-sm);
+}
+.txt-color-s {
+    color: var(--color-s);
+    text-shadow: var(--shadow-text-s)
+}
+
+.txt-color-s.txt-shadow-sm {
+    color: var(--color-s);
+    text-shadow: var(--shadow-text-s-sm)
+}
+
+.txt-color-t {
+    color: var(--color-t);
+    text-shadow: var(--shadow-text-t);
+}
+.txt-color-t.txt-shadow-sm {
+    color: var(--color-t);
+    text-shadow: var(--shadow-text-t-sm);
+}
+
+
+
+/* headers mobile */
