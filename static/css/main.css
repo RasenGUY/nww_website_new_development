@@ -1,0 +1,21 @@
+/* main css styling for the new world website */
+
+/* css modules/libraries */
+
+@import 'https://fonts.googleapis.com/css2?family=Roboto&Roboto+Condensed&family=Roboto+Slab:wght@100..900';
+@import './general-styles.css';
+@import './variables.css';
+@import './button-styles.css';
+@import './icons.css';
+@import './letter-styles.css';
+
+/* clipping */
+
+img {
+    mask-image: url('/static/images/home/svg_web/home_sh_teach_picture.svg');
+    mask-repeat: no-repeat;
+    mask-origin: fill-box;
+    mask-size: contain;
+    -webkit-mask-border-width: 1em;
+
+}
