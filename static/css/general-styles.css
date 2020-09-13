@@ -1,12 +1,9 @@
  
 /* global variables */
-* {
+*, *::before, *::after {
 
-    /* font-size */
-    font-size: normal; 
     padding: 0px;
     margin: 0px;
-
 }
 
 

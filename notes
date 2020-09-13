@@ -7,11 +7,25 @@
     - roboto slab (for blog page)
 
 - TODO
-    - animate button effects
-    - stylize the typography
-    - create masking styles for reviews and other pictures 
+    - animate button effects (done)
+    - stylize the typography (done)
+    - stylize icons (done)
+    - create masking styles for reviews and other pictures
+        - notes, all of the images with a custom path have to be converted into pngs, svg don't really work since it seems that borders can't be added in masks
+        
     - create navigation menu
         - mobile version
         - web version 
     - figure out how to create background blur on elements
-    
+    - position elements
+    - create animations for web pages
+    - research cheap ways of hosting pictures for gallery
+    - work on blog page
+        - what tech to use ? 
+        - which db to use ? 
+        - where to deploy to ?
+
+TODO - today ()
+- convert costum svg's with borders to pngs or jpegs 
+- create navigation menu
+- make fonts dynamic 

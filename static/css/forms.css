@@ -1,0 +1,16 @@
+/* styling for forms of the new world website */
+@import './variables.css';
+
+/* general styles */
+form > input, textarea {
+    
+    border: none;
+    background: var(--color-textarea-op-xxl);
+    border-radius: 0.75rem; 
+    padding: 0.5rem 0.75rem;
+    
+}
+
+textarea {
+    
+}
