@@ -12,6 +12,7 @@
     - stylize icons (done)
     - create masking styles for reviews and other pictures
         - notes, all of the images with a custom path have to be converted into pngs, svg don't really work since it seems that borders can't be added in masks
+        - new approach export images with borders as pngs for now, the location figure needs to be cleaned up
         
     - create navigation menu
         - mobile version
@@ -26,6 +27,6 @@
         - where to deploy to ?
 
 TODO - today ()
-- convert costum svg's with borders to pngs or jpegs 
+- convert costum svg's with borders to pngs or jpegs (done)
 - create navigation menu
 - make fonts dynamic 

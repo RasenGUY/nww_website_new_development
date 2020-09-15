@@ -57,7 +57,7 @@ h6 {
 p, ul, li, i, form{
     font-size: calc(1.125rem * 1.618);
 }
-p {
+p { 
     padding-left: 0.25rem;
     line-height: 3rem;
 }

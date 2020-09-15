@@ -1,5 +1,10 @@
 /* css variables used in for the new world website */
 
+/* modules */
+@import 'https://fonts.googleapis.com/css2?family=Roboto&Roboto+Condensed&family=Roboto+Slab:wght@100..900';
+
+
+
     /* global variables */
     html {
         box-sizing: border-box;
@@ -176,6 +181,8 @@
         
         --shadow-btn-p: 2px 2px 3px var(--color-p-op-normal);
         --shadow-btn-p-lg: 3px 3px 4px var(--color-p-op-normal);
+        --shadow-btn-s: 2px 2px 3px var(--color-s-op-normal);
+        --shadow-btn-s-lg: 3px 3px 4px var(--color-s-op-normal);
         --shadow-btn-cta: 2px 2px 3px var(--color-cta-op-normal);
         --shadow-btn-cta-lg: 3px 3px 4px var(--color-cta-op-normal);
         --shadow-figure: 5px 5px 15px var(--color-text);
@@ -204,6 +211,9 @@
         --shadow-icon-cta: 0.75px .75px 1px var(--color-cta-op-lg);
         --shadow-icon-s: 0.75px .75px 1px var(--color-s-op-lg);
         --shadow-icon-t: 0.75px .75px 1px var(--color-t-op-lg);
+
+        /* forms */
+        --shadow-form-text-area: 0.5rem 0.6125rem 0.25rem var(--color-s-light-op-normal);
     }
 
     /* gradients */
@@ -217,8 +227,24 @@
         --grad-btn-p-hover: linear-gradient(135deg, var(--color-p-hover-1), var(--color-p-hover-2), var(--color-p-hover-1) 105%);
         --grad-btn-cta-hover: linear-gradient(135deg, var(--color-cta-hover-1), var(--color-cta-hover-2), var(--color-cta-hover-1) 105%);
 
+        /* text */
+        --grad-highlight-bg: linear-gradient(90deg, var(--color-cta), var(--color-cta-light), var(--color-cta-lighter) 10%); 
     }  
 
+    /* spacing */
+    :root {
+        
+        /* padding */
+        --padding-sm: 0.875rem 1.125rem;
+        --padding: 1rem 1.25rem;
+        --padding-md: 1.125rem 1.375rem;
+        --padding-lg: 1.25rem 1.5rem;
+        --padding-xl: 1.375rem 1.6125rem;
+
+
+
+
+    }
 
 
     
