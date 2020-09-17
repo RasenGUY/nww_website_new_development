@@ -9,9 +9,43 @@
 @import './letter-styles.css';
 @import './forms.css';
 
-/* clipping */
+/* navigation */
 
-/* positioning */
+nav, .nav-bar {
+    display: grid;
+    grid-template-columns: [left] 14rem [middle] auto [right] 14rem;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    
+    background-color: var(--color-cta-lighter-op-normal);
+    width: 100vw;
+}
+
+nav .wrapper{
+    grid-column: middle / right;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+}
+.logo {
+}
+
+.nav-links {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto; 
+    align-items: center;
+
+}
+ul li, .nav-links li {
+    display: inline;
+    text-align: right;  
+}
+
+
+
+
+
 
 
 

@@ -10,7 +10,12 @@
 }
 
 
-/* all css for tweeking the legacy css attributes */
+/* all css settings for legacy css attributes */
+.logo img{
+
+    height: 8.5rem;
+    padding: var(--padding-sm);
+}
 
 /* standard */
 a {
