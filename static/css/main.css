@@ -11,15 +11,16 @@
 
 /* navigation */
 
-nav, .nav-bar {
+nav {
     display: grid;
     grid-template-columns: [left] 14rem [middle] auto [right] 14rem;
     align-items: center;
     position: fixed;
-    top: 0;
-    
-    background-color: var(--color-cta-lighter-op-normal);
+    top: 0; 
+    left: 0;
     width: 100vw;
+
+
 }
 
 nav .wrapper{
@@ -28,20 +29,55 @@ nav .wrapper{
     grid-template-columns: 40% 60%;
     align-items: center;
 }
-.logo {
-}
 
 .nav-links {
+    
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto; 
+    /* grid-template-columns: auto auto auto auto auto auto auto auto; 
+    align-items: center; */
+    grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
     align-items: center;
 
 }
-ul li, .nav-links li {
-    display: inline;
-    text-align: right;  
+
+.nav-links li {
+    
+    display: inline-block;
+    text-align: center;
+    
 }
 
+.nav-links li a {
+    color: var(--color-text);
+    transition: color .15s ease-in-out, border-color .15s ease-in-out;
+    
+}
+
+/* toggle navigation items */
+.nav-links li:not(:nth-child(1)) a:hover {
+    
+    border-bottom: solid 2px var(--color-p); 
+    padding-bottom: 0.5rem;
+    color: var(--color-p);
+}
+
+.active a{
+    color: var(--color-p) !important;
+}
+
+nav .overlay {
+    /* background-color: green; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: url(green) blur(1rem) brightness(0.5) opacity(0.6) invert(75%) saturate(30%);
+    z-index: -1;
+
+}
+
+/* overlays */
 
 
 
