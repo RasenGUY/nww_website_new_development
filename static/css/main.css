@@ -19,7 +19,12 @@ nav {
     top: 0; 
     left: 0;
     width: 100vw;
-
+    background-color: var(--color-s-light-op-normal) !important;
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px);
+    -moz-backdrop-filter: blur(5px);   
+    -o-backdrop-filter: blur(5px);
+    -ms-backdrop-filter: blur(5px);
 
 }
 
@@ -33,8 +38,6 @@ nav .wrapper{
 .nav-links {
     
     display: grid;
-    /* grid-template-columns: auto auto auto auto auto auto auto auto; 
-    align-items: center; */
     grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
     align-items: center;
 
@@ -64,20 +67,6 @@ nav .wrapper{
 .active a{
     color: var(--color-p) !important;
 }
-
-nav .overlay {
-    /* background-color: green; */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    filter: url(green) blur(1rem) brightness(0.5) opacity(0.6) invert(75%) saturate(30%);
-    z-index: -1;
-
-}
-
-/* overlays */
 
 
 

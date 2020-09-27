@@ -28,4 +28,6 @@
 
 TODO - code-dash
 - create navigation menu 
+    - animation of navigation links
+        - change hover, active and focus states
 - make fonts dynamic 
