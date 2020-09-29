@@ -15,11 +15,7 @@
     font-weight: var(--bold);
     color: var(--text-color);
     border-width: 0em;
-<<<<<<< HEAD
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !important;
-=======
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !important; 
->>>>>>> e7e982e2e9cccf5ed119c9d80f43a83024702e38
 }
 
 .btn-p {
@@ -55,7 +51,6 @@
 
 }       
 
-<<<<<<< HEAD
 /* click states */
 .btn-p:active, .btn-p:focus {   
     box-shadow: var(--shadow-active-btn-p);
@@ -87,8 +82,6 @@
 p span.txt-color-cta, p span.txt-color-p, p span.txt-color-s, p span.txt-color-t, a span {
     text-shadow: none;
 }
-=======
->>>>>>> e7e982e2e9cccf5ed119c9d80f43a83024702e38
 
 
 /* button sizes */
@@ -113,30 +106,6 @@ p span.txt-color-cta, p span.txt-color-p, p span.txt-color-s, p span.txt-color-t
     border-radius: var(--corner-xl);
 }
 
-<<<<<<< HEAD
-=======
-/* click states */
-.btn-p:active, .btn-p:focus {   
-    box-shadow: var(--shadow-active-btn-p);
-    background-image: var(--grad-btn-p-hover);
-}
-.btn-cta:active, .btn-cta:focus {   
-    box-shadow: var(--shadow-active-btn-cta);
-    background-image: var(--grad-btn-cta-hover);
-}
-.btn-cta:active, .btn-cta:focus {   
-    box-shadow: var(--shadow-active-btn-cta);
-    background-image: var(--grad-btn-cta-hover);
-}
-
-.btn-cta:active,  .btn-cta:focus, .btn-p:active, .btn-p:focus {
-    color: var(--color-t);  
-    outline: none; 
-}
-p span.txt-color-cta, p span.txt-color-p, p span.txt-color-s, p span.txt-color-t, a span {
-    text-shadow: none;
-}
->>>>>>> e7e982e2e9cccf5ed119c9d80f43a83024702e38
 
 
 

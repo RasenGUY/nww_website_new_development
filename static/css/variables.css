@@ -159,7 +159,7 @@
             --fnt-btn-xl: calc(1.125rem * 1.618 * 1.618 * 1.618);
 
             /* general text */
-            --font-sm: 
+            --font-sm: 1.125rem;
             --font-normal: calc(1.0625rem * 1.618);
         }
 
@@ -184,15 +184,15 @@
     /* shadows */
     :root {
         
-        --shadow-btn-p: 2px 2px 3px var(--color-p-op-normal);
-        --shadow-btn-p-lg: 3px 3px 4px var(--color-p-op-normal);
-        --shadow-btn-s: 2px 2px 3px var(--color-s-op-normal);
-        --shadow-btn-s-lg: 3px 3px 4px var(--color-s-op-normal);
-        --shadow-btn-cta: 2px 2px 3px var(--color-cta-op-normal);
-        --shadow-btn-cta-lg: 3px 3px 4px var(--color-cta-op-normal);
+        --shadow-btn-p: 2px 2px 3px var(--color-p-op-lg);
+        --shadow-btn-p-lg: 3px 3px 4px var(--color-p-op-lg);
+        --shadow-btn-s: 2px 2px 3px var(--color-s-op-lg);
+        --shadow-btn-s-lg: 3px 3px 4px var(--color-s-op-lg);
+        --shadow-btn-cta: 2px 2px 3px var(--color-cta-op-lg);
+        --shadow-btn-cta-lg: 3px 3px 4px var(--color-cta-op-lg);
         --shadow-figure: 5px 5px 15px var(--color-text);
         --shadow-figure-sm: none none none none;
-        --shadow-icon: 1px 1px 5px var(--color-text);
+        --shadow-icon: 1px 1px 2px var(--color-p-op-lg);
         
         /* active states */
         --shadow-active-btn-p: 0 0 0 3pt var(--color-p-op-xxl);
