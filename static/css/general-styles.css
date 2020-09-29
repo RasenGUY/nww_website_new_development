@@ -1,0 +1,59 @@
+ /* modules */
+ @import 'https://fonts.googleapis.com/css2?family=Roboto&Roboto+Condensed&family=Roboto+Slab:wght@100..900';
+
+
+/* global variables */
+*, *::before, *::after {
+
+    padding: 0px;
+    margin: 0px;
+}
+
+
+/* all css settings for legacy css attributes */
+.logo img{
+
+    height: 8.5rem;
+    padding: var(--padding-sm);
+}
+
+/* standard */
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+
+ /* Tekst transform */
+
+    /* uppercase */
+    .to-upper {
+        text-transform: uppercase;
+    }
+    
+    /* lowercase */
+    .to-lower {
+        text-transform: lowercase;
+    }
+
+    /* capitalize */
+    .capitalize { 
+        text-transform: capitalize;
+    }
+
+    /* span tag */
+    span {
+        
+        /* as child of text element */
+        box-sizing: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        font-weight: inherit;
+        text-shadow: inherit;
+
+    }

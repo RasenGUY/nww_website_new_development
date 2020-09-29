@@ -1,0 +1,147 @@
+/* main css styling for the new world website */
+
+/* css modules/libraries */
+
+@import './variables.css';
+@import './general-styles.css';
+@import './button-styles.css';
+@import './icons.css';
+@import './letter-styles.css';
+@import './forms.css';
+
+/* navigation */
+
+nav {
+
+    display: grid;
+    grid-template-columns: [left] 14rem [middle] auto [right] 14rem;
+    align-items: center;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100vw;
+    box-shadow: 3px 0px 5px var(--color-text-op-normal);
+
+}
+
+nav .wrapper-mobile-top, .mobile-bottom {
+    display: none;
+}
+
+    /* backdrop blurr */
+    nav:after {
+
+        display: inline-block;
+        content: '';
+        height: 100%;
+        width: 100%;
+        background-color: var(--color-s-lighter-op-normal);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        backdrop-filter: blur(1rem);
+
+    }
+    nav .wrapper-web {
+
+        grid-column: middle / right;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        align-items: center;
+    }
+
+    .nav-links {
+        
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+        align-items: center;
+
+    }
+
+    .nav-links li {
+        
+        display: inline-block;
+        text-align: center;
+        
+    }
+
+    .nav-links li a {
+        color: var(--color-text);
+        transition: color .15s ease-in-out, border-color .15s ease-in-out;
+        
+    }
+
+    /* toggle navigation items */
+    .nav-links li:not(:nth-child(1)) a:hover {
+        
+        border-bottom: solid 2px var(--color-p); 
+        padding-bottom: 0.5rem;
+        color: var(--color-p);
+    }
+
+    .active a{
+        color: var(--color-p) !important;
+    }
+
+    /* logo settings */
+    .logo img {
+        padding: 0;
+    }
+
+    /* responsiveness for navbar*/
+    @media only screen and (max-width: 376px) {
+        
+        /* placement of items in top navbar */
+        nav {
+
+            grid-template-columns: [left] 2.5rem [middle] auto [right] 2.5rem;
+        }
+        
+        nav .wrapper-mobile-top, nav .wrapper-mobile-bottom {
+            grid-column: middle / right;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            align-items: center;
+
+        }
+
+        /* join button */
+        nav .wrapper-mobile-top div:nth-child(2) {
+            
+            justify-self: right;
+        }
+        .logo a img {
+
+            padding: 0;
+        }
+
+        /* hide web navbar */
+        nav .wrapper-web {
+
+            display: none;
+        }
+        
+        /* elements in navbar */
+        .wrapper-mobile-top div a {
+            display: inline-block;
+        }
+
+
+        /* bottom menu */
+        nav.mobile-bottom {
+            display: grid;
+            bottom: 0;
+            top: unset;
+        }
+    }
+
+
+
+
+
+
+
+
+
+

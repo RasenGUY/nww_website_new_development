@@ -1,0 +1,68 @@
+/* css for the forms and all of the form items used in on the new world website */
+
+
+/* modules */
+@import './variables.css';
+@import './letter-styles.css';
+
+
+/* global settings */
+form > * {
+
+    font-family: var(--roboto);
+    font-weight: var(--regular);
+    border-radius: 10px;
+    border: none;
+    
+}
+
+/* input  settings */
+form > input {
+
+    display: inline-block; 
+    padding: var(--padding);
+    background-color: var(--color-text-area);
+    box-shadow: var(--shadow-btn-s);
+
+}
+
+form > label {
+
+    border-bottom: 0.25rem solid var(--color-p);
+    border-radius: 0px; 
+    
+}
+
+
+form > textarea {
+
+    padding: var(--padding);
+    background-color: var(--color-text-area);
+    box-shadow: var(--shadow-form-text-area);
+
+}
+
+::placeholder {
+
+    color: var(--color-text);
+    font-size: calc(1.125rem * 1.618);
+    
+}
+
+::selection {
+    font-size: calc(1.125rem * 1.618);
+    background-color: var(--color-cta-op-normal);
+}
+
+::-moz-placeholder, ::-webkit-input-placeholder,{
+    
+    color: var(--color-placeholder);
+    font-size: calc(1.125rem * 1.618);
+
+}
+
+::-moz-selection, ::-webkit-input-selection { 
+
+    color: var(--color-text);
+    background-color: var(--color-cta-op-normal);
+}
