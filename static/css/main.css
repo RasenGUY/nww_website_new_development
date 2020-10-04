@@ -1,16 +1,16 @@
 /* main css styling for the new world website */
 
 /* css modules/libraries */
-
+@import 'https://fonts.googleapis.com/css2?family=Roboto&Roboto+Condensed&family=Roboto+Slab:wght@100..900';
 @import './variables.css';
 @import './general-styles.css';
-@import './button-styles.css';
+@import './forms.css';
 @import './icons.css';
 @import './letter-styles.css';
-@import './forms.css';
+@import './button-styles.css';
+@import './colors.css';
 
 /* navigation */
-
 nav {
 
     display: grid;
@@ -35,7 +35,7 @@ nav {
         content: '';
         height: 100%;
         width: 100%;
-        background-color: var(--color-s-light-op-xxl);
+        background-color: var(--color-s-lighter-op-xxl);
         position: absolute;
         top: 0;
         left: 0;
@@ -106,7 +106,7 @@ nav {
 
 
 /* responsiveness for navbar*/
-@media only screen and (max-width: 376px) {
+@media only screen and (max-width: 415px) {
     
     /* placement of items in top navbar */
     nav, .mobile-bottom {
@@ -213,7 +213,7 @@ nav {
                 bottom: 0;
                 height: 100%;
                 width: 100%;
-                background-color: var(--color-s-light-op-xxl);
+                background-color: var(--color-s-lighter-op-xxl);
                 z-index: -2;
                 backdrop-filter: blur(1rem);
 
@@ -340,6 +340,55 @@ nav {
     opacity: 1;
 }
 
+
+/* hero section */
+.home-hero {
+
+    /* general settings */
+    height: 100vh;
+    width: 100vw;
+    
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    z-index: -2;
+
+}
+
+    .home-hero .bg-image {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/static/images/home/jpeg_web/compressed/teach_2.jpg');
+        z-index: -1;
+
+    }
+
+    /* arrows */
+    
+    .home-hero .arrows {
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        margin-top: 5rem;
+        
+    }
+    .home-hero .arrows a:hover {
+        cursor: pointer !important;
+        
+    }
+    
+    .home-hero .arrows a img {
+        
+        cursor: pointer;
+        height: 5vh;
+    }
 
         
         

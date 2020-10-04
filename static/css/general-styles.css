@@ -1,7 +1,3 @@
- /* modules */
- @import 'https://fonts.googleapis.com/css2?family=Roboto&Roboto+Condensed&family=Roboto+Slab:wght@100..900';
-
-
 /* global variables */
 *, *::before, *::after {
 
@@ -58,3 +54,31 @@ a:hover {
         text-shadow: inherit;
 
     }
+/* colors */
+.color-p {}
+
+/* background settings for hero section */
+.background {
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+/* overlay settings */
+.overlay {
+
+    position: absolute;
+    top: 0; 
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: var(--opacity-normal);
+    background-color: var(--color-cta-lighter);
+    z-index: -1;
+}
+
+.img-blur {
+
+    filter: blur(0.3rem) brightness(45%);
+    -webkit-filter: blur(0.3rem) brightness(45%);
+}

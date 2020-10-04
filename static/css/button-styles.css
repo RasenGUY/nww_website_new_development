@@ -1,8 +1,4 @@
 /* import other css files */
-@import './variables.css';
-@import './general-styles.css';
-
-/* main css for buttons used in newworld website */
 
 /* primary-button */
 .btn-p, .btn-cta {

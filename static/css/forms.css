@@ -1,11 +1,5 @@
 /* css for the forms and all of the form items used in on the new world website */
 
-
-/* modules */
-@import './variables.css';
-@import './letter-styles.css';
-
-
 /* global settings */
 form > * {
 
