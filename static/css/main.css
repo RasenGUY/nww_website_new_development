@@ -187,7 +187,7 @@ nav {
         .wrapper-links-bottom {
 
             position: absolute;
-            top: 5.7rem; /* transition to -29.8rem */
+            top: 0rem; /* transition to -29.8rem */
             bottom: 0;
             display: grid;
             justify-items: center;
@@ -195,9 +195,11 @@ nav {
             z-index: -1;
             box-shadow: 3px 0px 5px var(--color-text-op-normal);
 
+            
+
             /* animation */
             transition: all 0.33s ease-in-out;
-            transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
+            transition-timing-function: cubic-bezier(0.5, 0.5, 0.1, 1);
             
         }
 
@@ -212,7 +214,7 @@ nav {
                 height: 100%;
                 width: 100%;
                 background-color: var(--color-s-light-op-xxl);
-                z-index: -1;
+                z-index: -2;
                 backdrop-filter: blur(1rem);
 
             }
@@ -223,12 +225,17 @@ nav {
                     overflow: hidden;
                     width: 100%;
                     height: 100%;
+                    z-index: -1;
+                    opacity: 0;
+
+                    transition: all 0.15s ease-in-out;
+                    transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
             }
 
             .nav-links-bottom li {
                 list-style: none;
                 text-align: center;
-                transition: all 0.15s ease-in-out; 
+                transition: all 0.15s ease-in-out;
             }
             
             .nav-links-bottom li a {
@@ -237,6 +244,8 @@ nav {
                 padding: 1rem 0;
                 width: 100%;
                 height: 100%;
+
+                
             }
 
                 /* hover */
@@ -326,6 +335,9 @@ nav {
 
     top: -29.8rem !important;
 
+}
+.fade {
+    opacity: 1;
 }
 
 

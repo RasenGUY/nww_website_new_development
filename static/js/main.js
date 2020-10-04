@@ -4,6 +4,7 @@
 function animateMenu() {
     
     var links = document.querySelector(".wrapper-links-bottom");
+    var linksUl = document.querySelector(".nav-links-bottom");
     var navBtm = document.querySelector("nav.mobile-bottom");
     var burger = document.querySelector(".hamburger");
     var burgerTop = document.querySelector(".burger-top");
@@ -12,6 +13,7 @@ function animateMenu() {
     
     // toggle class
     links.classList.toggle("links-reveal");
+    linksUl.classList.toggle("fade");
     burger.classList.toggle("animate-burger-border");
     burgerTop.classList.toggle("animate-top");
     burgerMiddle.classList.toggle("animate-middle");
