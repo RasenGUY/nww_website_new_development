@@ -27,5 +27,13 @@
         - where to deploy to ?
 
 TODO - code-dash
-- create navigation menu 
 - make fonts dynamic 
+    - for web and for mobile
+
+
+------- some font guidelines ---------
+(mobile)
+- body font 16px
+- input size should be atleast 16px
+- secondary text(labels, captions etc.) should  be around 2 sizes smaller then the paragraph text (13-14px)
+-  
