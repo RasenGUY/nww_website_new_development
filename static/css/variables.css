@@ -2,6 +2,7 @@
 
 /* global variables */
     html {
+
         box-sizing: border-box;
         font-size: 62.5%;
     }  
@@ -147,15 +148,32 @@
     /* font_sizes */
         :root {
 
-            /* buttons */
-            --fnt-btn-sm: 1.125rem;
-            --fnt-btn-normal: calc(1.125rem * 1.618);
-            --fnt-btn-lg: calc(1.125rem * 1.618 * 1.618);
-            --fnt-btn-xl: calc(1.125rem * 1.618 * 1.618 * 1.618);
+            /* general */
+            --fnt-sm: 1.125rem;
+            --fnt-normal: 1.820rem;
+            --fnt-lg: 3.106rem;
+            --fnt-xl: 3.871rem;
 
             /* general text */
             --font-sm: 1.125rem;
-            --font-normal: calc(1.0625rem * 1.618);
+            --font-normal: 1.7rem;
+
+            /* headings big*/
+            --fnt-head-h1-nm: 4.765rem;
+            --fnt-head-h2-nm: 2.945rem;
+            --fnt-head-h3-nm: 1.820rem;
+            --fnt-head-h4-nm: 1.719rem;
+            --fnt-head-h5-nm: 1.618rem;
+            --fnt-head-h6-nm: 1.516rem;
+
+            /* headings small */
+            --fnt-head-h1-sm: ;
+            --fnt-head-h2-sm: ;
+            --fnt-head-h3-sm: ;
+            --fnt-head-h4-sm: ;
+            --fnt-head-h5-sm: ;
+            --fnt-head-h6-sm: ;
+            
         }
 
     /* borders */
@@ -239,7 +257,6 @@
         --padding-md: 1.125rem 1.375rem;
         --padding-lg: 1.25rem 1.5rem;
         --padding-xl: 1.375rem 1.6125rem;
-
 
     }
 

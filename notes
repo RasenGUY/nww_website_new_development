@@ -14,9 +14,9 @@
         - notes, all of the images with a custom path have to be converted into pngs, svg don't really work since it seems that borders can't be added in masks
         - new approach export images with borders as pngs for now, the location figure needs to be cleaned up (done)
         
-    - create navigation menu
-        - mobile version
-        - web version 
+    - create navigation menu (done)
+        - mobile version (done)
+        - web version (done)
     - figure out how to create background blur on elements
     - position elements
     - create animations for web pages

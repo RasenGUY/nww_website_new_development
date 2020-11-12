@@ -24,39 +24,41 @@ h2, h3, h4, h5, h6 {
 
 h1 {
 
-    font-size: calc(1.125rem * 1.618 * 1.618 * 1.618);
+    font-size: var(--fnt-head-h1-nm);
 }
 
 h2 {
     
-    font-size: calc(1.125rem * 1.618 * 1.618);
+    font-size: var(--fnt-head-h2-nm);
 }
 
 h3 {
     
-    font-size: calc(1.125rem * 1.618);
+    font-size: var(--fnt-head-h3-nm);
 }
 
 h4 {
-
-    font-size: calc(1.0625rem * 1.618);
-
+    
+    font-size: var(--fnt-head-h4-nm);
+    
 }
 
 h5 {
-
-    font-size: calc(1rem * 1.618);
+    
+    font-size: var(--fnt-head-h5-nm);
 }
 
 h6 {
     
-    font-size: calc(0.9375rem * 1.618);
+    font-size: var(--fnt-head-h6-nm);
 }
 
 
-p, ul, li, i, form{
-    font-size: calc(1.125rem * 1.618);
+p, ul, li, i, form {
+
+    font-size: var(--fnt-normal);
 }
+
 p { 
     padding-left: 0.25rem;
     line-height: 3rem;
@@ -65,7 +67,7 @@ p {
 /* normal state */
 a {
 
-    font-size: calc(1.125rem * 1.618);
+    font-size: var(--fnt-normal);
     color: var(--color-cta);
     transition: color ease-in-out .15s;
 }
@@ -121,4 +123,7 @@ a:active, a:focus {
     text-shadow: var(--shadow-text-t-sm);
 }
 
-/* headers mobile */
+/* letter styles mobile */
+@media only screen and (max-width: 415px) {
+    /* make letters styles dynamic */
+}

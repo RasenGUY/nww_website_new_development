@@ -84,21 +84,21 @@ p span.txt-color-cta, p span.txt-color-p, p span.txt-color-s, p span.txt-color-t
 .sm {
     
     padding: var(--btn-sm);
-    font-size: var(--fnt-btn-sm);
+    font-size: var(--fnt-sm);
     border-radius: var(--corner-normal);
 }
 
 .lg {
     
     padding: var(--btn-lg); 
-    font-size: var(--fnt-btn-lg);
+    font-size: var(--fnt-lg);
     border-radius: var(--corner-lg);
 }
 
 .xl {
 
     padding: var(--btn-xl);
-    font-size: var(--fnt-btn-xl);
+    font-size: var(--fnt-xl);
     border-radius: var(--corner-xl);
 }
 
