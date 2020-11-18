@@ -48,7 +48,7 @@ form > textarea {
     background-color: var(--color-cta-op-normal);
 }
 
-::-moz-placeholder, ::-webkit-input-placeholder,{
+::-moz-placeholder, ::-webkit-input-placeholder {
     
     color: var(--color-placeholder);
     font-size: calc(1.125rem * 1.618);
