@@ -7,7 +7,7 @@
     padding: var(--btn-normal);
     border-radius: var(--corner-normal);
     font-family: var(--roboto-condensed);
-    font-size: var(--fnt-btn-normal);
+    font-size: var(--fnt-btn-nm);
     font-weight: var(--bold);
     color: var(--text-color);
     border-width: 0em;

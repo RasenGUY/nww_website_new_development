@@ -148,15 +148,15 @@
     /* font_sizes */
         :root {
 
-            /* general */
-            --fnt-sm: 1.125rem;
+            /* general fonts */
+            --fnt-sm: 1.82rem;
             --fnt-normal: 1.820rem;
             --fnt-lg: 3.106rem;
             --fnt-xl: 3.871rem;
 
-            /* general text */
-            --font-sm: 1.125rem;
-            --font-normal: 1.7rem;
+            /* buttons */
+            --fnt-btn-nm: clamp(1.6rem, 1.85rem, 2.2rem);
+            --fnt-btn-bg: clamp(2.6rem, 2.8rem, 3.1rem);
 
             /* headings big*/
             --fnt-head-h1-nm: 4.765rem;
@@ -167,14 +167,15 @@
             --fnt-head-h6-nm: 1.516rem;
 
             /* headings small */
-            --fnt-head-h1-sm: ;
-            --fnt-head-h2-sm: ;
+            --fnt-head-h1-sm: 10vw;
+            --fnt-head-h2-sm:  ;
             --fnt-head-h3-sm: ;
             --fnt-head-h4-sm: ;
             --fnt-head-h5-sm: ;
             --fnt-head-h6-sm: ;
             
         }
+
 
     /* borders */
     :root {

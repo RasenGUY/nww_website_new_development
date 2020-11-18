@@ -11,10 +11,7 @@ h1, h2, h3, h4, h5, h6, p, li, form {
 
 }
 
-h1 {
 
-    text-shadow: var(--shadow-text); 
-}
 h2, h3, h4, h5, h6 {
 
     /* letter-spacing: 0.0625rem; 
@@ -24,39 +21,43 @@ h2, h3, h4, h5, h6 {
 
 h1 {
 
-    font-size: var(--fnt-head-h1-nm);
+    font-size: min(var(--fnt-head-h1-nm), var(--fnt-head-h1-sm));   
+    text-shadow: var(--shadow-text); 
+
 }
 
 h2 {
-    
-    font-size: var(--fnt-head-h2-nm);
+
+    font-size: minmax(var(--fnt-head-h2-nm), var(--fnt-head-h1-nm));
 }
 
 h3 {
     
-    font-size: var(--fnt-head-h3-nm);
+    font-size: minmax(var(--fnt-head-h3-nm), var(--fnt-head-h2-nm));
 }
 
 h4 {
     
-    font-size: var(--fnt-head-h4-nm);
+    font-size: minmax(var(--fnt-head-h4-nm), var(--fnt-head-h3-nm));
     
 }
 
 h5 {
     
-    font-size: var(--fnt-head-h5-nm);
+    font-size: minmax(var(--fnt-head-h5-nm), var(--fnt-head-h4-nm));
+
 }
 
 h6 {
     
-    font-size: var(--fnt-head-h6-nm);
+    font-size: minmax(var(--fnt-head-h6-nm), var(--fnt-head-h5-nm));
+    
 }
 
 
 p, ul, li, i, form {
 
-    font-size: var(--fnt-normal);
+    font-size: min(var(--fnt-normal), var(--fnt-sm));
 }
 
 p { 
@@ -67,7 +68,7 @@ p {
 /* normal state */
 a {
 
-    font-size: var(--fnt-normal);
+    font-size: min(var(--fnt-normal), var(--fnt-sm));
     color: var(--color-cta);
     transition: color ease-in-out .15s;
 }
@@ -91,6 +92,7 @@ a:active, a:focus {
     color: var(--color-p);
     text-shadow: var(--shadow-text-p);
 }
+
 .txt-color-p.txt-shadow-sm {
     color: var(--color-p);
     text-shadow: var(--shadow-text-p-sm);
@@ -100,10 +102,12 @@ a:active, a:focus {
     color: var(--color-cta);
     text-shadow: var(--shadow-text-cta);
 }
+
 .txt-color-cta.txt-shadow-sm {
     color: var(--color-cta);
     text-shadow: var(--shadow-text-cta-sm);
 }
+
 .txt-color-s {
     color: var(--color-s);
     text-shadow: var(--shadow-text-s)
@@ -118,6 +122,7 @@ a:active, a:focus {
     color: var(--color-t);
     text-shadow: var(--shadow-text-t);
 }
+
 .txt-color-t.txt-shadow-sm {
     color: var(--color-t);
     text-shadow: var(--shadow-text-t-sm);
@@ -125,5 +130,8 @@ a:active, a:focus {
 
 /* letter styles mobile */
 @media only screen and (max-width: 415px) {
+    
     /* make letters styles dynamic */
+    
+
 }
