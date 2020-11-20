@@ -15,7 +15,7 @@
 nav {
 
     display: grid;
-    grid-template-columns: [left] 14rem [middle] auto [right] 14rem;
+    grid-template-columns: [left] 10% [middle] auto [right] 10%;
     align-items: center;
     position: fixed;
     top: 0; 
@@ -25,6 +25,16 @@ nav {
     z-index: 99999;
 
 }
+
+/* mobile settings for navbar */
+@media only screen and (max-width: 975px) {
+
+    grid-template-columns: [left] 5% [middle] auto [right] 5%;
+
+
+}
+
+
     /* unset for web */
     nav .wrapper-mobile-top, .mobile-bottom {
         display: none;
@@ -49,7 +59,7 @@ nav {
 
         grid-column: middle / right;
         display: grid;
-        grid-template-columns: 40% 60%;
+        grid-template-columns: auto auto;
         align-items: center;
         
     }
@@ -59,7 +69,7 @@ nav {
         list-style-type: none;
         margin: 0;
         padding: 0;
-        overflow: hidden;
+        /* overflow: hidden; */
         justify-self: end;
         
     }
@@ -124,7 +134,7 @@ nav {
     /* placement of items in top navbar */
     nav, .mobile-bottom {
 
-        grid-template-columns: [left] 2.75rem [middle] auto [right] 2.75rem;
+        grid-template-columns: [left] 3.25% [middle] auto [right] 3.25%;
 
     }
     

@@ -13,8 +13,8 @@
 
         --opacity-normal: 0.16;
         --opacity-lg: 0.25;
-        --opacity-xl: 0.30;
-        --opacity-xxl: 0.6;
+        --opacity-xl: 0.3;
+        --opacity-xxl: 0.7;
     }
 
     /* colors  */
@@ -107,7 +107,8 @@
             --color-text-light-op-xxl: rgba(14,19,24, var(--opacity-xxl));
     
         /* tertiary */
-        --color-t: #FFFFFF;
+        --color-t: rgba(255, 255, 255, 1);
+        --color-t-op-lg: rgba(255, 255, 255, var(--opacity-lg));
 
         /* text area */
         --color-placeholder: rgba(184, 184, 184, 1);
@@ -198,6 +199,7 @@
     /* shadows */
     :root {
         
+        /* buttons */
         --shadow-btn-p: 2px 2px 3px var(--color-p-op-lg);
         --shadow-btn-p-lg: 3px 3px 4px var(--color-p-op-lg);
         --shadow-btn-s: 2px 2px 3px var(--color-s-op-lg);
@@ -213,16 +215,19 @@
         --shadow-active-btn-cta: 0 0 0 3pt var(--color-cta-op-xxl);
         
         /* text-shadows */
-        --shadow-text: 3px 2px 1px var(--color-text-op-lg);
-        --shadow-text-sm: 1px 1.5px 1px var(--color-text-op-lg);
-        --shadow-text-p: 3px 2px 1px var(--color-p-op-lg);
-        --shadow-text-p-sm: 0.75px 1px 1px var(--color-p-op-lg);
-        --shadow-text-s: 3px 2px 1px var(--color-s-op-lg);
-        --shadow-text-s-sm: 0.75px 1px 1px var(--color-s-op-lg);
-        --shadow-text-cta: 3px 2px 1px var(--color-cta-op-lg); 
-        --shadow-text-cta-sm: 0.75px 1px 1px var(--color-cta-op-lg); 
-        --shadow-text-t: 3px 2px 1px var(--color-t-op-lg);
-        --shadow-text-t-sm: 0.75px 1px 1px var(--color-t-op-lg);
+
+            /* dark */
+            --shdw-txt-dark-sm: 3px 2px 1px var(--color-text-op-lg);
+            --shdw-txt-dark-nm: 3px 2px 1px var(--color-text-op-lg);
+            --shdw-txt-dark-lg: 1px 1.5px 1px var(--color-text-op-xxl);
+            
+            
+            /* light */
+            --shdw-txt-light-sm: 1px 1.5px 1px var(--color-text-op-xxl);
+            --shdw-txt-light-nm: 3px 2px 1px var(--color-text-op-lg);
+            --shdw-txt-light-lg: 3px 2px 1px var(--color-text-op-lg);
+
+        
 
         /* icon shadows */
         --shadow-icon-p: 0.75px .75px 1px var(--color-p-op-lg);

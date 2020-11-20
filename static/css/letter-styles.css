@@ -13,17 +13,15 @@ h1, h2, h3, h4, h5, h6, p, li, form {
 }
 
 
-h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
 
-    /* letter-spacing: 0.0625rem; 
-    line-height: 0.9375rem; */
-    text-shadow: var(--shadow-text-sm);
+    /* letter-spacing: 0.0625rem;  */
+    /* line-height: 0.9375rem;  */
 }
 
 h1 {
 
     font-size: min(var(--fnt-head-h1-nm), var(--fnt-head-h1-sm));   
-    text-shadow: var(--shadow-text); 
 
 }
 
@@ -88,51 +86,52 @@ a:active, a:focus {
     color: var(--color-p)
 }
 
-/* text-colors-with shadows */
+/* text-colors */ 
 .txt-color-p {
     color: var(--color-p);
-    text-shadow: var(--shadow-text-p);
 }
 
-.txt-color-p.txt-shadow-sm {
+.txt-color-p {
     color: var(--color-p);
-    text-shadow: var(--shadow-text-p-sm);
 }
 
 .txt-color-cta {
     color: var(--color-cta);
-    text-shadow: var(--shadow-text-cta);
 }
 
-.txt-color-cta.txt-shadow-sm {
-    color: var(--color-cta);
-    text-shadow: var(--shadow-text-cta-sm);
-}
 
 .txt-color-s {
     color: var(--color-s);
-    text-shadow: var(--shadow-text-s)
 }
 
-.txt-color-s.txt-shadow-sm {
-    color: var(--color-s);
-    text-shadow: var(--shadow-text-s-sm)
-}
 
 .txt-color-t {
     color: var(--color-t);
-    text-shadow: var(--shadow-text-t);
 }
 
-.txt-color-t.txt-shadow-sm {
-    color: var(--color-t);
-    text-shadow: var(--shadow-text-t-sm);
-}
+    /* text-shadows */
+    .txt-shadow-dark-sm {
+        text-shadow: var(--shdw-txt-dark-sm);
+    }
 
-/* letter styles mobile */
-@media only screen and (max-width: 415px) {
-    
-    /* make letters styles dynamic */
-    
+    .txt-shadow-dark-nm {
+        text-shadow: var(--shdw-txt-dark-nm);
+    }
 
-}
+    .txt-shadow-dark-lg {
+        text-shadow: var(--shdw-txt-dark-lg);
+    }
+    .txt-shadow-light-sm {
+        text-shadow: var(--shdw-txt-light-sm);
+    }
+
+    .txt-shadow-light-nm {
+        text-shadow: var(--shdw-txt-light-nm);
+    }
+
+    .txt-shadow-light-lg {
+        text-shadow: var(--shdw-txt-light-lg);
+    }
+
+
+
