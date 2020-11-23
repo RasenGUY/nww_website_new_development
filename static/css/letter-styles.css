@@ -1,8 +1,3 @@
-/* import css files */
-@import 'https://fonts.googleapis.com/css2?family=Roboto&Roboto+Condensed&family=Roboto+Slab:wght@100..900';
-@import './general-styles.css';
-@import './variables.css'; 
-
 /* headers  web*/
 h1, h2, h3, h4, h5, h6, p, li, form {
 
@@ -15,48 +10,47 @@ h1, h2, h3, h4, h5, h6, p, li, form {
 
 h1, h2, h3, h4, h5, h6 {
 
-    /* letter-spacing: 0.0625rem;  */
-    /* line-height: 0.9375rem;  */
+    letter-spacing: 0.0625rem;
+    
 }
 
 h1 {
 
-    font-size: min(var(--fnt-head-h1-nm), var(--fnt-head-h1-sm));   
-
+    font-size: ;   
 }
 
 h2 {
 
-    font-size: minmax(var(--fnt-head-h2-nm), var(--fnt-head-h1-nm));
+    font-size: ;
 }
 
 h3 {
     
-    font-size: minmax(var(--fnt-head-h3-nm), var(--fnt-head-h2-nm));
+    font-size: ;
 }
 
 h4 {
     
-    font-size: minmax(var(--fnt-head-h4-nm), var(--fnt-head-h3-nm));
+    font-size: ;
     
 }
 
 h5 {
     
-    font-size: minmax(var(--fnt-head-h5-nm), var(--fnt-head-h4-nm));
+    font-size: ;
 
 }
 
 h6 {
     
-    font-size: minmax(var(--fnt-head-h6-nm), var(--fnt-head-h5-nm));
+    font-size: ;
     
 }
 
 
-p, ul, li, i, form {
+p, ul, li, i, a, form {
 
-    font-size: min(var(--fnt-normal), var(--fnt-sm));
+    font-size: clamp(calc(var(--p-min) * 1rem), var(--p-preff), calc(var(--p-max) * 1rem));
 }
 
 p { 
@@ -67,10 +61,10 @@ p {
 /* normal state */
 a {
 
-    font-size: min(var(--fnt-normal), var(--fnt-sm));
     color: var(--color-cta);
     transition: color ease-in-out .15s;
 }
+
 p a {
     font-size: inherit;
 }
@@ -81,7 +75,6 @@ a:hover {
 }
 
 a:active, a:focus {
-
     outline: none; 
     color: var(--color-p)
 }

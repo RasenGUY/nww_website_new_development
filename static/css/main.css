@@ -5,9 +5,9 @@
 @import '';
 @import './variables.css';
 @import './general-styles.css';
+@import './letter-styles.css';
 @import './forms.css';
 @import './icons.css';
-@import './letter-styles.css';
 @import './button-styles.css';
 @import './colors.css';
 
@@ -30,8 +30,6 @@ nav {
 @media only screen and (max-width: 975px) {
 
     grid-template-columns: [left] 5% [middle] auto [right] 5%;
-
-
 }
 
 
@@ -69,7 +67,6 @@ nav {
         list-style-type: none;
         margin: 0;
         padding: 0;
-        /* overflow: hidden; */
         justify-self: end;
         
     }
