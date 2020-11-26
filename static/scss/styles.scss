@@ -1,0 +1,87 @@
+// variables for the new world website
+// sass imports
+@use "sass:color";
+
+// opacities
+$opacityNm: 0.16;
+$opacityLg: 0.25;
+$opacityXl: 0.3;
+$opacityXxl: 0.3;
+
+// colors 
+
+    // primary
+    $primaryColor: #da4a22; 
+    $primaryLight: #ff7650;
+    $primaryLighter: #ffbdaa;
+
+    // secondary
+    $secondarColor: #22b2da;
+    $secondarLight: #afe2ec;
+    $secondarLighter: #eef9fc;
+
+    // call to action
+    $ctaColor:#22da4a;  
+    $ctaLight: #77f993;  
+    $ctaLighter: #d1ffdb;  
+
+    // tertiary
+    $tertiaryColor: #ffffff;
+
+    // text
+    $textColor: #0e1318;
+
+    // forms
+    $placeholderColor: #b8b8b8;
+    $textAreaColor: #eef9fc;
+
+// fonts
+
+    // font family 
+    $roboto: 'Roboto';
+    $robotoCon: 'Roboto Condensed';
+    $robotSlab: 'Roboto Slab';
+
+    // font weights
+    $regular: 400;
+    $bold: 700;
+
+// borders
+$borderSm: 2.5px;
+$borderNm: 5px;
+$borderLg: 10px;
+$borderXl: 15px;
+
+// corners
+$cornerSm: 15px;
+$cornerNm: 20px;
+$cornerXg: 22px;
+$cornerXl: 22px;
+$cornerCircle: 100px;
+
+// shadows
+
+// buttons
+
+    @function shadow ($property, $color, $opacity) {
+        
+        $shadowColor: color.adjust($color, $alpha: $opacity);
+        $prefix: "";
+
+        @if $property == 'btn-sm' {
+            $prefix: "2px 2px 3px #{$shadowColor}";
+        } 
+        @else if $property == 'btn-nm' {
+            $prefix: "3px 3px 4px #{$shadowColor}";
+        }
+        @else if $property == "btn-active" {
+            $prefix: "0 0 3pt #{$shadowColor}";
+        }
+
+    
+    };// variables: color, opacity
+    
+    
+
+
+
