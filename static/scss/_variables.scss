@@ -77,4 +77,6 @@ $cornerCircle: 100px;
         @else if $property == "btn-active" {
             $prefix: "0 0 3pt #{$shadowColor}";
         }
+        
+        @return $prefix
     };// variables: color, opacity
