@@ -1,0 +1,8 @@
+@use "variables" as variable;
+
+.gradient {
+
+    
+
+    background-image: variable.gradient("radial", "130deg", (variable.$primaryColor + " 150%", variable.$secondaryColor + " 180%"));
+}

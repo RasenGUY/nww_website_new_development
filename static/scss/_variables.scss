@@ -1,6 +1,8 @@
 // variables for the new world website
 // sass imports
 @use "sass:color";
+@use "sass:list";
+@use "sass:string";
 
 // opacities
 $opacityNm: 0.16;
@@ -16,9 +18,9 @@ $opacityXxl: 0.3;
     $primaryLighter: #ffbdaa;
 
     // secondary
-    $secondarColor: #22b2da;
-    $secondarLight: #afe2ec;
-    $secondarLighter: #eef9fc;
+    $secondaryColor: #22b2da;
+    $secondaryLight: #afe2ec;
+    $secondaryLighter: #eef9fc;
 
     // call to action
     $ctaColor:#22da4a;  
@@ -63,20 +65,67 @@ $cornerCircle: 100px;
 
 // buttons
 
-    @function shadow ($property, $color, $opacity) {
-        
-        $shadowColor: color.adjust($color, $alpha: $opacity);
-        $prefix: "";
+@function shadows ($property, $color, $opacity) {
+    
+    $shadowColor: color.adjust($color, $alpha: $opacity);
+    $prefix: "";
 
-        @if $property == 'btn-sm' {
-            $prefix: "2px 2px 3px #{$shadowColor}";
-        } 
-        @else if $property == 'btn-nm' {
-            $prefix: "3px 3px 4px #{$shadowColor}";
+    @if $property == 'btn-sm' {
+        $prefix: "2px 2px 3px #{$shadowColor}";
+    } 
+    @else if $property == 'btn-nm' {
+        $prefix: "3px 3px 4px #{$shadowColor}";
+    }
+    @else if $property == "btn-active" {
+        $prefix: "0 0 3pt #{$shadowColor}";
+    }
+    @else if $property == "figure" {
+        $prefix: "5px 5px 15px #{$shadowColor}";
+    }
+    @else if $property == "icon-sm" {
+        $prefix: "0.75px .75px 1px #{$shadowColor}";
+    }
+    @else if $property == "icon-nm" {
+        $prefix: "1px 1px 2px #{$shadowColor}";
+    }
+    @else if $property == "text-sm" {
+        $prefix: "1px 1.5px 1px #{$shadowColor}";
+    }
+    @else if $property == "text-nm" {
+        $prefix: "3px 2px 1px #{$shadowColor}";
+    }
+    @else if $property == "form-area" {
+        $prefix: "0.5rem 0.6125rem 0.25rem #{$shadowColor}";
+    }
+            
+    @return $prefix
+
+}; // variables: color, opacity
+
+// gradients
+@function gradient ($type, $direct-size, $colors) {
+
+    $result: "";
+    
+    @if $type == "linear" {
+        $result: "linear-gradient(#{$direct-size}, ";
+    }
+    @else {
+        $result: "radial-gradient(#{$direct-size}, "
+    }
+
+    // add colors
+    @each $color in $colors {
+
+        @if list.index($colors, $color) == list.length($colors) {
+            $result: $result + $color + ")";
         }
-        @else if $property == "btn-active" {
-            $prefix: "0 0 3pt #{$shadowColor}";
+        @else {
+            $result: $result + $color + ", ";
         }
-        
-        @return $prefix
-    };// variables: color, opacity
+    }
+    $result: string.unquote($result);
+
+    @return $result
+
+}; //type: type of gradient, direction: direction is more then 0, colors: colors to go in the radient
