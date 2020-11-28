@@ -1,8 +1,6 @@
-@use "variables" as variable;
+@use "variables" as v;
+@use "functions" as f;
 
 .gradient {
-
-    
-
-    background-image: variable.gradient("radial", "130deg", (variable.$primaryColor + " 150%", variable.$secondaryColor + " 180%"));
+    background-image: f.gradient("radial", "130deg", (v.$primaryColor + " 150%", v.$secondaryColor + " 180%"));
 }
