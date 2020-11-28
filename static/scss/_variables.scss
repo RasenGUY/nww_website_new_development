@@ -61,10 +61,15 @@ $cornerXg: 22px;
 $cornerXl: 22px;
 $cornerCircle: 100px;
 
+// padding
+$padding-sm: 0.875rem 1.125rem;
+$padding: 1rem 1.25rem;
+$padding-md: 1.125rem 1.375rem;
+$padding-lg: 1.25rem 1.5rem;
+$padding-xl: 1.375rem 1.6125rem;
+
+
 // shadows
-
-// buttons
-
 @function shadows ($property, $color, $opacity) {
     
     $shadowColor: color.adjust($color, $alpha: $opacity);
@@ -106,7 +111,8 @@ $cornerCircle: 100px;
 @function gradient ($type, $direct-size, $colors) {
 
     $result: "";
-    
+
+    // look for gradient type
     @if $type == "linear" {
         $result: "linear-gradient(#{$direct-size}, ";
     }
