@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+html, *, *::before, *::after {
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  font-size: inherit;
+  color: #0e1318;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #0e1318;
+  text-decoration: none;
+}
+
+a {
+  color: var(--color-cta);
+  transition: color ease-in-out 0.15s;
+}
+
+a:hover {
+  color: var(--color-p-light);
+}
+
+a:active, a:focus {
+  outline: none;
+  color: var(--color-p);
+}
+
+h1, h2, h3, h4, h5, h6, p, li, form {
+  font-family: var(--roboto-condensed);
+  font-weight: var(--regular);
+  margin: 0px 0px;
+  color: #0e1318;
+}
+
+p .primary {
+  color: #da4a22;
+}
+
+p .secondary {
+  color: #22b2da;
+}
+
+p .tertiary {
+  color: #ffffff;
+}
+
+/*# sourceMappingURL=base.css.map */

@@ -4,6 +4,7 @@
 @use "sass:list";
 @use "sass:string";
 
+
 // opacities
 $opacityNm: 0.16;
 $opacityLg: 0.25;
@@ -36,6 +37,14 @@ $opacityXxl: 0.3;
     // forms
     $placeholderColor: #b8b8b8;
     $textAreaColor: #eef9fc;
+
+    // backgrounds
+    $bgPrimary: $primaryColor;
+    $bgSecondary: $secondaryColor;
+    $bgCTA: $ctaColor;
+    $bgWhite: $tertiaryColor;
+    $bgDark: $textColor;
+
 
 // fonts
 

@@ -1,0 +1,82 @@
+// base styles for new world website 
+@use 'variables' as v;
+
+// modules
+// for fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+// html box-sizing etc 
+html, *, *::before, *::after {
+    padding: 0px;
+    margin: 0px;
+}
+
+// headings 
+
+// link styles
+    
+    // standard
+    a {
+        font-size: inherit;
+        color: v.$textColor;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    a:hover {
+        color: v.$textColor;
+        text-decoration: none;
+    }
+
+    // website theme
+    a {
+
+        color: var(--color-cta);
+        transition: color ease-in-out .15s;
+    }
+    
+        // hover states
+        a:hover {
+            color: var(--color-p-light)
+        }
+        
+        a:active, a:focus {
+            outline: none; 
+            color: var(--color-p);
+        }
+        
+    
+
+// font styles
+
+    // general
+    h1, h2, h3, h4, h5, h6, p, li, form {
+
+        font-family: var(--roboto-condensed);
+        font-weight: var(--regular);
+        margin: 0px 0px;
+        color: v.$textColor;
+    
+    }
+
+    // paragraph 
+    p {
+        .primary {
+            color: v.$primaryColor;
+        }
+    } // primary color
+
+    p {
+        .secondary {
+            color: v.$secondaryColor;
+        }
+    } // secondary color
+    
+    p {
+        .tertiary {
+            color: v.$tertiaryColor;
+        }
+    } // secondary color
+
+// background colors

@@ -23,12 +23,10 @@ nav {
     width: 100vw;
     box-shadow: 3px 0px 5px var(--color-text-op-normal);
     z-index: 99999;
-
 }
 
 /* mobile settings for navbar */
 @media only screen and (max-width: 975px) {
-
     grid-template-columns: [left] 5% [middle] auto [right] 5%;
 }
 
@@ -51,24 +49,21 @@ nav {
         left: 0;
         z-index: -3;
         backdrop-filter: blur(1rem);
-
     }
+
     nav .wrapper-web {
 
         grid-column: middle / right;
         display: grid;
         grid-template-columns: auto auto;
         align-items: center;
-        
     }
 
     .nav-links {
-        
         list-style-type: none;
         margin: 0;
         padding: 0;
         justify-self: end;
-        
     }
 
     .nav-links li, .social li {
@@ -215,12 +210,9 @@ nav {
             z-index: -1;
             box-shadow: 3px 0px 5px var(--color-text-op-normal);
 
-            
-
             /* animation */
             transition: all 0.33s ease-in-out;
             transition-timing-function: cubic-bezier(0.5, 0.5, 0.1, 1);
-            
         }
 
             /* blur filter for links */
