@@ -4,30 +4,35 @@ html, *, *::before, *::after {
   margin: 0px;
 }
 
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
 a {
   font-size: inherit;
   color: #0e1318;
   text-decoration: none;
   cursor: pointer;
 }
-
 a:hover {
   color: #0e1318;
   text-decoration: none;
 }
+a:active {
+  color: #0e1318;
+}
 
 a {
-  color: var(--color-cta);
+  color: #22da4a;
   transition: color ease-in-out 0.15s;
 }
-
 a:hover {
-  color: var(--color-p-light);
+  color: #a4f1b5;
 }
-
 a:active, a:focus {
   outline: none;
-  color: var(--color-p);
+  color: #228e39;
 }
 
 h1, h2, h3, h4, h5, h6, p, li, form {
@@ -47,6 +52,10 @@ p .secondary {
 
 p .tertiary {
   color: #ffffff;
+}
+
+p {
+  font-size: clamp(1.585rem, -1.3225796178rem + 0.6369426752vw, 1.985rem);
 }
 
 /*# sourceMappingURL=base.css.map */

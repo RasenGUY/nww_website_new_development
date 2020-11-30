@@ -1,5 +1,9 @@
 // base styles for new world website 
 @use 'variables' as v;
+@use 'functions' as f;
+@use 'sass:color';
+
+
 
 // modules
 // for fonts
@@ -11,43 +15,48 @@ html, *, *::before, *::after {
     padding: 0px;
     margin: 0px;
 }
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+
 
 // headings 
 
 // link styles
     
-    // standard
+    // standard theme
     a {
         font-size: inherit;
         color: v.$textColor;
         text-decoration: none;
         cursor: pointer;
+        &:hover {
+            color: v.$textColor;
+            text-decoration: none;
+        }
+        &:active {
+            color: v.$textColor;
+        }
     }
 
-    a:hover {
-        color: v.$textColor;
-        text-decoration: none;
-    }
 
-    // website theme
+    // website theme for links
     a {
 
-        color: var(--color-cta);
+        color: v.$ctaColor;
         transition: color ease-in-out .15s;
+        // hover states
+        &:hover {
+            color: color.adjust(v.$ctaColor, $lightness: 30%);
+        }
+        &:active, &:focus {
+            outline: none; 
+            color: color.adjust(v.$ctaColor, $blackness: 30%);
+        }
     }
     
-        // hover states
-        a:hover {
-            color: var(--color-p-light)
-        }
-        
-        a:active, a:focus {
-            outline: none; 
-            color: var(--color-p);
-        }
-        
-    
-
 // font styles
 
     // general
@@ -78,5 +87,10 @@ html, *, *::before, *::after {
             color: v.$tertiaryColor;
         }
     } // secondary color
+
+    // sizing
+    p {
+        font-size: f.fontDynSize(412, 1040, 15.85, 19.85);
+    }
 
 // background colors

@@ -7,7 +7,7 @@
 
 
 /* all css settings for legacy css attributes */
-.logo img{
+.logo img {
 
     height: 8.5rem;
     padding: var(--padding-sm);
@@ -54,6 +54,7 @@ a:hover {
         text-shadow: inherit;
 
     }
+
 /* colors */
 /* .color-p {} */
 
@@ -78,7 +79,6 @@ a:hover {
 }
 
 .img-blur {
-
     filter: blur(0.3rem) brightness(45%);
     -webkit-filter: blur(0.3rem) brightness(45%);
 }

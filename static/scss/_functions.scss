@@ -74,3 +74,26 @@
 }; //type: type of gradient, direction: direction is more then 0, colors: colors to go in the radient
 
 
+// function for sizing fonts
+@function fontDynSize($vwMin, $vwMax, $fontMin, $fontMax) {
+
+    // divide by ten since site base font-size is 65%
+    $vwMin: $vwMin / 10;
+    $vwMax: $vwMax / 10;
+    $fontMin: $fontMin /10;
+    $fontMax: $fontMax /10;
+    
+    // calculate slope and y intersection
+    $slope: ($fontMax - $fontMin) / ($vwMax - $vwMin);
+    $yInt: -$vwMin * $slope + $fontMin;
+    
+    // calculate preffered font-size
+    $fontPreff: "#{-1rem * ($yInt)} + #{1vw * ($slope * 100)}";
+    
+    // property value to be used
+    $result: "clamp(#{$fontMin * 1rem}, #{$fontPreff}, #{$fontMax *1rem})";
+
+    @return string.unquote($result);
+    
+}// dynamically size fonts according to a given minimum and maximum virtual with and max and font min and max -note accepts inputs in px (leave out unit)
+
