@@ -10,7 +10,7 @@
 @use "functions" as f;
 
 // mixin for shadows
-@mixin shadow ($property, $value, $h, $v, $radius, $color) {
+@mixin shadow($property, $value, $h, $v, $radius, $color) {
     
     // if there is no predifined shadow value then create a shadow on its own
     @if $value == none {
@@ -44,6 +44,7 @@
         };
     }
     @else if $type == ">" {
+        
         @media screen only and (min-width: $screen) {
             @content
         };

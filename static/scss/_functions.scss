@@ -7,7 +7,7 @@
 
 
 // shadows
-@function shadows ($property, $color, $opacity) {
+@function shadows($property, $color, $opacity) {
     
     $shadowColor: color.adjust($color, $alpha: $opacity);
     $prefix: "";
@@ -31,16 +31,16 @@
         $prefix: "1px 1px 2px #{$shadowColor}";
     }
     @else if $property == "text-sm" {
-        $prefix: "1px 1.5px 1px #{$shadowColor}";
+        $prefix: "0.5px 0.5px 1.5px #{$shadowColor}";
     }
     @else if $property == "text-nm" {
-        $prefix: "3px 2px 1px #{$shadowColor}";
+        $prefix: "1px 1px 1px #{$shadowColor}";
     }
     @else if $property == "form-area" {
         $prefix: "0.5rem 0.6125rem 0.25rem #{$shadowColor}";
     }
             
-    @return $prefix
+    @return string.unquote($prefix)
 
 }; // variables: color, opacity
 
@@ -97,4 +97,4 @@
     
 }// dynamically size fonts according to a given minimum and maximum virtual with and max and font min and max -note accepts inputs in px (leave out unit)
 
-// function for creating responsiveness of elements 
+

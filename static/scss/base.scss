@@ -59,7 +59,9 @@ html {
 
     // general
     h1, h2, h3, h4, h5, h6, p, li, form, a, span{
+        
         font-family: v.$robotoCon;
+        font-weight: v.$regular;
         &.to-upper {
             text-transform: uppercase; 
         }
@@ -70,18 +72,19 @@ html {
             text-transform: capitalize; 
         }
     }
+    
     h1, h2, h3, h4, h5, p, li, span {
         &.paragraph {
             font-family: v.$robotoSlab;
         }
     }
-    h1, h2, h3 {
-        font-weight: v.$bold;
-    }
+
     h4, h5, h6 {
         font-style: italic;
         stroke-opacity: v.$opacitySm;
     }
+
+// colors
 
     // base colors
     p, li, form {
@@ -95,44 +98,86 @@ html {
         &.tertiary {
             color: v.$tertiaryColor;
         }
+        &.text-color {
+            color: v.$textColor;
+        }
     }
 
-    // sizing
 
-        // generals
-        p, a, li, form, i {
-            font-size: f.fontDynSize(412, 1040, 15.85, 19.85);
+    // headings
+    h1, h2, h3, h4, h5, h6 {
+        color: v.$tertiaryColor;
+        &.shadow {
+            @include mix.shadow("text-shadow", f.shadows('text-sm,', v.$textColor, v.$opacityXl), none, none, none, none);
         }
-    
-        // headings
-        h1 {
-            font-size: f.fontDynSize(412, 1040, 25, 32);
-            color:v.$tertiaryColor;
-        }   
-        h2 {
-            font-size: f.fontDynSize(412, 1040, 21, 25);
-            color:v.$tertiaryColor;
-        }   
-        h3 {
-            font-size: f.fontDynSize(412, 1040, 19, 22.5);
-            color:v.$tertiaryColor;
-        }
-        h4 {
-            font-size: f.fontDynSize(412, 1040, 17.5, 21);
-            color:v.$tertiaryColor;
-        }
-        h5 {
-            font-size: f.fontDynSize(412, 1040, 14.5, 17);
-            color:v.$tertiaryColor;
-        }
-        h6 {
-            font-size: f.fontDynSize(412, 1040, 12, 15.5);
-            color:v.$tertiaryColor;
-            &.caption{
-                font-size: f.fontDynSize(412, 1040, 8.5, 10.5);
+        &.primary{
+            color: v.$primaryColor;
+            &.shadow {
+                @include mix.shadow("text-shadow", f.shadows('text-sm', v.$primaryColor, v.$opacityXl), none, none, none, none);
             }
         }
-        
-          
+        &.secondary{
+            color: v.$secondaryColor;
+            &.shadow{
+                @include mix.shadow("text-shadow", f.shadows('text-sm', v.$secondaryColor, v.$opacityXl), none, none, none, none);
+            }
+        }
+        &.tertiary{
+            color: v.$tertiaryColor;
+            &.shadow{
+                @include mix.shadow("text-shadow", f.shadows('text-sm', v.$tertiaryColor, v.$opacityXl), none, none, none, none);
+            }
+        }
+        &.text{
+            color: v.$textColor;
+            &.shadow{
+                @include mix.shadow("text-shadow", f.shadows('text-sm', v.$textColor, v.$opacityXl), none, none, none, none);
+            }
+        }
+
+    }
+
+    // icons
+    i, a i, li a i {
+        color: v.$primaryColor;
+        // hover and active states
+        &:hover {
+            color: color.adjust(v.$primaryColor, $lightness: 30%);
+        }
+        &:active, &:focus {
+            outline: none; 
+            color: color.adjust(v.$primaryColor, $blackness: 30%);
+        }
+    }
+
+// sizing
+
+    // generals
+    p, a, li, form, i {
+        font-size: f.fontDynSize(412, 1040, 15.85, 19.85);
+    }
+
+    //headings
+    h1 {
+        font-size: f.fontDynSize(412, 1040, 25, 32);
+    }   
+    h2 {
+        font-size: f.fontDynSize(412, 1040, 21, 25);
+    }   
+    h3 {
+        font-size: f.fontDynSize(412, 1040, 19, 22.5);
+    }
+    h4 {
+        font-size: f.fontDynSize(412, 1040, 17.5, 21);
+    }
+    h5 {
+        font-size: f.fontDynSize(412, 1040, 14.5, 17);
+    }
+    h6 {
+        font-size: f.fontDynSize(412, 1040, 12, 15.5);
+        &.caption{
+            font-size: f.fontDynSize(412, 1040, 8.5, 10.5);
+        }
+    }
 
 // background colors

@@ -37,6 +37,7 @@ a:active, a:focus {
 
 h1, h2, h3, h4, h5, h6, p, li, form, a, span {
   font-family: "Roboto Condensed";
+  font-weight: 400;
 }
 h1.to-upper, h2.to-upper, h3.to-upper, h4.to-upper, h5.to-upper, h6.to-upper, p.to-upper, li.to-upper, form.to-upper, a.to-upper, span.to-upper {
   text-transform: uppercase;
@@ -50,10 +51,6 @@ h1.capitalize, h2.capitalize, h3.capitalize, h4.capitalize, h5.capitalize, h6.ca
 
 h1.paragraph, h2.paragraph, h3.paragraph, h4.paragraph, h5.paragraph, p.paragraph, li.paragraph, span.paragraph {
   font-family: "Roboto Slab";
-}
-
-h1, h2, h3 {
-  font-weight: 700;
 }
 
 h4, h5, h6 {
@@ -73,6 +70,48 @@ p.secondary, li.secondary, form.secondary {
 p.tertiary, li.tertiary, form.tertiary {
   color: #ffffff;
 }
+p.text-color, li.text-color, form.text-color {
+  color: #0e1318;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+}
+h1.primary, h2.primary, h3.primary, h4.primary, h5.primary, h6.primary {
+  color: #da4a22;
+}
+h1.primary.shadow, h2.primary.shadow, h3.primary.shadow, h4.primary.shadow, h5.primary.shadow, h6.primary.shadow {
+  text-shadow: 0.5px 0.5px 1.5px #da4a22;
+}
+h1.secondary, h2.secondary, h3.secondary, h4.secondary, h5.secondary, h6.secondary {
+  color: #22b2da;
+}
+h1.secondary.shadow, h2.secondary.shadow, h3.secondary.shadow, h4.secondary.shadow, h5.secondary.shadow, h6.secondary.shadow {
+  text-shadow: 0.5px 0.5px 1.5px #22b2da;
+}
+h1.tertiary, h2.tertiary, h3.tertiary, h4.tertiary, h5.tertiary, h6.tertiary {
+  color: #ffffff;
+}
+h1.tertiary.shadow, h2.tertiary.shadow, h3.tertiary.shadow, h4.tertiary.shadow, h5.tertiary.shadow, h6.tertiary.shadow {
+  text-shadow: 0.5px 0.5px 1.5px white;
+}
+h1.text, h2.text, h3.text, h4.text, h5.text, h6.text {
+  color: #0e1318;
+}
+h1.text.shadow, h2.text.shadow, h3.text.shadow, h4.text.shadow, h5.text.shadow, h6.text.shadow {
+  text-shadow: 0.5px 0.5px 1.5px #0e1318;
+}
+
+i, a i, li a i {
+  color: #da4a22;
+}
+i:hover, a i:hover, li a i:hover {
+  color: #f1b5a4;
+}
+i:active, i:focus, a i:active, a i:focus, li a i:active, li a i:focus {
+  outline: none;
+  color: #8e3922;
+}
 
 p, a, li, form, i {
   font-size: clamp(1.585rem, -1.3225796178rem + 6.3694267516vw, 1.985rem);
@@ -80,32 +119,26 @@ p, a, li, form, i {
 
 h1 {
   font-size: clamp(2.5rem, -2.0407643312rem + 11.1464968153vw, 3.2rem);
-  color: #ffffff;
 }
 
 h2 {
   font-size: clamp(2.1rem, -1.8375796178rem + 6.3694267516vw, 2.5rem);
-  color: #ffffff;
 }
 
 h3 {
   font-size: clamp(1.9rem, -1.6703821656rem + 5.5732484076vw, 2.25rem);
-  color: #ffffff;
 }
 
 h4 {
   font-size: clamp(1.75rem, -1.5203821656rem + 5.5732484076vw, 2.1rem);
-  color: #ffffff;
 }
 
 h5 {
   font-size: clamp(1.45rem, -1.2859872611rem + 3.9808917197vw, 1.7rem);
-  color: #ffffff;
 }
 
 h6 {
   font-size: clamp(1.2rem, -0.9703821656rem + 5.5732484076vw, 1.55rem);
-  color: #ffffff;
 }
 h6.caption {
   font-size: clamp(0.85rem, -0.7187898089rem + 3.1847133758vw, 1.05rem);

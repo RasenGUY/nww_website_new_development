@@ -160,7 +160,7 @@
             /* slope of two points font-size vs vwport sizes */
             --p-slope: calc(calc(var(--p-max) - var(--p-min)) / calc(var(--vw-max) - var(--p-min)));
             
-            /* y intersection of two two points */
+            /* y intersection of two points */
             --p-yint: calc(calc(var(--vw-min) * -1) * var(--p-slope) + var(--p-min));
            
             /* preffered value for clamp function */
