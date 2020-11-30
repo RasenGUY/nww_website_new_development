@@ -2,6 +2,7 @@
 @use 'variables' as v;
 @use 'functions' as f;
 @use 'sass:color';
+@use 'mixins' as mix;
 
 
 
@@ -15,14 +16,13 @@ html, *, *::before, *::after {
     padding: 0px;
     margin: 0px;
 }
+
 html {
     box-sizing: border-box;
     font-size: 62.5%;
 }
 
 
-
-// headings 
 
 // link styles
     
@@ -41,10 +41,8 @@ html {
         }
     }
 
-
     // website theme for links
     a {
-
         color: v.$ctaColor;
         transition: color ease-in-out .15s;
         // hover states
@@ -60,37 +58,81 @@ html {
 // font styles
 
     // general
-    h1, h2, h3, h4, h5, h6, p, li, form {
-
-        font-family: var(--roboto-condensed);
-        font-weight: var(--regular);
-        margin: 0px 0px;
-        color: v.$textColor;
-    
+    h1, h2, h3, h4, h5, h6, p, li, form, a, span{
+        font-family: v.$robotoCon;
+        &.to-upper {
+            text-transform: uppercase; 
+        }
+        &.to-lower {
+            text-transform: lowercase; 
+        }
+        &.capitalize {
+            text-transform: capitalize; 
+        }
+    }
+    h1, h2, h3, h4, h5, p, li, span {
+        &.paragraph {
+            font-family: v.$robotoSlab;
+        }
+    }
+    h1, h2, h3 {
+        font-weight: v.$bold;
+    }
+    h4, h5, h6 {
+        font-style: italic;
+        stroke-opacity: v.$opacitySm;
     }
 
-    // paragraph 
-    p {
-        .primary {
+    // base colors
+    p, li, form {
+        color: v.$textColor;
+        &.primary {
             color: v.$primaryColor;
         }
-    } // primary color
-
-    p {
-        .secondary {
+        &.secondary {
             color: v.$secondaryColor;
         }
-    } // secondary color
-    
-    p {
-        .tertiary {
+        &.tertiary {
             color: v.$tertiaryColor;
         }
-    } // secondary color
+    }
 
     // sizing
-    p {
-        font-size: f.fontDynSize(412, 1040, 15.85, 19.85);
-    }
+
+        // generals
+        p, a, li, form, i {
+            font-size: f.fontDynSize(412, 1040, 15.85, 19.85);
+        }
+    
+        // headings
+        h1 {
+            font-size: f.fontDynSize(412, 1040, 25, 32);
+            color:v.$tertiaryColor;
+        }   
+        h2 {
+            font-size: f.fontDynSize(412, 1040, 21, 25);
+            color:v.$tertiaryColor;
+        }   
+        h3 {
+            font-size: f.fontDynSize(412, 1040, 19, 22.5);
+            color:v.$tertiaryColor;
+        }
+        h4 {
+            font-size: f.fontDynSize(412, 1040, 17.5, 21);
+            color:v.$tertiaryColor;
+        }
+        h5 {
+            font-size: f.fontDynSize(412, 1040, 14.5, 17);
+            color:v.$tertiaryColor;
+        }
+        h6 {
+            font-size: f.fontDynSize(412, 1040, 12, 15.5);
+            color:v.$tertiaryColor;
+            &.caption{
+                font-size: f.fontDynSize(412, 1040, 8.5, 10.5);
+            }
+        }
+        
+          
 
 // background colors

@@ -88,7 +88,7 @@
     $yInt: -$vwMin * $slope + $fontMin;
     
     // calculate preffered font-size
-    $fontPreff: "#{-1rem * ($yInt)} + #{1vw * ($slope * 100)}";
+    $fontPreff: "#{-1rem * ($yInt)} + #{1vw * ($slope * 1000)}";
     
     // property value to be used
     $result: "clamp(#{$fontMin * 1rem}, #{$fontPreff}, #{$fontMax *1rem})";
@@ -97,3 +97,4 @@
     
 }// dynamically size fonts according to a given minimum and maximum virtual with and max and font min and max -note accepts inputs in px (leave out unit)
 
+// function for creating responsiveness of elements 

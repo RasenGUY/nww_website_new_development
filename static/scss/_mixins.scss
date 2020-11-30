@@ -1,0 +1,64 @@
+//mixins module
+
+// import built in modules
+@use "sass:color";
+@use "sass:string";
+@use "sass:list";
+
+// import modules
+@use "variables" as v;
+@use "functions" as f;
+
+// mixin for shadows
+@mixin shadow ($property, $value, $h, $v, $radius, $color) {
+    
+    // if there is no predifined shadow value then create a shadow on its own
+    @if $value == none {
+
+        @if $property == 'text-shadow' {
+           text-shadow: $h $v $radius $color;
+        }
+        @else {
+            box-shadow: $h $v $radius $color; 
+        } 
+    }
+    @else { // if there is a predifined value then set that as the property
+
+        @if $property == 'text-shadow' {
+            text-shadow: $value;
+        }
+        @else {
+            box-shadow: $value;
+        }
+
+    }
+};
+
+@mixin responsive($type, $screen){
+    
+    // create a media for minimum, maximum or between screen sizes
+    @if $type == "<" {
+
+        @media screen only and (max-width: $screen){
+            @content
+        };
+    }
+    @else if $type == ">" {
+        @media screen only and (min-width: $screen) {
+            @content
+        };
+    }
+    @else if $type == ">and<" {
+
+        // access min widths and max widths 
+        $min: list.nth($screen, 1);
+        $max: list.nth($screen, 2);
+        
+        @media (min-width:$min) and (max-width:$max){
+            @content
+        };
+    } 
+       
+};
+
+
