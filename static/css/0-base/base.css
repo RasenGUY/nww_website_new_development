@@ -34,6 +34,46 @@ a:active, a:focus {
   outline: none;
   color: #228e39;
 }
+a.primary {
+  color: #b44222;
+}
+a.primary:hover {
+  color: #f1b5a4;
+}
+a.primary:active, a.primary:focus {
+  outline: none;
+  color: #8e3922;
+}
+a.secondary {
+  color: #22b2da;
+}
+a.secondary:hover {
+  color: #a4e0f1;
+}
+a.secondary:active, a.secondary:focus {
+  outline: none;
+  color: #22768e;
+}
+a.tertiary {
+  color: #ffffff;
+}
+a.tertiary:hover {
+  color: white;
+}
+a.tertiary:active, a.tertiary:focus {
+  outline: none;
+  color: #c4c4c4;
+}
+a.text {
+  color: #0e1318;
+}
+a.text:hover {
+  color: #466079;
+}
+a.text:active, a.text:focus {
+  outline: none;
+  color: #0d0d0d;
+}
 
 h1, h2, h3, h4, h5, h6, p, li, form, a, span {
   font-family: "Roboto Condensed";
@@ -80,26 +120,11 @@ h1, h2, h3, h4, h5, h6 {
 h1.primary, h2.primary, h3.primary, h4.primary, h5.primary, h6.primary {
   color: #da4a22;
 }
-h1.primary.shadow, h2.primary.shadow, h3.primary.shadow, h4.primary.shadow, h5.primary.shadow, h6.primary.shadow {
-  text-shadow: 0.5px 0.5px 1.5px #da4a22;
-}
 h1.secondary, h2.secondary, h3.secondary, h4.secondary, h5.secondary, h6.secondary {
   color: #22b2da;
 }
-h1.secondary.shadow, h2.secondary.shadow, h3.secondary.shadow, h4.secondary.shadow, h5.secondary.shadow, h6.secondary.shadow {
-  text-shadow: 0.5px 0.5px 1.5px #22b2da;
-}
-h1.tertiary, h2.tertiary, h3.tertiary, h4.tertiary, h5.tertiary, h6.tertiary {
-  color: #ffffff;
-}
-h1.tertiary.shadow, h2.tertiary.shadow, h3.tertiary.shadow, h4.tertiary.shadow, h5.tertiary.shadow, h6.tertiary.shadow {
-  text-shadow: 0.5px 0.5px 1.5px white;
-}
 h1.text, h2.text, h3.text, h4.text, h5.text, h6.text {
   color: #0e1318;
-}
-h1.text.shadow, h2.text.shadow, h3.text.shadow, h4.text.shadow, h5.text.shadow, h6.text.shadow {
-  text-shadow: 0.5px 0.5px 1.5px #0e1318;
 }
 
 i, a i, li a i {
@@ -113,35 +138,61 @@ i:active, i:focus, a i:active, a i:focus, li a i:active, li a i:focus {
   color: #8e3922;
 }
 
+.shadow {
+  text-shadow: 0.5px 0.5px 1.5px #0e1318;
+}
+.shadow.s-primary {
+  text-shadow: 0.5px 0.5px 1.5px #da4a22;
+}
+.shadow.s-secondary {
+  text-shadow: 0.5px 0.5px 1.5px #22b2da;
+}
+.shadow.s-tertiary {
+  text-shadow: 0.5px 0.5px 1.5px white;
+}
+
 p, a, li, form, i {
-  font-size: clamp(1.585rem, -1.3225796178rem + 6.3694267516vw, 1.985rem);
+  font-size: clamp(1.585rem, 1.3225796178rem + 0.6369426752vw, 1.985rem);
 }
 
 h1 {
-  font-size: clamp(2.5rem, -2.0407643312rem + 11.1464968153vw, 3.2rem);
+  font-size: clamp(2.5rem, 2.0407643312rem + 1.1146496815vw, 3.2rem);
 }
 
 h2 {
-  font-size: clamp(2.1rem, -1.8375796178rem + 6.3694267516vw, 2.5rem);
+  font-size: clamp(2.1rem, 1.8375796178rem + 0.6369426752vw, 2.5rem);
 }
 
 h3 {
-  font-size: clamp(1.9rem, -1.6703821656rem + 5.5732484076vw, 2.25rem);
+  font-size: clamp(1.9rem, 1.6703821656rem + 0.5573248408vw, 2.25rem);
 }
 
 h4 {
-  font-size: clamp(1.75rem, -1.5203821656rem + 5.5732484076vw, 2.1rem);
+  font-size: clamp(1.75rem, 1.5203821656rem + 0.5573248408vw, 2.1rem);
 }
 
 h5 {
-  font-size: clamp(1.45rem, -1.2859872611rem + 3.9808917197vw, 1.7rem);
+  font-size: clamp(1.45rem, 1.2859872611rem + 0.398089172vw, 1.7rem);
 }
 
 h6 {
-  font-size: clamp(1.2rem, -0.9703821656rem + 5.5732484076vw, 1.55rem);
+  font-size: clamp(1.2rem, 0.9703821656rem + 0.5573248408vw, 1.55rem);
 }
 h6.caption {
-  font-size: clamp(0.85rem, -0.7187898089rem + 3.1847133758vw, 1.05rem);
+  font-size: clamp(0.85rem, 0.7187898089rem + 0.3184713376vw, 1.05rem);
+}
+
+.bg {
+  background-color: #22b2da;
+}
+.bg.primary {
+  background-color: #da4a22;
+}
+.bg.tertiary {
+  background-color: #ffffff;
+}
+.bg.text {
+  background-color: #0e1318;
 }
 
 /*# sourceMappingURL=base.css.map */

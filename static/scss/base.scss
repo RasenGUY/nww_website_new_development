@@ -53,6 +53,46 @@ html {
             outline: none; 
             color: color.adjust(v.$ctaColor, $blackness: 30%);
         }
+        &.primary{
+            color: color.adjust(v.$primaryColor, $blackness: 15%);
+            &:hover{
+                color: color.adjust(v.$primaryColor, $lightness: 30%);
+            }
+            &:active, &:focus{
+                outline: none; 
+                color: color.adjust(v.$primaryColor, $blackness: 30%);
+            }
+        }
+        &.secondary{
+            color: v.$secondaryColor;
+            &:hover{
+                color: color.adjust(v.$secondaryColor, $lightness: 30%);
+            }
+            &:active, &:focus{
+                outline: none; 
+                color: color.adjust(v.$secondaryColor, $blackness: 30%);
+            }
+        }
+        &.tertiary{
+            color: v.$tertiaryColor;
+            &:hover{
+                color: color.adjust(v.$tertiaryColor, $lightness: 30%);
+            }
+            &:active, &:focus{
+                outline: none; 
+                color: color.adjust(v.$tertiaryColor, $blackness: 30%);
+            }
+        }
+        &.text{
+            color: v.$textColor;
+            &:hover{
+                color: color.adjust(v.$textColor, $lightness: 30%);
+            }
+            &:active, &:focus{
+                outline: none; 
+                color: color.adjust(v.$textColor, $blackness: 30%);
+            }
+        }
     }
     
 // font styles
@@ -106,37 +146,21 @@ html {
 
     // headings
     h1, h2, h3, h4, h5, h6 {
+
         color: v.$tertiaryColor;
-        &.shadow {
-            @include mix.shadow("text-shadow", f.shadows('text-sm,', v.$textColor, v.$opacityXl), none, none, none, none);
-        }
+    
         &.primary{
             color: v.$primaryColor;
-            &.shadow {
-                @include mix.shadow("text-shadow", f.shadows('text-sm', v.$primaryColor, v.$opacityXl), none, none, none, none);
-            }
         }
         &.secondary{
             color: v.$secondaryColor;
-            &.shadow{
-                @include mix.shadow("text-shadow", f.shadows('text-sm', v.$secondaryColor, v.$opacityXl), none, none, none, none);
-            }
-        }
-        &.tertiary{
-            color: v.$tertiaryColor;
-            &.shadow{
-                @include mix.shadow("text-shadow", f.shadows('text-sm', v.$tertiaryColor, v.$opacityXl), none, none, none, none);
-            }
         }
         &.text{
             color: v.$textColor;
-            &.shadow{
-                @include mix.shadow("text-shadow", f.shadows('text-sm', v.$textColor, v.$opacityXl), none, none, none, none);
-            }
         }
-
     }
-
+    
+    
     // icons
     i, a i, li a i {
         color: v.$primaryColor;
@@ -149,14 +173,29 @@ html {
             color: color.adjust(v.$primaryColor, $blackness: 30%);
         }
     }
+    
+// shadows
+.shadow {
 
+    @include mix.shadow("text-shadow", f.shadows('text-sm', v.$textColor, v.$opacityXl), none, none, none, none);
+    
+    &.s-primary {
+        @include mix.shadow("text-shadow", f.shadows('text-sm', v.$primaryColor, v.$opacityXl), none, none, none, none);
+    }
+    &.s-secondary{
+        @include mix.shadow("text-shadow", f.shadows('text-sm', v.$secondaryColor, v.$opacityXl), none, none, none, none);
+    }
+    &.s-tertiary{
+        @include mix.shadow("text-shadow", f.shadows('text-sm', v.$tertiaryColor, v.$opacityXl), none, none, none, none);
+    }
+}
 // sizing
 
-    // generals
+// generals
     p, a, li, form, i {
         font-size: f.fontDynSize(412, 1040, 15.85, 19.85);
     }
-
+    
     //headings
     h1 {
         font-size: f.fontDynSize(412, 1040, 25, 32);
@@ -181,3 +220,16 @@ html {
     }
 
 // background colors
+.bg {
+    background-color: v.$secondaryColor;
+    &.primary{
+        background-color: v.$primaryColor;
+    }
+    &.tertiary{
+        background-color: v.$tertiaryColor;
+    }
+    &.text{
+        background-color: v.$textColor;
+    }
+
+}
