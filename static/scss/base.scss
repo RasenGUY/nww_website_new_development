@@ -53,7 +53,7 @@ html {
             outline: none; 
             color: color.adjust(v.$ctaColor, $blackness: 30%);
         }
-        &.primary{
+        &.primary{ // with secondary background
             color: color.adjust(v.$primaryColor, $blackness: 15%);
             &:hover{
                 color: color.adjust(v.$primaryColor, $lightness: 30%);
@@ -138,7 +138,7 @@ html {
         &.tertiary {
             color: v.$tertiaryColor;
         }
-        &.text-color {
+        &.cta {
             color: v.$textColor;
         }
     }
@@ -157,6 +157,9 @@ html {
         }
         &.text{
             color: v.$textColor;
+        }
+        &.cta{
+            color: v.$ctaColor;
         }
     }
     
@@ -177,20 +180,22 @@ html {
 // shadows
 .shadow {
 
-    @include mix.shadow("text-shadow", f.shadows('text-sm', v.$textColor, v.$opacityXl), none, none, none, none);
+    @include mix.shadow("text-shadow", f.shadows('text-nm', v.$textColor, v.$opacityXl), none, none, none, none);
     
     &.s-primary {
-        @include mix.shadow("text-shadow", f.shadows('text-sm', v.$primaryColor, v.$opacityXl), none, none, none, none);
+        @include mix.shadow("text-shadow", f.shadows('text-nm', v.$primaryColor, v.$opacityXl), none, none, none, none);
     }
     &.s-secondary{
-        @include mix.shadow("text-shadow", f.shadows('text-sm', v.$secondaryColor, v.$opacityXl), none, none, none, none);
+        @include mix.shadow("text-shadow", f.shadows('text-nm', v.$secondaryColor, v.$opacityXl), none, none, none, none);
     }
     &.s-tertiary{
-        @include mix.shadow("text-shadow", f.shadows('text-sm', v.$tertiaryColor, v.$opacityXl), none, none, none, none);
+        @include mix.shadow("text-shadow", f.shadows('text-nm', v.$tertiaryColor, v.$opacityXl), none, none, none, none);
+    }
+    &.s-cta{
+        @include mix.shadow("text-shadow", f.shadows('text-nm', v.$ctaColor, v.$opacityXl), none, none, none, none);
     }
 }
 // sizing
-
 // generals
     p, a, li, form, i {
         font-size: f.fontDynSize(412, 1040, 15.85, 19.85);
@@ -198,10 +203,10 @@ html {
     
     //headings
     h1 {
-        font-size: f.fontDynSize(412, 1040, 25, 32);
+        font-size: f.fontDynSize(412, 1040, 28, 36);
     }   
     h2 {
-        font-size: f.fontDynSize(412, 1040, 21, 25);
+        font-size: f.fontDynSize(412, 1040, 24, 27);
     }   
     h3 {
         font-size: f.fontDynSize(412, 1040, 19, 22.5);
@@ -233,3 +238,23 @@ html {
     }
 
 }
+
+// buttons
+    // general styling
+    .btn {
+        display: inline-block;
+        border-radius: v.$cornerNm;
+        font-family: v.$robotoCon;
+        font-weight: v.$bold;
+        border-width: 0rem;
+        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        
+        // create gradient color
+        $gradColors: v.$ctaColor, v.$ctaLighter, v.$ctaColor 105%;
+        background-image: f.gradient('linear', 135deg, $gradColors);
+        box-shadow: f.shadows("btn-nm", v.$ctaColor, v.$opacityXl);
+        
+        padding: f.fontDynSize(412, 1040, 4.5, 6) f.fontDynSize(412, 1040, 10, 14);
+
+        
+    }

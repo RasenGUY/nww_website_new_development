@@ -31,10 +31,10 @@
         $prefix: "1px 1px 2px #{$shadowColor}";
     }
     @else if $property == "text-sm" {
-        $prefix: "0.5px 0.5px 1.5px #{$shadowColor}";
+        $prefix: "1px 1px 3px #{$shadowColor}";
     }
     @else if $property == "text-nm" {
-        $prefix: "1px 1px 1px #{$shadowColor}";
+        $prefix: "2px 2px 5px #{$shadowColor}";
     }
     @else if $property == "form-area" {
         $prefix: "0.5rem 0.6125rem 0.25rem #{$shadowColor}";
@@ -45,7 +45,7 @@
 }; // variables: color, opacity
 
 // gradients
-@function gradient ($type, $direct-size, $colors) {
+@function gradient($type, $direct-size, $colors) {
 
     $result: "";
 
@@ -67,12 +67,10 @@
             $result: $result + $color + ", ";
         }
     }
-    $result: string.unquote($result);
 
-    @return $result
+    @return string.unquote($result);
 
 }; //type: type of gradient, direction: direction is more then 0, colors: colors to go in the radient
-
 
 // function for sizing fonts
 @function fontDynSize($vwMin, $vwMax, $fontMin, $fontMax) {

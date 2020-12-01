@@ -95,7 +95,7 @@ h1.paragraph, h2.paragraph, h3.paragraph, h4.paragraph, h5.paragraph, p.paragrap
 
 h4, h5, h6 {
   font-style: italic;
-  stroke-opacity: 0.75;
+  stroke-opacity: -0.25;
 }
 
 p, li, form {
@@ -110,7 +110,7 @@ p.secondary, li.secondary, form.secondary {
 p.tertiary, li.tertiary, form.tertiary {
   color: #ffffff;
 }
-p.text-color, li.text-color, form.text-color {
+p.cta, li.cta, form.cta {
   color: #0e1318;
 }
 
@@ -126,6 +126,9 @@ h1.secondary, h2.secondary, h3.secondary, h4.secondary, h5.secondary, h6.seconda
 h1.text, h2.text, h3.text, h4.text, h5.text, h6.text {
   color: #0e1318;
 }
+h1.cta, h2.cta, h3.cta, h4.cta, h5.cta, h6.cta {
+  color: #22da4a;
+}
 
 i, a i, li a i {
   color: #da4a22;
@@ -139,16 +142,19 @@ i:active, i:focus, a i:active, a i:focus, li a i:active, li a i:focus {
 }
 
 .shadow {
-  text-shadow: 0.5px 0.5px 1.5px #0e1318;
+  text-shadow: 2px 2px 5px rgba(14, 19, 24, 0.3);
 }
 .shadow.s-primary {
-  text-shadow: 0.5px 0.5px 1.5px #da4a22;
+  text-shadow: 2px 2px 5px rgba(218, 74, 34, 0.3);
 }
 .shadow.s-secondary {
-  text-shadow: 0.5px 0.5px 1.5px #22b2da;
+  text-shadow: 2px 2px 5px rgba(34, 178, 218, 0.3);
 }
 .shadow.s-tertiary {
-  text-shadow: 0.5px 0.5px 1.5px white;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+}
+.shadow.s-cta {
+  text-shadow: 2px 2px 5px rgba(34, 218, 74, 0.3);
 }
 
 p, a, li, form, i {
@@ -156,11 +162,11 @@ p, a, li, form, i {
 }
 
 h1 {
-  font-size: clamp(2.5rem, 2.0407643312rem + 1.1146496815vw, 3.2rem);
+  font-size: clamp(2.8rem, 2.2751592357rem + 1.2738853503vw, 3.6rem);
 }
 
 h2 {
-  font-size: clamp(2.1rem, 1.8375796178rem + 0.6369426752vw, 2.5rem);
+  font-size: clamp(2.4rem, 2.2031847134rem + 0.4777070064vw, 2.7rem);
 }
 
 h3 {
@@ -193,6 +199,18 @@ h6.caption {
 }
 .bg.text {
   background-color: #0e1318;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 20px;
+  font-family: "Roboto Condensed";
+  font-weight: 700;
+  border-width: 0rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background-image: linear-gradient(135deg, #22da4a, #d1ffdb, #22da4a 105%);
+  box-shadow: 3px 3px 4px rgba(34, 218, 74, 0.3);
+  padding: clamp(0.45rem, 0.3515923567rem + 0.2388535032vw, 0.6rem) clamp(1rem, 0.7375796178rem + 0.6369426752vw, 1.4rem);
 }
 
 /*# sourceMappingURL=base.css.map */
