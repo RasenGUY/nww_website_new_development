@@ -1,0 +1,43 @@
+/* css module for layout of elements in newworld site */
+/* navigation web and mobile*/
+nav {
+  width: 100vw;
+}
+
+#nav-web {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+@media screen only and (max-width: 412px) {
+  #nav-web {
+    display: none;
+  }
+}
+@media screen only and (min-width: 413px) {
+  #nav-web {
+    display: initial;
+  }
+}
+
+#nav-mobile {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+@media screen only and (max-width: 412px) {
+  #nav-mobile {
+    display: initial;
+  }
+}
+@media screen only and (min-width: 413px) {
+  #nav-mobile {
+    display: none;
+  }
+}
+
+section {
+  width: 100vw;
+}
+
+/*# sourceMappingURL=layout.css.map */

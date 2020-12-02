@@ -1,0 +1,49 @@
+// scss module for layout of elements in newworld site
+
+// sass libs
+@use 'sass:string';
+@use 'sass:color';
+@use 'sass:list';
+
+// new world libs
+@use 'variables' as v;
+@use 'functions' as f;
+@use 'mixins' as m;
+
+/* css module for layout of elements in newworld site */
+
+// navigation
+
+/* navigation web and mobile*/
+nav {
+    width: 100vw
+}
+
+#nav-web {
+    position:  fixed;
+    top: 0;
+    left: 0;
+    @include m.responsive("<", 412px){
+        display: none;
+    }
+    @include m.responsive(">", 413px){
+        display: initial; 
+    }
+}
+
+#nav-mobile {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    @include m.responsive("<", 412px){
+        display: initial;
+    }
+    @include m.responsive(">", 413px){
+        display: none; 
+    }
+}
+
+// sections
+section {
+    width: 100vw;
+}
