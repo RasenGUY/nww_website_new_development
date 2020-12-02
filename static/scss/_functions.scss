@@ -19,7 +19,7 @@
         $prefix: "3px 3px 4px #{$shadowColor}";
     }
     @else if $property == "btn-active" {
-        $prefix: "0 0 3pt #{$shadowColor}";
+        $prefix: "0 0 0 3pt #{$shadowColor}";
     }
     @else if $property == "figure" {
         $prefix: "5px 5px 15px #{$shadowColor}";
@@ -93,6 +93,6 @@
 
     @return string.unquote($result);
     
-}// dynamically size fonts according to a given minimum and maximum virtual with and max and font min and max -note accepts inputs in px (leave out unit)
+} // dynamically size fonts according to a given minimum and maximum virtual with and max and font min and max -note accepts inputs in px (leave out unit)
 
 

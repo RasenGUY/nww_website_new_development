@@ -80,7 +80,7 @@ p span.txt-color-cta, p span.txt-color-p, p span.txt-color-s, p span.txt-color-t
 }
 
 
-/* button sizes */
+/* button sizes */  
 .sm {
     
     padding: var(--btn-sm);

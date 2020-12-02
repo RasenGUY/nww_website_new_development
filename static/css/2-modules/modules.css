@@ -1,0 +1,48 @@
+/* scss modules for newwworld site */
+.btn {
+  display: inline-block;
+  border-radius: 20px;
+  font-family: "Roboto Condensed";
+  font-weight: 700;
+  border-width: 0rem;
+  transition: all 0.15s ease-in-out;
+  color: #0e1318;
+  background-image: linear-gradient(135deg, #22da4a, #77f993, #22da4a 105%);
+  box-shadow: 2px 2px 3px rgba(34, 218, 74, 0.16);
+  padding: clamp(0.45rem, 0.3515923567rem + 0.2388535032vw, 0.6rem) clamp(1rem, 0.7375796178rem + 0.6369426752vw, 1.4rem);
+}
+.btn:hover {
+  color: #ffffff;
+  background-image: linear-gradient(135deg, #22c144, #77f392, #22c144 105%);
+}
+.btn:active, .btn:focus {
+  box-shadow: 0 0 0 3pt rgba(34, 218, 74, 0.45);
+}
+.btn.primary {
+  color: #0e1318;
+  background-image: linear-gradient(135deg, #da4a22, #ff7650, #da4a22 105%);
+  box-shadow: 2px 2px 3px rgba(218, 74, 34, 0.16);
+  padding: clamp(0.45rem, 0.3515923567rem + 0.2388535032vw, 0.6rem) clamp(1rem, 0.7375796178rem + 0.6369426752vw, 1.4rem);
+}
+.btn.primary:hover {
+  color: #ffffff;
+  background-image: linear-gradient(135deg, #c14422, #f97550, #c14422 105%);
+}
+.btn.primary:active, .btn.primary:focus {
+  box-shadow: 0 0 0 3pt rgba(218, 74, 34, 0.45);
+}
+.btn.secondary {
+  color: #0e1318;
+  background-image: linear-gradient(135deg, #22b2da, #afe2ec, #22b2da 105%);
+  box-shadow: 2px 2px 3px rgba(34, 178, 218, 0.16);
+  padding: clamp(0.45rem, 0.3515923567rem + 0.2388535032vw, 0.6rem) clamp(1rem, 0.7375796178rem + 0.6369426752vw, 1.4rem);
+}
+.btn.secondary:hover {
+  color: #ffffff;
+  background-image: linear-gradient(135deg, #229ec1, #afdde6, #229ec1 105%);
+}
+.btn.secondary:active, .btn.secondary:focus {
+  box-shadow: 0 0 0 3pt rgba(34, 178, 218, 0.45);
+}
+
+/*# sourceMappingURL=modules.css.map */

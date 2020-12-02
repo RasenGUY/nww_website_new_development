@@ -1,0 +1,74 @@
+/* scss modules for newwworld site */
+
+// sass libs
+@use 'sass:string';
+@use 'sass:color';
+@use 'sass:list';
+
+// new world libs
+@use 'variables' as v;
+@use 'functions' as f;
+@use 'mixins' as m;
+
+// buttons
+    .btn {
+        // general styling  
+        display: inline-block;
+        border-radius: v.$cornerNm;
+        font-family: v.$robotoCon;
+        font-weight: v.$bold;
+        border-width: 0rem;
+        transition: all .15s ease-in-out;
+        color: v.$textColor;
+        
+        // create gradient color
+        $gradColors: v.$ctaColor, v.$ctaLight, v.$ctaColor 105%;
+        background-image: f.gradient('linear', 135deg, $gradColors);
+        box-shadow: f.shadows("btn-sm", v.$ctaColor, v.$opacityXxl);
+        padding: f.fontDynSize(412, 1040, 4.5, 6) f.fontDynSize(412, 1040, 10, 14);
+        &:hover, {
+            $gradColors: color.adjust(v.$ctaColor, $blackness: 10%), color.adjust(v.$ctaLight, $blackness: 2.5%), color.adjust(v.$ctaColor, $blackness: 10%) 105%;
+            color: v.$tertiaryColor;
+            background-image: f.gradient('linear', 135deg, $gradColors);
+        }
+        &:active, &:focus {
+            box-shadow: f.shadows("btn-active", v.$ctaColor, v.$opacityLg);
+            // outline: none;
+        }
+        &.primary{
+            color: v.$textColor;
+
+            // create gradient color
+            $gradColors: v.$primaryColor, v.$primaryLight, v.$primaryColor 105%;
+            background-image: f.gradient('linear', 135deg, $gradColors);
+            box-shadow: f.shadows("btn-sm", v.$primaryColor, v.$opacityXxl);
+            padding: f.fontDynSize(412, 1040, 4.5, 6) f.fontDynSize(412, 1040, 10, 14);
+            &:hover, {
+                $gradColors: color.adjust(v.$primaryColor, $blackness: 10%), color.adjust(v.$primaryLight, $blackness: 2.5%), color.adjust(v.$primaryColor, $blackness: 10%) 105%;
+                color: v.$tertiaryColor;
+                background-image: f.gradient('linear', 135deg, $gradColors);
+            }
+            &:active, &:focus {
+                box-shadow: f.shadows("btn-active", v.$primaryColor, v.$opacityLg);
+                // outline: none;
+            }
+        }
+        &.secondary{
+            color: v.$textColor;
+
+            // create gradient color
+            $gradColors: v.$secondaryColor, v.$secondaryLight, v.$secondaryColor 105%;
+            background-image: f.gradient('linear', 135deg, $gradColors);
+            box-shadow: f.shadows("btn-sm", v.$secondaryColor, v.$opacityXxl);
+            padding: f.fontDynSize(412, 1040, 4.5, 6) f.fontDynSize(412, 1040, 10, 14);
+            &:hover, {
+                $gradColors: color.adjust(v.$secondaryColor, $blackness: 10%), color.adjust(v.$secondaryLight, $blackness: 2.5%), color.adjust(v.$secondaryColor, $blackness: 10%) 105%;
+                color: v.$tertiaryColor;
+                background-image: f.gradient('linear', 135deg, $gradColors);
+            }
+            &:active, &:focus {
+                box-shadow: f.shadows("btn-active", v.$secondaryColor, v.$opacityLg);
+                // outline: none;
+            }
+        }
+    }

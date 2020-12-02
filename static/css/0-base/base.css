@@ -75,17 +75,17 @@ a.text:active, a.text:focus {
   color: #0d0d0d;
 }
 
-h1, h2, h3, h4, h5, h6, p, li, form, a, span {
+h1, h2, h3, h4, h5, h6, p, li, input, textarea, a, span {
   font-family: "Roboto Condensed";
   font-weight: 400;
 }
-h1.to-upper, h2.to-upper, h3.to-upper, h4.to-upper, h5.to-upper, h6.to-upper, p.to-upper, li.to-upper, form.to-upper, a.to-upper, span.to-upper {
+h1.to-upper, h2.to-upper, h3.to-upper, h4.to-upper, h5.to-upper, h6.to-upper, p.to-upper, li.to-upper, input.to-upper, textarea.to-upper, a.to-upper, span.to-upper {
   text-transform: uppercase;
 }
-h1.to-lower, h2.to-lower, h3.to-lower, h4.to-lower, h5.to-lower, h6.to-lower, p.to-lower, li.to-lower, form.to-lower, a.to-lower, span.to-lower {
+h1.to-lower, h2.to-lower, h3.to-lower, h4.to-lower, h5.to-lower, h6.to-lower, p.to-lower, li.to-lower, input.to-lower, textarea.to-lower, a.to-lower, span.to-lower {
   text-transform: lowercase;
 }
-h1.capitalize, h2.capitalize, h3.capitalize, h4.capitalize, h5.capitalize, h6.capitalize, p.capitalize, li.capitalize, form.capitalize, a.capitalize, span.capitalize {
+h1.capitalize, h2.capitalize, h3.capitalize, h4.capitalize, h5.capitalize, h6.capitalize, p.capitalize, li.capitalize, input.capitalize, textarea.capitalize, a.capitalize, span.capitalize {
   text-transform: capitalize;
 }
 
@@ -98,19 +98,19 @@ h4, h5, h6 {
   stroke-opacity: -0.25;
 }
 
-p, li, form {
+p, li, input, textarea {
   color: #0e1318;
 }
-p.primary, li.primary, form.primary {
+p.primary, li.primary, input.primary, textarea.primary {
   color: #da4a22;
 }
-p.secondary, li.secondary, form.secondary {
+p.secondary, li.secondary, input.secondary, textarea.secondary {
   color: #22b2da;
 }
-p.tertiary, li.tertiary, form.tertiary {
+p.tertiary, li.tertiary, input.tertiary, textarea.tertiary {
   color: #ffffff;
 }
-p.cta, li.cta, form.cta {
+p.cta, li.cta, input.cta, textarea.cta {
   color: #0e1318;
 }
 
@@ -141,6 +141,12 @@ i:active, i:focus, a i:active, a i:focus, li a i:active, li a i:focus {
   color: #8e3922;
 }
 
+input, textarea {
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  border: solid #0e1318 1px;
+}
+
 .shadow {
   text-shadow: 2px 2px 5px rgba(14, 19, 24, 0.3);
 }
@@ -157,7 +163,7 @@ i:active, i:focus, a i:active, a i:focus, li a i:active, li a i:focus {
   text-shadow: 2px 2px 5px rgba(34, 218, 74, 0.3);
 }
 
-p, a, li, form, i {
+p, a, li, input, textarea, i, button {
   font-size: clamp(1.585rem, 1.3225796178rem + 0.6369426752vw, 1.985rem);
 }
 
@@ -199,18 +205,6 @@ h6.caption {
 }
 .bg.text {
   background-color: #0e1318;
-}
-
-.btn {
-  display: inline-block;
-  border-radius: 20px;
-  font-family: "Roboto Condensed";
-  font-weight: 700;
-  border-width: 0rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  background-image: linear-gradient(135deg, #22da4a, #d1ffdb, #22da4a 105%);
-  box-shadow: 3px 3px 4px rgba(34, 218, 74, 0.3);
-  padding: clamp(0.45rem, 0.3515923567rem + 0.2388535032vw, 0.6rem) clamp(1rem, 0.7375796178rem + 0.6369426752vw, 1.4rem);
 }
 
 /*# sourceMappingURL=base.css.map */

@@ -98,7 +98,7 @@ html {
 // font styles
 
     // general
-    h1, h2, h3, h4, h5, h6, p, li, form, a, span{
+    h1, h2, h3, h4, h5, h6, p, li, input, textarea, a, span{
         
         font-family: v.$robotoCon;
         font-weight: v.$regular;
@@ -127,7 +127,7 @@ html {
 // colors
 
     // base colors
-    p, li, form {
+    p, li, input, textarea {
         color: v.$textColor;
         &.primary {
             color: v.$primaryColor;
@@ -177,6 +177,17 @@ html {
         }
     }
     
+    // input 
+    input, textarea {
+        padding: 0.75rem 1rem;
+        border-radius: v.$cornerXxs;
+        border: solid v.$textColor v.$borderXs;
+    }
+    
+
+
+
+    
 // shadows
 .shadow {
 
@@ -197,7 +208,7 @@ html {
 }
 // sizing
 // generals
-    p, a, li, form, i {
+    p, a, li, input, textarea, i, button {
         font-size: f.fontDynSize(412, 1040, 15.85, 19.85);
     }
     
@@ -239,22 +250,3 @@ html {
 
 }
 
-// buttons
-    // general styling
-    .btn {
-        display: inline-block;
-        border-radius: v.$cornerNm;
-        font-family: v.$robotoCon;
-        font-weight: v.$bold;
-        border-width: 0rem;
-        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-        
-        // create gradient color
-        $gradColors: v.$ctaColor, v.$ctaLighter, v.$ctaColor 105%;
-        background-image: f.gradient('linear', 135deg, $gradColors);
-        box-shadow: f.shadows("btn-nm", v.$ctaColor, v.$opacityXl);
-        
-        padding: f.fontDynSize(412, 1040, 4.5, 6) f.fontDynSize(412, 1040, 10, 14);
-
-        
-    }

@@ -6,6 +6,7 @@
 
 
 // opacities
+$opacityXs: -0.15;
 $opacitySm: -0.25;
 $opacityNm: -0.4;
 $opacityLg: -0.55;
@@ -59,12 +60,15 @@ $opacityXxl: -0.84;
     $bold: 700;
 
 // borders
+$borderXs: 1px;
 $borderSm: 2.5px;
 $borderNm: 5px;
 $borderLg: 10px;
 $borderXl: 15px;
 
 // corners
+$cornerXxs: 5px;
+$cornerXs: 10px;
 $cornerSm: 15px;
 $cornerNm: 20px;
 $cornerXg: 22px;
