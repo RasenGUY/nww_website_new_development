@@ -9,28 +9,25 @@
     <script src="https://kit.fontawesome.com/77ede35369.js" crossorigin="anonymous"></script> <!-- font awesome icons  -->
     <!-- <link rel="stylesheet" href="/static/css/main.css"> main css -->
     <link rel="stylesheet" href="/static/css/0-base/base.css"> <!-- main css -->
+    <link rel="stylesheet" href="/static/css/1-layout/layout.css"> <!-- main css -->
     <link rel="stylesheet" href="/static/css/2-modules/modules.css"> <!-- main css -->
     
 <!-- font awesome all styles -->
 </head>
-<body>
+<body class="l-flex col">
+    
+    <!-- flex -->
+    <!-- <nav class="menu-top">
 
-    <!-- navigation -->
-    <nav class="menu-top">
-        <!-- wrapper-web --> 
         <div class="wrapper-web">
 
-            <!-- logo-side -->
-            <!-- logo -->
             <a href="/index.html" class="logo">
                 <img src="/static/images/logo/logo.png" alt="newworld logo">
             </a>
             
-            <!--links  -->
             <ul class="nav-links">
                 <li>
-                    <!-- https://goo.gl/forms/42PxcOgwkW21OsGr2 -->
-                    <a href="#" class="btn-cta">Join us!</a> <!-- apply button--> 
+                    <a href="#" class="btn-cta">Join us!</a>
                 </li>
                 <li class="active">
                     <a href="#section-1" class="capitalize">teach</a>
@@ -55,32 +52,25 @@
                 </li>
             </ul>
     
-        </div> <!-- end wrapper-web -->
+        </div> 
 
-        <!-- wrapper-mobile-top-menu --> 
         <div class="wrapper-mobile-top">
-
-            <!-- logo-side -->
             <a href="/index.html" class="logo">
                 <img src="/static/images/logo/logo.png" alt="newworld logo">
             </a>
 
             <div>
-                <!-- https://goo.gl/forms/42PxcOgwkW21OsGr2 -->
-                <a href="#" class="btn-cta">Join us!</a> <!-- apply button--> 
+                <a href="#" class="btn-cta">Join us!</a> 
             </div>
                
-    
-        </div> <!-- end wrapper-mobile -->
+        </div> 
 
     </nav>
     
     <nav class="mobile-bottom">
 
-        <!-- wrapper-bottom-menu -->
-        <div class="wrapper-mobile-bottom">
     
-            <!-- social icons -->
+        <div class="wrapper-mobile-bottom">
             <ul class="social"> 
                 <li>
                     <a href=""><i class="fab fa-facebook-f"></i></a>
@@ -95,7 +85,6 @@
                 </li>
             </ul>
             
-            <!--links and button  -->
             <div class="hamburger" onclick="animateMenu()">
 
                     <div class="burger-top">
@@ -140,10 +129,10 @@
             
         </div>
         
-    </nav>
+    </nav> -->
 
     <!-- section -->
-    <section style="background: black; margin-top: 20rem; width: 43%; float: left; padding-left: 2%;">
+    <section style="background: black;" class="f-item" id="one">
         
         <h1 class="tertiary">Heading 1</h1>
         <p class="tertiary"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut itaque animi voluptates obcaecati, nostrum ea sit. Inventore, a accusantium eius perferendis necessitatibus aperiam ducimus cumque veniam enim itaque corporis saepe? <a href="#">Click here</a></p>
@@ -168,7 +157,7 @@
 
     </section>
 
-    <section style="width: 43%; margin-top: 20rem; float: right; padding-right: 2%;" class="bg">
+    <section class="bg f-item" id="two">
         
         <h1 class="shadow to-upper">Heading 1</h1>
         <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut itaque animi voluptates obcaecati, nostrum ea sit. Inventore, a accusantium eius perferendis necessitatibus aperiam ducimus cumque veniam enim itaque corporis saepe? <a class="primary" href="#">Click here</a></p>
@@ -192,7 +181,7 @@
             
     </section>
 
-    <section style="width: 43%; float:left; padding-left: 2%;">
+    <section class="f-item" id="three">
         <br>
         <br>
         <h2>a buttons</h2>
@@ -265,7 +254,7 @@
     </section>
 
 
-    <section style="background: white; width: 43%; float:right; padding-right: 2%;">
+    <section style="background: white;" class="f-item" id="four">
         <br>
         <br>
         <br>

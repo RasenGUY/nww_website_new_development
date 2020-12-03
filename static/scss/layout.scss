@@ -43,11 +43,134 @@ nav {
     }
 }
 
-// sections
-section {
-    width: 100vw;
+// flex alignment
+.l-flex{
+    display: flex;
+    &.inline {
+        display: inline-flex;
+        &.wrap {
+            wrap: wrap
+        }
+        &.wrap-rev{
+            wrap: wrap-reverse;
+        }
+        &.items-align-left{
+            align-items: left;
+        }
+        &.items-align-right{
+            align-items: right;
+        }
+        &.items-align-center{
+            align-items: center;
+        }
+        &.items-align-baseline{
+            align-items: baseline;
+        }
+    }
+    &.wrap {
+        wrap: wrap;
+    }
+    &.wrap-rev{
+        wrap: wrap-reverse;
+    }
+    &.items-align-left{
+        align-items: left;
+    }
+    &.items-align-right{
+        align-items: right;
+    }
+    &.items-align-center{
+        align-items: center;
+    }
+    &.items-align-baseline{
+        align-items: baseline;
+    }
+
 }
+
+.l-flex.col{
+    display: flex;
+    flex-direction: column;
+    &.inline {
+        display: inline-flex;
+        &.wrap {
+            wrap: wrap;
+        }
+        &.wrap-rev{
+            wrap: wrap-reverse;
+        }
+        &.items-align-left{
+            align-items: left;
+        }
+        &.items-align-right{
+            align-items: right;
+        }
+        &.items-align-center{
+            align-items: center;
+        }
+        &.items-align-baseline{
+            align-items: baseline;
+        }
+    }
+    &.wrap {
+        wrap: wrap;
+    }
+    &.wrap-rev{
+        wrap: wrap-reverse;
+    }
+    &.items-align-left{
+        align-items: left;
+    }
+    &.items-align-right{
+        align-items: right;
+    }
+    &.items-align-center{
+        align-items: center;
+    }
+    &.items-align-baseline{
+        align-items: baseline;
+    }
+
+}
+
+.f-item {
+    &.align-left{
+        align-self: left;
+    }
+    &.align-right{
+        align-self: right;
+    }
+    &.align-center{
+        align-self: center;
+    }
+    &.align-stretch{
+        align-self: baseline; 
+    }
+}
+
+
+// sections
+// section {
+//     width: 100vw;
+// }
 
 footer {
     width: 100vw;
+}
+
+.f-item#one {
+    flex: 1;
+    order: 1;
+}
+.f-item#two {
+    flex:1;
+    order: 3;
+}
+.f-item#three {
+    flex:1;
+    order: 1;
+}
+.f-item#four {
+    flex:1;
+    order: 4;
 }
