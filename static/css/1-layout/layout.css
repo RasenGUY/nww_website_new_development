@@ -1,4 +1,8 @@
 /* css module for layout of elements in newworld site */
+/* import css modules */
+@import "flexbox.css";
+@import "grid.css";
+/* navigation */
 /* navigation web and mobile*/
 nav {
   width: 100vw;
@@ -36,108 +40,17 @@ nav {
   }
 }
 
-.l-flex {
-  display: flex;
-}
-.l-flex.inline {
-  display: inline-flex;
-}
-.l-flex.inline.wrap {
-  wrap: wrap;
-}
-.l-flex.inline.wrap-rev {
-  wrap: wrap-reverse;
-}
-.l-flex.inline.items-align-left {
-  align-items: left;
-}
-.l-flex.inline.items-align-right {
-  align-items: right;
-}
-.l-flex.inline.items-align-center {
-  align-items: center;
-}
-.l-flex.inline.items-align-baseline {
-  align-items: baseline;
-}
-.l-flex.wrap {
-  wrap: wrap;
-}
-.l-flex.wrap-rev {
-  wrap: wrap-reverse;
-}
-.l-flex.items-align-left {
-  align-items: left;
-}
-.l-flex.items-align-right {
-  align-items: right;
-}
-.l-flex.items-align-center {
-  align-items: center;
-}
-.l-flex.items-align-baseline {
-  align-items: baseline;
-}
-
-.l-flex.col {
-  display: flex;
-  flex-direction: column;
-}
-.l-flex.col.inline {
-  display: inline-flex;
-}
-.l-flex.col.inline.wrap {
-  wrap: wrap;
-}
-.l-flex.col.inline.wrap-rev {
-  wrap: wrap-reverse;
-}
-.l-flex.col.inline.items-align-left {
-  align-items: left;
-}
-.l-flex.col.inline.items-align-right {
-  align-items: right;
-}
-.l-flex.col.inline.items-align-center {
-  align-items: center;
-}
-.l-flex.col.inline.items-align-baseline {
-  align-items: baseline;
-}
-.l-flex.col.wrap {
-  wrap: wrap;
-}
-.l-flex.col.wrap-rev {
-  wrap: wrap-reverse;
-}
-.l-flex.col.items-align-left {
-  align-items: left;
-}
-.l-flex.col.items-align-right {
-  align-items: right;
-}
-.l-flex.col.items-align-center {
-  align-items: center;
-}
-.l-flex.col.items-align-baseline {
-  align-items: baseline;
-}
-
-.f-item.align-left {
-  align-self: left;
-}
-.f-item.align-right {
-  align-self: right;
-}
-.f-item.align-center {
-  align-self: center;
-}
-.f-item.align-stretch {
-  align-self: baseline;
+/* sections */
+section {
+  width: 100vw;
 }
 
 footer {
   width: 100vw;
+}
+
+.l-flex {
+  justify-content: flex-start;
 }
 
 .f-item#one {
@@ -147,12 +60,12 @@ footer {
 
 .f-item#two {
   flex: 1;
-  order: 3;
+  order: 2;
 }
 
 .f-item#three {
   flex: 1;
-  order: 1;
+  order: 3;
 }
 
 .f-item#four {

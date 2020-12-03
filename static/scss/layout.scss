@@ -1,3 +1,4 @@
+/* css module for layout of elements in newworld site */
 // scss module for layout of elements in newworld site
 
 // sass libs
@@ -10,10 +11,12 @@
 @use 'functions' as f;
 @use 'mixins' as m;
 
-/* css module for layout of elements in newworld site */
+/* import css modules */ 
+@import "flexbox.css"; 
+@import "grid.css"; 
 
-// navigation
 
+/* navigation */
 /* navigation web and mobile*/
 nav {
     width: 100vw
@@ -43,119 +46,16 @@ nav {
     }
 }
 
-// flex alignment
-.l-flex{
-    display: flex;
-    &.inline {
-        display: inline-flex;
-        &.wrap {
-            wrap: wrap
-        }
-        &.wrap-rev{
-            wrap: wrap-reverse;
-        }
-        &.items-align-left{
-            align-items: left;
-        }
-        &.items-align-right{
-            align-items: right;
-        }
-        &.items-align-center{
-            align-items: center;
-        }
-        &.items-align-baseline{
-            align-items: baseline;
-        }
-    }
-    &.wrap {
-        wrap: wrap;
-    }
-    &.wrap-rev{
-        wrap: wrap-reverse;
-    }
-    &.items-align-left{
-        align-items: left;
-    }
-    &.items-align-right{
-        align-items: right;
-    }
-    &.items-align-center{
-        align-items: center;
-    }
-    &.items-align-baseline{
-        align-items: baseline;
-    }
-
+/* sections */
+section {
+    width: 100vw;
 }
-
-.l-flex.col{
-    display: flex;
-    flex-direction: column;
-    &.inline {
-        display: inline-flex;
-        &.wrap {
-            wrap: wrap;
-        }
-        &.wrap-rev{
-            wrap: wrap-reverse;
-        }
-        &.items-align-left{
-            align-items: left;
-        }
-        &.items-align-right{
-            align-items: right;
-        }
-        &.items-align-center{
-            align-items: center;
-        }
-        &.items-align-baseline{
-            align-items: baseline;
-        }
-    }
-    &.wrap {
-        wrap: wrap;
-    }
-    &.wrap-rev{
-        wrap: wrap-reverse;
-    }
-    &.items-align-left{
-        align-items: left;
-    }
-    &.items-align-right{
-        align-items: right;
-    }
-    &.items-align-center{
-        align-items: center;
-    }
-    &.items-align-baseline{
-        align-items: baseline;
-    }
-
-}
-
-.f-item {
-    &.align-left{
-        align-self: left;
-    }
-    &.align-right{
-        align-self: right;
-    }
-    &.align-center{
-        align-self: center;
-    }
-    &.align-stretch{
-        align-self: baseline; 
-    }
-}
-
-
-// sections
-// section {
-//     width: 100vw;
-// }
 
 footer {
     width: 100vw;
+}
+.l-flex {
+    justify-content: flex-start;
 }
 
 .f-item#one {
@@ -164,11 +64,11 @@ footer {
 }
 .f-item#two {
     flex:1;
-    order: 3;
+    order: 2;
 }
 .f-item#three {
     flex:1;
-    order: 1;
+    order: 3;
 }
 .f-item#four {
     flex:1;

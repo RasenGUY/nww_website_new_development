@@ -1,0 +1,167 @@
+// scss code for flexbox layouts
+// flex alignment
+
+.l-flex{
+    display: flex;
+    &.inline {
+        display: inline-flex;
+        &.wrap {
+            flex-wrap: wrap
+        }
+        &.wrap-rev{
+            flex-wrap: wrap-reverse;
+        }
+        &.items-align-left{
+            align-items: left;
+        }
+        &.items-align-right{
+            align-items: right;
+        }
+        &.items-align-center{
+            align-items: center;
+        }
+        &.items-align-baseline{
+            align-items: baseline;
+        }
+        &.items-justify-left{
+            justify-content: flex-start;
+        }
+        &.items-justify-right{
+            justify-content: flex-end;
+        }
+        &.items-justify-center{
+            justify-content: center;
+        }
+        &.items-justify-evenly{
+            justify-content: space-evenly;
+        }
+        
+    }
+    &.wrap {
+        flex-wrap: wrap;
+    }
+    &.wrap-rev{
+        flex-wrap: wrap-reverse;
+    }
+    &.items-align-left{
+        align-items: flex-start;
+    }
+    &.items-align-right{
+        align-items: flex-end;
+    }
+    &.items-align-center{
+        align-items: center;
+    }
+    &.items-align-baseline{
+        align-items: baseline;
+    }
+    &.items-align-stretch{
+        align-items: stretch;
+    }
+    &.items-justify-left{
+        justify-content: flex-start;
+    }
+    &.items-justify-right{
+        justify-content: flex-end;
+    }
+    &.items-justify-center{
+        justify-content: center;
+    }
+    &.items-justify-evenly{
+        justify-content: space-evenly;
+    }
+
+}
+
+.l-flex.col{
+    display: flex;
+    flex-direction: column;
+    &.inline {
+        display: inline-flex;
+        &.wrap {
+            flex-wrap: wrap;
+        }
+        &.wrap-rev{
+            flex-wrap: wrap-reverse;
+        }
+        &.items-align-left{
+            align-items: flex-start;
+        }
+        &.items-align-right{
+            align-items: flex-end;
+        }
+        &.items-align-center{
+            align-items: center;
+        }
+        &.items-align-baseline{
+            align-items: baseline;
+        }
+        &.items-align-auto{
+            align-items: auto;
+        }
+        &.items-justify-left{
+            justify-content: flex-start;
+        }
+        &.items-justify-right{
+            justify-content: flex-end;
+        }
+        &.items-justify-center{
+            justify-content: center;
+        }
+        &.items-justify-evenly{
+            justify-content: space-evenly;
+        }
+    }
+    &.wrap {
+        flex-wrap: wrap;
+    }
+    &.wrap-rev{
+        flex-wrap: wrap-reverse;
+    }
+    &.items-align-left{
+        align-items: flex-start;
+    }
+    &.items-align-right{
+        align-items: flex-end;
+    }
+    &.items-align-center{
+        align-items: center;
+    }
+    &.items-align-baseline{
+        align-items: baseline;
+    }
+    &.items-align-stretch{
+        align-items: stretch;
+    }
+    &.items-align-auto{
+        align-items: auto;
+    }
+    &.items-justify-left{
+        justify-content: flex-start;
+    }
+    &.items-justify-right{
+        justify-content: flex-end;
+    }
+    &.items-justify-center{
+        justify-content: center;
+    }
+    &.items-justify-evenly{
+        justify-content: space-evenly;
+    }
+
+}
+
+.f-item {
+    &.align-left{
+        align-self: left;
+    }
+    &.align-right{
+        align-self: right;
+    }
+    &.align-center{
+        align-self: center;
+    }
+    &.align-stretch{
+        align-self: baseline; 
+    }
+}

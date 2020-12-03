@@ -1,0 +1,69 @@
+.l-grid {
+  display: grid;
+}
+.l-grid.inline {
+  display: inline-grid;
+}
+.l-grid.inline.items-align-left {
+  align-items: start;
+}
+.l-grid.inline.items-align-right {
+  align-items: end;
+}
+.l-grid.inline.items-align-center {
+  align-items: center;
+}
+.l-grid.inline.items-align-stretch {
+  align-items: stretch;
+}
+.l-grid.inline.items-justify-left {
+  justify-content: start;
+}
+.l-grid.inline.items-justify-right {
+  justify-content: end;
+}
+.l-grid.inline.items-justify-center {
+  justify-content: center;
+}
+.l-grid.inline.items-justify-stretch {
+  justify-content: stretch;
+}
+.l-grid.items-align-left {
+  align-items: start;
+}
+.l-grid.items-align-right {
+  align-items: end;
+}
+.l-grid.items-align-center {
+  align-items: center;
+}
+.l-grid.items-align-stretch {
+  align-items: stretch;
+}
+.l-grid.items-justify-left {
+  justify-items: start;
+}
+.l-grid.items-justify-right {
+  justify-items: end;
+}
+.l-grid.items-justify-center {
+  justify-items: center;
+}
+.l-grid.items-justify-stretch {
+  justify-items: stretch;
+}
+
+.f-item.align-left {
+  align-self: start;
+}
+.f-item.align-right {
+  align-self: end;
+}
+.f-item.align-center {
+  align-self: center;
+}
+.f-item.align-stretch {
+  align-self: stretch;
+}
+
+/*# sourceMappingURL=grid.css.map */

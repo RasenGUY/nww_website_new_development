@@ -1,0 +1,76 @@
+// scss code for css grid layouts
+
+// grid alignment
+
+.l-grid{
+    display: grid;
+    &.inline {
+        display: inline-grid;
+        &.items-align-left{
+            align-items: start;
+        }
+        &.items-align-right{
+            align-items: end;
+        }
+        &.items-align-center{
+            align-items: center;
+        }
+        &.items-align-stretch{
+            align-items: stretch;
+        }
+        &.items-justify-left{
+            justify-content: start;
+        }
+        &.items-justify-right{
+            justify-content: end;
+        }
+        &.items-justify-center{
+            justify-content: center;
+        }
+        &.items-justify-stretch{
+            justify-content: stretch;
+        }
+        
+    }
+    &.items-align-left{
+        align-items: start;
+    }
+    &.items-align-right{
+        align-items: end;
+    }
+    &.items-align-center{
+        align-items: center;
+    }
+    &.items-align-stretch{
+        align-items: stretch;
+    }
+    &.items-justify-left{
+        justify-items: start;
+    }
+    &.items-justify-right{
+        justify-items: end;
+    }
+    &.items-justify-center{
+        justify-items: center;
+    }
+    &.items-justify-stretch{
+        justify-items: stretch;
+    }
+
+}
+
+
+.f-item {
+    &.align-left{
+        align-self: start;
+    }
+    &.align-right{
+        align-self: end;
+    }
+    &.align-center{
+        align-self: center;
+    }
+    &.align-stretch{
+        align-self: stretch; 
+    }
+}
