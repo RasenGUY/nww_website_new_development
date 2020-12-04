@@ -62,6 +62,17 @@
        
 };
 
+@mixin compatible($property, $value){
+
+    #{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -webkit-#{$property}: $value;
+    
+    // unquote everything
+}// make property compatible
+
 
 
 

@@ -12,6 +12,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 999999;
 }
 @media only screen and (max-width: 412px) {
   #nav-web {
@@ -57,7 +58,7 @@ nav#nav-web .wrapper, main#main-content .wrapper {
   width: 80%;
   margin: 0 auto;
 }
-@media only screen and (max-width: 412px) {
+@media only screen and (max-width: 550px) {
   nav#nav-web .wrapper, main#main-content .wrapper {
     width: 95%;
   }

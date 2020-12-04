@@ -45,8 +45,34 @@
   box-shadow: 0 0 0 3pt rgba(34, 178, 218, 0.45);
 }
 
+#nav-web {
+  box-shadow: 5px 0px 5px #afe2ec;
+}
+
+#nav-web::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+  backdrop-filter: blur(1rem);
+  -ms-backdrop-filter: blur(1rem);
+  -o-backdrop-filter: blur(1rem);
+  -moz-backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
+  background-color: rgba(238, 249, 252, 0.6);
+}
+
 .logo {
   flex: 1 35%;
+}
+@media only screen and (max-width: 1036px) {
+  .logo {
+    flex: 0.1;
+  }
 }
 .logo img {
   width: 5.5vw;
@@ -61,6 +87,37 @@
 
 .nav-links {
   flex: 1 65%;
+  list-style: none;
+}
+@media only screen and (max-width: 550px) {
+  .nav-links {
+    flex: 0.9;
+  }
+}
+.nav-links li a {
+  color: #0e1318;
+}
+.nav-links li:not(:nth-child(1)) a:hover {
+  color: #da4a22;
+}
+.nav-links li:not(:nth-child(1)) a::after {
+  transition: all ease-in-out 0.15s;
+}
+.nav-links li:not(:nth-child(1)) a {
+  padding: 0.5rem;
+}
+.nav-links li:not(:nth-child(1)) a::after, .nav-links li:not(:nth-child(1)) a::before {
+  display: block;
+  position: relative;
+  content: "";
+  top: 5px;
+  left: -4px;
+  width: 0%;
+  height: 2px;
+}
+.nav-links li:not(:nth-child(1)):hover a::after {
+  width: 100%;
+  background-color: #da4a22;
 }
 
 /*# sourceMappingURL=modules.css.map */

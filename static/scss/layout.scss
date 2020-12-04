@@ -32,6 +32,7 @@ nav {
     @include m.responsive(">", 413px){
         display: initial; 
     }
+    z-index: 999999;
 }
 
 #nav-mobile {
@@ -63,7 +64,7 @@ nav#nav-web, main#main-content {
     .wrapper {
         width: 80%;
         margin: 0 auto;
-        @include m.responsive("<", 412px){
+        @include m.responsive("<", 550px){
             width: 95%;
         }
     }

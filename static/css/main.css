@@ -21,7 +21,7 @@ nav {
     top: 0; 
     left: 0;    
     width: 100vw;
-    box-shadow: 3px 0px 5px var(--color-text-op-normal);
+    box-shadow: 5px 0px 5px var(--color-text-op-normal);
     z-index: 99999;
 }
 

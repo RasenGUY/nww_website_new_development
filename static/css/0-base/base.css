@@ -164,7 +164,7 @@ input, textarea {
 }
 
 p, a, li, input, textarea, i, button {
-  font-size: clamp(1.585rem, 1.3225796178rem + 0.6369426752vw, 1.985rem);
+  font-size: clamp(1.15rem, 0.6021974522rem + 1.3296178344vw, 1.985rem);
 }
 
 h1 {

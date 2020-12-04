@@ -74,8 +74,29 @@
     }
 
 // navigation menu
+#nav-web{
+    box-shadow: 5px 0px 5px color.adjust(v.$secondaryLight);
+}
+// blur effect
+#nav-web::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    @include m.compatible(backdrop-filter, blur(1rem));
+    background-color: color.adjust(v.$secondaryLighter, $alpha: v.$opacityNm);
+}
+
+// nav items and logo
 .logo {
     flex: 1 35%;
+    @include m.responsive("<", 1036px){
+        flex: 0.1;
+    }
     img {
         width: 5.5vw;
         padding: 1rem;
@@ -90,4 +111,37 @@
 
 .nav-links {
     flex: 1 65%;
+    @include m.responsive("<", 550px){
+        flex: 0.9;
+    }
+
+    // nav-items
+    list-style: none;
+    & li a {
+        color: v.$textColor;
+    } 
+    & li:not(:nth-child(1)) a:hover {
+        color: v.$primaryColor;
+    }   
+
+    & li:not(:nth-child(1)) a::after {
+        transition: all ease-in-out 0.15s;
+    }
+    & li:not(:nth-child(1)) a {
+        padding: 0.5rem;
+    }
+    & li:not(:nth-child(1)) a::after, li:not(:nth-child(1)) a::before {
+        display: block;
+        position: relative;
+        content: '';
+        top: 5px;
+        left: -4px;
+        width: 0%;
+        height: 2px;
+    }
+    & li:not(:nth-child(1)):hover a::after {
+        width: 100%;
+        background-color: v.$primaryColor;
+    }
+
 }
