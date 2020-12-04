@@ -19,7 +19,7 @@
 /* navigation */
 /* navigation web and mobile*/
 nav {
-    width: 100vw
+    width: 100%;
 }
 
 #nav-web {
@@ -48,29 +48,23 @@ nav {
 
 /* sections */
 section {
-    width: 100vw;
+    width: 100%;
 }
 
 footer {
-    width: 100vw;
-}
-.l-flex {
-    justify-content: flex-start;
+    width: 100%;
 }
 
-.f-item#one {
-    flex: 1;
-    order: 1;
+main#main-content{
+    width: 100%;
 }
-.f-item#two {
-    flex:1;
-    order: 2;
-}
-.f-item#three {
-    flex:1;
-    order: 3;
-}
-.f-item#four {
-    flex:1;
-    order: 4;
+nav#nav-web, main#main-content {
+
+    .wrapper {
+        width: 80%;
+        margin: 0 auto;
+        @include m.responsive("<", 412px){
+            width: 95%;
+        }
+    }
 }

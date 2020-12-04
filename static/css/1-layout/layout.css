@@ -5,7 +5,7 @@
 /* navigation */
 /* navigation web and mobile*/
 nav {
-  width: 100vw;
+  width: 100%;
 }
 
 #nav-web {
@@ -13,12 +13,12 @@ nav {
   top: 0;
   left: 0;
 }
-@media screen only and (max-width: 412px) {
+@media only screen and (max-width: 412px) {
   #nav-web {
     display: none;
   }
 }
-@media screen only and (min-width: 413px) {
+@media only screen and (min-width: 413px) {
   #nav-web {
     display: initial;
   }
@@ -29,12 +29,12 @@ nav {
   bottom: 0;
   left: 0;
 }
-@media screen only and (max-width: 412px) {
+@media only screen and (max-width: 412px) {
   #nav-mobile {
     display: initial;
   }
 }
-@media screen only and (min-width: 413px) {
+@media only screen and (min-width: 413px) {
   #nav-mobile {
     display: none;
   }
@@ -42,35 +42,25 @@ nav {
 
 /* sections */
 section {
-  width: 100vw;
+  width: 100%;
 }
 
 footer {
-  width: 100vw;
+  width: 100%;
 }
 
-.l-flex {
-  justify-content: flex-start;
+main#main-content {
+  width: 100%;
 }
 
-.f-item#one {
-  flex: 1;
-  order: 1;
+nav#nav-web .wrapper, main#main-content .wrapper {
+  width: 80%;
+  margin: 0 auto;
 }
-
-.f-item#two {
-  flex: 1;
-  order: 2;
-}
-
-.f-item#three {
-  flex: 1;
-  order: 3;
-}
-
-.f-item#four {
-  flex: 1;
-  order: 4;
+@media only screen and (max-width: 412px) {
+  nav#nav-web .wrapper, main#main-content .wrapper {
+    width: 95%;
+  }
 }
 
 /*# sourceMappingURL=layout.css.map */

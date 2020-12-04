@@ -55,16 +55,16 @@
 .l-flex.items-align-stretch {
   align-items: stretch;
 }
-.l-flex.items-justify-left {
+.l-flex.content-justify-left {
   justify-content: flex-start;
 }
-.l-flex.items-justify-right {
+.l-flex.content-justify-right {
   justify-content: flex-end;
 }
-.l-flex.items-justify-center {
+.l-flex.content-justify-center {
   justify-content: center;
 }
-.l-flex.items-justify-evenly {
+.l-flex.content-justify-evenly {
   justify-content: space-evenly;
 }
 
@@ -129,33 +129,48 @@
 .l-flex.col.items-align-stretch {
   align-items: stretch;
 }
-.l-flex.col.items-align-auto {
-  align-items: auto;
+.l-flex.col.content-align-left {
+  align-content: flex-start;
 }
-.l-flex.col.items-justify-left {
+.l-flex.col.content-align-right {
+  align-items: flex-end;
+}
+.l-flex.col.content-align-center {
+  align-content: center;
+}
+.l-flex.col.content-align-stretch {
+  align-content: stretch;
+}
+.l-flex.col.content-justify-left {
   justify-content: flex-start;
 }
-.l-flex.col.items-justify-right {
+.l-flex.col.content-justify-right {
   justify-content: flex-end;
 }
-.l-flex.col.items-justify-center {
+.l-flex.col.content-justify-center {
   justify-content: center;
 }
-.l-flex.col.items-justify-evenly {
+.l-flex.col.content-justify-evenly {
   justify-content: space-evenly;
 }
 
 .f-item.align-left {
-  align-self: left;
+  align-self: flex-start;
 }
 .f-item.align-right {
-  align-self: right;
+  align-self: flex-end;
 }
 .f-item.align-center {
   align-self: center;
 }
-.f-item.align-stretch {
+.f-item.align-baseline {
   align-self: baseline;
+}
+.f-item.align-stretch {
+  align-self: stretch;
+}
+.f-item.align-auto {
+  align-self: auto;
 }
 
 /*# sourceMappingURL=flexbox.css.map */

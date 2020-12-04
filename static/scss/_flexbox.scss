@@ -58,16 +58,16 @@
     &.items-align-stretch{
         align-items: stretch;
     }
-    &.items-justify-left{
+    &.content-justify-left{
         justify-content: flex-start;
     }
-    &.items-justify-right{
+    &.content-justify-right{
         justify-content: flex-end;
     }
-    &.items-justify-center{
+    &.content-justify-center{
         justify-content: center;
     }
-    &.items-justify-evenly{
+    &.content-justify-evenly{
         justify-content: space-evenly;
     }
 
@@ -133,19 +133,31 @@
     &.items-align-stretch{
         align-items: stretch;
     }
-    &.items-align-auto{
-        align-items: auto;
+    &.content-align-left{
+        align-content: flex-start;
     }
-    &.items-justify-left{
+    &.content-align-right{
+        align-items: flex-end;
+    }
+    &.content-align-center{
+        align-content: center;
+    }
+    // &.content-align-baseline{ // not fully supported yet
+    //     align-content: baseline;
+    // }
+    &.content-align-stretch{
+        align-content: stretch;
+    }
+    &.content-justify-left{
         justify-content: flex-start;
     }
-    &.items-justify-right{
+    &.content-justify-right{
         justify-content: flex-end;
     }
-    &.items-justify-center{
+    &.content-justify-center{
         justify-content: center;
     }
-    &.items-justify-evenly{
+    &.content-justify-evenly{
         justify-content: space-evenly;
     }
 
@@ -153,15 +165,21 @@
 
 .f-item {
     &.align-left{
-        align-self: left;
+        align-self: flex-start;
     }
     &.align-right{
-        align-self: right;
+        align-self: flex-end;
     }
     &.align-center{
         align-self: center;
     }
-    &.align-stretch{
+    &.align-baseline{
         align-self: baseline; 
+    }
+    &.align-stretch{
+        align-self: stretch; 
+    }
+    &.align-auto{
+        align-self: auto; 
     }
 }

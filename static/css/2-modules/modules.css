@@ -45,4 +45,22 @@
   box-shadow: 0 0 0 3pt rgba(34, 178, 218, 0.45);
 }
 
+.logo {
+  flex: 1 35%;
+}
+.logo img {
+  width: 5.5vw;
+  padding: 1rem;
+}
+.logo a {
+  display: block;
+  font-family: none;
+  font-weight: none;
+  font-size: none;
+}
+
+.nav-links {
+  flex: 1 65%;
+}
+
 /*# sourceMappingURL=modules.css.map */

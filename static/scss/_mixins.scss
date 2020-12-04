@@ -39,13 +39,13 @@
     // create a media for minimum, maximum or between screen sizes
     @if $type == "<" {
 
-        @media screen only and (max-width: $screen){
+        @media only screen and (max-width: $screen){
             @content
         };
     }
     @else if $type == ">" {
         
-        @media screen only and (min-width: $screen) {
+        @media only screen and (min-width: $screen) {
             @content
         };
     }

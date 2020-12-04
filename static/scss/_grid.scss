@@ -19,15 +19,27 @@
             align-items: stretch;
         }
         &.items-justify-left{
-            justify-content: start;
+            justify-items: start;
         }
         &.items-justify-right{
-            justify-content: end;
+            justify-items: end;
         }
         &.items-justify-center{
-            justify-content: center;
+            justify-items: center;
         }
         &.items-justify-stretch{
+            justify-items: stretch;
+        }
+        &.content-justify-left{
+            justify-content: start;
+        }
+        &.content-justify-right{
+            justify-content: end;
+        }
+        &.content-justify-center{
+            justify-content: center;
+        }
+        &.content-justify-stretch{
             justify-content: stretch;
         }
         
@@ -56,11 +68,23 @@
     &.items-justify-stretch{
         justify-items: stretch;
     }
+    &.content-justify-left{
+        justify-content: start;
+    }
+    &.content-justify-right{
+        justify-content: end;
+    }
+    &.content-justify-center{
+        justify-content: center;
+    }
+    &.content-justify-stretch{
+        justify-content: stretch;
+    }
 
 }
 
 
-.f-item {
+.g-item {
     &.align-left{
         align-self: start;
     }
@@ -72,5 +96,17 @@
     }
     &.align-stretch{
         align-self: stretch; 
+    }
+    &.justify-left{
+        justify-self: start;
+    }
+    &.justify-right{
+        justify-self: end;
+    }
+    &.justify-center{
+        justify-self: center;
+    }
+    &.justify-stretch{
+        justify-self: stretch;
     }
 }
