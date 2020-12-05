@@ -45,11 +45,11 @@
   box-shadow: 0 0 0 3pt rgba(34, 178, 218, 0.45);
 }
 
-#nav-web {
-  box-shadow: 5px 0px 5px #afe2ec;
+nav#nav-web {
+  box-shadow: 5px 0px 15px rgba(175, 226, 236, 0.6);
 }
 
-#nav-web::before {
+nav#nav-web::before {
   display: block;
   position: absolute;
   top: 0;
@@ -75,8 +75,10 @@
   }
 }
 .logo img {
-  width: 5.5vw;
-  padding: 1rem;
+  width: 5.535vw;
+  min-width: 70px;
+  max-width: 86px;
+  padding: clamp(0.0615rem, 0.0355816993rem + 0.0629084967vw, 0.1rem);
 }
 .logo a {
   display: block;
@@ -86,13 +88,7 @@
 }
 
 .nav-links {
-  flex: 1 65%;
   list-style: none;
-}
-@media only screen and (max-width: 550px) {
-  .nav-links {
-    flex: 0.9;
-  }
 }
 .nav-links li a {
   color: #0e1318;

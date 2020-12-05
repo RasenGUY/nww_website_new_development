@@ -209,7 +209,7 @@ html {
 // sizing
 // generals
     p, a, li, input, textarea, i, button {
-        font-size: f.fontDynSize(412, 1040, 11.5, 19.85);
+        font-size: f.fontDynSize(412, 1040, 15.85, 19.85);
     }
     
     //headings
@@ -226,12 +226,12 @@ html {
         font-size: f.fontDynSize(412, 1040, 17.5, 21);
     }
     h5 {
-        font-size: f.fontDynSize(412, 1040, 14.5, 17);
+        font-size: f.fontDynSize(412, 1040, 16.5, 18);
     }
     h6 {
-        font-size: f.fontDynSize(412, 1040, 12, 15.5);
+        font-size: f.fontDynSize(412, 1040, 16, 16.5);
         &.caption{
-            font-size: f.fontDynSize(412, 1040, 8.5, 10.5);
+            font-size: f.fontDynSize(412, 1040, 14.85, 15.85);
         }
     }
 

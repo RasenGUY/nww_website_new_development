@@ -26,13 +26,33 @@ nav {
     position:  fixed;
     top: 0;
     left: 0;
-    @include m.responsive("<", 412px){
-        display: none;
-    }
-    @include m.responsive(">", 413px){
-        display: initial; 
-    }
+    // @include m.responsive("<", 412px){
+    //     display: none;
+    // }
+    // @include m.responsive(">", 413px){
+    //     display: initial; 
+    // }
     z-index: 999999;
+
+    // show nav-links for web and hide mobile top for web
+    @include m.responsive(">", 413px){
+        ul .nav-links {
+            display: initial;
+        }
+        div .nav-links-mob-top {
+            display: none;
+        }
+    }
+
+    // hide nav-links for mobile
+    @include m.responsive("<", 412px){
+        .nav-links {
+            display: none;
+        }
+        .nav-links-top {
+            display: initial;
+        }
+    }
 }
 
 #nav-mobile {
@@ -60,12 +80,36 @@ main#main-content{
     width: 100%;
 }
 nav#nav-web, main#main-content {
-
+    
+    // center wrapper and create gap on the cides of the wrapper
     .wrapper {
         width: 80%;
         margin: 0 auto;
-        @include m.responsive("<", 550px){
-            width: 95%;
+        @include m.responsive("<", 820px){
+            width: 90%;
         }
+    }
+
+    // position logo section in navigation
+    .logo {
+        flex: 1 35%;
+        @include m.responsive("<", 820px){
+            flex: 1 5%;
+        }
+      }
+
+    // position nav-links in navigation web versition
+    .nav-links {
+        flex: 1 65%;
+
+        // positiong mobile version
+        @include m.responsive("<", 820px){
+            flex: 1 95%;
+        }
+    }
+
+    // position nav-links mobile version top
+    .nav-links-mob-top {
+        flex: 1;
     }
 }
