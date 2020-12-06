@@ -89,4 +89,16 @@ nav#nav-web .nav-links-mob-top, main#main-content .nav-links-mob-top {
   flex: 1;
 }
 
+nav#nav-mobile .wrapper {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+nav#nav-mobile .wrapper .social {
+  flex: 30%;
+}
+nav#nav-mobile .wrapper .hamburger {
+  flex: 70%;
+}
+
 /*# sourceMappingURL=layout.css.map */

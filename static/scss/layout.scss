@@ -26,12 +26,6 @@ nav {
     position:  fixed;
     top: 0;
     left: 0;
-    // @include m.responsive("<", 412px){
-    //     display: none;
-    // }
-    // @include m.responsive(">", 413px){
-    //     display: initial; 
-    // }
     z-index: 999999;
 
     // show nav-links for web and hide mobile top for web
@@ -111,5 +105,18 @@ nav#nav-web, main#main-content {
     // position nav-links mobile version top
     .nav-links-mob-top {
         flex: 1;
+    }
+}
+
+nav#nav-mobile .wrapper {
+    width: 90%; 
+    margin: 0 auto;
+    padding: 1rem;
+    & .social {
+        flex: 30%;
+    }
+    
+    & .hamburger {
+        flex: 70%;
     }
 }

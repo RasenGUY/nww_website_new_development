@@ -92,8 +92,8 @@ nav#nav-web::before {
     @include m.compatible(backdrop-filter, blur(1rem));
     background-color: color.adjust(v.$secondaryLighter, $alpha: v.$opacityNm);
 }
-
-// nav items and logo
+ 
+// nav items and logo web
 .logo {
     flex: 1 35%;
     @include m.responsive("<", 1036px){
@@ -144,3 +144,59 @@ nav#nav-web::before {
         background-color: v.$primaryColor;
     }
 }
+
+// mobile navigation bottom
+    
+    // socials
+    .social {
+        list-style: none;
+    }
+    // // hamburger
+    // .hamburger {
+    //     transition: all .15s ease-in-out;
+    // }
+    // hamburger animate burger
+    .burger {
+        width: 3.5rem;
+        height: 3.5rem;
+        border: 0.1rem solid v.$textColor;
+        cursor: pointer;
+        transition: all .15s ease-in-out;
+        &.animate-burger-border {
+            border-color: v.$primaryColor;
+        }
+        .burger-top, .burger-bottom, .burger-middle {
+            width: 65%;
+            height: 0.25rem;
+            transition: all 0.15s ease-in-out;
+            transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
+            border-radius: 5rem;
+            position: relative;
+
+        }
+        .burger-top {
+            background-color: v.$ctaColor;
+            transform: translateY(1rem);
+
+            &.animate-top{
+                transform: translateY(0.125rem) rotate(135deg);
+            }
+        }
+        .burger-middle {
+            background-color: v.$secondaryColor;
+
+            &.hide {
+                opacity: 0;
+                display: none;
+            }
+        }
+        .burger-bottom {
+            background-color: v.$primaryColor;
+            transform: translateY(-1rem);
+            &.animate-bottom{
+                transform: translateY(-0.125rem) rotate(45deg);
+            }
+
+        }
+
+    }

@@ -116,4 +116,48 @@ nav#nav-web::before {
   background-color: #da4a22;
 }
 
+.social {
+  list-style: none;
+}
+
+.burger {
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 0.1rem solid #0e1318;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+.burger.animate-burger-border {
+  border-color: #da4a22;
+}
+.burger .burger-top, .burger .burger-bottom, .burger .burger-middle {
+  width: 65%;
+  height: 0.25rem;
+  transition: all 0.15s ease-in-out;
+  transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
+  border-radius: 5rem;
+  position: relative;
+}
+.burger .burger-top {
+  background-color: #22da4a;
+  transform: translateY(1rem);
+}
+.burger .burger-top.animate-top {
+  transform: translateY(0.125rem) rotate(135deg);
+}
+.burger .burger-middle {
+  background-color: #22b2da;
+}
+.burger .burger-middle.hide {
+  opacity: 0;
+  display: none;
+}
+.burger .burger-bottom {
+  background-color: #da4a22;
+  transform: translateY(-1rem);
+}
+.burger .burger-bottom.animate-bottom {
+  transform: translateY(-0.125rem) rotate(45deg);
+}
+
 /*# sourceMappingURL=modules.css.map */

@@ -163,8 +163,12 @@ input, textarea {
   text-shadow: 2px 2px 5px rgba(34, 218, 74, 0.3);
 }
 
-p, a, li, input, textarea, i, button {
+p, a, li, input, textarea, button {
   font-size: clamp(1.585rem, 1.3225796178rem + 0.6369426752vw, 1.985rem);
+}
+
+i {
+  font-size: clamp(1.8rem, 1.5375796178rem + 0.6369426752vw, 2.2rem);
 }
 
 h1 {

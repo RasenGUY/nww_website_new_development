@@ -184,9 +184,6 @@ html {
         border: solid v.$textColor v.$borderXs;
     }
     
-
-
-
     
 // shadows
 .shadow {
@@ -208,8 +205,12 @@ html {
 }
 // sizing
 // generals
-    p, a, li, input, textarea, i, button {
+    p, a, li, input, textarea, button {
         font-size: f.fontDynSize(412, 1040, 15.85, 19.85);
+    }
+    
+    i {
+        font-size: f.fontDynSize(412, 1040, 18, 22)
     }
     
     //headings
