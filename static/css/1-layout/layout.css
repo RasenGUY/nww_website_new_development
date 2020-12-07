@@ -14,7 +14,7 @@ nav {
   left: 0;
   z-index: 999;
 }
-@media only screen and (min-width: 413px) {
+@media only screen and (min-width: 612px) {
   #nav-web ul .nav-links {
     display: initial;
   }
@@ -22,7 +22,7 @@ nav {
     display: none;
   }
 }
-@media only screen and (max-width: 412px) {
+@media only screen and (max-width: 612px) {
   #nav-web .nav-links {
     display: none;
   }
@@ -31,18 +31,18 @@ nav {
   }
 }
 
-#nav-mobile {
+#nav-mobile, #nav-mobile-links {
   position: fixed;
   bottom: 0;
   left: 0;
 }
-@media only screen and (max-width: 412px) {
-  #nav-mobile {
+@media only screen and (max-width: 612px) {
+  #nav-mobile, #nav-mobile-links {
     display: initial;
   }
 }
-@media only screen and (min-width: 413px) {
-  #nav-mobile {
+@media only screen and (min-width: 612px) {
+  #nav-mobile, #nav-mobile-links {
     display: none;
   }
 }
@@ -64,7 +64,7 @@ nav#nav-web .wrapper, main#main-content .wrapper {
   width: 80%;
   margin: 0 auto;
 }
-@media only screen and (max-width: 820px) {
+@media only screen and (max-width: 1033px) {
   nav#nav-web .wrapper, main#main-content .wrapper {
     width: 90%;
   }
@@ -72,7 +72,7 @@ nav#nav-web .wrapper, main#main-content .wrapper {
 nav#nav-web .logo, main#main-content .logo {
   flex: 1 35%;
 }
-@media only screen and (max-width: 820px) {
+@media only screen and (max-width: 1033px) {
   nav#nav-web .logo, main#main-content .logo {
     flex: 1 5%;
   }
@@ -80,7 +80,7 @@ nav#nav-web .logo, main#main-content .logo {
 nav#nav-web .nav-links, main#main-content .nav-links {
   flex: 1 65%;
 }
-@media only screen and (max-width: 820px) {
+@media only screen and (max-width: 1033px) {
   nav#nav-web .nav-links, main#main-content .nav-links {
     flex: 1 95%;
   }
@@ -110,6 +110,9 @@ nav#nav-mobile-links {
   bottom: 0;
   left: 0;
   right: 0;
+}
+nav#nav-mobile-links .nav-links-bottom, nav#nav-mobile-links::before {
+  transform: translateY(28rem);
 }
 
 /*# sourceMappingURL=layout.css.map */

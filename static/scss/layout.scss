@@ -29,7 +29,7 @@ nav {
     z-index: 999;
 
     // show nav-links for web and hide mobile top for web
-    @include m.responsive(">", 413px){
+    @include m.responsive(">", 612px){
         ul .nav-links {
             display: initial;
         }
@@ -39,7 +39,7 @@ nav {
     }
 
     // hide nav-links for mobile
-    @include m.responsive("<", 412px){
+    @include m.responsive("<", 612px){
         .nav-links {
             display: none;
         }
@@ -49,14 +49,14 @@ nav {
     }
 }
 
-#nav-mobile {
+#nav-mobile, #nav-mobile-links {
     position: fixed;
     bottom: 0;
     left: 0;
-    @include m.responsive("<", 412px){
+    @include m.responsive("<", 612px){
         display: initial;
     }
-    @include m.responsive(">", 413px){
+    @include m.responsive(">", 612px){
         display: none; 
     }
 }
@@ -79,7 +79,7 @@ nav#nav-web, main#main-content {
     .wrapper {
         width: 80%;
         margin: 0 auto;
-        @include m.responsive("<", 820px){
+        @include m.responsive("<", 1033px){
             width: 90%;
         }
     }
@@ -87,7 +87,7 @@ nav#nav-web, main#main-content {
     // position logo section in navigation
     .logo {
         flex: 1 35%;
-        @include m.responsive("<", 820px){
+        @include m.responsive("<", 1033px){
             flex: 1 5%;
         }
       }
@@ -97,7 +97,7 @@ nav#nav-web, main#main-content {
         flex: 1 65%;
 
         // positiong mobile version
-        @include m.responsive("<", 820px){
+        @include m.responsive("<", 1033px){
             flex: 1 95%;
         }
     }
@@ -109,6 +109,7 @@ nav#nav-web, main#main-content {
 }
 
 nav#nav-mobile {
+
     z-index: 105;
     & .wrapper {
         width: 90%; 
@@ -126,9 +127,17 @@ nav#nav-mobile {
     }
 }
 nav#nav-mobile-links {
+    
     z-index: 95;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
+
+    & .nav-links-bottom, &::before {
+        transform: translateY(28rem);
+    }
+
+    
 }
+

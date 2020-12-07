@@ -169,11 +169,12 @@ html {
         color: v.$primaryColor;
         // hover and active states
         &:hover {
-            color: color.adjust(v.$primaryColor, $lightness: 30%);
+            color: color.adjust(v.$primaryColor, $lightness: 10%);
         }
         &:active, &:focus {
             outline: none; 
-            color: color.adjust(v.$primaryColor, $blackness: 30%);
+            color: color.adjust(v.$primaryColor, $blackness: 20%);
+            text-shadow: f.shadows("icon-nm", color.adjust(v.$primaryColor, $blackness: 25%), v.$opacityXl);
         }
     }
     

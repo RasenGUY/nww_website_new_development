@@ -25,7 +25,7 @@
     $gradColors: v.$ctaColor, v.$ctaLight, v.$ctaColor 105%;
     background-image: f.gradient('linear', 135deg, $gradColors);
     box-shadow: f.shadows("btn-sm", v.$ctaColor, v.$opacityXxl);
-    padding: f.fontDynSize(412, 1040, 4.5, 6) f.fontDynSize(412, 1040, 10, 14);
+    padding: f.fontDynSize(612, 1040, 4.5, 6) f.fontDynSize(612, 1040, 10, 14);
     &:hover, {
         $gradColors: color.adjust(v.$ctaColor, $blackness: 10%), color.adjust(v.$ctaLight, $blackness: 2.5%), color.adjust(v.$ctaColor, $blackness: 10%) 105%;
         color: v.$tertiaryColor;
@@ -75,12 +75,12 @@
 
 // navigation menu
 nav#nav-web{
-    box-shadow: 5px 0px 15px color.adjust(v.$secondaryLight, $alpha: v.$opacityNm);
-
+    box-shadow: 5px 0px 5px color.adjust(v.$secondaryColor, $blackness: 30%, $alpha: v.$opacityXl);
 }
 
-// blur effect
-nav#nav-web::before {
+
+// blur effect for navigation top and bottom
+nav#nav-web::before, nav#nav-mobile::before, nav#nav-mobile-links::before {
     display: block;
     position: absolute;
     top: 0;
@@ -92,9 +92,10 @@ nav#nav-web::before {
     @include m.compatible(backdrop-filter, blur(1rem));
     background-color: color.adjust(v.$secondaryLighter, $alpha: v.$opacityNm);
 }
- 
+
 // nav items and logo web
 .logo {
+
     flex: 1 35%;
     @include m.responsive("<", 1036px){
         flex: 0.1;
@@ -146,10 +147,18 @@ nav#nav-web::before {
 }
 
 // mobile navigation bottom
-    
+nav#nav-mobile {
+
+    box-shadow: -5px 0px 5px color.adjust(v.$secondaryColor, $blackness: 30%, $alpha: v.$opacityXl);
+    transition: all 0.33s ease-in-out;
+    transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
+
     // socials
     .social {
         list-style: none;
+        & li a:hover{
+
+        }
     }
 
     // hamburger
@@ -159,14 +168,14 @@ nav#nav-web::before {
         height: 3.5rem;
         border: 0.1rem solid v.$textColor;
         cursor: pointer;
-        transition: all .15s ease-in-out;
+        transition: all .33s ease-in-out;
         &.animate-burger-border {
             border-color: v.$primaryColor;
         }
         .burger-top, .burger-bottom, .burger-middle {
             width: 65%;
             height: 0.25rem;
-            transition: all 0.15s ease-in-out;
+            transition: all 0.33s ease-in-out;
             transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
             border-radius: 5rem;
             position: relative;
@@ -198,26 +207,44 @@ nav#nav-web::before {
         }
 
     }
+}
 
-    // nav links bottom
+// nav links bottom
+nav#nav-mobile-links {
+
     .nav-links-bottom {
-        list-style: none;
-        opacity: 1;
-        background-color: greenyellow;
-        transform: translateY(28rem);
-        transition: all 0.15s ease-in-out;
+            list-style: none;
+            opacity: 0;
+            transition: all 0.33s ease-in-out;
+            transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
+            & li {
+                text-align: center;
+
+                & a {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    padding: 1rem 0;
+                    color: v.$textColor;
+
+                    &:hover {
+                        background-color: color.adjust(v.$ctaColor, $blackness: 15%, $alpha: v.$opacityXl);
+                        color: color.adjust(v.$primaryColor, $blackness: 15%);
+                    }
+                    &:active {
+                        box-shadow: 1.5px 1.5px 3px color.adjust(v.$secondaryColor, $blackness: 15%, $alpha: v.$opacityXl);
+                        background-color: color.adjust(v.$ctaColor, $blackness: 15%, $alpha: v.$opacityXxl);
+                    }
+                }   
+            }
+            &.animate {
+                opacity: 1;
+                transform: translateY(-5.5rem);
+            }
+            
+        }
+    &::before {
+        transition: all 0.33s ease-in-out;
         transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
-
-        & li {
-            display: inline-block;
-            width: 100vw;
-            text-align: center;
-            padding: 1rem 0;
-
-        }
-        &.animate {
-            opacity: 1;
-            transform: translateY(-5.5rem);
-        }
-        
     }
+}

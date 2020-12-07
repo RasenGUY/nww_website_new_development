@@ -134,11 +134,12 @@ i, a i, li a i {
   color: #da4a22;
 }
 i:hover, a i:hover, li a i:hover {
-  color: #f1b5a4;
+  color: #e36d4c;
 }
 i:active, i:focus, a i:active, a i:focus, li a i:active, li a i:focus {
   outline: none;
-  color: #8e3922;
+  color: #a73f22;
+  text-shadow: 1px 1px 2px rgba(154, 60, 34, 0.3);
 }
 
 input, textarea {
