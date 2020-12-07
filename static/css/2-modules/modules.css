@@ -160,4 +160,23 @@ nav#nav-web::before {
   transform: translateY(-0.125rem) rotate(45deg);
 }
 
+.nav-links-bottom {
+  list-style: none;
+  opacity: 1;
+  background-color: greenyellow;
+  transform: translateY(28rem);
+  transition: all 0.15s ease-in-out;
+  transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
+}
+.nav-links-bottom li {
+  display: inline-block;
+  width: 100vw;
+  text-align: center;
+  padding: 1rem 0;
+}
+.nav-links-bottom.animate {
+  opacity: 1;
+  transform: translateY(-5.5rem);
+}
+
 /*# sourceMappingURL=modules.css.map */

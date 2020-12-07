@@ -151,10 +151,8 @@ nav#nav-web::before {
     .social {
         list-style: none;
     }
-    // // hamburger
-    // .hamburger {
-    //     transition: all .15s ease-in-out;
-    // }
+
+    // hamburger
     // hamburger animate burger
     .burger {
         width: 3.5rem;
@@ -199,4 +197,27 @@ nav#nav-web::before {
 
         }
 
+    }
+
+    // nav links bottom
+    .nav-links-bottom {
+        list-style: none;
+        opacity: 1;
+        background-color: greenyellow;
+        transform: translateY(28rem);
+        transition: all 0.15s ease-in-out;
+        transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
+
+        & li {
+            display: inline-block;
+            width: 100vw;
+            text-align: center;
+            padding: 1rem 0;
+
+        }
+        &.animate {
+            opacity: 1;
+            transform: translateY(-5.5rem);
+        }
+        
     }

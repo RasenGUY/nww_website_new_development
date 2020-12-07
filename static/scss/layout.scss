@@ -26,7 +26,7 @@ nav {
     position:  fixed;
     top: 0;
     left: 0;
-    z-index: 999999;
+    z-index: 999;
 
     // show nav-links for web and hide mobile top for web
     @include m.responsive(">", 413px){
@@ -108,15 +108,27 @@ nav#nav-web, main#main-content {
     }
 }
 
-nav#nav-mobile .wrapper {
-    width: 90%; 
-    margin: 0 auto;
-    padding: 1rem;
-    & .social {
-        flex: 30%;
+nav#nav-mobile {
+    z-index: 105;
+    & .wrapper {
+        width: 90%; 
+        margin: 0 auto;
+        padding: 1rem;
+        
+        & .social {
+            flex: 30%;
+            
+        }
+        
+        & .hamburger {
+            flex: 70%;
+        }
     }
-    
-    & .hamburger {
-        flex: 70%;
-    }
+}
+nav#nav-mobile-links {
+    z-index: 95;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }

@@ -12,7 +12,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999999;
+  z-index: 999;
 }
 @media only screen and (min-width: 413px) {
   #nav-web ul .nav-links {
@@ -89,6 +89,9 @@ nav#nav-web .nav-links-mob-top, main#main-content .nav-links-mob-top {
   flex: 1;
 }
 
+nav#nav-mobile {
+  z-index: 105;
+}
 nav#nav-mobile .wrapper {
   width: 90%;
   margin: 0 auto;
@@ -99,6 +102,14 @@ nav#nav-mobile .wrapper .social {
 }
 nav#nav-mobile .wrapper .hamburger {
   flex: 70%;
+}
+
+nav#nav-mobile-links {
+  z-index: 95;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 /*# sourceMappingURL=layout.css.map */
