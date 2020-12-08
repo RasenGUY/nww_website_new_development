@@ -140,7 +140,22 @@ main#main {
     background-image: f.gradient("linear", 135deg, $colors);
     
     section {
-        width: 100%
+        width: 100%;
+
+        // index page elements
+        &#index-hero { // index section
+            height: 100vh;
+            & .wrapper {
+                width: 80%;
+                height: 100%;
+                margin: 0 auto;
+
+                & .text-box {
+                    width: 100%;
+                    height: inherit;            
+                }
+            }
+        }
     }
 
     footer {

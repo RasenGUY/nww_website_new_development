@@ -34,6 +34,9 @@
 .l-flex.inline.items-justify-evenly {
   justify-content: space-evenly;
 }
+.l-flex.inline.items-justify-between {
+  justify-content: space-between;
+}
 .l-flex.wrap {
   flex-wrap: wrap;
 }
@@ -66,6 +69,9 @@
 }
 .l-flex.content-justify-evenly {
   justify-content: space-evenly;
+}
+.l-flex.content-justify-between {
+  justify-content: space-between;
 }
 
 .l-flex.col {
@@ -107,6 +113,9 @@
 }
 .l-flex.col.inline.items-justify-evenly {
   justify-content: space-evenly;
+}
+.l-flex.col.inline.items-justify-between {
+  justify-content: space-between;
 }
 .l-flex.col.wrap {
   flex-wrap: wrap;
@@ -152,6 +161,9 @@
 }
 .l-flex.col.content-justify-evenly {
   justify-content: space-evenly;
+}
+.l-flex.col.content-justify-between {
+  justify-content: space-between;
 }
 
 .f-item.align-left {

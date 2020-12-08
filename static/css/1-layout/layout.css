@@ -110,6 +110,18 @@ main#main {
 main#main section {
   width: 100%;
 }
+main#main section#index-hero {
+  height: 100vh;
+}
+main#main section#index-hero .wrapper {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+main#main section#index-hero .wrapper .text-box {
+  width: 100%;
+  height: inherit;
+}
 main#main footer {
   width: 100%;
 }

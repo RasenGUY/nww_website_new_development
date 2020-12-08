@@ -35,7 +35,9 @@
         &.items-justify-evenly{
             justify-content: space-evenly;
         }
-        
+        &.items-justify-between{
+            justify-content: space-between;
+        }
     }
     &.wrap {
         flex-wrap: wrap;
@@ -64,11 +66,14 @@
     &.content-justify-right{
         justify-content: flex-end;
     }
-    &.content-justify-center{
+    &.content-justify-center {
         justify-content: center;
     }
     &.content-justify-evenly{
         justify-content: space-evenly;
+    }
+    &.content-justify-between{
+        justify-content: space-between;
     }
 
 }
@@ -111,6 +116,9 @@
         &.items-justify-evenly{
             justify-content: space-evenly;
         }
+        &.items-justify-between{
+            justify-content: space-between;
+        }
     }
     &.wrap {
         flex-wrap: wrap;
@@ -142,9 +150,6 @@
     &.content-align-center{
         align-content: center;
     }
-    // &.content-align-baseline{ // not fully supported yet
-    //     align-content: baseline;
-    // }
     &.content-align-stretch{
         align-content: stretch;
     }
@@ -159,6 +164,9 @@
     }
     &.content-justify-evenly{
         justify-content: space-evenly;
+    }
+    &.content-justify-between{
+        justify-content: space-between;
     }
 
 }

@@ -156,9 +156,6 @@ nav#nav-mobile {
     // socials
     .social {
         list-style: none;
-        & li a:hover{
-
-        }
     }
 
     // hamburger
@@ -248,3 +245,27 @@ nav#nav-mobile-links {
         transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
     }
 }
+
+.arrows {
+    transform: translateY(3rem);
+    overflow-wrap: break-word;
+    transition: all 0.33s ease-in-out;
+    transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
+    a img {
+        width: f.fontDynSize(412, 1040, 50, 60);
+    }
+    & .upper-arrow {
+        transform: translateY(0rem);
+    }  
+    & .lower-arrow {
+        transform: translateY(-1rem);
+        transition: all 0.33s ease-in-out;
+        transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
+    }
+    &:hover {
+        transform: translateY(5rem);
+        & .lower-arrow {
+            transform: translateY(1rem);
+        }
+    } 
+} 

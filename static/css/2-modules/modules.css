@@ -197,4 +197,28 @@ nav#nav-mobile-links::before {
   transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
 }
 
+.arrows {
+  transform: translateY(3rem);
+  overflow-wrap: break-word;
+  transition: all 0.33s ease-in-out;
+  transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
+}
+.arrows a img {
+  width: clamp(5rem, 4.3439490446rem + 1.5923566879vw, 6rem);
+}
+.arrows .upper-arrow {
+  transform: translateY(0rem);
+}
+.arrows .lower-arrow {
+  transform: translateY(-1rem);
+  transition: all 0.33s ease-in-out;
+  transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
+}
+.arrows:hover {
+  transform: translateY(5rem);
+}
+.arrows:hover .lower-arrow {
+  transform: translateY(1rem);
+}
+
 /*# sourceMappingURL=modules.css.map */
