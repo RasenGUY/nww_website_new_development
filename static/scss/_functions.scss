@@ -25,7 +25,7 @@
         $prefix: "5px 5px 15px #{$shadowColor}";
     }
     @else if $property == "icon-sm" {
-        $prefix: "0.75px .75px 1px #{$shadowColor}";
+        $prefix: "0.75px .75px 1.5px #{$shadowColor}";
     }
     @else if $property == "icon-nm" {
         $prefix: "1px 1px 2px #{$shadowColor}";

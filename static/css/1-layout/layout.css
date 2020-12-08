@@ -47,19 +47,6 @@ nav {
   }
 }
 
-/* sections */
-section {
-  width: 100%;
-}
-
-footer {
-  width: 100%;
-}
-
-main#main-content {
-  width: 100%;
-}
-
 nav#nav-web .wrapper, main#main-content .wrapper {
   width: 80%;
   margin: 0 auto;
@@ -113,6 +100,18 @@ nav#nav-mobile-links {
 }
 nav#nav-mobile-links .nav-links-bottom, nav#nav-mobile-links::before {
   transform: translateY(28rem);
+}
+
+/* general */
+main#main {
+  width: 100vw;
+  background-image: linear-gradient(135deg, #229ec1, #22b2da, #4cc2e3, #78d1ea);
+}
+main#main section {
+  width: 100%;
+}
+main#main footer {
+  width: 100%;
 }
 
 /*# sourceMappingURL=layout.css.map */

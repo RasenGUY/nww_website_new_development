@@ -61,18 +61,6 @@ nav {
     }
 }
 
-/* sections */
-section {
-    width: 100%;
-}
-
-footer {
-    width: 100%;
-}
-
-main#main-content{
-    width: 100%;
-}
 nav#nav-web, main#main-content {
     
     // center wrapper and create gap on the cides of the wrapper
@@ -126,6 +114,7 @@ nav#nav-mobile {
         }
     }
 }
+
 nav#nav-mobile-links {
     
     z-index: 95;
@@ -140,4 +129,26 @@ nav#nav-mobile-links {
 
     
 }
+
+
+
+/* general */
+main#main {
+    
+    width: 100vw;
+    $colors: color.adjust(v.$secondaryColor, $blackness: 10%), v.$secondaryColor, color.adjust(v.$secondaryColor, $lightness: 10%), color.adjust(v.$secondaryColor, $lightness: 20%);
+    background-image: f.gradient("linear", 135deg, $colors);
+    
+    section {
+        width: 100%
+    }
+
+    footer {
+        width: 100%;
+    }
+
+}
+
+
+
 
