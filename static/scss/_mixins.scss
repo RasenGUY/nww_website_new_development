@@ -73,6 +73,14 @@
     // unquote everything
 }// make property compatible
 
+@mixin background($attach, $img, $pos) {
+    background-attachment: $attach;
+    background-image: url('#{$img}');
+    background-origin: border-box;
+    background-position: $pos;
+    background-repeat: no-repeat; 
+
+}
 
 
 
