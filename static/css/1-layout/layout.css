@@ -104,14 +104,19 @@ nav#nav-mobile-links .nav-links-bottom, nav#nav-mobile-links::before {
 
 /* general */
 main#main {
+  position: absolute;
   width: 100vw;
-  background-image: linear-gradient(135deg, #229ec1, #22b2da, #4cc2e3, #78d1ea);
+  z-index: 0;
 }
 main#main section {
+  position: relative;
   width: 100%;
+  z-index: inherit;
 }
 main#main section#index-hero {
+  position: relative;
   height: 100vh;
+  z-index: inherit;
 }
 main#main section#index-hero .wrapper {
   width: 80%;
@@ -121,6 +126,38 @@ main#main section#index-hero .wrapper {
 main#main section#index-hero .wrapper .text-box {
   width: 100%;
   height: inherit;
+}
+main#main section#index-s-one {
+  position: relative;
+  z-index: 10;
+}
+main#main section#index-s-one .shapes {
+  position: absolute;
+  z-index: 9;
+  transform: translateY(-16rem);
+  left: 0;
+  width: 100%;
+}
+main#main section#index-s-one .shapes .folder {
+  width: inherit;
+  position: absolute;
+  z-index: 8;
+}
+main#main section#index-s-one .shapes .folder .fore, main#main section#index-s-one .shapes .folder .middle, main#main section#index-s-one .shapes .folder .back {
+  position: inherit;
+  width: inherit;
+}
+main#main section#index-s-one .shapes .folder .fore {
+  transform: translateY(-5rem);
+  z-index: 7;
+}
+main#main section#index-s-one .shapes .folder .middle {
+  transform: translateY(-2rem);
+  z-index: 6;
+}
+main#main section#index-s-one .shapes .folder .back {
+  transform: translateY(-10rem);
+  z-index: 5;
 }
 main#main footer {
   width: 100%;
