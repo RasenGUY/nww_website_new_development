@@ -197,6 +197,47 @@ nav#nav-mobile-links::before {
   transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
 }
 
+#index-hero {
+  background-attachment: initial;
+  background-image: url("/static/images/home/jpeg_web/compressed/teach_2.jpg");
+  background-origin: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media only screen and (max-width: 412px) {
+  #index-hero {
+    background-attachment: initial;
+    background-image: url("/static/images/home/jpeg_mobile/teach_2.jpg");
+    background-origin: border-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+#index-hero::after {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  content: "";
+  width: inherit;
+  height: inherit;
+  background-color: rgba(40, 35, 34, 0.3);
+  backdrop-filter: blur(0.325rem);
+  z-index: 0;
+}
+
+.text-box {
+  position: relative;
+  z-index: 1;
+}
+@media only screen and (max-width: 412px) {
+  .text-box header {
+    text-align: center;
+  }
+}
+
 .arrows {
   transform: translateY(3rem);
   overflow-wrap: break-word;
@@ -205,6 +246,12 @@ nav#nav-mobile-links::before {
 }
 .arrows a img {
   width: clamp(5rem, 4.3439490446rem + 1.5923566879vw, 6rem);
+  filter: drop-shadow(7px 5px 3px #0e1318);
+}
+@media only screen and (max-width: 412px) {
+  .arrows a img {
+    filter: drop-shadow(4px 4px 3px #0e1318);
+  }
 }
 .arrows .upper-arrow {
   transform: translateY(0rem);

@@ -127,7 +127,7 @@ html {
 // colors
 
     // base colors
-    p, li, input, textarea {
+    p, li, input, textarea, span {
         color: v.$textColor;
         &.primary {
             color: v.$primaryColor;
@@ -216,16 +216,16 @@ html {
     
     //headings
     h1 {
-        font-size: f.fontDynSize(412, 1040, 28, 36);
+        font-size: f.fontDynSize(412, 1040, 32, 46);
     }   
     h2 {
-        font-size: f.fontDynSize(412, 1040, 24, 27);
+        font-size: f.fontDynSize(412, 1040, 30, 34);
     }   
     h3 {
-        font-size: f.fontDynSize(412, 1040, 19, 22.5);
+        font-size: f.fontDynSize(412, 1040, 28, 31);
     }
     h4 {
-        font-size: f.fontDynSize(412, 1040, 17.5, 21);
+        font-size: f.fontDynSize(412, 1040, 17.5, 24);
     }
     h5 {
         font-size: f.fontDynSize(412, 1040, 16.5, 18);

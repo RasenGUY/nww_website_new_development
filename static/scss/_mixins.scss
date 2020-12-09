@@ -18,8 +18,11 @@
         @if $property == 'text-shadow' {
            text-shadow: $h $v $radius $color;
         }
-        @else {
+        @else if $property == 'box-shadow' {
             box-shadow: $h $v $radius $color; 
+        } 
+        @else if $property == 'drop-shadow' {
+            filter: drop-shadow(#{$h} #{$v} #{$radius} #{$color}); 
         } 
     }
     @else { // if there is a predifined value then set that as the property
@@ -73,13 +76,13 @@
     // unquote everything
 }// make property compatible
 
-@mixin background($attach, $img, $pos) {
+@mixin background($attach, $img, $pos, $size) {
     background-attachment: $attach;
     background-image: url('#{$img}');
     background-origin: border-box;
     background-position: $pos;
-    background-repeat: no-repeat; 
-
+    background-repeat: no-repeat;
+    background-size: $size;
 }
 
 

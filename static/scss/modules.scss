@@ -246,27 +246,71 @@ nav#nav-mobile-links {
     }
 }
 
-// arrows for site
-.arrows {
-    transform: translateY(3rem);
-    overflow-wrap: break-word;
-    transition: all 0.33s ease-in-out;
-    transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
-    a img {
-        width: f.fontDynSize(412, 1040, 50, 60);
+// index page
+
+// hero section
+    // background
+    #index-hero {
+        @include m.background(initial, "/static/images/home/jpeg_web/compressed/teach_2.jpg", center, cover);
+
+        @include m.responsive("<", 412px){
+            @include m.background(initial, "/static/images/home/jpeg_mobile/teach_2.jpg", center, cover);
+        }
+
+        // darken image 
+        &::after {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            content: '';
+            width: inherit;
+            height: inherit;
+            background-color: color.adjust(v.$primaryColor, $alpha: v.$opacityXl, $blackness: 70%);
+            backdrop-filter: blur(0.325rem);
+            z-index: 0;
+        }
+
     }
-    & .upper-arrow {
-        transform: translateY(0rem);
-    }  
-    & .lower-arrow {
-        transform: translateY(-1rem);
+
+    // text box
+    .text-box {
+        position: relative;
+        z-index: 1;
+
+        // align header text to center on mobile
+        & header {
+            @include m.responsive("<", 412px){
+                text-align: center;    
+            }
+        }
+    }
+
+    // arrows and hover animation
+    .arrows {
+        transform: translateY(3rem);
+        overflow-wrap: break-word;
         transition: all 0.33s ease-in-out;
         transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
-    }
-    &:hover {
-        transform: translateY(5rem);
-        & .lower-arrow {
-            transform: translateY(1rem);
+        a img {
+            width: f.fontDynSize(412, 1040, 50, 60);
+            @include m.shadow("drop-shadow", none, 7px, 5px, 3px, v.$textColor);
+            @include m.responsive("<", 412px){    
+                @include m.shadow("drop-shadow", none, 4px, 4px, 3px, v.$textColor);
+            }
         }
+        & .upper-arrow {
+            transform: translateY(0rem);
+        }  
+        & .lower-arrow {
+            transform: translateY(-1rem);
+            transition: all 0.33s ease-in-out;
+            transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
+        }
+        &:hover {
+            transform: translateY(5rem);
+            & .lower-arrow {
+                transform: translateY(1rem);
+            }
+        } 
     } 
-} 

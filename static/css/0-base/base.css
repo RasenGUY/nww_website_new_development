@@ -98,19 +98,19 @@ h4, h5, h6 {
   stroke-opacity: -0.25;
 }
 
-p, li, input, textarea {
+p, li, input, textarea, span {
   color: #0e1318;
 }
-p.primary, li.primary, input.primary, textarea.primary {
+p.primary, li.primary, input.primary, textarea.primary, span.primary {
   color: #da4a22;
 }
-p.secondary, li.secondary, input.secondary, textarea.secondary {
+p.secondary, li.secondary, input.secondary, textarea.secondary, span.secondary {
   color: #22b2da;
 }
-p.tertiary, li.tertiary, input.tertiary, textarea.tertiary {
+p.tertiary, li.tertiary, input.tertiary, textarea.tertiary, span.tertiary {
   color: #ffffff;
 }
-p.cta, li.cta, input.cta, textarea.cta {
+p.cta, li.cta, input.cta, textarea.cta, span.cta {
   color: #0e1318;
 }
 
@@ -173,19 +173,19 @@ i {
 }
 
 h1 {
-  font-size: clamp(2.8rem, 2.2751592357rem + 1.2738853503vw, 3.6rem);
+  font-size: clamp(3.2rem, 2.2815286624rem + 2.2292993631vw, 4.6rem);
 }
 
 h2 {
-  font-size: clamp(2.4rem, 2.2031847134rem + 0.4777070064vw, 2.7rem);
+  font-size: clamp(3rem, 2.7375796178rem + 0.6369426752vw, 3.4rem);
 }
 
 h3 {
-  font-size: clamp(1.9rem, 1.6703821656rem + 0.5573248408vw, 2.25rem);
+  font-size: clamp(2.8rem, 2.6031847134rem + 0.4777070064vw, 3.1rem);
 }
 
 h4 {
-  font-size: clamp(1.75rem, 1.5203821656rem + 0.5573248408vw, 2.1rem);
+  font-size: clamp(1.75rem, 1.323566879rem + 1.0350318471vw, 2.4rem);
 }
 
 h5 {
