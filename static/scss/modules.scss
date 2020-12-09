@@ -275,9 +275,6 @@ nav#nav-mobile-links {
 
     // text box
     .text-box {
-        position: relative;
-        z-index: 1;
-
         // align header text to center on mobile
         & header {
             @include m.responsive("<", 412px){
@@ -313,4 +310,44 @@ nav#nav-mobile-links {
                 transform: translateY(1rem);
             }
         } 
-    } 
+    }
+
+    // create circular shapes on the site
+    .circles {
+
+        .circle {
+            border-radius: 50%;
+            $colors: color.adjust(v.$primaryColor, $lightness: 10%, $hue: 5deg) 5%, color.adjust(v.$primaryColor, $lightness: 5%, $hue: 0deg), color.adjust(v.$primaryColor, $lightness: -5%, $hue: -5deg);
+            background-image: f.gradient("linear", 45deg, $colors);
+
+            &.x-sm {
+                width: (11.82rem / 1.618); 
+                height: (11.82rem / 1.618); 
+            } 
+            &.sm {
+                width: 11.82rem; 
+                height: 11.82rem; 
+            } 
+            &.nm {
+                width: (11.82rem * 1.618); 
+                height: (11.82rem * 1.618); 
+            } 
+            &.lg {
+                width: (11.82rem * 1.618 * 1.618); 
+                height: (11.82rem * 1.618 * 1.618); 
+            } 
+            &.xl {
+                width: (11.82rem * 1.618 * 1.618 * 1.618); 
+                height: (11.82rem * 1.618 * 1.618 * 1.618); 
+            } 
+            &.xxl {
+                width: (11.82rem * 1.618 * 1.618 * 1.618 * 1.618); 
+                height: (11.82rem * 1.618 * 1.618 * 1.618 * 1.618); 
+            } 
+            
+            &.secondary {
+                $colors: color.adjust(v.$secondaryColor, $lightness: 25%, $hue: -10deg) 5%, color.adjust(v.$secondaryColor, $lightness: 10%, $hue: -5deg), color.adjust(v.$secondaryColor, $lightness: -5%, $hue: 5deg);
+                background-image: f.gradient("linear", 45deg, $colors);
+            }
+        }
+    }
