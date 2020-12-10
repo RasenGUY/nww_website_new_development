@@ -146,18 +146,18 @@ main#main {
         width: 100%;
         z-index: inherit;
 
-        // wrapper for
+        // wrapper for all text-boxes in sections
         & .wrapper {
             position: inherit;
             width: 80%;
             height: 100%;
             margin: 0 auto;
+            z-index: 11;           
 
             & .text-box {
                 position: inherit;
                 width: 100%;
                 height: inherit;
-                z-index: 11;            
             }
         }
         // index page elements
@@ -169,9 +169,10 @@ main#main {
         
         &#index-s-one { //section one
             position: relative;
+            height: 100vh * 1.25;
             z-index: 10;
 
-            & .folder {
+            & .folder { // folder shape
                 position: absolute;
                 z-index: 9;
                 left: 0;
@@ -205,8 +206,7 @@ main#main {
 
             }
 
-            // switch shape for mobile
-            @include m.responsive("<", 412px){
+            @include m.responsive("<", 412px){ // folder layout for mobile
                 & .folder {
                     transform: translateY(-14rem);
 
@@ -238,7 +238,7 @@ main#main {
 
             }
 
-            & .circles {
+            & .circles { // layout for circles 
                 position: absolute;
                 z-index: 9; 
                 width: 100%;
@@ -249,14 +249,47 @@ main#main {
                     width: 80%;
                     height: 100%;
                     margin: 0 auto;
-                    & .small {
+                    & > .f-item { // give all circles a column
                         flex: 1;
                     } 
-                    & .big {
-                        flex: 1;
-                    } 
+                    & .f-item:nth-child(1) .circle { // move top circle
+                        transform: translate(5rem, -7rem);
+                    }
+                    & .f-item:nth-child(2) .circle { // move second circle
+                        transform: translate(-5rem, -20rem);
+                    }
+                    & .f-item:nth-child(3) { // create row for 4th and 5th circle
+                        & > .f-item { // create col for each circle
+                            flex: 1;
+                        }
+                        & .f-item:nth-child(1) { // move 4th circle 
+                            flex-grow: 3;
+                            & .circle {
+                                transform: translate(4rem, -24rem);
+                            }
+                        }
+                        & .f-item:nth-child(2) { // move 5th circle
+                            & .circle {
+                                transform: translate(0rem, -10rem);
+                            }
+                        }
+                    }
                 }
 
+            }
+
+            & > :nth-child(3) {
+
+                > .f-item {
+                    flex: 1;
+                    &:first-child {
+                        height: 50%;
+                        // transform: translate(0rem, 0rem); 
+                    }
+                    &:nth-child(2) {
+                        background-color: none; 
+                    }
+                }
             }
         }
     }

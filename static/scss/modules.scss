@@ -314,13 +314,12 @@ nav#nav-mobile-links {
 
     // create circular shapes on the site
     .circles {
-
         .circle {
             border-radius: 50%;
             $colors: color.adjust(v.$primaryColor, $lightness: 10%, $hue: 5deg) 5%, color.adjust(v.$primaryColor, $lightness: 5%, $hue: 0deg), color.adjust(v.$primaryColor, $lightness: -5%, $hue: -5deg);
             background-image: f.gradient("linear", 45deg, $colors);
 
-            &.x-sm {
+            &.xs {
                 width: (11.82rem / 1.618); 
                 height: (11.82rem / 1.618); 
             } 
@@ -344,7 +343,6 @@ nav#nav-mobile-links {
                 width: (11.82rem * 1.618 * 1.618 * 1.618 * 1.618); 
                 height: (11.82rem * 1.618 * 1.618 * 1.618 * 1.618); 
             } 
-            
             &.secondary {
                 $colors: color.adjust(v.$secondaryColor, $lightness: 25%, $hue: -10deg) 5%, color.adjust(v.$secondaryColor, $lightness: 10%, $hue: -5deg), color.adjust(v.$secondaryColor, $lightness: -5%, $hue: 5deg);
                 background-image: f.gradient("linear", 45deg, $colors);

@@ -268,7 +268,7 @@ nav#nav-mobile-links::before {
   border-radius: 50%;
   background-image: linear-gradient(45deg, #e3794c 5%, #e05b36, #c4351f);
 }
-.circles .circle.x-sm {
+.circles .circle.xs {
   width: 7.305315204rem;
   height: 7.305315204rem;
 }

@@ -118,12 +118,12 @@ main#main section .wrapper {
   width: 80%;
   height: 100%;
   margin: 0 auto;
+  z-index: 11;
 }
 main#main section .wrapper .text-box {
   position: inherit;
   width: 100%;
   height: inherit;
-  z-index: 11;
 }
 main#main section#index-hero {
   position: relative;
@@ -132,6 +132,7 @@ main#main section#index-hero {
 }
 main#main section#index-s-one {
   position: relative;
+  height: 125vh;
   z-index: 10;
 }
 main#main section#index-s-one .folder {
@@ -206,11 +207,35 @@ main#main section#index-s-one .circles .wrapper {
   height: 100%;
   margin: 0 auto;
 }
-main#main section#index-s-one .circles .wrapper .small {
+main#main section#index-s-one .circles .wrapper > .f-item {
   flex: 1;
 }
-main#main section#index-s-one .circles .wrapper .big {
+main#main section#index-s-one .circles .wrapper .f-item:nth-child(1) .circle {
+  transform: translate(5rem, -7rem);
+}
+main#main section#index-s-one .circles .wrapper .f-item:nth-child(2) .circle {
+  transform: translate(-5rem, -20rem);
+}
+main#main section#index-s-one .circles .wrapper .f-item:nth-child(3) > .f-item {
   flex: 1;
+}
+main#main section#index-s-one .circles .wrapper .f-item:nth-child(3) .f-item:nth-child(1) {
+  flex-grow: 3;
+}
+main#main section#index-s-one .circles .wrapper .f-item:nth-child(3) .f-item:nth-child(1) .circle {
+  transform: translate(4rem, -24rem);
+}
+main#main section#index-s-one .circles .wrapper .f-item:nth-child(3) .f-item:nth-child(2) .circle {
+  transform: translate(0rem, -10rem);
+}
+main#main section#index-s-one > :nth-child(3) > .f-item {
+  flex: 1;
+}
+main#main section#index-s-one > :nth-child(3) > .f-item:first-child {
+  height: 50%;
+}
+main#main section#index-s-one > :nth-child(3) > .f-item:nth-child(2) {
+  background-color: none;
 }
 main#main footer {
   width: 100%;
