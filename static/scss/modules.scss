@@ -26,6 +26,7 @@
     background-image: f.gradient('linear', 135deg, $gradColors);
     box-shadow: f.shadows("btn-sm", v.$ctaColor, v.$opacityXxl);
     padding: f.fontDynSize(612, 1040, 4.5, 6) f.fontDynSize(612, 1040, 10, 14);
+
     &:hover, {
         $gradColors: color.adjust(v.$ctaColor, $blackness: 10%), color.adjust(v.$ctaLight, $blackness: 2.5%), color.adjust(v.$ctaColor, $blackness: 10%) 105%;
         color: v.$tertiaryColor;
@@ -42,7 +43,7 @@
         $gradColors: v.$primaryColor, v.$primaryLight, v.$primaryColor 105%;
         background-image: f.gradient('linear', 135deg, $gradColors);
         box-shadow: f.shadows("btn-sm", v.$primaryColor, v.$opacityXxl);
-        padding: f.fontDynSize(412, 1040, 4.5, 6) f.fontDynSize(412, 1040, 10, 14);
+
         &:hover, {
             $gradColors: color.adjust(v.$primaryColor, $blackness: 10%), color.adjust(v.$primaryLight, $blackness: 2.5%), color.adjust(v.$primaryColor, $blackness: 10%) 105%;
             color: v.$tertiaryColor;
@@ -55,12 +56,11 @@
     }
     &.secondary{
         color: v.$textColor;
-
         // create gradient color
         $gradColors: v.$secondaryColor, v.$secondaryLight, v.$secondaryColor 105%;
         background-image: f.gradient('linear', 135deg, $gradColors);
         box-shadow: f.shadows("btn-sm", v.$secondaryColor, v.$opacityXxl);
-        padding: f.fontDynSize(412, 1040, 4.5, 6) f.fontDynSize(412, 1040, 10, 14);
+
         &:hover, {
             $gradColors: color.adjust(v.$secondaryColor, $blackness: 10%), color.adjust(v.$secondaryLight, $blackness: 2.5%), color.adjust(v.$secondaryColor, $blackness: 10%) 105%;
             color: v.$tertiaryColor;
@@ -70,6 +70,22 @@
             box-shadow: f.shadows("btn-active", v.$secondaryColor, v.$opacityLg);
             // outline: none;
         }
+    }
+    &.small{
+        font-size: f.fontDynSize(412, 1040, (15.85/1.618), (19.85/1.618));
+        padding: f.fontDynSize(612, 1040, (4.5/1.618), (6/1.618)) f.fontDynSize(612, 1040, (10/1.618), (14/1.618));
+        border-radius: v.$cornerSm;
+
+    }
+    &.large{
+        font-size: f.fontDynSize(412, 1040, (15.85*1.618), (19.85*1.618));
+        padding: f.fontDynSize(612, 1040, (4.5*1.618), (6*1.618)) f.fontDynSize(612, 1040, (10*1.618), (14*1.618));
+        border-radius: v.$cornerXlg;
+
+    }
+    &.x-large{
+        font-size: f.fontDynSize(412, 1040, (15.85*1.618*1.618), (19.85*1.618*1.618));
+        padding: f.fontDynSize(612, 1040, (4.5*1.618*1.618), (6*1.618*1.618)) f.fontDynSize(612, 1040, (10*1.618*1.618), (14*1.618*1.618));
     }
 }
 

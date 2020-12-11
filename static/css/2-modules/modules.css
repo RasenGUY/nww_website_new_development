@@ -22,7 +22,6 @@
   color: #0e1318;
   background-image: linear-gradient(135deg, #da4a22, #ff7650, #da4a22 105%);
   box-shadow: 2px 2px 3px rgba(218, 74, 34, 0.16);
-  padding: clamp(0.45rem, 0.3515923567rem + 0.2388535032vw, 0.6rem) clamp(1rem, 0.7375796178rem + 0.6369426752vw, 1.4rem);
 }
 .btn.primary:hover {
   color: #ffffff;
@@ -35,7 +34,6 @@
   color: #0e1318;
   background-image: linear-gradient(135deg, #22b2da, #afe2ec, #22b2da 105%);
   box-shadow: 2px 2px 3px rgba(34, 178, 218, 0.16);
-  padding: clamp(0.45rem, 0.3515923567rem + 0.2388535032vw, 0.6rem) clamp(1rem, 0.7375796178rem + 0.6369426752vw, 1.4rem);
 }
 .btn.secondary:hover {
   color: #ffffff;
@@ -43,6 +41,20 @@
 }
 .btn.secondary:active, .btn.secondary:focus {
   box-shadow: 0 0 0 3pt rgba(34, 178, 218, 0.45);
+}
+.btn.small {
+  font-size: clamp(0.9796044499rem, 0.8174163275rem + 0.3936604914vw, 1.2268232386rem);
+  padding: clamp(0.2781211372rem, 0.145558726rem + 0.216605247vw, 0.3708281829rem) clamp(0.6180469716rem, 0.2645472084rem + 0.5776139921vw, 0.8652657602rem);
+  border-radius: 15px;
+}
+.btn.large {
+  font-size: clamp(2.56453rem, 2.1399338217rem + 1.0305732484vw, 3.21173rem);
+  padding: clamp(0.7281rem, 0.3810616822rem + 0.5670560748vw, 0.9708rem) clamp(1.618rem, 0.692564486rem + 1.5121495327vw, 2.2652rem);
+  border-radius: 30px;
+}
+.btn.x-large {
+  font-size: clamp(4.14940954rem, 3.4624129234rem + 1.6674675159vw, 5.19657914rem);
+  padding: clamp(1.1780658rem, 0.6165578019rem + 0.917496729vw, 1.5707544rem) clamp(2.617924rem, 1.1205693383rem + 2.4466579439vw, 3.6650936rem);
 }
 
 nav#nav-web {

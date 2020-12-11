@@ -125,6 +125,12 @@ main#main section .wrapper .text-box {
   width: 100%;
   height: inherit;
 }
+main#main section .wrapper .text-box header h1 {
+  padding-bottom: 1rem;
+}
+main#main section .wrapper .text-box .body > * {
+  padding-bottom: 0.75rem;
+}
 main#main section#index-hero {
   position: relative;
   height: 100vh;
@@ -207,35 +213,36 @@ main#main section#index-s-one .circles .wrapper {
   height: 100%;
   margin: 0 auto;
 }
-main#main section#index-s-one .circles .wrapper > .f-item {
-  flex: 1;
+main#main section#index-s-one .circles .wrapper .circle {
+  position: absolute;
 }
-main#main section#index-s-one .circles .wrapper .f-item:nth-child(1) .circle {
-  transform: translate(5rem, -7rem);
+main#main section#index-s-one .circles .wrapper .circle:first-child {
+  right: -5%;
+  top: -5%;
 }
-main#main section#index-s-one .circles .wrapper .f-item:nth-child(2) .circle {
-  transform: translate(-5rem, -20rem);
+main#main section#index-s-one .circles .wrapper .circle:nth-child(2) {
+  left: -5%;
+  top: 5%;
 }
-main#main section#index-s-one .circles .wrapper .f-item:nth-child(3) > .f-item {
-  flex: 1;
+main#main section#index-s-one .circles .wrapper .circle:nth-child(3) {
+  right: 5%;
+  bottom: 35%;
 }
-main#main section#index-s-one .circles .wrapper .f-item:nth-child(3) .f-item:nth-child(1) {
-  flex-grow: 3;
+main#main section#index-s-one .circles .wrapper .circle:nth-child(4) {
+  left: 7%;
+  top: 17%;
 }
-main#main section#index-s-one .circles .wrapper .f-item:nth-child(3) .f-item:nth-child(1) .circle {
-  transform: translate(4rem, -24rem);
-}
-main#main section#index-s-one .circles .wrapper .f-item:nth-child(3) .f-item:nth-child(2) .circle {
-  transform: translate(0rem, -10rem);
-}
-main#main section#index-s-one > :nth-child(3) > .f-item {
-  flex: 1;
-}
-main#main section#index-s-one > :nth-child(3) > .f-item:first-child {
+main#main section#index-s-one > :nth-child(3) .text-box {
   height: 50%;
 }
-main#main section#index-s-one > :nth-child(3) > .f-item:nth-child(2) {
-  background-color: none;
+main#main section#index-s-one > :nth-child(3) .text-box .body {
+  width: 50%;
+}
+main#main section#index-s-one > :nth-child(3) .text-box .body div > i {
+  padding-right: 1rem;
+}
+main#main section#index-s-one > :nth-child(4) {
+  content: url("/static/images/home/jpeg_web/compressed/teach_5.jpg");
 }
 main#main footer {
   width: 100%;

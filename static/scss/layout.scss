@@ -158,6 +158,12 @@ main#main {
                 position: inherit;
                 width: 100%;
                 height: inherit;
+                & header h1 {
+                    padding-bottom: 1rem;       
+                }
+                & .body > * {
+                    padding-bottom: 0.75rem; 
+                }
             }
         }
         // index page elements
@@ -249,47 +255,47 @@ main#main {
                     width: 80%;
                     height: 100%;
                     margin: 0 auto;
-                    & > .f-item { // give all circles a column
-                        flex: 1;
-                    } 
-                    & .f-item:nth-child(1) .circle { // move top circle
-                        transform: translate(5rem, -7rem);
+
+                    & .circle {
+                        position: absolute;
                     }
-                    & .f-item:nth-child(2) .circle { // move second circle
-                        transform: translate(-5rem, -20rem);
+                    & .circle:first-child { // circle top right
+                        right: -5%;
+                        top: -5%;
                     }
-                    & .f-item:nth-child(3) { // create row for 4th and 5th circle
-                        & > .f-item { // create col for each circle
-                            flex: 1;
-                        }
-                        & .f-item:nth-child(1) { // move 4th circle 
-                            flex-grow: 3;
-                            & .circle {
-                                transform: translate(4rem, -24rem);
-                            }
-                        }
-                        & .f-item:nth-child(2) { // move 5th circle
-                            & .circle {
-                                transform: translate(0rem, -10rem);
-                            }
-                        }
+                    & .circle:nth-child(2) { // circle top left
+                        left: -5%;
+                        top: 5%;
                     }
+                    & .circle:nth-child(3) { // circle middle
+                        right: 5%;
+                        bottom: 35%;
+                    }
+                    & .circle:nth-child(4) { // circle bottom right
+                        left: 7%;
+                        top: 17%;
+                    }
+                    
                 }
 
             }
 
-            & > :nth-child(3) {
+            & > :nth-child(3) { // text-box wrapper
 
-                > .f-item {
-                    flex: 1;
-                    &:first-child {
-                        height: 50%;
-                        // transform: translate(0rem, 0rem); 
+                & .text-box { // text-box s-one
+                    height: 50%;
+                    
+                    & .body { 
+                        width: 50%;
                     }
-                    &:nth-child(2) {
-                        background-color: none; 
+                    & .body div > i {
+                        padding-right: 1rem;
                     }
+
                 }
+            }
+            & > :nth-child(4) { // image on s-one
+                content: url("/static/images/home/jpeg_web/compressed/teach_5.jpg");
             }
         }
     }
