@@ -4,3 +4,14 @@
 .gradient {
     background-image: f.gradient("radial", "130deg", (v.$primaryColor + " 150%", v.$secondaryColor + " 180%"));
 }
+
+
+img {
+    width: 500px;
+    clip-path: url(#myclippath);
+}
+// svg {
+//     overflow: hidden;
+//     width: 200px;
+//     height: 100px; 
+// }

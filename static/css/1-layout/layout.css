@@ -242,7 +242,7 @@ main#main section#index-s-one > :nth-child(3) .text-box .body div > i {
   padding-right: 1rem;
 }
 main#main section#index-s-one > :nth-child(4) {
-  content: url("/static/images/home/jpeg_web/compressed/teach_5.jpg");
+  content: url("/static/images/home/svg_web/home_sh_s1_clip_img_optimised.svg");
 }
 main#main footer {
   width: 100%;
