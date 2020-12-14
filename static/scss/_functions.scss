@@ -21,8 +21,14 @@
     @else if $property == "btn-active" {
         $prefix: "0 0 0 3pt #{$shadowColor}";
     }
-    @else if $property == "figure" {
-        $prefix: "5px 5px 15px #{$shadowColor}";
+    @else if $property == "figure-sm" {
+        $prefix: "5px 1.5px 3.5px #{$shadowColor}";
+    }
+    @else if $property == "figure-nm" {
+        $prefix: "1.5px 2.5px 5px #{$shadowColor}";
+    }
+    @else if $property == "figure-lg" {
+        $prefix: "5px 5px 10px #{$shadowColor}";
     }
     @else if $property == "icon-sm" {
         $prefix: "0.75px .75px 1.5px #{$shadowColor}";

@@ -5,15 +5,41 @@
     background-image: f.gradient("radial", "130deg", (v.$primaryColor + " 150%", v.$secondaryColor + " 180%"));
 }
 
-
-img {
-    width:45%;
-    clip-path: url(#myclippath);
+.img {
+    width: 300px;
+    height: 300px;
 }
 
+#teach {
+    & g path.img-stroke {
 
-.image {
-    width: 250px;
-    height: 250px;
-    // overflow: hidden;
+        fill: red;
+    }
+    &:hover g path.img-stroke {
+        transition: all 0.5s linear;  
+
+        fill: green;
+    }
+
+} 
+
+
+
+object {
+    width: 100%;
+    height: 100%;
+    // outline: 6px solid black;
+    // -outline-radius: 50%;
+    // border-radius: 50%;
+
 }
+
+.shadow {
+    // -moz-box-shadow: 10px 10px 5px #888;
+    // -webkit-box-shadow: 10px 10px 5px #888;
+    // box-shadow: 10px 10px 5px #888; 
+    -webkit-filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, .7));
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, .7));
+
+}
+

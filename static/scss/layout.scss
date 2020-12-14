@@ -244,7 +244,7 @@ main#main {
 
             }
 
-            & .circles { // layout for circles 
+            & .shapes { // layout for shapes 
                 position: absolute;
                 z-index: 9; 
                 width: 100%;
@@ -256,7 +256,7 @@ main#main {
                     height: 100%;
                     margin: 0 auto;
 
-                    & .circle {
+                    & > div {
                         position: absolute;
                     }
                     & .circle:first-child { // circle top right
@@ -275,6 +275,12 @@ main#main {
                         left: 7%;
                         top: 17%;
                     }
+                    & .image-box { // circle bottom right
+                        height: 30rem;
+                        width: 30rem;
+                        right: 5%;
+                        bottom: -20%;
+                    }
                     
                 }
 
@@ -291,11 +297,11 @@ main#main {
                     & .body div > i {
                         padding-right: 1rem;
                     }
+                    & .body > div:nth-child(5) {
+                        margin-top: 5rem;
+                    }
 
                 }
-            }
-            & > :nth-child(4) { // image on s-one
-                content: url("/static/images/home/svg_web/home_sh_s1_clip_img_optimised.svg");
             }
         }
     }

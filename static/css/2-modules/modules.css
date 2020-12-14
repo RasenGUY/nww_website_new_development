@@ -276,36 +276,133 @@ nav#nav-mobile-links::before {
   transform: translateY(1rem);
 }
 
-.circles .circle {
+.shapes .circle {
   border-radius: 50%;
   background-image: linear-gradient(45deg, #e3794c 5%, #e05b36, #c4351f);
 }
-.circles .circle.xs {
+.shapes .circle.xs {
   width: 7.305315204rem;
   height: 7.305315204rem;
 }
-.circles .circle.sm {
+.shapes .circle.sm {
   width: 11.82rem;
   height: 11.82rem;
 }
-.circles .circle.nm {
+.shapes .circle.nm {
   width: 19.12476rem;
   height: 19.12476rem;
 }
-.circles .circle.lg {
+.shapes .circle.lg {
   width: 30.94386168rem;
   height: 30.94386168rem;
 }
-.circles .circle.xl {
+.shapes .circle.xl {
   width: 50.0671681982rem;
   height: 50.0671681982rem;
 }
-.circles .circle.xxl {
+.shapes .circle.xxl {
   width: 81.0086781448rem;
   height: 81.0086781448rem;
 }
-.circles .circle.secondary {
+.shapes .circle.secondary {
   background-image: linear-gradient(45deg, #8ee9ed 5%, #4ccfe3, #1f92c4);
+}
+
+.svg-image {
+  width: 100%;
+  height: 100%;
+}
+.svg-image.shadow-fg {
+  filter: drop-shadow(1.5px 2.5px 5px rgba(14, 19, 24, 0.45));
+  -ms-filter: drop-shadow(1.5px 2.5px 5px rgba(14, 19, 24, 0.45));
+  -o-filter: drop-shadow(1.5px 2.5px 5px rgba(14, 19, 24, 0.45));
+  -moz-filter: drop-shadow(1.5px 2.5px 5px rgba(14, 19, 24, 0.45));
+  -webkit-filter: drop-shadow(1.5px 2.5px 5px rgba(14, 19, 24, 0.45));
+}
+.svg-image.shadow-fg.primary {
+  filter: drop-shadow(1.5px 2.5px 5px rgba(218, 74, 34, 0.45));
+  -ms-filter: drop-shadow(1.5px 2.5px 5px rgba(218, 74, 34, 0.45));
+  -o-filter: drop-shadow(1.5px 2.5px 5px rgba(218, 74, 34, 0.45));
+  -moz-filter: drop-shadow(1.5px 2.5px 5px rgba(218, 74, 34, 0.45));
+  -webkit-filter: drop-shadow(1.5px 2.5px 5px rgba(218, 74, 34, 0.45));
+}
+.svg-image.shadow-fg.secondary {
+  filter: drop-shadow(1.5px 2.5px 5px rgba(34, 178, 218, 0.45));
+  -ms-filter: drop-shadow(1.5px 2.5px 5px rgba(34, 178, 218, 0.45));
+  -o-filter: drop-shadow(1.5px 2.5px 5px rgba(34, 178, 218, 0.45));
+  -moz-filter: drop-shadow(1.5px 2.5px 5px rgba(34, 178, 218, 0.45));
+  -webkit-filter: drop-shadow(1.5px 2.5px 5px rgba(34, 178, 218, 0.45));
+}
+.svg-image.shadow-fg.cta {
+  filter: drop-shadow(1.5px 2.5px 5px rgba(34, 218, 74, 0.45));
+  -ms-filter: drop-shadow(1.5px 2.5px 5px rgba(34, 218, 74, 0.45));
+  -o-filter: drop-shadow(1.5px 2.5px 5px rgba(34, 218, 74, 0.45));
+  -moz-filter: drop-shadow(1.5px 2.5px 5px rgba(34, 218, 74, 0.45));
+  -webkit-filter: drop-shadow(1.5px 2.5px 5px rgba(34, 218, 74, 0.45));
+}
+.svg-image.shadow-fg.sm {
+  filter: drop-shadow(5px 1.5px 3.5px rgba(14, 19, 24, 0.45));
+  -ms-filter: drop-shadow(5px 1.5px 3.5px rgba(14, 19, 24, 0.45));
+  -o-filter: drop-shadow(5px 1.5px 3.5px rgba(14, 19, 24, 0.45));
+  -moz-filter: drop-shadow(5px 1.5px 3.5px rgba(14, 19, 24, 0.45));
+  -webkit-filter: drop-shadow(5px 1.5px 3.5px rgba(14, 19, 24, 0.45));
+}
+.svg-image.shadow-fg.sm .primary {
+  filter: drop-shadow(5px 1.5px 3.5px rgba(218, 74, 34, 0.45));
+  -ms-filter: drop-shadow(5px 1.5px 3.5px rgba(218, 74, 34, 0.45));
+  -o-filter: drop-shadow(5px 1.5px 3.5px rgba(218, 74, 34, 0.45));
+  -moz-filter: drop-shadow(5px 1.5px 3.5px rgba(218, 74, 34, 0.45));
+  -webkit-filter: drop-shadow(5px 1.5px 3.5px rgba(218, 74, 34, 0.45));
+}
+.svg-image.shadow-fg.sm .secondary {
+  filter: drop-shadow(5px 1.5px 3.5px rgba(34, 178, 218, 0.45));
+  -ms-filter: drop-shadow(5px 1.5px 3.5px rgba(34, 178, 218, 0.45));
+  -o-filter: drop-shadow(5px 1.5px 3.5px rgba(34, 178, 218, 0.45));
+  -moz-filter: drop-shadow(5px 1.5px 3.5px rgba(34, 178, 218, 0.45));
+  -webkit-filter: drop-shadow(5px 1.5px 3.5px rgba(34, 178, 218, 0.45));
+}
+.svg-image.shadow-fg.sm .cta {
+  filter: drop-shadow(5px 1.5px 3.5px rgba(34, 178, 218, 0.45));
+  -ms-filter: drop-shadow(5px 1.5px 3.5px rgba(34, 178, 218, 0.45));
+  -o-filter: drop-shadow(5px 1.5px 3.5px rgba(34, 178, 218, 0.45));
+  -moz-filter: drop-shadow(5px 1.5px 3.5px rgba(34, 178, 218, 0.45));
+  -webkit-filter: drop-shadow(5px 1.5px 3.5px rgba(34, 178, 218, 0.45));
+}
+.svg-image.shadow-fg.lg {
+  filter: drop-shadow(5px 5px 10px rgba(14, 19, 24, 0.45));
+  -ms-filter: drop-shadow(5px 5px 10px rgba(14, 19, 24, 0.45));
+  -o-filter: drop-shadow(5px 5px 10px rgba(14, 19, 24, 0.45));
+  -moz-filter: drop-shadow(5px 5px 10px rgba(14, 19, 24, 0.45));
+  -webkit-filter: drop-shadow(5px 5px 10px rgba(14, 19, 24, 0.45));
+}
+.svg-image.shadow-fg.lg .primary {
+  filter: drop-shadow(5px 5px 10px rgba(218, 74, 34, 0.45));
+  -ms-filter: drop-shadow(5px 5px 10px rgba(218, 74, 34, 0.45));
+  -o-filter: drop-shadow(5px 5px 10px rgba(218, 74, 34, 0.45));
+  -moz-filter: drop-shadow(5px 5px 10px rgba(218, 74, 34, 0.45));
+  -webkit-filter: drop-shadow(5px 5px 10px rgba(218, 74, 34, 0.45));
+}
+.svg-image.shadow-fg.lg .secondary {
+  filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
+  -ms-filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
+  -o-filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
+  -moz-filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
+  -webkit-filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
+}
+.svg-image.shadow-fg.lg .cta {
+  filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
+  -ms-filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
+  -o-filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
+  -moz-filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
+  -webkit-filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
+}
+
+#svg-images.home-s1 .border {
+  fill: #da4a22;
+}
+#svg-images.home-s1:hover .border {
+  transition: all 0.15s ease-in-out;
+  fill: #22da4a;
 }
 
 /*# sourceMappingURL=modules.css.map */

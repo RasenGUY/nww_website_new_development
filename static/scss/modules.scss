@@ -329,7 +329,7 @@ nav#nav-mobile-links {
     }
 
     // create circular shapes on the site
-    .circles {
+    .shapes {
         .circle {
             border-radius: 50%;
             $colors: color.adjust(v.$primaryColor, $lightness: 10%, $hue: 5deg) 5%, color.adjust(v.$primaryColor, $lightness: 5%, $hue: 0deg), color.adjust(v.$primaryColor, $lightness: -5%, $hue: -5deg);
@@ -366,4 +366,59 @@ nav#nav-mobile-links {
         }
     }
 
-    // 
+    // svg-images (for all svg images)
+    .svg-image {
+
+        width: 100%;
+        height: 100%;
+
+        &.shadow-fg {
+            @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$textColor, v.$opacityLg)));
+            &.primary {
+                @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$primaryColor, v.$opacityLg)));
+            }
+            &.secondary {
+                @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$secondaryColor, v.$opacityLg)));
+            }
+            &.cta {
+                @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$ctaColor, v.$opacityLg)));
+            }
+
+            &.sm {
+                @include m.compatible(filter, drop-shadow(f.shadows("figure-sm", v.$textColor, v.$opacityLg)));
+                .primary {
+                    @include m.compatible(filter, drop-shadow(f.shadows("figure-sm", v.$primaryColor, v.$opacityLg)));
+                }
+                .secondary {
+                    @include m.compatible(filter, drop-shadow(f.shadows("figure-sm", v.$secondaryColor, v.$opacityLg)));
+                }
+                .cta {
+                    @include m.compatible(filter, drop-shadow(f.shadows("figure-sm", v.$secondaryColor, v.$opacityLg)));
+                }
+            }
+            &.lg {
+                @include m.compatible(filter, drop-shadow(f.shadows("figure-lg", v.$textColor, v.$opacityLg)));
+                .primary {
+                    @include m.compatible(filter, drop-shadow(f.shadows("figure-lg", v.$primaryColor, v.$opacityLg)));
+                }
+                .secondary {
+                    @include m.compatible(filter, drop-shadow(f.shadows("figure-lg", v.$secondaryColor, v.$opacityLg)));
+                }
+                .cta {
+                    @include m.compatible(filter, drop-shadow(f.shadows("figure-lg", v.$secondaryColor, v.$opacityLg)));
+                }
+            }
+        }
+    }
+
+    #svg-images { 
+        &.home-s1 { // home-section-1 svg image 
+            & .border {
+                fill: v.$primaryColor;
+            }
+            &:hover .border {
+                transition: all 0.15s ease-in-out;  
+                fill: v.$ctaColor;
+            }
+        }
+    } 
