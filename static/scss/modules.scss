@@ -25,7 +25,7 @@
     $gradColors: v.$ctaColor, v.$ctaLight, v.$ctaColor 105%;
     background-image: f.gradient('linear', 135deg, $gradColors);
     box-shadow: f.shadows("btn-sm", v.$ctaColor, v.$opacityXxl);
-    padding: f.fontDynSize(612, 1040, 4.5, 6) f.fontDynSize(612, 1040, 10, 14);
+    padding: f.fontDynSize(614, 1040, 4.5, 6) f.fontDynSize(614, 1040, 10, 14);
 
     &:hover, {
         $gradColors: color.adjust(v.$ctaColor, $blackness: 10%), color.adjust(v.$ctaLight, $blackness: 2.5%), color.adjust(v.$ctaColor, $blackness: 10%) 105%;
@@ -73,19 +73,104 @@
     }
     &.small{
         font-size: f.fontDynSize(412, 1040, (15.85/1.618), (19.85/1.618));
-        padding: f.fontDynSize(612, 1040, (4.5/1.618), (6/1.618)) f.fontDynSize(612, 1040, (10/1.618), (14/1.618));
+        padding: f.fontDynSize(614, 1040, (4.5/1.618), (6/1.618)) f.fontDynSize(614, 1040, (10/1.618), (14/1.618));
         border-radius: v.$cornerSm;
 
     }
     &.large{
         font-size: f.fontDynSize(412, 1040, (15.85*1.618), (19.85*1.618));
-        padding: f.fontDynSize(612, 1040, (4.5*1.618), (6*1.618)) f.fontDynSize(612, 1040, (10*1.618), (14*1.618));
+        padding: f.fontDynSize(614, 1040, (4.5*1.618), (6*1.618)) f.fontDynSize(614, 1040, (10*1.618), (14*1.618));
         border-radius: v.$cornerXlg;
 
     }
     &.x-large{
         font-size: f.fontDynSize(412, 1040, (15.85*1.618*1.618), (19.85*1.618*1.618));
-        padding: f.fontDynSize(612, 1040, (4.5*1.618*1.618), (6*1.618*1.618)) f.fontDynSize(612, 1040, (10*1.618*1.618), (14*1.618*1.618));
+        padding: f.fontDynSize(614, 1040, (4.5*1.618*1.618), (6*1.618*1.618)) f.fontDynSize(614, 1040, (10*1.618*1.618), (14*1.618*1.618));
+    }
+}
+
+// other elements 
+// create circular shapes on the site
+.shapes {
+    
+    .circle {
+        border-radius: 50%;
+        $colors: color.adjust(v.$primaryColor, $lightness: 10%, $hue: 5deg) 5%, color.adjust(v.$primaryColor, $lightness: 5%, $hue: 0deg), color.adjust(v.$primaryColor, $lightness: -5%, $hue: -5deg);
+        background-image: f.gradient("linear", 45deg, $colors);
+
+        &.xs {
+            width: (11.82rem / 1.618); 
+            height: (11.82rem / 1.618); 
+        } 
+        &.sm {
+            width: 11.82rem; 
+            height: 11.82rem; 
+        } 
+        &.nm {
+            width: (11.82rem * 1.618); 
+            height: (11.82rem * 1.618); 
+        } 
+        &.lg {
+            width: (11.82rem * 1.618 * 1.618); 
+            height: (11.82rem * 1.618 * 1.618); 
+        } 
+        &.xl {
+            width: (11.82rem * 1.618 * 1.618 * 1.618); 
+            height: (11.82rem * 1.618 * 1.618 * 1.618); 
+        } 
+        &.xxl {
+            width: (11.82rem * 1.618 * 1.618 * 1.618 * 1.618); 
+            height: (11.82rem * 1.618 * 1.618 * 1.618 * 1.618); 
+        } 
+        &.secondary {
+            $colors: color.adjust(v.$secondaryColor, $lightness: 25%, $hue: -10deg) 5%, color.adjust(v.$secondaryColor, $lightness: 10%, $hue: -5deg), color.adjust(v.$secondaryColor, $lightness: -5%, $hue: 5deg);
+            background-image: f.gradient("linear", 45deg, $colors);
+        }
+    }
+}
+
+// svg-images (for all svg images)
+.svg-image {
+
+    width: 100%;
+    height: 100%;
+
+    &.shadow-fg {
+        @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$textColor, v.$opacityLg)));
+        &.primary {
+            @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$primaryColor, v.$opacityLg)));
+        }
+        &.secondary {
+            @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$secondaryColor, v.$opacityLg)));
+        }
+        &.cta {
+            @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$ctaColor, v.$opacityLg)));
+        }
+
+        &.sm {
+            @include m.compatible(filter, drop-shadow(f.shadows("figure-sm", v.$textColor, v.$opacityLg)));
+            .primary {
+                @include m.compatible(filter, drop-shadow(f.shadows("figure-sm", v.$primaryColor, v.$opacityLg)));
+            }
+            .secondary {
+                @include m.compatible(filter, drop-shadow(f.shadows("figure-sm", v.$secondaryColor, v.$opacityLg)));
+            }
+            .cta {
+                @include m.compatible(filter, drop-shadow(f.shadows("figure-sm", v.$secondaryColor, v.$opacityLg)));
+            }
+        }
+        &.lg {
+            @include m.compatible(filter, drop-shadow(f.shadows("figure-lg", v.$textColor, v.$opacityLg)));
+            .primary {
+                @include m.compatible(filter, drop-shadow(f.shadows("figure-lg", v.$primaryColor, v.$opacityLg)));
+            }
+            .secondary {
+                @include m.compatible(filter, drop-shadow(f.shadows("figure-lg", v.$secondaryColor, v.$opacityLg)));
+            }
+            .cta {
+                @include m.compatible(filter, drop-shadow(f.shadows("figure-lg", v.$secondaryColor, v.$opacityLg)));
+            }
+        }
     }
 }
 
@@ -268,11 +353,9 @@ nav#nav-mobile-links {
     // background
     #index-hero {
         @include m.background(initial, "/static/images/home/jpeg_web/compressed/teach_2.jpg", center, cover);
-
         @include m.responsive("<", 412px){
             @include m.background(initial, "/static/images/home/jpeg_mobile/teach_2.jpg", center, cover);
         }
-
         // darken image 
         &::after {
             position: absolute;
@@ -301,15 +384,15 @@ nav#nav-mobile-links {
 
     // arrows and hover animation
     .arrows {
-        transform: translateY(3rem);
+        transform: translateY(2rem);
         overflow-wrap: break-word;
         transition: all 0.33s ease-in-out;
         transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
         a img {
-            width: f.fontDynSize(412, 1040, 50, 60);
+            width: f.fontDynSize(412, 1040, 35, 50);
             @include m.shadow("drop-shadow", none, 7px, 5px, 3px, v.$textColor);
             @include m.responsive("<", 412px){    
-                @include m.shadow("drop-shadow", none, 4px, 4px, 3px, v.$textColor);
+            @include m.shadow("drop-shadow", none, 4px, 4px, 3px, v.$textColor);
             }
         }
         & .upper-arrow {
@@ -328,97 +411,24 @@ nav#nav-mobile-links {
         } 
     }
 
-    // create circular shapes on the site
-    .shapes {
-        .circle {
-            border-radius: 50%;
-            $colors: color.adjust(v.$primaryColor, $lightness: 10%, $hue: 5deg) 5%, color.adjust(v.$primaryColor, $lightness: 5%, $hue: 0deg), color.adjust(v.$primaryColor, $lightness: -5%, $hue: -5deg);
-            background-image: f.gradient("linear", 45deg, $colors);
-
-            &.xs {
-                width: (11.82rem / 1.618); 
-                height: (11.82rem / 1.618); 
-            } 
-            &.sm {
-                width: 11.82rem; 
-                height: 11.82rem; 
-            } 
-            &.nm {
-                width: (11.82rem * 1.618); 
-                height: (11.82rem * 1.618); 
-            } 
-            &.lg {
-                width: (11.82rem * 1.618 * 1.618); 
-                height: (11.82rem * 1.618 * 1.618); 
-            } 
-            &.xl {
-                width: (11.82rem * 1.618 * 1.618 * 1.618); 
-                height: (11.82rem * 1.618 * 1.618 * 1.618); 
-            } 
-            &.xxl {
-                width: (11.82rem * 1.618 * 1.618 * 1.618 * 1.618); 
-                height: (11.82rem * 1.618 * 1.618 * 1.618 * 1.618); 
-            } 
-            &.secondary {
-                $colors: color.adjust(v.$secondaryColor, $lightness: 25%, $hue: -10deg) 5%, color.adjust(v.$secondaryColor, $lightness: 10%, $hue: -5deg), color.adjust(v.$secondaryColor, $lightness: -5%, $hue: 5deg);
-                background-image: f.gradient("linear", 45deg, $colors);
+    #index-s-one {
+        & .shapes .wrapper > .circle {
+            &:nth-child(3){ // big circle with images   
+                @include m.background(initial, "/static/images/home/jpeg_web/compressed/teach_6.jpg", center, cover);
+                border: solid v.$borderNm v.$primaryColor;
+                @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$textColor, v.$opacityLg)));
             }
         }
-    }
 
-    // svg-images (for all svg images)
-    .svg-image {
-
-        width: 100%;
-        height: 100%;
-
-        &.shadow-fg {
-            @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$textColor, v.$opacityLg)));
-            &.primary {
-                @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$primaryColor, v.$opacityLg)));
-            }
-            &.secondary {
-                @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$secondaryColor, v.$opacityLg)));
-            }
-            &.cta {
-                @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$ctaColor, v.$opacityLg)));
-            }
-
-            &.sm {
-                @include m.compatible(filter, drop-shadow(f.shadows("figure-sm", v.$textColor, v.$opacityLg)));
-                .primary {
-                    @include m.compatible(filter, drop-shadow(f.shadows("figure-sm", v.$primaryColor, v.$opacityLg)));
+        #svg-images {//svg image 
+            &.home-s1 { 
+                & .border {
+                    fill: v.$primaryColor;
                 }
-                .secondary {
-                    @include m.compatible(filter, drop-shadow(f.shadows("figure-sm", v.$secondaryColor, v.$opacityLg)));
-                }
-                .cta {
-                    @include m.compatible(filter, drop-shadow(f.shadows("figure-sm", v.$secondaryColor, v.$opacityLg)));
-                }
-            }
-            &.lg {
-                @include m.compatible(filter, drop-shadow(f.shadows("figure-lg", v.$textColor, v.$opacityLg)));
-                .primary {
-                    @include m.compatible(filter, drop-shadow(f.shadows("figure-lg", v.$primaryColor, v.$opacityLg)));
-                }
-                .secondary {
-                    @include m.compatible(filter, drop-shadow(f.shadows("figure-lg", v.$secondaryColor, v.$opacityLg)));
-                }
-                .cta {
-                    @include m.compatible(filter, drop-shadow(f.shadows("figure-lg", v.$secondaryColor, v.$opacityLg)));
+                &:hover .border {
+                    transition: all 0.15s ease-in-out;  
+                    fill: v.$ctaColor;
                 }
             }
         }
     }
-
-    #svg-images { 
-        &.home-s1 { // home-section-1 svg image 
-            & .border {
-                fill: v.$primaryColor;
-            }
-            &:hover .border {
-                transition: all 0.15s ease-in-out;  
-                fill: v.$ctaColor;
-            }
-        }
-    } 

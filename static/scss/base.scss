@@ -6,6 +6,8 @@
 
 
 // sass --watch static/scss/base.scss:static/css/0-base/base.css static/scss/modules.scss:static/css/2-modules/modules.css static/scss/layout.scss:static/css/1-layout/layout.css static/scss/_flexbox.scss:static/css/1-layout/flexbox.css static/scss/_grid.scss:static/css/1-layout/grid.css
+// sass --watch static/scss/testing.scss:static/css/tests.css
+
 
 // modules
 // for fonts
@@ -127,7 +129,7 @@ html {
 // colors
 
     // base colors
-    p, li, input, textarea, span {
+    p, li, input, textarea, span, i {
         color: v.$textColor;
         &.primary {
             color: v.$primaryColor;
@@ -165,7 +167,7 @@ html {
     
     
     // icons
-    i, a i, li a i {
+    a i, li a i {
         color: v.$primaryColor;
         // hover and active states
         &:hover {

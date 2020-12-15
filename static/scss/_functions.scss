@@ -101,4 +101,25 @@
     
 } // dynamically size fonts according to a given minimum and maximum virtual with and max and font min and max -note accepts inputs in px (leave out unit)
 
+// function for creating dynamic sizes for virtual heights 
+@function vhDynSize($vwMin, $vwMax, $vhMin, $vhMax){
+
+    // divide by ten since site base font-size is 65%
+    $vwMin: $vwMin / 10;
+    $vwMax: $vwMax / 10;
+    $fontMin: $vhMin /10;
+    $fontMax: $vhMax /10;
+    
+    // calculate slope and y intersection
+    $slope: ($vhMax - $vhMin) / ($vwMax - $vwMin);
+    $yInt: -$vwMin * $slope + $vhMin;
+    
+    // calculate preffered font-size
+    $vhPreff: "#{1rem * $yInt} + #{1vw * $slope * 100}";
+    
+    // property value to be used
+    $result: "clamp(#{$vhMin * 1vh}, #{$vhPreff}, #{$vhMax *1vh})";
+
+    @return string.unquote($result);
+}
 

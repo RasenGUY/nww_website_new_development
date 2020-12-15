@@ -53,10 +53,10 @@ nav {
     position: fixed;
     bottom: 0;
     left: 0;
-    @include m.responsive("<", 612px){
+    @include m.responsive("<", 613px){
         display: initial;
     }
-    @include m.responsive(">", 612px){
+    @include m.responsive(">", 613px){
         display: none; 
     }
 }
@@ -67,7 +67,7 @@ nav#nav-web, main#main-content {
     .wrapper {
         width: 80%;
         margin: 0 auto;
-        @include m.responsive("<", 1033px){
+        @include m.responsive("<", 1040px){
             width: 90%;
         }
     }
@@ -75,7 +75,7 @@ nav#nav-web, main#main-content {
     // position logo section in navigation
     .logo {
         flex: 1 35%;
-        @include m.responsive("<", 1033px){
+        @include m.responsive("<", 1040px){
             flex: 1 5%;
         }
       }
@@ -85,7 +85,7 @@ nav#nav-web, main#main-content {
         flex: 1 65%;
 
         // positiong mobile version
-        @include m.responsive("<", 1033px){
+        @include m.responsive("<", 1040px){
             flex: 1 95%;
         }
     }
@@ -150,7 +150,7 @@ main#main {
         & .wrapper {
             position: inherit;
             width: 80%;
-            height: 100%;
+            height: inherit;
             margin: 0 auto;
             z-index: 11;           
 
@@ -164,6 +164,7 @@ main#main {
                 & .body > * {
                     padding-bottom: 0.75rem; 
                 }
+
             }
         }
         // index page elements
@@ -171,18 +172,19 @@ main#main {
             position: relative;
             height: 100vh;
             z-index: inherit;
+
         }
         
         &#index-s-one { //section one
             position: relative;
-            height: 100vh * 1.25;
+            height: 100vh;
             z-index: 10;
 
             & .folder { // folder shape
                 position: absolute;
                 z-index: 9;
                 left: 0;
-                transform: translateY(-16rem);
+                transform: translateY(f.fontDynSize(1040, 612, -160, -100));
                 width: 100%;
 
                 & .wrapper {
@@ -195,17 +197,17 @@ main#main {
                     }
                     & img.fore {
                         content: url("/static/images/home/svg_web/compressed/home_sh_s2_fg.svg"); 
-                        transform: translateY(-5rem);
+                        transform: translateY(f.fontDynSize(1040, 612, -50, -35));
                         z-index: 7;
                     }
                     & img.middle {
                         content: url("/static/images/home/svg_web/compressed/home_sh_s2_mg.svg"); 
-                        transform: translateY(-2rem);
+                        transform: translateY(f.fontDynSize(1040, 612, -50, -30));
                         z-index: 6;
                     }
                     & img.back {
                         content: url("/static/images/home/svg_web/compressed/home_sh_s2_bg.svg"); 
-                        transform: translateY(-10rem);
+                        transform: translateY(f.fontDynSize(1040, 612, -100, -65));
                         z-index: 5;
                     }
                 }
@@ -259,27 +261,27 @@ main#main {
                     & > div {
                         position: absolute;
                     }
-                    & .circle:first-child { // circle top right
-                        right: -5%;
-                        top: -5%;
-                    }
-                    & .circle:nth-child(2) { // circle top left
+                    & .circle:first-child { // circle top left
                         left: -5%;
-                        top: 5%;
+                        top: 0%;
+                    }
+                    & .circle:nth-child(2) { // circle top right
+                        right: 0%;
+                        top: -8%;
                     }
                     & .circle:nth-child(3) { // circle middle
-                        right: 5%;
-                        bottom: 35%;
+                        right: 0%;
+                        bottom: 15%;
                     }
                     & .circle:nth-child(4) { // circle bottom right
-                        left: 7%;
-                        top: 17%;
+                        left: -9%;
+                        top: 25%;
                     }
                     & .image-box { // circle bottom right
-                        height: 30rem;
-                        width: 30rem;
-                        right: 5%;
-                        bottom: -20%;
+                        // height: 30rem;
+                        // width: 30rem;
+                        // right: 5%;
+                        // bottom: -20%;
                     }
                     
                 }

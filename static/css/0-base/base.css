@@ -98,19 +98,19 @@ h4, h5, h6 {
   stroke-opacity: -0.25;
 }
 
-p, li, input, textarea, span {
+p, li, input, textarea, span, i {
   color: #0e1318;
 }
-p.primary, li.primary, input.primary, textarea.primary, span.primary {
+p.primary, li.primary, input.primary, textarea.primary, span.primary, i.primary {
   color: #da4a22;
 }
-p.secondary, li.secondary, input.secondary, textarea.secondary, span.secondary {
+p.secondary, li.secondary, input.secondary, textarea.secondary, span.secondary, i.secondary {
   color: #22b2da;
 }
-p.tertiary, li.tertiary, input.tertiary, textarea.tertiary, span.tertiary {
+p.tertiary, li.tertiary, input.tertiary, textarea.tertiary, span.tertiary, i.tertiary {
   color: #ffffff;
 }
-p.cta, li.cta, input.cta, textarea.cta, span.cta {
+p.cta, li.cta, input.cta, textarea.cta, span.cta, i.cta {
   color: #0e1318;
 }
 
@@ -130,13 +130,13 @@ h1.cta, h2.cta, h3.cta, h4.cta, h5.cta, h6.cta {
   color: #22da4a;
 }
 
-i, a i, li a i {
+a i, li a i {
   color: #da4a22;
 }
-i:hover, a i:hover, li a i:hover {
+a i:hover, li a i:hover {
   color: #e36d4c;
 }
-i:active, i:focus, a i:active, a i:focus, li a i:active, li a i:focus {
+a i:active, a i:focus, li a i:active, li a i:focus {
   outline: none;
   color: #a73f22;
   text-shadow: 1px 1px 2px rgba(154, 60, 34, 0.3);
