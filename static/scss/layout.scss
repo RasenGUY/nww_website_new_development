@@ -124,9 +124,7 @@ nav#nav-mobile-links {
 
     & .nav-links-bottom, &::before {
         transform: translateY(28rem);
-    }
-
-    
+    }    
 }
 
 
@@ -180,7 +178,7 @@ main#main {
             height: 100vh;
             z-index: 10;
 
-            & .folder { // folder shape
+            & .shapes .folder { // folder shape
                 position: absolute;
                 z-index: 9;
                 left: 0;
@@ -214,8 +212,8 @@ main#main {
 
             }
 
-            @include m.responsive("<", 412px){ // folder layout for mobile
-                & .folder {
+            @include m.responsive("<", 612px){ // folder layout for mobile
+                & .shapes .folder {
                     transform: translateY(-14rem);
 
                     & .wrapper {
@@ -246,7 +244,7 @@ main#main {
 
             }
 
-            & .shapes { // layout for shapes 
+            & .shapes .circles { // layout for shapes 
                 position: absolute;
                 z-index: 9; 
                 width: 100%;
@@ -288,7 +286,7 @@ main#main {
 
             }
 
-            & > :nth-child(3) { // text-box wrapper
+            & > :nth-child(2) { // text-box wrapper
 
                 & .text-box { // text-box s-one
                     height: 50%;

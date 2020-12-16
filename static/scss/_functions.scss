@@ -107,8 +107,8 @@
     // divide by ten since site base font-size is 65%
     $vwMin: $vwMin / 10;
     $vwMax: $vwMax / 10;
-    $fontMin: $vhMin /10;
-    $fontMax: $vhMax /10;
+    $fontMin: $vhMin / 10;
+    $fontMax: $vhMax / 10;
     
     // calculate slope and y intersection
     $slope: ($vhMax - $vhMin) / ($vwMax - $vwMin);
