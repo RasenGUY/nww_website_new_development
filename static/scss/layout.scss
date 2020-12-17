@@ -182,7 +182,7 @@ main#main {
                 position: absolute;
                 z-index: 9;
                 left: 0;
-                transform: translateY(f.fontDynSize(1040, 612, -160, -100));
+                transform: translateY(f.fontDynSize(1040, 612, -140 , -100));
                 width: 100%;
 
                 & .wrapper {

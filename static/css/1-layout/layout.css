@@ -145,7 +145,7 @@ main#main section#index-s-one .shapes .folder {
   position: absolute;
   z-index: 9;
   left: 0;
-  transform: translateY(clamp(-16rem, -1.4205607477rem + -14.0186915888vw, -10rem));
+  transform: translateY(clamp(-14rem, -4.2803738318rem + -9.3457943925vw, -10rem));
   width: 100%;
 }
 main#main section#index-s-one .shapes .folder .wrapper {
