@@ -128,7 +128,7 @@ main#main section .wrapper .text-box {
 main#main section .wrapper .text-box header h1 {
   padding-bottom: 1rem;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 612px) {
   main#main section .wrapper .text-box header {
     text-align: center;
   }
@@ -218,6 +218,11 @@ main#main section#index-s-one .shapes .circles .wrapper {
   height: 100%;
   margin: 0 auto;
 }
+@media only screen and (max-width: 612px) {
+  main#main section#index-s-one .shapes .circles .wrapper {
+    width: 90%;
+  }
+}
 main#main section#index-s-one .shapes .circles .wrapper > div {
   position: absolute;
 }
@@ -236,6 +241,11 @@ main#main section#index-s-one .shapes .circles .wrapper .circle:nth-child(3) {
 main#main section#index-s-one .shapes .circles .wrapper .circle:nth-child(4) {
   left: -9%;
   top: 25%;
+}
+@media only screen and (max-width: 1350px) {
+  main#main section#index-s-one .shapes .circles .wrapper .circle:nth-child(4) {
+    visibility: collapse;
+  }
 }
 @media only screen and (max-width: 1350px) {
   main#main section#index-s-one > div:nth-child(2) {

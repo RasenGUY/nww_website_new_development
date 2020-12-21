@@ -372,16 +372,6 @@ nav#nav-mobile-links {
 
     }
 
-    // text box
-    .text-box {
-        // align header text to center on mobile
-        & header {
-            @include m.responsive("<", 412px){
-                text-align: center;    
-            }
-        }
-    }
-
     // arrows and hover animation
     .arrows {
         transform: translateY(2rem);
@@ -432,7 +422,3 @@ nav#nav-mobile-links {
             }
         }
     }
-
-// #index-s-one div:nth-child(2) {
-//     background-color: green;
-// }

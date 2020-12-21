@@ -361,12 +361,6 @@ nav#nav-mobile-links::before {
   z-index: 0;
 }
 
-@media only screen and (max-width: 412px) {
-  .text-box header {
-    text-align: center;
-  }
-}
-
 .arrows {
   transform: translateY(2rem);
   overflow-wrap: break-word;

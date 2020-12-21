@@ -83,20 +83,23 @@ export function medQueries(width, minMax){
     }
 
     // initialize and listen to changes on page
-    return window.matchMedia(query);
+    return [window.matchMedia(query), width];
 };
 
 // queries for index page
-export function queriesIndex(window){
+export function queriesIndex(width){
     
     // select elements
     // section one
-    const sOneTextBox = document.querySelector("#index-s-one > div:nth-child(2)");
-    
+    const sOneTopRCir = document.querySelector("#index-s-one .shapes .circles .wrapper > div:nth-child(1)");
+    console.log(width[1]);
     if (window.matches){ // section one 
-        console.log("nothing yet")
+        sOneTopRCir.classList.toggle("xs");
+        sOneTopRCir.classList.toggle("lg");
     } else {
-        console.log("nothing yet")
+        sOneTopRCir.classList.toggle("xs");
+        sOneTopRCir.classList.toggle("lg");
     }
     return;
 };
+

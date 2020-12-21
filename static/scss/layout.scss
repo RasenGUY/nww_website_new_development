@@ -160,7 +160,7 @@ main#main {
                     & h1 {
                         padding-bottom: 1rem;
                     }
-                    @include m.responsive("<", 600px){
+                    @include m.responsive("<", 612px){
                         text-align: center;    
                     }       
                 }
@@ -261,31 +261,35 @@ main#main {
                     height: 100%;
                     margin: 0 auto;
 
+                    @include m.responsive('<', 612px){
+                        width: 90%;
+                    }
                     & > div {
                         position: absolute;
                     }
                     & .circle:first-child { // circle top left
                         left: -5%;
                         top: 0%;
+                        @include m.responsive("<", 1350px){
+                            
+                        }
                     }
                     & .circle:nth-child(2) { // circle top right
                         right: 0%;
                         top: -8%;
                     }
-                    & .circle:nth-child(3) { // circle middle
+                    & .circle:nth-child(3) { // circle bottom right
                         right: 0%;
                         bottom: 15%;
                     }
-                    & .circle:nth-child(4) { // circle bottom right
+                    & .circle:nth-child(4) { // circle bottom left
                         left: -9%;
                         top: 25%;
+                        @include m.responsive("<", 1350px){
+                            visibility: collapse;
+                        }
                     }
-                    & .image-box { // circle bottom right
-                        // height: 30rem;
-                        // width: 30rem;
-                        // right: 5%;
-                        // bottom: -20%;
-                    }
+
                     
                 }
 

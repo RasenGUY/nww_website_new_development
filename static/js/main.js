@@ -32,8 +32,7 @@ animateMenu.addEventListener("click", () => {
     f.togglePseudo(htmlEl, pseudo, cssRule);
 });
 
-// queire section one index page 
-// const indexSOneMax = f.medQueries(`1349px`, ">"); 
+
+// queire section one index page
 const indexSOneMin = f.medQueries(`1350px`, "<"); 
-indexSOneMin.addEventListener("change", f.queriesIndex);
-// indexSOneMax.addEventListener("change", f.queriesIndex);
+indexSOneMin[0].addEventListener("change", f.queriesIndex(indexSOneMin));
