@@ -1,5 +1,6 @@
 // all js functions used in the newworld site
 
+// general 
 // function for toggling pseudo elements on and off
 export function togglePseudo(htmlEl, pseudo, cssRule){ //function for animating pseudo-elements 
      
@@ -39,23 +40,7 @@ export function togglePseudo(htmlEl, pseudo, cssRule){ //function for animating 
     return 0;
 };
 
-// function for doing media queries on site 
-export function medQueries(width, minMax){
-    
-    let query = null; 
-    // max or min
-    if (minMax == "min"){ // if min then create min-width query
-        query = `(min-width: ${width})`;
-    }
-    else if (minMax == "max"){ // if min then create max-width query
-        query = `(max-width: ${width})`;
-    }
-
-    // initialize and listen to changes on page
-    let medQuery = window.mathcMedia(query);
-    return medQuery;
-};
-
+// function for animating menu
 export function animateMenu(){
 
     // variables to animate 
@@ -83,4 +68,35 @@ export function animateMenu(){
     var cssRule = "transform: translateY(-5.5rem);"
     var pseudo = "::before"
     togglePseudo(htmlEl, pseudo, cssRule);
+};
+
+// function for doing media queries on site 
+export function medQueries(width, minMax){
+    
+    let query = null; 
+    // max or min
+    if (minMax == ">"){ // if min then create min-width query
+        query = `(min-width: ${width})`;
+    }
+    else if (minMax == "<"){ // if min then create max-width query
+        query = `(max-width: ${width})`;
+    }
+
+    // initialize and listen to changes on page
+    return window.matchMedia(query);
+};
+
+// queries for index page
+export function queriesIndex(window){
+    
+    // select elements
+    // section one
+    const sOneTextBox = document.querySelector("#index-s-one > div:nth-child(2)");
+    
+    if (window.matches){ // section one 
+        console.log("nothing yet")
+    } else {
+        console.log("nothing yet")
+    }
+    return;
 };

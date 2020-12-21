@@ -156,8 +156,13 @@ main#main {
                 position: inherit;
                 width: 100%;
                 height: inherit;
-                & header h1 {
-                    padding-bottom: 1rem;       
+                & header {
+                    & h1 {
+                        padding-bottom: 1rem;
+                    }
+                    @include m.responsive("<", 600px){
+                        text-align: center;    
+                    }       
                 }
                 & .body > * {
                     padding-bottom: 0.75rem; 
@@ -286,13 +291,25 @@ main#main {
 
             }
 
-            & > :nth-child(2) { // text-box wrapper
+            & > div:nth-child(2) { // text-box wrapper
+
+                @include m.responsive("<", 1350px){
+                    align-items: left;
+                }
+                @include m.responsive(">", 1351px){
+                    align-items: center;
+                }
 
                 & .text-box { // text-box s-one
                     height: 50%;
                     
                     & .body { 
                         width: 50%;
+                    }
+                    @include m.responsive("<", 1040px){
+                        & .body { 
+                            width: 100%;
+                        }
                     }
                     & .body div > i {
                         padding-right: 1rem;

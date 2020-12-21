@@ -149,19 +149,19 @@ input, textarea {
 }
 
 .shadow {
-  text-shadow: 2px 2px 5px rgba(14, 19, 24, 0.3);
+  text-shadow: 1px 1px 3px rgba(14, 19, 24, 0.3);
 }
 .shadow.s-primary {
-  text-shadow: 2px 2px 5px rgba(218, 74, 34, 0.3);
+  text-shadow: 1px 1px 3px rgba(218, 74, 34, 0.3);
 }
 .shadow.s-secondary {
-  text-shadow: 2px 2px 5px rgba(34, 178, 218, 0.3);
+  text-shadow: 1px 1px 3px rgba(34, 178, 218, 0.3);
 }
 .shadow.s-tertiary {
-  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.3);
 }
 .shadow.s-cta {
-  text-shadow: 2px 2px 5px rgba(34, 218, 74, 0.3);
+  text-shadow: 1px 1px 3px rgba(34, 218, 74, 0.3);
 }
 
 p, a, li, input, textarea, button {
@@ -177,11 +177,11 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(3rem, 2.7375796178rem + 0.6369426752vw, 3.4rem);
+  font-size: clamp(2.6rem, 2.2719745223rem + 0.7961783439vw, 3.1rem);
 }
 
 h3 {
-  font-size: clamp(2.8rem, 2.6031847134rem + 0.4777070064vw, 3.1rem);
+  font-size: clamp(2.2rem, 2.0031847134rem + 0.4777070064vw, 2.5rem);
 }
 
 h4 {

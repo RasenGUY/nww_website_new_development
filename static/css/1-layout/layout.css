@@ -128,6 +128,11 @@ main#main section .wrapper .text-box {
 main#main section .wrapper .text-box header h1 {
   padding-bottom: 1rem;
 }
+@media only screen and (max-width: 600px) {
+  main#main section .wrapper .text-box header {
+    text-align: center;
+  }
+}
 main#main section .wrapper .text-box .body > * {
   padding-bottom: 0.75rem;
 }
@@ -232,16 +237,31 @@ main#main section#index-s-one .shapes .circles .wrapper .circle:nth-child(4) {
   left: -9%;
   top: 25%;
 }
-main#main section#index-s-one > :nth-child(2) .text-box {
+@media only screen and (max-width: 1350px) {
+  main#main section#index-s-one > div:nth-child(2) {
+    align-items: left;
+  }
+}
+@media only screen and (min-width: 1351px) {
+  main#main section#index-s-one > div:nth-child(2) {
+    align-items: center;
+  }
+}
+main#main section#index-s-one > div:nth-child(2) .text-box {
   height: 50%;
 }
-main#main section#index-s-one > :nth-child(2) .text-box .body {
+main#main section#index-s-one > div:nth-child(2) .text-box .body {
   width: 50%;
 }
-main#main section#index-s-one > :nth-child(2) .text-box .body div > i {
+@media only screen and (max-width: 1040px) {
+  main#main section#index-s-one > div:nth-child(2) .text-box .body {
+    width: 100%;
+  }
+}
+main#main section#index-s-one > div:nth-child(2) .text-box .body div > i {
   padding-right: 1rem;
 }
-main#main section#index-s-one > :nth-child(2) .text-box .body > div:nth-child(5) {
+main#main section#index-s-one > div:nth-child(2) .text-box .body > div:nth-child(5) {
   margin-top: 5rem;
 }
 main#main footer {

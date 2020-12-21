@@ -191,19 +191,19 @@ html {
 // shadows
 .shadow {
 
-    @include mix.shadow("text-shadow", f.shadows('text-nm', v.$textColor, v.$opacityXl), none, none, none, none);
+    @include mix.shadow("text-shadow", f.shadows('text-sm', v.$textColor, v.$opacityXl), none, none, none, none);
     
     &.s-primary {
-        @include mix.shadow("text-shadow", f.shadows('text-nm', v.$primaryColor, v.$opacityXl), none, none, none, none);
+        @include mix.shadow("text-shadow", f.shadows('text-sm', v.$primaryColor, v.$opacityXl), none, none, none, none);
     }
     &.s-secondary{
-        @include mix.shadow("text-shadow", f.shadows('text-nm', v.$secondaryColor, v.$opacityXl), none, none, none, none);
+        @include mix.shadow("text-shadow", f.shadows('text-sm', v.$secondaryColor, v.$opacityXl), none, none, none, none);
     }
     &.s-tertiary{
-        @include mix.shadow("text-shadow", f.shadows('text-nm', v.$tertiaryColor, v.$opacityXl), none, none, none, none);
+        @include mix.shadow("text-shadow", f.shadows('text-sm', v.$tertiaryColor, v.$opacityXl), none, none, none, none);
     }
     &.s-cta{
-        @include mix.shadow("text-shadow", f.shadows('text-nm', v.$ctaColor, v.$opacityXl), none, none, none, none);
+        @include mix.shadow("text-shadow", f.shadows('text-sm', v.$ctaColor, v.$opacityXl), none, none, none, none);
     }
 }
 // sizing
@@ -221,10 +221,10 @@ html {
         font-size: f.fontDynSize(412, 1040, 32, 46);
     }   
     h2 {
-        font-size: f.fontDynSize(412, 1040, 30, 34);
+        font-size: f.fontDynSize(412, 1040, 26, 31);
     }   
     h3 {
-        font-size: f.fontDynSize(412, 1040, 28, 31);
+        font-size: f.fontDynSize(412, 1040, 22, 25);
     }
     h4 {
         font-size: f.fontDynSize(412, 1040, 17.5, 24);

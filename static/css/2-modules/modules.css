@@ -78,8 +78,8 @@
   height: 30.94386168rem;
 }
 .shapes .circle.xl {
-  width: clamp(16.0267rem, -76.3688565381rem + 121.573100708vw, 50.0671681982rem);
-  height: clamp(16.0267rem, -76.3688565381rem + 121.573100708vw, 50.0671681982rem);
+  width: clamp(16.0267rem, -27.822038696rem + 57.6957088106vw, 50.0671681982rem);
+  height: clamp(16.0267rem, -27.822038696rem + 57.6957088106vw, 50.0671681982rem);
 }
 .shapes .circle.xxl {
   width: 81.0086781448rem;

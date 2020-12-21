@@ -1,9 +1,9 @@
 // main js for the new new world website
-import {togglePseudo, medQueries} from "./functions.js"; 
+import * as f from "./functions.js"; 
 
 // menu-mobile-animation
 const animateMenu = document.querySelector("#nav-mobile .hamburger");
-animateMenu.addEventListener("click", () =>{
+animateMenu.addEventListener("click", () => {
 
     // variables to animate 
     const navBtm = document.querySelector("nav#nav-mobile");
@@ -29,23 +29,11 @@ animateMenu.addEventListener("click", () =>{
     const htmlEl = "nav#nav-mobile-links";
     const cssRule = "transform: translateY(-5.5rem);"
     const pseudo = "::before"
-    togglePseudo(htmlEl, pseudo, cssRule);
+    f.togglePseudo(htmlEl, pseudo, cssRule);
 });
 
-
-// responsive functions for sections of pages of site 
-// const responsiveHome = () => { 
-
-    // s-one (section one)
-    // select items
-    // const header = document.querySelector("#index-s-one > :nth-child(2)"); // textbox header
-
-    // change s-one items attributes give query
-//     if () {
-
-//     }
-    
-// };  
-
-// initialize queries
-// f.medQueries().addlistener();
+// queire section one index page 
+// const indexSOneMax = f.medQueries(`1349px`, ">"); 
+const indexSOneMin = f.medQueries(`1350px`, "<"); 
+indexSOneMin.addEventListener("change", f.queriesIndex);
+// indexSOneMax.addEventListener("change", f.queriesIndex);
