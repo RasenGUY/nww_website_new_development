@@ -34,5 +34,6 @@ animateMenu.addEventListener("click", () => {
 
 
 // queire section one index page
-const indexSOneMin = f.medQueries(`1350px`, "<"); 
-indexSOneMin[0].addEventListener("change", f.queriesIndex(indexSOneMin));
+const indexSOneMin = f.medQueries(`412px`, "<"); 
+indexSOneMin.addEventListener("change", f.queriesIndex);
+

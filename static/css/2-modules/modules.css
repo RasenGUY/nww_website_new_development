@@ -405,6 +405,12 @@ nav#nav-mobile-links::before {
   -moz-filter: drop-shadow(1.5px 2.5px 5px rgba(14, 19, 24, 0.45));
   -webkit-filter: drop-shadow(1.5px 2.5px 5px rgba(14, 19, 24, 0.45));
 }
+@media only screen and (max-width: 1350px) {
+  #index-s-one .shapes .wrapper > .circle:nth-child(1) {
+    width: 30.94386168rem;
+    height: 30.94386168rem;
+  }
+}
 #index-s-one #svg-images.home-s1 .border {
   fill: #da4a22;
 }
