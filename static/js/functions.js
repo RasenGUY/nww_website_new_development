@@ -94,7 +94,7 @@ export function queriesIndex(window){
     const sOneTopRCir = document.querySelector("#index-s-one .shapes .circles .wrapper > div:nth-child(1)");
 
     if (window.matches){ // section one 
-        // sOneTopRCir.classList.toggle("xs");
+        
     } else {
 
     }

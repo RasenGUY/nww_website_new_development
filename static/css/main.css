@@ -111,7 +111,6 @@ nav {
     padding-bottom: 0.5rem;
     color: var(--color-p);
 }
-
     .active a {
         color: var(--color-p) !important;
     }
@@ -125,13 +124,10 @@ nav {
     
     /* placement of items in top navbar */
     nav, .mobile-bottom {
-
         grid-template-columns: [left] 3.25% [middle] auto [right] 3.25%;
-
     }
     
     nav .wrapper-mobile-top, nav .wrapper-mobile-bottom {
-
         grid-column: middle / right;
         display: grid;
         grid-template-columns: 50% 50%;

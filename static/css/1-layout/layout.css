@@ -120,6 +120,11 @@ main#main section .wrapper {
   margin: 0 auto;
   z-index: 11;
 }
+@media only screen and (max-width: 1040px) {
+  main#main section .wrapper {
+    width: 90%;
+  }
+}
 main#main section .wrapper .text-box {
   position: inherit;
   width: 100%;
@@ -218,7 +223,7 @@ main#main section#index-s-one .shapes .circles .wrapper {
   height: 100%;
   margin: 0 auto;
 }
-@media only screen and (max-width: 612px) {
+@media only screen and (max-width: 1040px) {
   main#main section#index-s-one .shapes .circles .wrapper {
     width: 90%;
   }
@@ -230,13 +235,35 @@ main#main section#index-s-one .shapes .circles .wrapper .circle:first-child {
   left: -5%;
   top: 0%;
 }
+@media only screen and (max-width: 1350px) {
+  main#main section#index-s-one .shapes .circles .wrapper .circle:first-child {
+    left: -10%;
+    top: -3%;
+  }
+}
+@media only screen and (max-width: 612px) {
+  main#main section#index-s-one .shapes .circles .wrapper .circle:first-child {
+    transform: translate(clamp(-13rem, -33.7118644068rem + 55.0847457627vw, 0rem), clamp(-6rem, -15.5593220339rem + 25.4237288136vw, 0rem));
+  }
+}
 main#main section#index-s-one .shapes .circles .wrapper .circle:nth-child(2) {
   right: 0%;
   top: -8%;
 }
+@media only screen and (max-width: 612px) {
+  main#main section#index-s-one .shapes .circles .wrapper .circle:nth-child(2) {
+    visibility: collapse;
+  }
+}
 main#main section#index-s-one .shapes .circles .wrapper .circle:nth-child(3) {
   right: 0%;
   bottom: 15%;
+  transform: translateY(clamp(-30rem, -54.8780487805rem + 40.6504065041vw, 0rem));
+}
+@media only screen and (max-width: 1350px) {
+  main#main section#index-s-one .shapes .circles .wrapper .circle:nth-child(3) {
+    visibility: collapse;
+  }
 }
 main#main section#index-s-one .shapes .circles .wrapper .circle:nth-child(4) {
   left: -9%;
@@ -245,6 +272,27 @@ main#main section#index-s-one .shapes .circles .wrapper .circle:nth-child(4) {
 @media only screen and (max-width: 1350px) {
   main#main section#index-s-one .shapes .circles .wrapper .circle:nth-child(4) {
     visibility: collapse;
+  }
+}
+main#main section#index-s-one .shapes div.img-box-wrapper {
+  width: 90%;
+  margin: auto;
+}
+main#main section#index-s-one .shapes div.img-box-wrapper .image-box {
+  position: absolute;
+  z-index: 9;
+  width: clamp(25rem, -25.6756756757rem + 135.1351351351vw, 30rem);
+  height: clamp(25rem, -25.6756756757rem + 135.1351351351vw, 30rem);
+  bottom: 5%;
+}
+@media only screen and (min-width: 612px) {
+  main#main section#index-s-one .shapes div.img-box-wrapper {
+    display: none;
+  }
+}
+@media only screen and (max-width: 612px) {
+  main#main section#index-s-one .shapes div.img-box-wrapper {
+    display: flex;
   }
 }
 @media only screen and (max-width: 1350px) {

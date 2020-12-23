@@ -33,7 +33,7 @@ animateMenu.addEventListener("click", () => {
 });
 
 
-// queire section one index page
-const indexSOneMin = f.medQueries(`412px`, "<"); 
-indexSOneMin.addEventListener("change", f.queriesIndex);
+// queries section one index page
+const indexSOneQ1 = f.medQueries(`412px`, "<"); 
+indexSOneQ1.addEventListener("change", f.queriesIndex);
 

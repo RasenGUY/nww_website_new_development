@@ -151,7 +151,9 @@ main#main {
             height: inherit;
             margin: 0 auto;
             z-index: 11;           
-
+            @include m.responsive('<', 1040px){
+                width: 90%;
+            }
             & .text-box {
                 position: inherit;
                 width: 100%;
@@ -165,7 +167,8 @@ main#main {
                     }       
                 }
                 & .body > * {
-                    padding-bottom: 0.75rem; 
+                    padding-bottom: 0.75rem;
+                     
                 }
 
             }
@@ -175,7 +178,6 @@ main#main {
             position: relative;
             height: 100vh;
             z-index: inherit;
-
         }
         
         &#index-s-one { //section one
@@ -214,7 +216,6 @@ main#main {
                         z-index: 5;
                     }
                 }
-
             }
 
             @include m.responsive("<", 612px){ // folder layout for mobile
@@ -261,7 +262,7 @@ main#main {
                     height: 100%;
                     margin: 0 auto;
 
-                    @include m.responsive('<', 612px){
+                    @include m.responsive('<', 1040px){
                         width: 90%;
                     }
                     & > div {
@@ -271,28 +272,58 @@ main#main {
                         left: -5%;
                         top: 0%;
                         @include m.responsive("<", 1350px){
-                            
+                            left: -10%;
+                            top: -3%;
+                        }
+                        @include m.responsive("<", 612px){
+                            transform: translate(f.fontDynSize(376, 612, -130, 0), f.fontDynSize(376, 612, -60, 0));
                         }
                     }
+
                     & .circle:nth-child(2) { // circle top right
                         right: 0%;
                         top: -8%;
+                        @include m.responsive("<", 612px){
+                            visibility: collapse;
+                        }
                     }
+
                     & .circle:nth-child(3) { // circle bottom right
                         right: 0%;
                         bottom: 15%;
+                        transform: translateY(f.fontDynSize(612, 1350, -300, 0));
+                        @include m.responsive("<", 1350px){
+                            visibility: collapse;
+                        }  
                     }
+
                     & .circle:nth-child(4) { // circle bottom left
                         left: -9%;
                         top: 25%;
                         @include m.responsive("<", 1350px){
                             visibility: collapse;
-                        }
-                    }
-
-                    
+                        }                        
+                    }                    
                 }
+            }
 
+            & .shapes div.img-box-wrapper {
+                width: 90%;
+                margin: auto;
+
+                & .image-box {
+                    position: absolute;
+                    z-index:  9;
+                    width: f.fontDynSize(375, 412, 250, 300);
+                    height: f.fontDynSize(375, 412, 250, 300);
+                    bottom: 5%;
+                }
+                @include m.responsive(">", 612px){
+                    display: none;
+                }
+                @include m.responsive("<", 612px){
+                    display: flex;
+                }
             }
 
             & > div:nth-child(2) { // text-box wrapper

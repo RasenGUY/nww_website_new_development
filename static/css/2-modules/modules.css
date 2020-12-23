@@ -411,11 +411,8 @@ nav#nav-mobile-links::before {
     height: 30.94386168rem;
   }
 }
-#index-s-one #svg-images.home-s1 .border {
-  fill: #da4a22;
-}
-#index-s-one #svg-images.home-s1:hover .border {
-  transition: all 0.15s ease-in-out;
+
+#svg-images.home-s1 .border {
   fill: #22da4a;
 }
 

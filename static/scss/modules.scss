@@ -403,13 +403,13 @@ nav#nav-mobile-links {
 
     #index-s-one {
         & .shapes .wrapper > .circle {
-            &:nth-child(3) { // big circle with images   
+            &:nth-child(3){ // big circle with image   
                 @include m.background(initial, "/static/images/home/jpeg_web/compressed/teach_6.jpg", center, cover);
                 border: solid v.$borderNm v.$primaryColor;
                 @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$textColor, v.$opacityLg)));
             }
 
-            &:nth-child(1) { // top-right circle
+            &:nth-child(1){ // top-right circle
                 @include m.responsive("<", 1350px){ // make circle big at smaller screen sizes
                     width: (11.82rem * 1.618 * 1.618); 
                     height: (11.82rem * 1.618 * 1.618); 
@@ -417,15 +417,10 @@ nav#nav-mobile-links {
             }
         }
 
-        #svg-images {//svg image 
-            &.home-s1 { 
-                & .border {
-                    fill: v.$primaryColor;
-                }
-                &:hover .border {
-                    transition: all 0.15s ease-in-out;  
-                    fill: v.$ctaColor;
-                }
-            }
+    }
+    
+    #svg-images.home-s1 {
+        & .border {
+            fill: v.$ctaColor;
         }
     }
