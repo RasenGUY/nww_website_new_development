@@ -212,4 +212,20 @@ h6.caption {
   background-color: #0e1318;
 }
 
+.spacer {
+  height: 1rem;
+}
+.spacer.wide {
+  height: 1.5rem;
+}
+.spacer.wider {
+  height: 2rem;
+}
+.spacer.thin {
+  height: 0.75rem;
+}
+.spacer.thinner {
+  height: 0.5rem;
+}
+
 /*# sourceMappingURL=base.css.map */

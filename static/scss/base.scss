@@ -254,3 +254,21 @@ html {
 
 }
 
+// spacers
+.spacer {
+    height: 1rem;
+
+    &.wide{
+        height: (1rem * 1.5);
+    }
+    &.wider {
+        height: (1rem * 2);
+    }
+    &.thin {
+        height: (1rem * 0.75);
+    }
+    &.thinner {
+        height: (1rem * 0.5);
+    }
+}
+

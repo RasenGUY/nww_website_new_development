@@ -184,43 +184,14 @@ main#main {
             position: relative;
             height: 100vh;
             z-index: 10;
-
-            & .shapes .folder { // folder shape
-                position: absolute;
-                z-index: 9;
-                left: 0;
-                transform: translateY(f.fontDynSize(1040, 612, -140 , -100));
+            & .shapes {
                 width: 100%;
-
-                & .wrapper {
-                    width: inherit;
+                & .folder { // folder shape
                     position: absolute;
-                    z-index: 8;
-                    & .fore, & .middle, & .back {
-                        position: inherit;
-                        width: inherit;
-                    }
-                    & img.fore {
-                        content: url("/static/images/home/svg_web/compressed/home_sh_s2_fg.svg"); 
-                        transform: translateY(f.fontDynSize(1040, 612, -50, -35));
-                        z-index: 7;
-                    }
-                    & img.middle {
-                        content: url("/static/images/home/svg_web/compressed/home_sh_s2_mg.svg"); 
-                        transform: translateY(f.fontDynSize(1040, 612, -50, -30));
-                        z-index: 6;
-                    }
-                    & img.back {
-                        content: url("/static/images/home/svg_web/compressed/home_sh_s2_bg.svg"); 
-                        transform: translateY(f.fontDynSize(1040, 612, -100, -65));
-                        z-index: 5;
-                    }
-                }
-            }
-
-            @include m.responsive("<", 612px){ // folder layout for mobile
-                & .shapes .folder {
-                    transform: translateY(-14rem);
+                    z-index: 9;
+                    left: 0;
+                    transform: translateY(f.fontDynSize(1040, 612, -140 , -100));
+                    width: 100%;
 
                     & .wrapper {
                         width: inherit;
@@ -231,115 +202,131 @@ main#main {
                             width: inherit;
                         }
                         & img.fore {
-                            content: url("/static/images/home/svg_mobile/compressed/home_sh_s2_fg.svg"); 
-                            transform: translateY(-2rem);
+                            content: url("/static/images/home/svg_web/compressed/home_sh_s2_fg.svg"); 
+                            transform: translateY(f.fontDynSize(1040, 612, -50, -35));
                             z-index: 7;
                         }
                         & img.middle {
-                            content: url("/static/images/home/svg_mobile/compressed/home_sh_s2_mg.svg"); 
-                            transform: translateY(-3rem);
+                            content: url("/static/images/home/svg_web/compressed/home_sh_s2_mg.svg"); 
+                            transform: translateY(f.fontDynSize(1040, 612, -50, -30));
                             z-index: 6;
                         }
                         & img.back {
-                            content: url("/static/images/home/svg_mobile/compressed/home_sh_s2_bg.svg"); 
-                            transform: translateY(-6rem);
+                            content: url("/static/images/home/svg_web/compressed/home_sh_s2_bg.svg"); 
+                            transform: translateY(f.fontDynSize(1040, 612, -100, -65));
                             z-index: 5;
                         }
                     }
                 }
 
-            }
-
-            & .shapes .circles { // layout for shapes 
-                position: absolute;
-                z-index: 9; 
-                width: 100%;
-                height: 100%;
-
-                & .wrapper {
-                    position: relative;
-                    width: 80%;
-                    height: 100%;
-                    margin: 0 auto;
-
-                    @include m.responsive('<', 1040px){
-                        width: 90%;
-                    }
-                    & > div {
-                        position: absolute;
-                    }
-                    & .circle:first-child { // circle top left
-                        left: -5%;
-                        top: 0%;
-                        @include m.responsive("<", 1350px){
-                            left: -10%;
-                            top: -3%;
-                        }
-                        @include m.responsive("<", 612px){
-                            transform: translate(f.fontDynSize(376, 612, -130, 0), f.fontDynSize(376, 612, -60, 0));
+                @include m.responsive("<", 612px){ // folder layout for mobile
+                    & .folder {
+                        transform: translateY(-14rem);
+    
+                        & .wrapper {
+                            width: inherit;
+                            position: absolute;
+                            z-index: 8;
+                            & .fore, & .middle, & .back {
+                                position: inherit;
+                                width: inherit;
+                            }
+                            & img.fore {
+                                content: url("/static/images/home/svg_mobile/compressed/home_sh_s2_fg.svg"); 
+                                transform: translateY(-2rem);
+                                z-index: 7;
+                            }
+                            & img.middle {
+                                content: url("/static/images/home/svg_mobile/compressed/home_sh_s2_mg.svg"); 
+                                transform: translateY(-3rem);
+                                z-index: 6;
+                            }
+                            & img.back {
+                                content: url("/static/images/home/svg_mobile/compressed/home_sh_s2_bg.svg"); 
+                                transform: translateY(-6rem);
+                                z-index: 5;
+                            }
                         }
                     }
-
-                    & .circle:nth-child(2) { // circle top right
-                        right: 0%;
-                        top: -8%;
-                        @include m.responsive("<", 612px){
-                            visibility: collapse;
-                        }
-                    }
-
-                    & .circle:nth-child(3) { // circle bottom right
-                        right: 0%;
-                        bottom: 15%;
-                        transform: translateY(f.fontDynSize(612, 1350, -300, 0));
-                        @include m.responsive("<", 1350px){
-                            visibility: collapse;
-                        }  
-                    }
-
-                    & .circle:nth-child(4) { // circle bottom left
-                        left: -9%;
-                        top: 25%;
-                        @include m.responsive("<", 1350px){
-                            visibility: collapse;
-                        }                        
-                    }                    
                 }
-            }
 
-            & .shapes div.img-box-wrapper {
-                width: 90%;
-                margin: auto;
-
-                & .image-box {
+                & .circles { // layout for shapes 
                     position: absolute;
-                    z-index:  9;
-                    width: f.fontDynSize(375, 412, 250, 300);
-                    height: f.fontDynSize(375, 412, 250, 300);
-                    bottom: 5%;
+                    z-index: 9; 
+                    width: 100%;
+                    height: 100%;
+    
+                    & .wrapper {
+                        position: relative;
+                        width: 80%;
+                        height: 100%;
+                        margin: 0 auto;
+    
+                        @include m.responsive('<', 1040px){
+                            width: 90%;
+                        }
+                        & > div {
+                            position: absolute;
+                        }
+                        & .circle:first-child { // circle top left
+                            left: -5%;
+                            top: 0%;
+                            @include m.responsive("<", 1350px){
+                                left: -10%;
+                                top: -3%;
+                            }
+                            @include m.responsive("<", 612px){
+                                transform: translate(f.fontDynSize(376, 612, -130, 0), f.fontDynSize(376, 612, -60, 0));
+                            }
+                        }
+    
+                        & .circle:nth-child(2) { // circle top right
+                            right: 0%;
+                            top: -8%;
+                            @include m.responsive("<", 612px){
+                                visibility: collapse;
+                            }
+                        }
+    
+                        & .circle:nth-child(3) { // circle bottom right
+                            right: 0%;
+                            bottom: 15%;
+                            transform: translateY(f.fontDynSize(612, 1350, -300, 0));
+                            @include m.responsive("<", 612px){
+                                visibility: collapse;
+                            }  
+                        }
+    
+                        & .circle:nth-child(4) { // circle bottom left
+                            left: -9%;
+                            top: 25%;
+                            @include m.responsive("<", 1350px){
+                                visibility: collapse;
+                            }                        
+                        }                    
+                    }
                 }
-                @include m.responsive(">", 612px){
-                    display: none;
-                }
-                @include m.responsive("<", 612px){
-                    display: flex;
-                }
+
             }
-
+            
             & > div:nth-child(2) { // text-box wrapper
-
-                @include m.responsive("<", 1350px){
-                    align-items: left;
-                }
-                @include m.responsive(">", 1351px){
-                    align-items: center;
-                }
-
+                
+                
                 & .text-box { // text-box s-one
-                    height: 50%;
+                    @include m.responsive("<", 1350px){
+                        justify-content: right;
+                    }
+                    @include m.responsive(">", 1351px){
+                        justify-content: center;
+                    }
+                    
+                    flex: 80%;
                     
                     & .body { 
                         width: 50%;
+                        @include m.responsive("<", 613px){
+                            align-items: center;
+                        }
                     }
                     @include m.responsive("<", 1040px){
                         & .body { 
@@ -350,14 +337,34 @@ main#main {
                         padding-right: 1rem;
                     }
                     & .body > div:nth-child(5) {
-                        margin-top: 5rem;
+                        margin-top: 3rem;
                     }
+                    
+                }
 
+                & div.img-box-wrapper {
+                    flex: 50%;
+                    width: 90%;
+                    margin: auto;
+            
+                    & .image-box {
+                        position: absolute;
+                        z-index:  9;
+                        width: f.fontDynSize(375, 412, 250, 300);
+                        height: f.fontDynSize(375, 412, 250, 300);
+                        bottom: -5%;
+                    }
+                    @include m.responsive(">", 612px){
+                        display: none;
+                    }
+                    @include m.responsive("<", 612px){
+                        display: flex;
+                    }
                 }
             }
         }
     }
-
+    
     footer {
         width: 100%;
     }
