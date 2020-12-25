@@ -347,31 +347,28 @@ nav#nav-mobile-links {
     }
 }
 
-// index page
+// --------------------  index page -------------------------------
 
-// hero section
-    // background
-    #index-hero {
-        @include m.background(initial, "/static/images/home/jpeg_web/compressed/teach_2.jpg", center, cover);
-        @include m.responsive("<", 412px){
-            @include m.background(initial, "/static/images/home/jpeg_mobile/teach_2.jpg", center, cover);
-        }
-        // darken image 
-        &::after {
-            position: absolute;
-            display: block;
-            top: 0;
-            left: 0;
-            content: '';
-            width: inherit;
-            height: inherit;
-            background-color: color.adjust(v.$primaryColor, $alpha: v.$opacityXl, $blackness: 70%);
-            backdrop-filter: blur(0.325rem);
-            z-index: 0;
-        }
-
+// ------- hero section ---------------    
+#index-hero { // background
+    @include m.background(initial, "/static/images/home/jpeg_web/compressed/teach_2.jpg", center, cover);
+    @include m.responsive("<", 412px){
+        @include m.background(initial, "/static/images/home/jpeg_mobile/teach_2.jpg", center, cover);
     }
-
+    // darken image 
+    &::after {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        content: '';
+        width: inherit;
+        height: inherit;
+        background-color: color.adjust(v.$primaryColor, $alpha: v.$opacityXl, $blackness: 70%);
+        backdrop-filter: blur(0.325rem);
+        z-index: 0;
+    }
+}
     // arrows and hover animation
     .arrows {
         transform: translateY(2rem);
@@ -401,26 +398,35 @@ nav#nav-mobile-links {
         } 
     }
 
-    #index-s-one {
-        & .shapes .wrapper > .circle {
-            &:nth-child(3){ // big circle with image   
-                @include m.background(initial, "/static/images/home/jpeg_web/compressed/teach_6.jpg", center, cover);
-                border: solid v.$borderNm v.$primaryColor;
-                @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$textColor, v.$opacityLg)));
-            }
-
-            &:nth-child(1){ // top-right circle
-                @include m.responsive("<", 1350px){ // make circle big at smaller screen sizes
-                    width: (11.82rem * 1.618 * 1.618); 
-                    height: (11.82rem * 1.618 * 1.618); 
-                }
-            }
+// ----------- section s one -----------------
+#index-s-one {
+    & .shapes .wrapper > .circle {
+        &:nth-child(3){ // big circle with image   
+            @include m.background(initial, "/static/images/home/jpeg_web/compressed/teach_6.jpg", center, cover);
+            border: solid v.$borderNm v.$primaryColor;
+            @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$textColor, v.$opacityLg)));
         }
 
-    }
-    
-    #svg-images.home-s1 {
-        & .border {
-            fill: v.$ctaColor;
+        &:nth-child(1){ // top-right circle
+            @include m.responsive("<", 1350px){ // make circle big at smaller screen sizes
+                width: (11.82rem * 1.618 * 1.618); 
+                height: (11.82rem * 1.618 * 1.618); 
+            }
         }
     }
+
+}
+
+#svg-images.home-s1 {
+    & .border {
+        fill: v.$ctaColor;
+    }
+}
+
+// ------------ section s two ---------------- 
+#index-s-two {
+    @include m.background(initial, "/static/images/home/jpeg_web/compressed/travel_5.jpg", center, cover);
+    @include m.responsive("<", 412px){
+        @include m.background(initial, "/static/images/home/jpeg_mobile/travel_2.jpg", center, cover);
+    }
+}

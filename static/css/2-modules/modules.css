@@ -416,4 +416,23 @@ nav#nav-mobile-links::before {
   fill: #22da4a;
 }
 
+#index-s-two {
+  background-attachment: initial;
+  background-image: url("/static/images/home/jpeg_web/compressed/travel_5.jpg");
+  background-origin: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media only screen and (max-width: 412px) {
+  #index-s-two {
+    background-attachment: initial;
+    background-image: url("/static/images/home/jpeg_mobile/travel_2.jpg");
+    background-origin: border-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
 /*# sourceMappingURL=modules.css.map */

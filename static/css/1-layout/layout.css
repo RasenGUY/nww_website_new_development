@@ -104,14 +104,10 @@ nav#nav-mobile-links .nav-links-bottom, nav#nav-mobile-links::before {
 
 /* general */
 main#main {
-  position: absolute;
   width: 100vw;
-  z-index: 0;
 }
 main#main section {
-  position: relative;
   width: 100%;
-  z-index: inherit;
 }
 main#main section .wrapper {
   position: inherit;
@@ -146,12 +142,8 @@ main#main section#index-hero {
   height: 100vh;
   z-index: inherit;
 }
-main#main section#index-s-one {
-  position: relative;
-  height: 100vh;
-  z-index: 10;
-}
 main#main section#index-s-one .shapes {
+  position: absolute;
   width: 100%;
 }
 main#main section#index-s-one .shapes .folder {
@@ -159,33 +151,47 @@ main#main section#index-s-one .shapes .folder {
   z-index: 9;
   left: 0;
   transform: translateY(clamp(-14rem, -4.2803738318rem + -9.3457943925vw, -10rem));
-  width: 100%;
 }
-main#main section#index-s-one .shapes .folder .wrapper {
-  width: inherit;
-  position: absolute;
-  z-index: 8;
-}
-main#main section#index-s-one .shapes .folder .wrapper .fore, main#main section#index-s-one .shapes .folder .wrapper .middle, main#main section#index-s-one .shapes .folder .wrapper .back {
+main#main section#index-s-one .shapes .folder .fore, main#main section#index-s-one .shapes .folder .middle, main#main section#index-s-one .shapes .folder .back {
   position: inherit;
-  width: inherit;
+  width: 100vw;
 }
-main#main section#index-s-one .shapes .folder .wrapper img.fore {
+main#main section#index-s-one .shapes .folder img.fore {
   content: url("/static/images/home/svg_web/compressed/home_sh_s2_fg.svg");
   transform: translateY(clamp(-5rem, -1.3551401869rem + -3.5046728972vw, -3.5rem));
   z-index: 7;
 }
-main#main section#index-s-one .shapes .folder .wrapper img.middle {
+main#main section#index-s-one .shapes .folder img.middle {
   content: url("/static/images/home/svg_web/compressed/home_sh_s2_mg.svg");
   transform: translateY(clamp(-5rem, -0.1401869159rem + -4.6728971963vw, -3rem));
   z-index: 6;
 }
-main#main section#index-s-one .shapes .folder .wrapper img.back {
+main#main section#index-s-one .shapes .folder img.back {
   content: url("/static/images/home/svg_web/compressed/home_sh_s2_bg.svg");
   transform: translateY(clamp(-10rem, -1.4953271028rem + -8.1775700935vw, -6.5rem));
   z-index: 5;
 }
 @media only screen and (max-width: 612px) {
+  main#main section#index-s-one .shapes .folder {
+    transform: translateY(-14rem);
+  }
+  main#main section#index-s-one .shapes .folder img.fore {
+    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_fore.svg");
+    transform: translateY(-2rem);
+    z-index: 7;
+  }
+  main#main section#index-s-one .shapes .folder img.middle {
+    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_middle.svg");
+    transform: translateY(-3rem);
+    z-index: 6;
+  }
+  main#main section#index-s-one .shapes .folder img.back {
+    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_back.svg");
+    transform: translateY(-6rem);
+    z-index: 5;
+  }
+}
+@media only screen and (max-width: 412px) {
   main#main section#index-s-one .shapes .folder {
     transform: translateY(-14rem);
   }
@@ -218,7 +224,6 @@ main#main section#index-s-one .shapes .circles {
   position: absolute;
   z-index: 9;
   width: 100%;
-  height: 100%;
 }
 main#main section#index-s-one .shapes .circles .wrapper {
   position: relative;
@@ -260,7 +265,7 @@ main#main section#index-s-one .shapes .circles .wrapper .circle:nth-child(2) {
 }
 main#main section#index-s-one .shapes .circles .wrapper .circle:nth-child(3) {
   right: 0%;
-  bottom: 15%;
+  top: 35rem;
   transform: translateY(clamp(-30rem, -54.8780487805rem + 40.6504065041vw, 0rem));
 }
 @media only screen and (max-width: 612px) {
@@ -269,13 +274,18 @@ main#main section#index-s-one .shapes .circles .wrapper .circle:nth-child(3) {
   }
 }
 main#main section#index-s-one .shapes .circles .wrapper .circle:nth-child(4) {
-  left: -9%;
-  top: 25%;
+  left: -13%;
+  top: 18rem;
 }
 @media only screen and (max-width: 1350px) {
   main#main section#index-s-one .shapes .circles .wrapper .circle:nth-child(4) {
     visibility: collapse;
   }
+}
+main#main section#index-s-one > div:nth-child(2) {
+  position: relative;
+  height: 100vh;
+  z-index: 10;
 }
 main#main section#index-s-one > div:nth-child(2) .text-box {
   flex: 80%;
@@ -336,6 +346,9 @@ main#main section#index-s-one > div:nth-child(2) div.img-box-wrapper .image-box 
   main#main section#index-s-one > div:nth-child(2) div.img-box-wrapper {
     display: flex;
   }
+}
+main#main section#index-s-two {
+  height: 100vh;
 }
 main#main footer {
   width: 100%;

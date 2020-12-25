@@ -131,18 +131,12 @@ nav#nav-mobile-links {
 
 /* general */
 main#main {
-    
-    position: absolute;
-    width: 100vw;
-    z-index: 0; 
-
+    width: 100vw; 
     $colors: color.adjust(v.$secondaryColor, $blackness: 10%), v.$secondaryColor, color.adjust(v.$secondaryColor, $lightness: 10%), color.adjust(v.$secondaryColor, $lightness: 20%);
     // background-image: f.gradient("linear", 135deg, $colors);
     
     section {
-        position: relative;
         width: 100%;
-        z-index: inherit;
 
         // wrapper for all text-boxes in sections
         & .wrapper {
@@ -173,6 +167,7 @@ main#main {
 
             }
         }
+
         // index page elements
         &#index-hero { // index section
             position: relative;
@@ -181,45 +176,64 @@ main#main {
         }
         
         &#index-s-one { //section one
-            position: relative;
-            height: 100vh;
-            z-index: 10;
+            
             & .shapes {
+                position: absolute;
                 width: 100%;
+
                 & .folder { // folder shape
                     position: absolute;
                     z-index: 9;
                     left: 0;
                     transform: translateY(f.fontDynSize(1040, 612, -140 , -100));
-                    width: 100%;
 
-                    & .wrapper {
-                        width: inherit;
-                        position: absolute;
-                        z-index: 8;
                         & .fore, & .middle, & .back {
                             position: inherit;
-                            width: inherit;
+                            width: 100vw;
                         }
+
                         & img.fore {
                             content: url("/static/images/home/svg_web/compressed/home_sh_s2_fg.svg"); 
                             transform: translateY(f.fontDynSize(1040, 612, -50, -35));
                             z-index: 7;
                         }
+
                         & img.middle {
                             content: url("/static/images/home/svg_web/compressed/home_sh_s2_mg.svg"); 
                             transform: translateY(f.fontDynSize(1040, 612, -50, -30));
                             z-index: 6;
                         }
+
                         & img.back {
                             content: url("/static/images/home/svg_web/compressed/home_sh_s2_bg.svg"); 
                             transform: translateY(f.fontDynSize(1040, 612, -100, -65));
                             z-index: 5;
                         }
-                    }
+                    
                 }
 
                 @include m.responsive("<", 612px){ // folder layout for mobile
+                    & .folder {
+                        transform: translateY(-14rem);
+                        
+                        & img.fore {
+                            content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_fore.svg"); 
+                            transform: translateY(-2rem);
+                            z-index: 7;
+                        }
+                        & img.middle {
+                            content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_middle.svg"); 
+                            transform: translateY(-3rem);
+                            z-index: 6;
+                        }
+                        & img.back {
+                            content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_back.svg"); 
+                            transform: translateY(-6rem);
+                            z-index: 5;
+                        }
+                    }
+                }
+                @include m.responsive("<", 412px){ // folder layout for mobile
                     & .folder {
                         transform: translateY(-14rem);
     
@@ -254,7 +268,6 @@ main#main {
                     position: absolute;
                     z-index: 9; 
                     width: 100%;
-                    height: 100%;
     
                     & .wrapper {
                         position: relative;
@@ -290,7 +303,7 @@ main#main {
     
                         & .circle:nth-child(3) { // circle bottom right
                             right: 0%;
-                            bottom: 15%;
+                            top: 35rem;
                             transform: translateY(f.fontDynSize(612, 1350, -300, 0));
                             @include m.responsive("<", 612px){
                                 visibility: collapse;
@@ -298,8 +311,8 @@ main#main {
                         }
     
                         & .circle:nth-child(4) { // circle bottom left
-                            left: -9%;
-                            top: 25%;
+                            left: -13%;
+                            top: 18rem;
                             @include m.responsive("<", 1350px){
                                 visibility: collapse;
                             }                        
@@ -308,9 +321,12 @@ main#main {
                 }
 
             }
-            
+
             & > div:nth-child(2) { // text-box wrapper
-                
+                position: relative;
+                height: 100vh;
+                z-index: 10;
+
                 
                 & .text-box { // text-box s-one
                     @include m.responsive("<", 1350px){
@@ -368,6 +384,10 @@ main#main {
                     }
                 }
             }
+        }
+
+        &#index-s-two { //section two
+            height: 100vh;
         }
     }
     
