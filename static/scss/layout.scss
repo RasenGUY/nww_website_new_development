@@ -315,6 +315,11 @@ main#main {
                 & .text-box { // text-box s-one
                     @include m.responsive("<", 1350px){
                         justify-content: right;
+                        
+                        @include m.responsive("<", 412px){
+                            justify-content: center;
+                            
+                        }
                     }
                     @include m.responsive(">", 1351px){
                         justify-content: center;
@@ -353,6 +358,7 @@ main#main {
                         width: f.fontDynSize(375, 412, 250, 300);
                         height: f.fontDynSize(375, 412, 250, 300);
                         bottom: -5%;
+                        transform: translateY(f.fontDynSize(375, 412, -130, 0));
                     }
                     @include m.responsive(">", 612px){
                         display: none;

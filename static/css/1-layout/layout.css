@@ -285,6 +285,11 @@ main#main section#index-s-one > div:nth-child(2) .text-box {
     justify-content: right;
   }
 }
+@media only screen and (max-width: 1350px) and (max-width: 412px) {
+  main#main section#index-s-one > div:nth-child(2) .text-box {
+    justify-content: center;
+  }
+}
 @media only screen and (min-width: 1351px) {
   main#main section#index-s-one > div:nth-child(2) .text-box {
     justify-content: center;
@@ -320,6 +325,7 @@ main#main section#index-s-one > div:nth-child(2) div.img-box-wrapper .image-box 
   width: clamp(25rem, -25.6756756757rem + 135.1351351351vw, 30rem);
   height: clamp(25rem, -25.6756756757rem + 135.1351351351vw, 30rem);
   bottom: -5%;
+  transform: translateY(clamp(-13rem, -144.7567567568rem + 351.3513513514vw, 0rem));
 }
 @media only screen and (min-width: 612px) {
   main#main section#index-s-one > div:nth-child(2) div.img-box-wrapper {
