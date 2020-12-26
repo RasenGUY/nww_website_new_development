@@ -400,11 +400,15 @@ nav#nav-mobile-links {
 
 // ----------- section s one -----------------
 #index-s-one {
-    & .shapes .wrapper > .circle {
+    & .shapes .circles > .circle {
         &:nth-child(3){ // big circle with image   
             @include m.background(initial, "/static/images/home/jpeg_web/compressed/teach_6.jpg", center, cover);
             border: solid v.$borderNm v.$primaryColor;
             @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$textColor, v.$opacityLg)));
+            @include m.responsive("<", 768px) {
+                width: f.fontDynSize(576, 768, 200, (118.2 * 1.618 * 1.618 * 1.618)); 
+                height: f.fontDynSize(576, 768, 200, (118.2 * 1.618 * 1.618 * 1.618));
+            }
         }
 
         &:nth-child(1){ // top-right circle
