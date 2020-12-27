@@ -1,5 +1,6 @@
 @use "variables" as v;
 @use "functions" as f;
+@use "mixins" as m;
 
 .gradient {
     background-image: f.gradient("radial", "130deg", (v.$primaryColor + " 150%", v.$secondaryColor + " 180%"));
@@ -41,5 +42,34 @@ object {
     -webkit-filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, .7));
     filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, .7));
 
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    & .shapes {
+        width: 100%;
+        
+        & > div {
+            position: absolute;
+            width: 100%;
+            &.back {
+                & object {
+                    content: url("/static/images/home/svg_web/compressed/home_sh_s2_bg.svg");
+                }
+            }
+            &.middle {
+                & object {
+                    content: url("/static/images/home/svg_web/compressed/home_sh_s2_mg.svg");
+                }
+            }
+            &.fore {
+                & object {
+                    content: url("/static/images/home/svg_web/compressed/home_sh_s2_fg.svg");
+                }
+            }
+        }
+    }
 }
 
