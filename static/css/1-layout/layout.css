@@ -400,17 +400,17 @@ main#main #index-s-three div.wrapper > div.text-box {
 main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members > li.member {
   display: block;
 }
-main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members > li.f-item {
+main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members > .f-item {
   flex: 1;
   flex-basis: auto;
 }
 @media only screen and (max-width: 768px) {
-  main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members > li.f-item {
+  main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members > .f-item {
     flex: 1 50%;
   }
 }
 @media only screen and (max-width: 412px) {
-  main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members > li.f-item {
+  main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members > .f-item {
     flex: 1 100%;
   }
 }

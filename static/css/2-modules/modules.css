@@ -240,7 +240,6 @@ nav#nav-web::before, nav#nav-mobile::before, nav#nav-mobile-links::before {
   position: relative;
   content: "";
   top: 5px;
-  left: -4px;
   width: 0%;
   height: 2px;
 }
@@ -441,27 +440,27 @@ nav#nav-mobile-links::before {
   }
 }
 
-#index-s-three div.text-box {
+section#index-s-three div.text-box {
   width: 100%;
 }
-#index-s-three div.text-box > div.body > ul.team-members {
+section#index-s-three div.text-box > div.body > ul.team-members {
   list-style: none;
 }
-#index-s-three div.text-box > div.body > ul.team-members > li.member > a {
+section#index-s-three div.text-box > div.body > ul.team-members > li.member > a {
   width: 100%;
 }
-#index-s-three div.text-box > div.body > ul.team-members > li.member > a > div > div.image {
+section#index-s-three div.text-box > div.body > ul.team-members > li.member > a > div > div.image {
   border-radius: 100px;
   height: clamp(13rem, 7.5531914894rem + 7.0921985816vw, 15rem);
   width: clamp(13rem, 7.5531914894rem + 7.0921985816vw, 15rem);
   border: solid #22da4a 0.75rem;
   background-color: grey;
 }
-#index-s-three div.text-box > div.body > ul.team-members > li.member > a h3.title {
+section#index-s-three div.text-box > div.body > ul.team-members > li.member > a h3.title {
   padding: 1.5rem 0 0 0;
 }
 @media only screen and (max-width: 768px) {
-  #index-s-three div.text-box > div.body > ul.team-members > li.member {
+  section#index-s-three div.text-box > div.body > ul.team-members > li.member {
     padding-bottom: 5rem;
   }
 }

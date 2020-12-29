@@ -237,7 +237,6 @@ nav#nav-web::before, nav#nav-mobile::before, nav#nav-mobile-links::before {
         position: relative;
         content: '';
         top: 5px;
-        left: -4px;
         width: 0%;
         height: 2px;
     }
@@ -436,7 +435,7 @@ nav#nav-mobile-links {
 }
 
 // ------------- section s three ------------
-#index-s-three {
+section#index-s-three {
     // some stuff enters here 
     & div.text-box {
         width: 100%;

@@ -404,7 +404,7 @@ main#main {
                         & > li.member {
                             display: block;
                         }
-                        & > li.f-item {
+                        & > .f-item {
                             flex: 1;
                             flex-basis: auto;
                             @include m.responsive("<", 768px){
