@@ -9,7 +9,7 @@
   color: #0e1318;
   background-image: linear-gradient(135deg, #22da4a, #77f993, #22da4a 105%);
   box-shadow: 2px 2px 3px rgba(34, 218, 74, 0.16);
-  padding: clamp(0.45rem, 0.2338028169rem + 0.3521126761vw, 0.6rem) clamp(1rem, 0.4234741784rem + 0.9389671362vw, 1.4rem);
+  padding: clamp(0.45rem, 0.2637931034rem + 0.3232758621vw, 0.6rem) clamp(1rem, 0.5034482759rem + 0.8620689655vw, 1.4rem);
 }
 .btn:hover {
   color: #ffffff;
@@ -438,6 +438,31 @@ nav#nav-mobile-links::before {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+}
+
+#index-s-three div.text-box {
+  width: 100%;
+}
+#index-s-three div.text-box > div.body > ul.team-members {
+  list-style: none;
+}
+#index-s-three div.text-box > div.body > ul.team-members > li.member > a {
+  width: 100%;
+}
+#index-s-three div.text-box > div.body > ul.team-members > li.member > a > div > div.image {
+  border-radius: 100px;
+  height: clamp(13rem, 7.5531914894rem + 7.0921985816vw, 15rem);
+  width: clamp(13rem, 7.5531914894rem + 7.0921985816vw, 15rem);
+  border: solid #22da4a 0.75rem;
+  background-color: grey;
+}
+#index-s-three div.text-box > div.body > ul.team-members > li.member > a h3.title {
+  padding: 1.5rem 0 0 0;
+}
+@media only screen and (max-width: 768px) {
+  #index-s-three div.text-box > div.body > ul.team-members > li.member {
+    padding-bottom: 5rem;
   }
 }
 

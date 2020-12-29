@@ -2,8 +2,45 @@
 /* import css modules */
 @import "flexbox.css";
 @import "grid.css";
+/* general */
+/* text alignment horizontal*/
+.t-align.left {
+  text-align: left;
+  text-align: start;
+}
+.t-align.right {
+  text-align: right;
+  text-align: end;
+}
+.t-align.justify {
+  text-align: justify;
+}
+.t-align.center {
+  text-align: center;
+}
+.t-align.top {
+  vertical-align: top;
+}
+.t-align.bottom {
+  vertical-align: bottom;
+}
+.t-align.middle {
+  vertical-align: middle;
+}
+.t-align.t-top {
+  vertical-align: text-top;
+}
+.t-align.t-bottom {
+  vertical-align: text-bottom;
+}
+.t-align.sub {
+  vertical-align: sub;
+}
+.t-align.super {
+  vertical-align: super;
+}
+
 /* navigation */
-/* navigation web and mobile*/
 nav, main {
   width: 100vw;
 }
@@ -14,7 +51,7 @@ nav, main {
   left: 0;
   z-index: 999;
 }
-@media only screen and (min-width: 612px) {
+@media only screen and (min-width: 576px) {
   #nav-web ul .nav-links {
     display: initial;
   }
@@ -22,7 +59,7 @@ nav, main {
     display: none;
   }
 }
-@media only screen and (max-width: 612px) {
+@media only screen and (max-width: 576px) {
   #nav-web .nav-links {
     display: none;
   }
@@ -36,12 +73,12 @@ nav, main {
   bottom: 0;
   left: 0;
 }
-@media only screen and (max-width: 613px) {
+@media only screen and (max-width: 576px) {
   #nav-mobile, #nav-mobile-links {
     display: initial;
   }
 }
-@media only screen and (min-width: 613px) {
+@media only screen and (min-width: 576px) {
   #nav-mobile, #nav-mobile-links {
     display: none;
   }
@@ -103,9 +140,12 @@ nav#nav-mobile-links .nav-links-bottom, nav#nav-mobile-links::before {
   transform: translateY(28rem);
 }
 
-/* general */
 main#main section {
   width: 100%;
+}
+main#main section .shapes {
+  width: 100%;
+  position: absolute;
 }
 main#main section > .wrapper {
   position: relative;
@@ -119,152 +159,260 @@ main#main section > .wrapper {
     width: 90%;
   }
 }
-main#main section > .wrapper .text-box header h1 {
-  padding-bottom: 1rem;
-}
-@media only screen and (max-width: 612px) {
-  main#main section > .wrapper .text-box header {
+@media only screen and (max-width: 576px) {
+  main#main section > .wrapper .text-box {
     text-align: center;
   }
+}
+main#main section > .wrapper .text-box header h1 {
+  padding-bottom: 1rem;
 }
 main#main section > .wrapper .text-box .body > * {
   padding-bottom: 0.75rem;
 }
-main#main section#index-hero {
+main#main #index-hero {
   height: 100vh;
   z-index: inherit;
 }
-main#main section#index-s-one {
+main#main #index-s-one {
   width: 100vw;
   height: 100vh;
 }
-main#main section#index-s-one .shapes {
-  width: 100%;
-  position: absolute;
-}
-main#main section#index-s-one .shapes .folder {
+main#main #index-s-one .shapes .folder {
   width: 100%;
   position: absolute;
   z-index: 11;
   transform: translateY(-15rem);
 }
-main#main section#index-s-one .shapes .folder > div {
+main#main #index-s-one .shapes .folder > div {
   position: inherit;
   width: 100%;
 }
-main#main section#index-s-one .shapes .folder > div.back {
+main#main #index-s-one .shapes .folder > div.back {
   transform: translateY(-5rem);
 }
-main#main section#index-s-one .shapes .folder > div.back object {
+main#main #index-s-one .shapes .folder > div.back object {
   content: url("/static/images/home/svg_web/compressed/home_sh_s2_bg.svg");
 }
 @media only screen and (max-width: 768px) {
-  main#main section#index-s-one .shapes .folder > div.back object {
+  main#main #index-s-one .shapes .folder > div.back object {
     content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_back.svg");
   }
 }
 @media only screen and (max-width: 576px) {
-  main#main section#index-s-one .shapes .folder > div.back object {
+  main#main #index-s-one .shapes .folder > div.back object {
     content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_bg.svg");
   }
 }
-main#main section#index-s-one .shapes .folder > div.middle {
+main#main #index-s-one .shapes .folder > div.middle {
   transform: translateY(-1rem);
 }
-main#main section#index-s-one .shapes .folder > div.middle object {
+main#main #index-s-one .shapes .folder > div.middle object {
   content: url("/static/images/home/svg_web/compressed/home_sh_s2_mg.svg");
 }
 @media only screen and (max-width: 768px) {
-  main#main section#index-s-one .shapes .folder > div.middle object {
+  main#main #index-s-one .shapes .folder > div.middle object {
     content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_middle.svg");
   }
 }
 @media only screen and (max-width: 576px) {
-  main#main section#index-s-one .shapes .folder > div.middle object {
+  main#main #index-s-one .shapes .folder > div.middle object {
     content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_mg.svg");
   }
 }
-main#main section#index-s-one .shapes .folder > div.fore object {
+main#main #index-s-one .shapes .folder > div.fore object {
   content: url("/static/images/home/svg_web/compressed/home_sh_s2_fg.svg");
 }
 @media only screen and (max-width: 768px) {
-  main#main section#index-s-one .shapes .folder > div.fore object {
+  main#main #index-s-one .shapes .folder > div.fore object {
     content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_fore.svg");
   }
 }
 @media only screen and (max-width: 576px) {
-  main#main section#index-s-one .shapes .folder > div.fore object {
+  main#main #index-s-one .shapes .folder > div.fore object {
     content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_fg.svg");
   }
 }
-main#main section#index-s-one .shapes .circles {
+main#main #index-s-one .shapes .circles {
   position: relative;
   width: 80%;
   margin: 0px auto;
   height: clamp(30rem, -42.7969018933rem + 94.6643717728vw, 85rem);
   z-index: 11;
 }
-main#main section#index-s-one .shapes .circles > div {
+main#main #index-s-one .shapes .circles > div {
   position: absolute;
 }
-main#main section#index-s-one .shapes .circles > div:nth-child(1) {
-  top: 21rem;
-  left: -18rem;
+main#main #index-s-one .shapes .circles > div:nth-child(1) {
+  top: 23rem;
+  left: -6rem;
 }
 @media only screen and (max-width: 1350px) {
-  main#main section#index-s-one .shapes .circles > div:nth-child(1) {
-    top: 0rem;
-    left: -18rem;
+  main#main #index-s-one .shapes .circles > div:nth-child(1) {
+    top: 3rem;
+    left: -6rem;
   }
 }
-main#main section#index-s-one .shapes .circles > div:nth-child(2) {
+@media only screen and (max-width: 1040px) {
+  main#main #index-s-one .shapes .circles > div:nth-child(1) {
+    top: 2rem;
+    left: -12rem;
+    transform: translateY(clamp(-3rem, -6.724137931rem + 6.4655172414vw, 0rem));
+  }
+}
+@media only screen and (max-width: 576px) {
+  main#main #index-s-one .shapes .circles > div:nth-child(1) {
+    left: -9rem;
+  }
+}
+main#main #index-s-one .shapes .circles > div:nth-child(2) {
   top: 0;
   right: 0;
 }
-main#main section#index-s-one .shapes .circles > div:nth-child(3) {
+@media only screen and (max-width: 768px) {
+  main#main #index-s-one .shapes .circles > div:nth-child(2) {
+    visibility: collapse;
+  }
+}
+main#main #index-s-one .shapes .circles > div:nth-child(3) {
   bottom: 0rem;
   right: 0;
   transform: translateX(0rem) translateY(0rem);
 }
 @media only screen and (max-width: 768px) {
-  main#main section#index-s-one .shapes .circles > div:nth-child(3) {
+  main#main #index-s-one .shapes .circles > div:nth-child(3) {
     bottom: -36rem;
     right: -12rem;
     transform: translateX(clamp(-12rem, -48.2513089005rem + 62.8272251309vw, 0rem)) translateY(clamp(-24rem, -96.502617801rem + 125.6544502618vw, 0rem));
   }
 }
 @media only screen and (max-width: 576px) {
-  main#main section#index-s-one .shapes .circles > div:nth-child(3) {
+  main#main #index-s-one .shapes .circles > div:nth-child(3) {
     visibility: collapse;
   }
 }
-main#main section#index-s-one > div:nth-child(2) {
+main#main #index-s-one > div:nth-child(2) {
   margin-top: clamp(0rem, -12.3633440514rem + 16.077170418vw, 5rem);
   height: 100vh;
 }
-main#main section#index-s-one > div:nth-child(2) .text-box {
+main#main #index-s-one > div:nth-child(2) .text-box {
   width: 100%;
   height: 100%;
   justify-content: center;
 }
 @media only screen and (max-width: 1350px) {
-  main#main section#index-s-one > div:nth-child(2) .text-box {
+  main#main #index-s-one > div:nth-child(2) .text-box {
     justify-content: flex-start;
   }
 }
+@media only screen and (max-width: 576px) {
+  main#main #index-s-one > div:nth-child(2) .text-box .body {
+    align-items: center;
+  }
+}
+main#main #index-s-one > div:nth-child(2) .text-box .body > div > i {
+  margin-right: 0.75rem;
+}
 @media only screen and (min-width: 576px) {
-  main#main section#index-s-one > div:nth-child(2) .img-box-wrapper {
+  main#main #index-s-one > div:nth-child(2) .img-box-wrapper {
     visibility: collapse;
   }
 }
-main#main section#index-s-one > div:nth-child(2) .img-box-wrapper .image-box {
-  height: clamp(22.5rem, 8.4rem + 37.5vw, 30rem);
-  width: clamp(22.5rem, 8.4rem + 37.5vw, 30rem);
-  transform: translateY(clamp(-22rem, -63.36rem + 110vw, 0rem));
+main#main #index-s-one > div:nth-child(2) .img-box-wrapper .image-box {
+  height: clamp(18.5rem, -3.12rem + 57.5vw, 30rem);
+  width: clamp(18.5rem, -3.12rem + 57.5vw, 30rem);
+  transform: translateY(clamp(-20rem, -57.6rem + 100vw, 0rem));
 }
-main#main section#index-s-two {
+main#main #index-s-two {
   height: 100vh;
   margin-top: clamp(-32rem, -87rem + 71.6145833333vw, 23rem);
+}
+@media only screen and (max-width: 768px) {
+  main#main #index-s-two {
+    margin-top: clamp(-22rem, -85.7736842105rem + 110.5263157895vw, -1rem);
+  }
+}
+@media only screen and (max-width: 576px) {
+  main#main #index-s-two {
+    margin-top: clamp(-32rem, -88.4rem + 150vw, -2rem);
+  }
+}
+main#main #index-s-three {
+  width: 100vw;
+  height: 85vh;
+}
+main#main #index-s-three .shapes {
+  margin-top: -16rem;
+}
+@media only screen and (max-width: 768px) {
+  main#main #index-s-three .shapes {
+    margin-top: -27rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  main#main #index-s-three .shapes {
+    margin-top: -22rem;
+  }
+}
+main#main #index-s-three .shapes .index-s-three-sh-1 {
+  width: 100%;
+}
+main#main #index-s-three .shapes .index-s-three-sh-1 object {
+  content: url("/static/images/home/svg_web/compressed/home_sh_s3.svg");
+}
+@media only screen and (max-width: 768px) {
+  main#main #index-s-three .shapes .index-s-three-sh-1 object {
+    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s3.svg");
+  }
+}
+@media only screen and (max-width: 576px) {
+  main#main #index-s-three .shapes .index-s-three-sh-1 object {
+    content: url("/static/images/home/svg_mobile/compressed/index_mobile_sh_s3.svg");
+  }
+}
+@media only screen and (max-width: 412px) {
+  main#main #index-s-three .shapes .index-s-three-sh-1 {
+    width: 170%;
+  }
+}
+main#main #index-s-three div.wrapper {
+  height: 100%;
+  margin-top: clamp(-22rem, -51.0309278351rem + 37.8006872852vw, 0rem);
+}
+@media only screen and (max-width: 768px) {
+  main#main #index-s-three div.wrapper {
+    margin-top: clamp(-6.5rem, -45.5rem + 67.7083333333vw, 6.5rem);
+  }
+}
+@media only screen and (max-width: 576px) {
+  main#main #index-s-three div.wrapper {
+    margin-top: clamp(-6rem, -48.7073170732rem + 103.6585365854vw, 11rem);
+  }
+}
+@media only screen and (max-width: 412px) {
+  main#main #index-s-three div.wrapper {
+    margin-top: clamp(17rem, -45.6666666667rem + 166.6666666667vw, 23rem);
+  }
+}
+main#main #index-s-three div.wrapper > div.text-box {
+  height: 100%;
+}
+main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members > li.member {
+  display: block;
+}
+main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members > li.f-item {
+  flex: 1;
+  flex-basis: auto;
+}
+@media only screen and (max-width: 768px) {
+  main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members > li.f-item {
+    flex: 1 50%;
+  }
+}
+@media only screen and (max-width: 412px) {
+  main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members > li.f-item {
+    flex: 1 100%;
+  }
 }
 main#main footer {
   width: 100%;

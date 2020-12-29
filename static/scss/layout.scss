@@ -15,9 +15,47 @@
 @import "flexbox.css"; 
 @import "grid.css"; 
 
+/* general */
+/* text alignment horizontal*/
+.t-align {
+    &.left {
+        text-align: left; 
+        text-align: start; 
+    }
+    &.right {
+        text-align: right; 
+        text-align: end; 
+    }
+    &.justify {
+        text-align: justify; 
+    }
+    &.center {
+        text-align: center; 
+    }
+    &.top {
+        vertical-align: top; 
+    }
+    &.bottom {
+        vertical-align: bottom; 
+    }
+    &.middle {
+        vertical-align: middle; 
+    }
+    &.t-top {
+        vertical-align: text-top; 
+    }
+    &.t-bottom {
+        vertical-align: text-bottom; 
+    }
+    &.sub {
+        vertical-align: sub; 
+    }
+    &.super {
+        vertical-align: super; 
+    }
+}
 
 /* navigation */
-/* navigation web and mobile*/
 nav, main {
     width: 100vw;
 }
@@ -29,7 +67,7 @@ nav, main {
     z-index: 999;
 
     // show nav-links for web and hide mobile top for web
-    @include m.responsive(">", 612px){
+    @include m.responsive(">", 576px){
         ul .nav-links {
             display: initial;
         }
@@ -39,7 +77,7 @@ nav, main {
     }
 
     // hide nav-links for mobile
-    @include m.responsive("<", 612px){
+    @include m.responsive("<", 576px){
         .nav-links {
             display: none;
         }
@@ -53,10 +91,10 @@ nav, main {
     position: fixed;
     bottom: 0;
     left: 0;
-    @include m.responsive("<", 613px){
+    @include m.responsive("<", 576px){
         display: initial;
     }
-    @include m.responsive(">", 613px){
+    @include m.responsive(">", 576px){
         display: none; 
     }
 }
@@ -98,7 +136,6 @@ nav#nav-web, main#main-content {
 }
 
 nav#nav-mobile {
-
     z-index: 105;
     & .wrapper {
         width: 90%; 
@@ -128,16 +165,17 @@ nav#nav-mobile-links {
     }    
 }
 
-
-
-/* general */
+// main content index page
 main#main {
     $colors: color.adjust(v.$secondaryColor, $blackness: 10%), v.$secondaryColor, color.adjust(v.$secondaryColor, $lightness: 10%), color.adjust(v.$secondaryColor, $lightness: 20%);
     // background-image: f.gradient("linear", 135deg, $colors);
     
     section {
         width: 100%;
-
+        .shapes{
+            width: 100%;
+            position: absolute;
+        }
         // wrapper for all text-boxes in sections
         & > .wrapper {
             position: relative;
@@ -149,160 +187,240 @@ main#main {
                 width: 90%;
             }
             & .text-box {
-
+                @include m.responsive("<", 576px){
+                    text-align: center;    
+                } 
                 & header {
                     & h1 {
                         padding-bottom: 1rem;
-                    }
-                    @include m.responsive("<", 612px){
-                        text-align: center;    
-                    }       
+                    }      
                 }
                 & .body > * {
-                    padding-bottom: 0.75rem;
+                    padding-bottom: 0.75rem;       
                 }
-
+    
             }
         }
+    }
 
-        // index page elements
-        &#index-hero { // index section
-            height: 100vh;
-            z-index: inherit;
-        }
+    // index page elements
+    & #index-hero { // index section
+        height: 100vh;
+        z-index: inherit;
+    }
 
-        // index-s-one
-        &#index-s-one {
-            width: 100vw;
-            height: 100vh;
-            & .shapes {
+    // index-s-one
+    & #index-s-one {
+        width: 100vw;
+        height: 100vh;
+        & .shapes {
+            & .folder {
                 width: 100%;
                 position: absolute;
-                & .folder {
+                z-index: 11;
+                transform: translateY(-15rem);      
+                
+                & > div {
+                    position: inherit;
                     width: 100%;
-                    position: absolute;
-                    z-index: 11;
-                    transform: translateY(-15rem);      
-                    
-                    & > div {
-                        position: inherit;
-                        width: 100%;
-                        &.back {
-                            transform: translateY(-5rem);      
-                            & object {
-                                content: url("/static/images/home/svg_web/compressed/home_sh_s2_bg.svg");
-                                @include m.responsive("<", 768px){
-                                    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_back.svg");
-                                }
-                                @include m.responsive("<", 576px){
-                                    content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_bg.svg");
-                                }
-                            }
-                        }
-                        &.middle {
-                            transform: translateY(-1rem);      
-                            & object {
-                                content: url("/static/images/home/svg_web/compressed/home_sh_s2_mg.svg");
-                                @include m.responsive("<", 768px){
-                                    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_middle.svg");
-                                }
-                                @include m.responsive("<", 576px){
-                                    content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_mg.svg");
-                                }
-                            }
-                        }
-                        &.fore {
-                            & object {
-                                content: url("/static/images/home/svg_web/compressed/home_sh_s2_fg.svg");
-                                @include m.responsive("<", 768px){
-                                    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_fore.svg");
-                                }
-                                @include m.responsive("<", 576px){
-                                    content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_fg.svg");
-                                }
-                            }
-                        }
-                    } 
-                }
-                & .circles {
-                    position: relative;
-                    width: 80%;
-                    margin: 0px auto; 
-                    height: f.fontDynSize(769, 1350, 300, 850);
-                    z-index: 11;
-
-                    & > div {
-                        position: absolute;
-                        
-                        &:nth-child(1){ // top-left circle
-                            top:21rem;
-                            left: -18rem;
-                            @include m.responsive("<", 1350px) {
-                                top:0rem;
-                                left: -18rem;
-                            }
-                        }
-                        &:nth-child(2){ // top-right circle
-                            top: 0;
-                            right: 0;
-                        }
-                        &:nth-child(3){ // bottom-right circle
-                            bottom: 0rem;
-                            right: 0;
-                            transform: translateX(0rem) translateY(0rem);
-                            @include m.responsive("<", 768px) {
-                                bottom: -36rem;
-                                right: -12rem;
-                                transform: translateX(f.fontDynSize(577, 768, -120, 0)) translateY(f.fontDynSize(577, 768, -240, 0)); 
+                    &.back {
+                        transform: translateY(-5rem);      
+                        & object {
+                            content: url("/static/images/home/svg_web/compressed/home_sh_s2_bg.svg");
+                            @include m.responsive("<", 768px){
+                                content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_back.svg");
                             }
                             @include m.responsive("<", 576px){
-                                visibility: collapse;
+                                content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_bg.svg");
                             }
-
                         }
-                    } 
-                }
+                    }
+                    &.middle {
+                        transform: translateY(-1rem);      
+                        & object {
+                            content: url("/static/images/home/svg_web/compressed/home_sh_s2_mg.svg");
+                            @include m.responsive("<", 768px){
+                                content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_middle.svg");
+                            }
+                            @include m.responsive("<", 576px){
+                                content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_mg.svg");
+                            }
+                        }
+                    }
+                    &.fore {
+                        & object {
+                            content: url("/static/images/home/svg_web/compressed/home_sh_s2_fg.svg");
+                            @include m.responsive("<", 768px){
+                                content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_fore.svg");
+                            }
+                            @include m.responsive("<", 576px){
+                                content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_fg.svg");
+                            }
+                        }
+                    }
+                } 
             }
+            & .circles {
+                position: relative;
+                width: 80%;
+                margin: 0px auto; 
+                height: f.fontDynSize(769, 1350, 300, 850);
+                z-index: 11;
 
-            & > div:nth-child(2){ // text-box wrapper
-                margin-top: f.fontDynSize(769, 1080, 0, 50);
-                height: 100vh;
+                & > div {
+                    position: absolute;
+                    
+                    &:nth-child(1){ // top-left circle
+                        top:23rem;
+                        left: -6rem;
+                        @include m.responsive("<", 1350px) {
+                            top: 3rem;
+                            left: -6rem;
+                        }
+                        @include m.responsive("<", 1040px) {
+                            top: 2rem;
+                            left: -12rem;
+                            transform: translateY(f.fontDynSize(576, 1040, -30, 0));
+                        }
+                        @include m.responsive("<", 576px) {
+                            left: -9rem;
+                        }
+                    }
+                    &:nth-child(2){ // top-right circle
+                        top: 0;
+                        right: 0;
+                        @include m.responsive("<", 768px) {
+                            visibility: collapse;
+                        }
+                    }
+                    &:nth-child(3){ // bottom-right circle
+                        bottom: 0rem;
+                        right: 0;
+                        transform: translateX(0rem) translateY(0rem);
+                        @include m.responsive("<", 768px) {
+                            bottom: -36rem;
+                            right: -12rem;
+                            transform: translateX(f.fontDynSize(577, 768, -120, 0)) translateY(f.fontDynSize(577, 768, -240, 0)); 
+                        }
+                        @include m.responsive("<", 576px){
+                            visibility: collapse;
+                        }
 
-                & .text-box {
-                    width: 100%;
-                    height: 100%;
-                    justify-content: center;
-                    @include m.responsive("<", 1350px){
-                        justify-content: flex-start;
                     }
-                }
-                & .img-box-wrapper {
-
-                    @include m.responsive(">", 576px){ // show image at mobile screens 
-                        visibility: collapse;
-                    }
-                    & .image-box {
-                        height: f.fontDynSize(376, 576, 225, 300);
-                        width: f.fontDynSize(376, 576, 225, 300);
-                        transform: translateY(f.fontDynSize(376, 576, -220, 0)); 
-                    }
-                }
+                } 
             }
         }
 
-        // index-s-two
-        &#index-s-two {
+        & > div:nth-child(2){ // text-box wrapper
+            margin-top: f.fontDynSize(769, 1080, 0, 50);
             height: 100vh;
-            margin-top: f.fontDynSize(768, 1536, -320, 230);
-            // transform: translateY(0rem);
-            // position: relative;
-            // top: 13rem;
-            // transform: ;
-        }
-        
 
+            & .text-box {
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+                @include m.responsive("<", 1350px){
+                    justify-content: flex-start;
+                }
+                & .body {
+                    @include m.responsive("<", 576px){
+                        align-items: center;
+                    }
+                }
+                & .body > div > i {
+                    margin-right: 0.75rem;
+                }
+            }
+            & .img-box-wrapper {
+
+                @include m.responsive(">", 576px){ // show image at mobile screens 
+                    visibility: collapse;
+                }
+                & .image-box {
+                    height: f.fontDynSize(376, 576, 185, 300);
+                    width: f.fontDynSize(376, 576, 185, 300);
+                    transform: translateY(f.fontDynSize(376, 576, -200, 0)); 
+                }
+            }
+        }
     }
-    
+
+    // index-s-two
+    & #index-s-two {
+        height: 100vh;
+        margin-top: f.fontDynSize(768, 1536, -320, 230);
+        @include m.responsive("<", 768px){
+            margin-top: f.fontDynSize(577, 767, -220, -10);
+        }
+        @include m.responsive("<", 576px){
+            margin-top: f.fontDynSize(376, 576, -320, -20);
+        }
+    }
+
+    // index-s-three
+    & #index-s-three {
+        width:100vw;
+        height: 85vh;
+        & .shapes {
+            margin-top: -16rem;
+            @include m.responsive("<", 768px){
+                margin-top: -27rem;
+            }
+            @include m.responsive("<", 576px){
+                margin-top: -22rem;
+            }
+            & .index-s-three-sh-1 {
+                width: 100%;
+                & object {
+                    content: url("/static/images/home/svg_web/compressed/home_sh_s3.svg");
+                    @include m.responsive("<", 768px){
+                        content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s3.svg");
+                    }
+                    @include m.responsive("<", 576px){
+                        content: url("/static/images/home/svg_mobile/compressed/index_mobile_sh_s3.svg");
+                    }
+                }
+                @include m.responsive("<", 412px){
+                    width: 170%;
+                }
+            }
+        } 
+        & div.wrapper {
+            height: 100%;
+            margin-top: f.fontDynSize(768, 1350, -220, 0);
+            @include m.responsive("<", 768px){
+                margin-top: f.fontDynSize(576, 768, -65, 65);
+            };
+            @include m.responsive("<", 576px){
+                margin-top: f.fontDynSize(412, 576, -60, 110);
+            };
+            @include m.responsive("<", 412px){
+                margin-top: f.fontDynSize(376, 412, 170, 230);
+            };
+            & > div.text-box {
+               height: 100%; 
+                & div.body {
+                    & > ul.team-members {
+                        & > li.member {
+                            display: block;
+                        }
+                        & > li.f-item {
+                            flex: 1;
+                            flex-basis: auto;
+                            @include m.responsive("<", 768px){
+                                flex: 1 50%;
+                            }
+                            @include m.responsive("<", 412px){
+                                flex: 1 100%;
+                            }
+                        }
+                    }
+                }
+
+            }  
+        } 
+    }
+        
     footer {
         width: 100%;
     }

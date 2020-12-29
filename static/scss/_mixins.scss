@@ -71,8 +71,7 @@
     -o-#{$property}: $value;
     -moz-#{$property}: $value;
     -webkit-#{$property}: $value;
-    
-    // unquote everything
+
 }// make property compatible
 
 @mixin background($attach, $img, $pos, $size) {

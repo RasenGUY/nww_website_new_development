@@ -25,7 +25,7 @@
     $gradColors: v.$ctaColor, v.$ctaLight, v.$ctaColor 105%;
     background-image: f.gradient('linear', 135deg, $gradColors);
     box-shadow: f.shadows("btn-sm", v.$ctaColor, v.$opacityXxl);
-    padding: f.fontDynSize(614, 1040, 4.5, 6) f.fontDynSize(614, 1040, 10, 14);
+    padding: f.fontDynSize(576, 1040, 4.5, 6) f.fontDynSize(576, 1040, 10, 14);
 
     &:hover, {
         $gradColors: color.adjust(v.$ctaColor, $blackness: 10%), color.adjust(v.$ctaLight, $blackness: 2.5%), color.adjust(v.$ctaColor, $blackness: 10%) 105%;
@@ -432,5 +432,34 @@ nav#nav-mobile-links {
     @include m.background(initial, "/static/images/home/jpeg_web/compressed/travel_5.jpg", center, cover);
     @include m.responsive("<", 412px){
         @include m.background(initial, "/static/images/home/jpeg_mobile/travel_2.jpg", center, cover);
+    }
+}
+
+// ------------- section s three ------------
+#index-s-three {
+    // some stuff enters here 
+    & div.text-box {
+        width: 100%;
+        & > div.body > ul.team-members {
+            list-style: none;
+            & > li.member {
+                & > a {
+                    width: 100%;
+                    & > div > div.image {
+                        border-radius: v.$cornerCircle;
+                        height: f.fontDynSize(768, 1050, 130, 150); 
+                        width: f.fontDynSize(768, 1050, 130, 150);
+                        border: solid v.$ctaColor 0.75rem; 
+                        background-color: grey;
+                    }
+                    & h3.title {
+                        padding: 1.5rem 0 0 0;
+                    }
+                }
+                @include m.responsive("<", 768px){
+                    padding-bottom: 5rem;
+                } 
+            }
+        }
     }
 }
