@@ -356,6 +356,7 @@ main#main {
             margin-top: f.fontDynSize(376, 576, -320, -20);
         }
     }
+    
 
     // index-s-three
     & #index-s-three {
@@ -419,6 +420,23 @@ main#main {
 
             }  
         } 
+    }
+
+    // index-s-two
+    & #index-s-four {
+        height: 100vh;
+        margin-top: f.fontDynSize(768, 1536, -380, 10);
+        @include m.responsive("<", 768px){
+            height: 150vh;
+            background-position: 85%;
+            margin-top: f.fontDynSize(576, 768, -140, 80);
+        }
+        @include m.responsive("<", 576px){
+            margin-top: f.fontDynSize(412, 576, -120, 160);
+            @include m.responsive("<", 412px){
+                margin-top: f.fontDynSize(376, 412, 250, 370);
+            }
+        }
     }
         
     footer {

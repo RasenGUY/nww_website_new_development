@@ -448,8 +448,7 @@ section#index-s-three {
                         border-radius: v.$cornerCircle;
                         height: f.fontDynSize(768, 1050, 130, 150); 
                         width: f.fontDynSize(768, 1050, 130, 150);
-                        border: solid v.$ctaColor 0.75rem; 
-                        background-color: grey;
+                        border: solid v.$ctaColor 0.5rem;
                     }
                     & h3.title {
                         padding: 1.5rem 0 0 0;
@@ -457,8 +456,28 @@ section#index-s-three {
                 }
                 @include m.responsive("<", 768px){
                     padding-bottom: 5rem;
-                } 
+                }
+                &:nth-child(1) > a div.image { // director
+                    @include m.background(initial, "/static/images/home/pngs/team/compressed/hong.png", center, cover);
+                }
+                &:nth-child(2) > a div.image { // managing director
+                    @include m.background(initial, "/static/images/home/pngs/team/compressed/ly.png", center, cover);
+                }
+                &:nth-child(3) > a div.image { // marketing
+                    @include m.background(initial, "/static/images/home/pngs/team/compressed/eva.png", center, cover);
+                }
+                &:nth-child(4) > a div.image { // IT
+                    @include m.background(initial, "/static/images/home/pngs/team/compressed/fernando.png", center, cover);
+                }
             }
         }
+    }
+}
+
+// ------------ section s four ---------------- 
+#index-s-four {
+    @include m.background(initial, "/static/images/home/jpeg_web/compressed/experience_4.jpg", center, cover);
+    @include m.responsive("<", 412px){
+        @include m.background(initial, "/static/images/home/jpeg_mobile/experience_4.jpg", center, cover);
     }
 }

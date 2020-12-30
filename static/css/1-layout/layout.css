@@ -414,6 +414,27 @@ main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members >
     flex: 1 100%;
   }
 }
+main#main #index-s-four {
+  height: 100vh;
+  margin-top: clamp(-38rem, -77rem + 50.78125vw, 1rem);
+}
+@media only screen and (max-width: 768px) {
+  main#main #index-s-four {
+    height: 150vh;
+    background-position: 85%;
+    margin-top: clamp(-14rem, -80rem + 114.5833333333vw, 8rem);
+  }
+}
+@media only screen and (max-width: 576px) {
+  main#main #index-s-four {
+    margin-top: clamp(-12rem, -82.3414634146rem + 170.7317073171vw, 16rem);
+  }
+}
+@media only screen and (max-width: 576px) and (max-width: 412px) {
+  main#main #index-s-four {
+    margin-top: clamp(25rem, -100.3333333333rem + 333.3333333333vw, 37rem);
+  }
+}
 main#main footer {
   width: 100%;
 }
