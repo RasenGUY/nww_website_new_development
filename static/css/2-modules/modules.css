@@ -329,6 +329,11 @@ nav#nav-mobile-links::before {
   transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
 }
 
+section .overlay {
+  background-color: rgba(33, 33, 33, 0.3);
+  backdrop-filter: blur(0.125rem);
+}
+
 #index-hero {
   background-attachment: initial;
   background-image: url("/static/images/home/jpeg_web/compressed/teach_2.jpg");
@@ -346,18 +351,6 @@ nav#nav-mobile-links::before {
     background-repeat: no-repeat;
     background-size: cover;
   }
-}
-#index-hero::after {
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  content: "";
-  width: inherit;
-  height: inherit;
-  background-color: rgba(40, 35, 34, 0.3);
-  backdrop-filter: blur(0.325rem);
-  z-index: 0;
 }
 
 .arrows {

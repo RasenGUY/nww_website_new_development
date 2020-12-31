@@ -169,9 +169,12 @@ nav#nav-mobile-links {
 main#main {
     $colors: color.adjust(v.$secondaryColor, $blackness: 10%), v.$secondaryColor, color.adjust(v.$secondaryColor, $lightness: 10%), color.adjust(v.$secondaryColor, $lightness: 20%);
     // background-image: f.gradient("linear", 135deg, $colors);
+    overflow: hidden;
     
     section {
-        width: 100%;
+        position: relative;
+        width: 100vw;
+        // z-index: 0;
         .shapes{
             width: 100%;
             position: absolute;
@@ -201,17 +204,22 @@ main#main {
     
             }
         }
+        .overlay {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            z-index: inherit;
+        }
     }
 
-    // index page elements
+    // index hero first section 
     & #index-hero { // index section
         height: 100vh;
-        z-index: inherit;
     }
 
-    // index-s-one
+    // index section one teach in vietnam
     & #index-s-one {
-        width: 100vw;
         height: 100vh;
         & .shapes {
             & .folder {
@@ -313,8 +321,7 @@ main#main {
 
         & > div:nth-child(2){ // text-box wrapper
             margin-top: f.fontDynSize(769, 1080, 0, 50);
-            height: 100vh;
-
+            height: 100%;
             & .text-box {
                 width: 100%;
                 height: 100%;
@@ -334,7 +341,7 @@ main#main {
             & .img-box-wrapper {
 
                 @include m.responsive(">", 576px){ // show image at mobile screens 
-                    visibility: collapse;
+                    display: none;
                 }
                 & .image-box {
                     height: f.fontDynSize(376, 576, 185, 300);
@@ -345,30 +352,30 @@ main#main {
         }
     }
 
-    // index-s-two
+    // index section two explore vietnam
     & #index-s-two {
         height: 100vh;
-        margin-top: f.fontDynSize(768, 1536, -320, 230);
+        margin-top: f.fontDynSize(768, 1550, -320, 240);
         @include m.responsive("<", 768px){
             margin-top: f.fontDynSize(577, 767, -220, -10);
         }
         @include m.responsive("<", 576px){
-            margin-top: f.fontDynSize(376, 576, -320, -20);
+            margin-top: f.fontDynSize(376, 576, -340, -20);
         }
     }
     
 
-    // index-s-three
+    // index section three team
     & #index-s-three {
-        width:100vw;
-        height: 85vh;
+        height: 100vh;
         & .shapes {
             margin-top: -16rem;
+            z-index: 1;
             @include m.responsive("<", 768px){
-                margin-top: -27rem;
+                margin-top: -20rem;
             }
             @include m.responsive("<", 576px){
-                margin-top: -22rem;
+                margin-top: -20rem;
             }
             & .index-s-three-sh-1 {
                 width: 100%;
@@ -387,7 +394,7 @@ main#main {
             }
         } 
         & div.wrapper {
-            height: 100%;
+            height: 85%;
             margin-top: f.fontDynSize(768, 1350, -220, 0);
             @include m.responsive("<", 768px){
                 margin-top: f.fontDynSize(576, 768, -65, 65);
@@ -422,22 +429,47 @@ main#main {
         } 
     }
 
-    // index-s-two
+    // section four experience vietnam
     & #index-s-four {
         height: 100vh;
-        margin-top: f.fontDynSize(768, 1536, -380, 10);
+        margin-top: f.fontDynSize(769, 1536, -490, -90);
         @include m.responsive("<", 768px){
             height: 150vh;
             background-position: 85%;
-            margin-top: f.fontDynSize(576, 768, -140, 80);
+            margin-top: f.fontDynSize(579, 768, -170, 70);
         }
         @include m.responsive("<", 576px){
-            margin-top: f.fontDynSize(412, 576, -120, 160);
+            margin-top: f.fontDynSize(412, 576, -210, 60);
             @include m.responsive("<", 412px){
-                margin-top: f.fontDynSize(376, 412, 250, 370);
+                margin-top: f.fontDynSize(379, 412, 150, 270);
             }
         }
     }
+
+
+    // section five reviews and contact
+    & #index-s-five {
+        height: 325vh;
+        & .shapes {
+            margin-top: -9rem;
+            & .index-s-five-sh-1 {
+                width: 100%;
+                & object {
+                    content: url("/static/images/home/svg_web/compressed/home_sh_s5.svg");
+                    @include m.responsive("<", 768px){
+                        // content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s3.svg");
+                    }
+                    @include m.responsive("<", 576px){
+                        // content: url("/static/images/home/svg_mobile/compressed/index_mobile_sh_s3.svg");
+                    }
+                }
+                @include m.responsive("<", 412px){
+                    // width: 170%;
+                }
+            }
+        }
+    }
+
         
     footer {
         width: 100%;

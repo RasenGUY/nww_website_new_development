@@ -346,6 +346,11 @@ nav#nav-mobile-links {
     }
 }
 
+section .overlay {
+    background-color: color.adjust(v.$primaryColor, $alpha: v.$opacityXl, $blackness: 75%);
+    // background-color: black;
+    backdrop-filter: blur(0.125rem);
+}
 // --------------------  index page -------------------------------
 
 // ------- hero section ---------------    
@@ -354,19 +359,7 @@ nav#nav-mobile-links {
     @include m.responsive("<", 412px){
         @include m.background(initial, "/static/images/home/jpeg_mobile/teach_2.jpg", center, cover);
     }
-    // darken image 
-    &::after {
-        position: absolute;
-        display: block;
-        top: 0;
-        left: 0;
-        content: '';
-        width: inherit;
-        height: inherit;
-        background-color: color.adjust(v.$primaryColor, $alpha: v.$opacityXl, $blackness: 70%);
-        backdrop-filter: blur(0.325rem);
-        z-index: 0;
-    }
+
 }
     // arrows and hover animation
     .arrows {
@@ -480,4 +473,5 @@ section#index-s-three {
     @include m.responsive("<", 412px){
         @include m.background(initial, "/static/images/home/jpeg_mobile/experience_4.jpg", center, cover);
     }
+
 }
