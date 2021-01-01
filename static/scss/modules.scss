@@ -90,6 +90,7 @@
 }
 
 // other elements 
+
 // create circular shapes on the site
 .shapes {
     
@@ -174,6 +175,13 @@
     }
 }
 
+// div-shapes for mugshots
+div.mugshot {
+    border-radius: v.$cornerCircle;
+    height: f.fontDynSize(768, 1050, 130, 150); 
+    width: f.fontDynSize(768, 1050, 130, 150);
+    border: solid v.$ctaColor 0.5rem;
+}
 // navigation menu
 nav#nav-web{
     box-shadow: 5px 0px 5px color.adjust(v.$secondaryColor, $blackness: 30%, $alpha: v.$opacityXl);
@@ -351,6 +359,7 @@ section .overlay {
     // background-color: black;
     backdrop-filter: blur(0.125rem);
 }
+
 // --------------------  index page -------------------------------
 
 // ------- hero section ---------------    
@@ -437,12 +446,6 @@ section#index-s-three {
             & > li.member {
                 & > a {
                     width: 100%;
-                    & > div > div.image {
-                        border-radius: v.$cornerCircle;
-                        height: f.fontDynSize(768, 1050, 130, 150); 
-                        width: f.fontDynSize(768, 1050, 130, 150);
-                        border: solid v.$ctaColor 0.5rem;
-                    }
                     & h3.title {
                         padding: 1.5rem 0 0 0;
                     }
@@ -450,16 +453,16 @@ section#index-s-three {
                 @include m.responsive("<", 768px){
                     padding-bottom: 5rem;
                 }
-                &:nth-child(1) > a div.image { // director
+                &:nth-child(1) > a div.mugshot { // director
                     @include m.background(initial, "/static/images/home/pngs/team/compressed/hong.png", center, cover);
                 }
-                &:nth-child(2) > a div.image { // managing director
+                &:nth-child(2) > a div.mugshot { // managing director
                     @include m.background(initial, "/static/images/home/pngs/team/compressed/ly.png", center, cover);
                 }
-                &:nth-child(3) > a div.image { // marketing
+                &:nth-child(3) > a div.mugshot { // marketing
                     @include m.background(initial, "/static/images/home/pngs/team/compressed/eva.png", center, cover);
                 }
-                &:nth-child(4) > a div.image { // IT
+                &:nth-child(4) > a div.mugshot { // IT
                     @include m.background(initial, "/static/images/home/pngs/team/compressed/fernando.png", center, cover);
                 }
             }
@@ -474,4 +477,28 @@ section#index-s-three {
         @include m.background(initial, "/static/images/home/jpeg_mobile/experience_4.jpg", center, cover);
     }
 
+}
+
+// ----------- section s five -----------------
+#index-s-five {
+    .wrapper {
+        height: 100%;
+        .text-box {
+            &.reviews-section{
+                height: 65%;
+                & .body {
+                    width: 100%;    
+                    & ul.reviews {
+                        list-style: none;
+                        a {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            &.contact-section{
+                height: 35%;
+            }
+        }
+    }
 }

@@ -354,7 +354,7 @@ main#main {
 
     // index section two explore vietnam
     & #index-s-two {
-        height: 100vh;
+        height: 125vh;
         margin-top: f.fontDynSize(768, 1550, -320, 240);
         @include m.responsive("<", 768px){
             margin-top: f.fontDynSize(577, 767, -220, -10);
@@ -397,7 +397,7 @@ main#main {
             height: 85%;
             margin-top: f.fontDynSize(768, 1350, -220, 0);
             @include m.responsive("<", 768px){
-                margin-top: f.fontDynSize(576, 768, -65, 65);
+                margin-top: f.fontDynSize(576, 768, 12.5, 135);
             };
             @include m.responsive("<", 576px){
                 margin-top: f.fontDynSize(412, 576, -60, 110);
@@ -431,7 +431,7 @@ main#main {
 
     // section four experience vietnam
     & #index-s-four {
-        height: 100vh;
+        height: 125vh;
         margin-top: f.fontDynSize(769, 1536, -490, -90);
         @include m.responsive("<", 768px){
             height: 150vh;
@@ -443,6 +443,9 @@ main#main {
             @include m.responsive("<", 412px){
                 margin-top: f.fontDynSize(379, 412, 150, 270);
             }
+        }
+        & .wrapper .text-box header {
+            margin-top: 10rem;
         }
     }
 
@@ -460,7 +463,7 @@ main#main {
                         // content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s3.svg");
                     }
                     @include m.responsive("<", 576px){
-                        // content: url("/static/images/home/svg_mobile/compressed/index_mobile_sh_s3.svg");
+                        content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s5.svg");
                     }
                 }
                 @include m.responsive("<", 412px){

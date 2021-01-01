@@ -333,7 +333,7 @@ main#main #index-s-one > div:nth-child(2) .img-box-wrapper .image-box {
   transform: translateY(clamp(-20rem, -57.6rem + 100vw, 0rem));
 }
 main#main #index-s-two {
-  height: 100vh;
+  height: 125vh;
   margin-top: clamp(-32rem, -86.9974424552rem + 71.6112531969vw, 24rem);
 }
 @media only screen and (max-width: 768px) {
@@ -390,7 +390,7 @@ main#main #index-s-three div.wrapper {
 }
 @media only screen and (max-width: 768px) {
   main#main #index-s-three div.wrapper {
-    margin-top: clamp(-6.5rem, -45.5rem + 67.7083333333vw, 6.5rem);
+    margin-top: clamp(1.25rem, -35.5rem + 63.8020833333vw, 13.5rem);
   }
 }
 @media only screen and (max-width: 576px) {
@@ -424,7 +424,7 @@ main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members >
   }
 }
 main#main #index-s-four {
-  height: 100vh;
+  height: 125vh;
   margin-top: clamp(-49rem, -89.1043024772rem + 52.1512385919vw, -9rem);
 }
 @media only screen and (max-width: 768px) {
@@ -444,6 +444,9 @@ main#main #index-s-four {
     margin-top: clamp(15rem, -122.8181818182rem + 363.6363636364vw, 27rem);
   }
 }
+main#main #index-s-four .wrapper .text-box header {
+  margin-top: 10rem;
+}
 main#main #index-s-five {
   height: 325vh;
 }
@@ -455,6 +458,11 @@ main#main #index-s-five .shapes .index-s-five-sh-1 {
 }
 main#main #index-s-five .shapes .index-s-five-sh-1 object {
   content: url("/static/images/home/svg_web/compressed/home_sh_s5.svg");
+}
+@media only screen and (max-width: 576px) {
+  main#main #index-s-five .shapes .index-s-five-sh-1 object {
+    content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s5.svg");
+  }
 }
 main#main footer {
   width: 100%;

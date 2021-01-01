@@ -178,6 +178,13 @@
   -webkit-filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
 }
 
+div.mugshot {
+  border-radius: 100px;
+  height: clamp(13rem, 7.5531914894rem + 7.0921985816vw, 15rem);
+  width: clamp(13rem, 7.5531914894rem + 7.0921985816vw, 15rem);
+  border: solid #22da4a 0.5rem;
+}
+
 nav#nav-web {
   box-shadow: 5px 0px 5px rgba(34, 118, 142, 0.3);
 }
@@ -442,12 +449,6 @@ section#index-s-three div.text-box > div.body > ul.team-members {
 section#index-s-three div.text-box > div.body > ul.team-members > li.member > a {
   width: 100%;
 }
-section#index-s-three div.text-box > div.body > ul.team-members > li.member > a > div > div.image {
-  border-radius: 100px;
-  height: clamp(13rem, 7.5531914894rem + 7.0921985816vw, 15rem);
-  width: clamp(13rem, 7.5531914894rem + 7.0921985816vw, 15rem);
-  border: solid #22da4a 0.5rem;
-}
 section#index-s-three div.text-box > div.body > ul.team-members > li.member > a h3.title {
   padding: 1.5rem 0 0 0;
 }
@@ -456,7 +457,7 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member > a 
     padding-bottom: 5rem;
   }
 }
-section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-child(1) > a div.image {
+section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-child(1) > a div.mugshot {
   background-attachment: initial;
   background-image: url("/static/images/home/pngs/team/compressed/hong.png");
   background-origin: border-box;
@@ -464,7 +465,7 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-
   background-repeat: no-repeat;
   background-size: cover;
 }
-section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-child(2) > a div.image {
+section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-child(2) > a div.mugshot {
   background-attachment: initial;
   background-image: url("/static/images/home/pngs/team/compressed/ly.png");
   background-origin: border-box;
@@ -472,7 +473,7 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-
   background-repeat: no-repeat;
   background-size: cover;
 }
-section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-child(3) > a div.image {
+section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-child(3) > a div.mugshot {
   background-attachment: initial;
   background-image: url("/static/images/home/pngs/team/compressed/eva.png");
   background-origin: border-box;
@@ -480,7 +481,7 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-
   background-repeat: no-repeat;
   background-size: cover;
 }
-section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-child(4) > a div.image {
+section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-child(4) > a div.mugshot {
   background-attachment: initial;
   background-image: url("/static/images/home/pngs/team/compressed/fernando.png");
   background-origin: border-box;
@@ -506,6 +507,25 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-
     background-repeat: no-repeat;
     background-size: cover;
   }
+}
+
+#index-s-five .wrapper {
+  height: 100%;
+}
+#index-s-five .wrapper .text-box.reviews-section {
+  height: 65%;
+}
+#index-s-five .wrapper .text-box.reviews-section .body {
+  width: 100%;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
+  list-style: none;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews a {
+  display: block;
+}
+#index-s-five .wrapper .text-box.contact-section {
+  height: 35%;
 }
 
 /*# sourceMappingURL=modules.css.map */
