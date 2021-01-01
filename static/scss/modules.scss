@@ -490,9 +490,54 @@ section#index-s-three {
                     width: 100%;    
                     & ul.reviews {
                         list-style: none;
-                        a {
+                        & li a {
                             display: block;
                         }
+                        & li:first-child a { // Anne
+                            & > div > div.mugshot { 
+                            @include m.background(initial, "/static/images/home/pngs/reviews/compressed/anne.png", center, cover);
+                            }
+                        }   
+                        & li:nth-child(2) a { // Tobi
+                            & > div > div.mugshot { 
+                            @include m.background(initial, "/static/images/home/pngs/reviews/compressed/tobias.png", center, cover);
+                            }
+                        }   
+                        & li:nth-child(3) a { // Eva
+                            & > div > div.mugshot { 
+                            @include m.background(initial, "/static/images/home/pngs/reviews/compressed/eva.png", center, cover);
+                            }
+                        }   
+                        & li:nth-child(4) a { // Dani
+                            & > div > div.mugshot { 
+                            @include m.background(initial, "/static/images/home/pngs/reviews/compressed/eva.png", center, cover);
+                            }
+                        }   
+                        & li:nth-child(5) a { // Chuck
+                            & > div > div.mugshot { 
+                            @include m.background(initial, "/static/images/home/pngs/reviews/compressed/chuck.png", center, cover);
+                            }
+                        }   
+                        & li:nth-child(6) a { // Johana
+                            & > div > div.mugshot { 
+                            @include m.background(initial, "/static/images/home/pngs/reviews/compressed/johana.png", center, cover);
+                            }
+                        }   
+                        & li:nth-child(7) a { // Karen
+                            & > div > div.mugshot { 
+                            @include m.background(initial, "/static/images/home/pngs/reviews/compressed/karen.png", center, cover);
+                            }
+                        }   
+                        & li:nth-child(8) a { // Marion
+                            & > div > div.mugshot { 
+                            @include m.background(initial, "/static/images/home/pngs/reviews/compressed/marion.png", center, cover);
+                            }
+                        }   
+                        & li:nth-child(9) a { // Oksana
+                            & > div > div.mugshot { 
+                            @include m.background(initial, "/static/images/home/pngs/reviews/compressed/oksana.png", center, cover);
+                            }
+                        }   
                     }
                 }
             }

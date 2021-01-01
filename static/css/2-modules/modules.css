@@ -521,8 +521,80 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-
 #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
   list-style: none;
 }
-#index-s-five .wrapper .text-box.reviews-section .body ul.reviews a {
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li a {
   display: block;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:first-child a > div > div.mugshot {
+  background-attachment: initial;
+  background-image: url("/static/images/home/pngs/reviews/compressed/anne.png");
+  background-origin: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(2) a > div > div.mugshot {
+  background-attachment: initial;
+  background-image: url("/static/images/home/pngs/reviews/compressed/tobias.png");
+  background-origin: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(3) a > div > div.mugshot {
+  background-attachment: initial;
+  background-image: url("/static/images/home/pngs/reviews/compressed/eva.png");
+  background-origin: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(4) a > div > div.mugshot {
+  background-attachment: initial;
+  background-image: url("/static/images/home/pngs/reviews/compressed/eva.png");
+  background-origin: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(5) a > div > div.mugshot {
+  background-attachment: initial;
+  background-image: url("/static/images/home/pngs/reviews/compressed/chuck.png");
+  background-origin: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(6) a > div > div.mugshot {
+  background-attachment: initial;
+  background-image: url("/static/images/home/pngs/reviews/compressed/johana.png");
+  background-origin: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(7) a > div > div.mugshot {
+  background-attachment: initial;
+  background-image: url("/static/images/home/pngs/reviews/compressed/karen.png");
+  background-origin: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(8) a > div > div.mugshot {
+  background-attachment: initial;
+  background-image: url("/static/images/home/pngs/reviews/compressed/marion.png");
+  background-origin: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(9) a > div > div.mugshot {
+  background-attachment: initial;
+  background-image: url("/static/images/home/pngs/reviews/compressed/oksana.png");
+  background-origin: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 #index-s-five .wrapper .text-box.contact-section {
   height: 35%;
