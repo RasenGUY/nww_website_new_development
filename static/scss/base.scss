@@ -266,11 +266,17 @@ html {
     &.wider {
         height: (1rem * 2);
     }
+    &.widest {
+        height: (1rem * 2.5);
+    }
     &.thin {
         height: (1rem * 0.75);
     }
     &.thinner {
         height: (1rem * 0.5);
+    }
+    &.thinnest {
+        height: (1rem * 0.25);
     }
 }
 

@@ -222,11 +222,17 @@ h6.caption {
 .spacer.wider {
   height: 2rem;
 }
+.spacer.widest {
+  height: 2.5rem;
+}
 .spacer.thin {
   height: 0.75rem;
 }
 .spacer.thinner {
   height: 0.5rem;
+}
+.spacer.thinnest {
+  height: 0.25rem;
 }
 
 /*# sourceMappingURL=base.css.map */

@@ -471,9 +471,40 @@ main#main {
                 }
             }
         }
+        & .wrapper .text-box.reviews-section {
+            & header {
+                & .spacer {
+                    height: 7.5rem; 
+                    @include m.responsive("<", 768px){
+                        height: 5rem;
+                    }
+                    @include m.responsive("<", 576px){
+                        height: 2.5rem;
+                    }
+                    
+                }
+            }
+            & .body ul.reviews {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax((100%/3), 1fr));
+                justify-content: center;
+                gap: 7.5rem 0; 
+                @include m.responsive("<", 768px){
+                    gap: 5rem; 
+                }
+                @include m.responsive("<", 576px){
+                    grid-template-columns: repeat(auto-fit, minmax((100%/2), 1fr));
+                    gap: 2.5rem 0;
+                }
+                @include m.responsive("<", 412px){
+                    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+                    gap: 2.5rem 0;
+                }
+            }
+        }
+
     }
 
-        
     footer {
         width: 100%;
     }

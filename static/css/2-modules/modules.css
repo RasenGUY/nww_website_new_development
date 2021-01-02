@@ -512,19 +512,56 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-
 #index-s-five .wrapper {
   height: 100%;
 }
-#index-s-five .wrapper .text-box.reviews-section {
-  height: 65%;
-}
 #index-s-five .wrapper .text-box.reviews-section .body {
   width: 100%;
 }
 #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
   list-style: none;
 }
-#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li a {
-  display: block;
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li > a {
+  z-index: 15;
+  position: relative;
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  height: 100%;
 }
-#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:first-child a > div > div.mugshot {
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li > a > div.mugshot {
+  z-index: inherit;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li > a .hover-box {
+  visibility: collapse;
+  position: absolute;
+  opacity: 0;
+  top: 50%;
+  left: 0;
+  height: 0%;
+  transition: opacity 0.33s ease-in;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li > a .hover-box blockquote {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 35vh;
+  padding: 9rem 2rem 2rem 2rem;
+  background-color: #eef9fc;
+  border-radius: 20px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li > a .hover-box blockquote i, #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li > a .hover-box blockquote p {
+  font-size: clamp(1.185rem, 0.9225796178rem + 0.6369426752vw, 1.585rem);
+  color: #466079;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li > a .hover-box blockquote::-webkit-scrollbar {
+  display: none;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li > a:hover .hover-box {
+  visibility: initial;
+  opacity: 1;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:first-child a > div.mugshot {
   background-attachment: initial;
   background-image: url("/static/images/home/pngs/reviews/compressed/anne.png");
   background-origin: border-box;
@@ -532,7 +569,10 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-
   background-repeat: no-repeat;
   background-size: cover;
 }
-#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(2) a > div > div.mugshot {
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:first-child a .hover-box {
+  z-index: 14;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(2) a > div.mugshot {
   background-attachment: initial;
   background-image: url("/static/images/home/pngs/reviews/compressed/tobias.png");
   background-origin: border-box;
@@ -540,7 +580,18 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-
   background-repeat: no-repeat;
   background-size: cover;
 }
-#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(3) a > div > div.mugshot {
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(2) a .hover-box {
+  z-index: 14;
+}
+@media only screen and (max-width: 412px) {
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(2) a {
+    z-index: 14;
+  }
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(2) a .hover-box {
+    z-index: 13;
+  }
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(3) a > div.mugshot {
   background-attachment: initial;
   background-image: url("/static/images/home/pngs/reviews/compressed/eva.png");
   background-origin: border-box;
@@ -548,15 +599,45 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-
   background-repeat: no-repeat;
   background-size: cover;
 }
-#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(4) a > div > div.mugshot {
+@media only screen and (max-width: 768px) {
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(3) a {
+    z-index: 13;
+  }
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(3) a .hover-box {
+    z-index: 12;
+  }
+}
+@media only screen and (max-width: 412px) {
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(3) a {
+    z-index: 12;
+  }
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(3) a .hover-box {
+    z-index: 11;
+  }
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(4) a {
+  z-index: 13;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(4) a > div.mugshot {
   background-attachment: initial;
-  background-image: url("/static/images/home/pngs/reviews/compressed/eva.png");
+  background-image: url("/static/images/home/pngs/reviews/compressed/daniella.png");
   background-origin: border-box;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(5) a > div > div.mugshot {
+@media only screen and (max-width: 412px) {
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(4) a {
+    z-index: 11;
+  }
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(4) a .hover-box {
+    z-index: 10;
+  }
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(5) a {
+  z-index: 13;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(5) a > div.mugshot {
   background-attachment: initial;
   background-image: url("/static/images/home/pngs/reviews/compressed/chuck.png");
   background-origin: border-box;
@@ -564,7 +645,23 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-
   background-repeat: no-repeat;
   background-size: cover;
 }
-#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(6) a > div > div.mugshot {
+@media only screen and (max-width: 768px) {
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(5) a {
+    z-index: 12;
+  }
+}
+@media only screen and (max-width: 412px) {
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(5) a {
+    z-index: 10;
+  }
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(5) a .hover-box {
+    z-index: 9;
+  }
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(6) a {
+  z-index: 13;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(6) a > div.mugshot {
   background-attachment: initial;
   background-image: url("/static/images/home/pngs/reviews/compressed/johana.png");
   background-origin: border-box;
@@ -572,7 +669,23 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-
   background-repeat: no-repeat;
   background-size: cover;
 }
-#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(7) a > div > div.mugshot {
+@media only screen and (max-width: 768px) {
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(6) a {
+    z-index: 12;
+  }
+}
+@media only screen and (max-width: 412px) {
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(6) a {
+    z-index: 9;
+  }
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(6) a .hover-box {
+    z-index: 8;
+  }
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(7) a {
+  z-index: 12;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(7) a > div.mugshot {
   background-attachment: initial;
   background-image: url("/static/images/home/pngs/reviews/compressed/karen.png");
   background-origin: border-box;
@@ -580,7 +693,23 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-
   background-repeat: no-repeat;
   background-size: cover;
 }
-#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(8) a > div > div.mugshot {
+@media only screen and (max-width: 768px) {
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(7) a {
+    z-index: 11;
+  }
+}
+@media only screen and (max-width: 412px) {
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(7) a {
+    z-index: 8;
+  }
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(7) a .hover-box {
+    z-index: 7;
+  }
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(8) a {
+  z-index: 12;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(8) a > div.mugshot {
   background-attachment: initial;
   background-image: url("/static/images/home/pngs/reviews/compressed/marion.png");
   background-origin: border-box;
@@ -588,7 +717,23 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-
   background-repeat: no-repeat;
   background-size: cover;
 }
-#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(9) a > div > div.mugshot {
+@media only screen and (max-width: 768px) {
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(8) a {
+    z-index: 11;
+  }
+}
+@media only screen and (max-width: 412px) {
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(8) a {
+    z-index: 7;
+  }
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(8) a .hover-box {
+    z-index: 6;
+  }
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(9) a {
+  z-index: 12;
+}
+#index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(9) a > div.mugshot {
   background-attachment: initial;
   background-image: url("/static/images/home/pngs/reviews/compressed/oksana.png");
   background-origin: border-box;
@@ -596,8 +741,18 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-
   background-repeat: no-repeat;
   background-size: cover;
 }
-#index-s-five .wrapper .text-box.contact-section {
-  height: 35%;
+@media only screen and (max-width: 768px) {
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(9) a {
+    z-index: 10;
+  }
+}
+@media only screen and (max-width: 412px) {
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(9) a {
+    z-index: 6;
+  }
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(9) a .hover-box {
+    z-index: 5;
+  }
 }
 
 /*# sourceMappingURL=modules.css.map */

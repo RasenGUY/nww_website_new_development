@@ -464,6 +464,42 @@ main#main #index-s-five .shapes .index-s-five-sh-1 object {
     content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s5.svg");
   }
 }
+main#main #index-s-five .wrapper .text-box.reviews-section header .spacer {
+  height: 7.5rem;
+}
+@media only screen and (max-width: 768px) {
+  main#main #index-s-five .wrapper .text-box.reviews-section header .spacer {
+    height: 5rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  main#main #index-s-five .wrapper .text-box.reviews-section header .spacer {
+    height: 2.5rem;
+  }
+}
+main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(33.3333333333%, 1fr));
+  justify-content: center;
+  gap: 7.5rem 0;
+}
+@media only screen and (max-width: 768px) {
+  main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
+    gap: 5rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    gap: 2.5rem 0;
+  }
+}
+@media only screen and (max-width: 412px) {
+  main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    gap: 2.5rem 0;
+  }
+}
 main#main footer {
   width: 100%;
 }
