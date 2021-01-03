@@ -452,7 +452,7 @@ main#main {
 
     // section five reviews and contact
     & #index-s-five {
-        height: 325vh;
+        height: 300vh;
         & .shapes {
             margin-top: -9rem;
             & .index-s-five-sh-1 {
@@ -471,24 +471,26 @@ main#main {
                 }
             }
         }
-        & .wrapper .text-box.reviews-section {
-            & header {
-                & .spacer {
-                    height: 7.5rem; 
-                    @include m.responsive("<", 768px){
-                        height: 5rem;
+        & .wrapper {
+            
+            & .text-box.reviews-section {
+                margin-top: f.fontDynSize(769, 1080, 50, 75);
+                & header {
+                    & .spacer {
+                        height: f.fontDynSize(769, 1080, 50, 75); 
+                        @include m.responsive("<", 768px){
+                            height: 5rem;
+                        }
+                        @include m.responsive("<", 576px){
+                            height: 2.5rem;
+                        }   
                     }
-                    @include m.responsive("<", 576px){
-                        height: 2.5rem;
-                    }
-                    
                 }
-            }
-            & .body ul.reviews {
+                & .body ul.reviews {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax((100%/3), 1fr));
-                justify-content: center;
-                gap: 7.5rem 0; 
+                justify-content: center; 
+                gap: f.fontDynSize(769, 1080, 50, 200) 0; 
                 @include m.responsive("<", 768px){
                     gap: 5rem; 
                 }
@@ -500,8 +502,33 @@ main#main {
                     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
                     gap: 2.5rem 0;
                 }
+                }
             }
-        }
+            & .text-box.contact-section {
+                margin-top: f.fontDynSize(769, 1080, 75, 200);
+                width: 100%;
+                & .body {
+                    width: 100%;
+                    & > div.map-wrapper.f-item {
+                        flex: 65%;
+                        width: 100%; 
+                        height: 45rem;
+                        // & object {
+                        //     content: url("/static/images/home/svg_web/compressed/g_map.svg");
+
+                        // }
+                        & #g-map {
+                            width: 100%;
+                            height: 100%; 
+                            
+                        }
+                    }   
+                    & > form.f-item {
+                        flex: 35%;
+                    }
+                }
+            }
+        }   
 
     }
 
