@@ -754,10 +754,5 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-
     z-index: 5;
   }
 }
-#g-map-test {
-  background-color: lightgrey;
-  height: 100%;
-  width: 100%;
-}
 
 /*# sourceMappingURL=modules.css.map */

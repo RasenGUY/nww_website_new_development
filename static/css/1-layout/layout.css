@@ -509,18 +509,40 @@ main#main #index-s-five .wrapper .text-box.contact-section {
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body {
   width: 100%;
+  margin-top: 7.5rem;
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body > div.map-wrapper.f-item {
-  flex: 65%;
+  flex: 60%;
   width: 100%;
-  height: 45rem;
 }
-main#main #index-s-five .wrapper .text-box.contact-section .body > div.map-wrapper.f-item #g-map {
+main#main #index-s-five .wrapper .text-box.contact-section .body > div.map-wrapper.f-item .map-box {
+  width: 80%;
+}
+main#main #index-s-five .wrapper .text-box.contact-section .body > div.map-wrapper.f-item .map-box #g-map {
   width: 100%;
   height: 100%;
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item {
-  flex: 35%;
+  flex: 40%;
+  width: 100%;
+}
+main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item > * {
+  margin-bottom: 1rem;
+}
+main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item input, main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item textarea {
+  width: 85%;
+}
+main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item textarea {
+  height: 25%;
+}
+main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item > div.form-content {
+  width: 90%;
+}
+main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item > div.form-content > * {
+  margin-bottom: 1rem;
+}
+main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item > div.form-content div > i {
+  padding-left: 1rem;
 }
 main#main footer {
   width: 100%;
