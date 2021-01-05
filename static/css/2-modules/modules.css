@@ -417,7 +417,7 @@ section .overlay {
   }
 }
 
-#svg-images.home-s1 .border {
+#svg-images .border {
   fill: #22da4a;
 }
 

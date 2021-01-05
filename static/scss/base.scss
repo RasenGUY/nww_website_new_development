@@ -2,7 +2,7 @@
 @use 'variables' as v;
 @use 'functions' as f;
 @use 'sass:color';
-@use 'mixins' as mix;
+@use 'mixins' as m;
 
 
 // sass --watch static/scss/base.scss:static/css/0-base/base.css static/scss/modules.scss:static/css/2-modules/modules.css static/scss/layout.scss:static/css/1-layout/layout.css static/scss/_flexbox.scss:static/css/1-layout/flexbox.css static/scss/_grid.scss:static/css/1-layout/grid.css
@@ -131,7 +131,7 @@ html {
 // colors
 
     // base colors
-    p, li, input, textarea, span, i {
+    p, li, span, i {
         color: v.$textColor;
         &.primary {
             color: v.$primaryColor;
@@ -146,7 +146,32 @@ html {
             color: v.$textColor;
         }
     }
+    // form elements
+    input, textarea {
 
+        padding: 0.75rem 1rem;
+        border-radius: v.$cornerXxs;
+        background-color: v.$textAreaColor; 
+        border: unset; 
+        color: color.adjust(v.$textColor, $lightness: 10%);
+        // transition: all 0.15s ease-in-out;
+        @include m.shadow("box-shadow", none, 1px, 1px, 0.5px, color.adjust(v.$textAreaColor, $blackness: 30%));
+        &:focus {
+            box-shadow: unset;
+            border: solid 2px v.$ctaColor; 
+        }
+    }
+    
+        // placeholders
+        ::placeholder { 
+            color: v.$placeholderColor;
+        }
+        :-ms-input-placeholder {
+            color: v.$placeholderColor;
+        }
+        ::-ms-input-placeholder {
+            color: v.$placeholderColor;
+        }
 
     // headings
     h1, h2, h3, h4, h5, h6 {
@@ -182,30 +207,24 @@ html {
         }
     }
     
-    // input 
-    input, textarea {
-        padding: 0.75rem 1rem;
-        border-radius: v.$cornerXxs;
-        border: solid v.$textColor v.$borderXs;
-    }
     
     
 // shadows
 .shadow {
 
-    @include mix.shadow("text-shadow", f.shadows('text-sm', v.$textColor, v.$opacityXl), none, none, none, none);
+    @include m.shadow("text-shadow", f.shadows('text-sm', v.$textColor, v.$opacityXl), none, none, none, none);
     
     &.s-primary {
-        @include mix.shadow("text-shadow", f.shadows('text-sm', v.$primaryColor, v.$opacityXl), none, none, none, none);
+        @include m.shadow("text-shadow", f.shadows('text-sm', v.$primaryColor, v.$opacityXl), none, none, none, none);
     }
     &.s-secondary{
-        @include mix.shadow("text-shadow", f.shadows('text-sm', v.$secondaryColor, v.$opacityXl), none, none, none, none);
+        @include m.shadow("text-shadow", f.shadows('text-sm', v.$secondaryColor, v.$opacityXl), none, none, none, none);
     }
     &.s-tertiary{
-        @include mix.shadow("text-shadow", f.shadows('text-sm', v.$tertiaryColor, v.$opacityXl), none, none, none, none);
+        @include m.shadow("text-shadow", f.shadows('text-sm', v.$tertiaryColor, v.$opacityXl), none, none, none, none);
     }
     &.s-cta{
-        @include mix.shadow("text-shadow", f.shadows('text-sm', v.$ctaColor, v.$opacityXl), none, none, none, none);
+        @include m.shadow("text-shadow", f.shadows('text-sm', v.$ctaColor, v.$opacityXl), none, none, none, none);
     }
 }
 // sizing
@@ -215,7 +234,7 @@ html {
     }
     
     i {
-        font-size: f.fontDynSize(412, 1040, 18, 22)
+        font-size: f.fontDynSize(412, 1040, 18, 22);
     }
     
     //headings

@@ -511,6 +511,12 @@ main#main #index-s-five .wrapper .text-box.contact-section .body {
   width: 100%;
   margin-top: 7.5rem;
 }
+@media only screen and (max-width: 576px) {
+  main#main #index-s-five .wrapper .text-box.contact-section .body {
+    flex-direction: column;
+    margin-top: 2.5rem;
+  }
+}
 main#main #index-s-five .wrapper .text-box.contact-section .body > div.map-wrapper.f-item {
   flex: 60%;
   width: 100%;
@@ -522,27 +528,40 @@ main#main #index-s-five .wrapper .text-box.contact-section .body > div.map-wrapp
   width: 100%;
   height: 100%;
 }
+@media only screen and (max-width: 576px) {
+  main#main #index-s-five .wrapper .text-box.contact-section .body > div.map-wrapper.f-item {
+    flex: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+}
 main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item {
   flex: 40%;
   width: 100%;
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item > * {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item input, main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item textarea {
   width: 85%;
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item textarea {
-  height: 25%;
+  height: 15vh;
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item > div.form-content {
   width: 90%;
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item > div.form-content > * {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item > div.form-content div > i {
-  padding-left: 1rem;
+  margin-left: 1rem;
+}
+@media only screen and (max-width: 576px) {
+  main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item {
+    flex: 100%;
+  }
 }
 main#main footer {
   width: 100%;

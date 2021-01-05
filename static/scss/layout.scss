@@ -509,7 +509,11 @@ main#main {
                 width: 100%;
                 & .body {
                     width: 100%;
-                    margin-top: 7.5rem; 
+                    margin-top: 7.5rem;
+                    @include m.responsive("<", 576px){
+                        flex-direction: column;
+                        margin-top: 2.5rem;
+                    }
                     & > div.map-wrapper.f-item {
                         flex: 60%;
                         width: 100%; 
@@ -520,29 +524,39 @@ main#main {
                                 height: 100%;
                             }
                         }
+                        @include m.responsive("<", 576px){
+                            flex: 100%;
+                            align-items: center;
+                            justify-content: center;
+                            margin-bottom: 2.5rem; 
+
+                        }
                     }   
                     & > form.f-item {
                         flex: 40%;
                         width: 100%;
                         & > * {
-                            margin-bottom: 1rem;
+                            margin-bottom: 2rem;
                         }
                         & input, textarea {
                             width: 85%;
                         }
                         & textarea {
-                            height: 25%;
+                            height: 15vh;
                         }
                         & > div.form-content {
                             width: 90%;
                             & > * {
-                                margin-bottom: 1rem;
+                                margin-bottom: 1.5rem;
                             }
                             & div > i {
-                                padding-left: 1rem;
+                                margin-left: 1rem;
                             }
                         }
-                    }
+                        @include m.responsive("<", 576px){
+                            flex: 100%;
+                        }
+                    } 
                 }
             }
         }   

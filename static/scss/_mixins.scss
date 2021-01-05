@@ -30,8 +30,11 @@
         @if $property == 'text-shadow' {
             text-shadow: $value;
         }
-        @else {
+        @else if $property == "box-shadow" {
             box-shadow: $value;
+        }
+        @else {
+            filter: drop-shadow($value);
         }
 
     }
