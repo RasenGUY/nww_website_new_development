@@ -459,6 +459,11 @@ main#main #index-s-five .shapes .index-s-five-sh-1 {
 main#main #index-s-five .shapes .index-s-five-sh-1 object {
   content: url("/static/images/home/svg_web/compressed/home_sh_s5.svg");
 }
+@media only screen and (max-width: 768px) {
+  main#main #index-s-five .shapes .index-s-five-sh-1 object {
+    content: url("/static/images/home/svg_medium/compressed/index_medium_s5_sh.svg");
+  }
+}
 @media only screen and (max-width: 576px) {
   main#main #index-s-five .shapes .index-s-five-sh-1 object {
     content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s5.svg");

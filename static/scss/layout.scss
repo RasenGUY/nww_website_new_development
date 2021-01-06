@@ -460,7 +460,7 @@ main#main {
                 & object {
                     content: url("/static/images/home/svg_web/compressed/home_sh_s5.svg");
                     @include m.responsive("<", 768px){
-                        // content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s3.svg");
+                        content: url("/static/images/home/svg_medium/compressed/index_medium_s5_sh.svg");
                     }
                     @include m.responsive("<", 576px){
                         content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s5.svg");
