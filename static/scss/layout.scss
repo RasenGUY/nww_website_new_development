@@ -454,7 +454,7 @@ main#main {
     & #index-s-five {
         height: 300vh;
         & .shapes {
-            margin-top: -9rem;
+            margin-top: f.fontDynSize(768, 1080, -60, -90);
             & .index-s-five-sh-1 {
                 width: 100%;
                 & object {
@@ -468,6 +468,11 @@ main#main {
                 }
                 @include m.responsive("<", 412px){
                     // width: 170%;
+                }
+            }
+            @include m.responsive("<", 768){
+                & .shapes {
+                    // margin-top: ;
                 }
             }
         }
@@ -505,11 +510,11 @@ main#main {
                 }
             }
             & .text-box.contact-section {
-                margin-top: f.fontDynSize(769, 1080, 75, 200);
+                margin-top: f.fontDynSize(769, 1080, 50, 200);
                 width: 100%;
                 & .body {
                     width: 100%;
-                    margin-top: 7.5rem;
+                    margin-top: f.fontDynSize(576, 768, 25, 75);
                     @include m.responsive("<", 576px){
                         flex-direction: column;
                         margin-top: 2.5rem;
@@ -518,7 +523,7 @@ main#main {
                         flex: 60%;
                         width: 100%; 
                         & .map-box {
-                            width: 80%;
+                            width: f.wDynSize(768, 1040, 90, 80);
                             & #g-map {
                                 width: 100%;
                                 height: 100%;
@@ -536,7 +541,8 @@ main#main {
                         flex: 40%;
                         width: 100%;
                         & > * {
-                            margin-bottom: 2rem;
+                            margin-bottom: f.fontDynSize(576, 1080, 10, 15);
+                            ;
                         }
                         & input, textarea {
                             width: 85%;
@@ -547,7 +553,7 @@ main#main {
                         & > div.form-content {
                             width: 90%;
                             & > * {
-                                margin-bottom: 1.5rem;
+                                margin-bottom: f.fontDynSize(576, 1080, 10, 15);
                             }
                             & div > i {
                                 margin-left: 1rem;

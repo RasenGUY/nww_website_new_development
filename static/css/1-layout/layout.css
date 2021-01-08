@@ -451,7 +451,7 @@ main#main #index-s-five {
   height: 300vh;
 }
 main#main #index-s-five .shapes {
-  margin-top: -9rem;
+  margin-top: clamp(-6rem, 1.3846153846rem + -9.6153846154vw, -9rem);
 }
 main#main #index-s-five .shapes .index-s-five-sh-1 {
   width: 100%;
@@ -509,12 +509,12 @@ main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
   }
 }
 main#main #index-s-five .wrapper .text-box.contact-section {
-  margin-top: clamp(7.5rem, -23.4083601286rem + 40.192926045vw, 20rem);
+  margin-top: clamp(5rem, -32.0900321543rem + 48.231511254vw, 20rem);
   width: 100%;
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body {
   width: 100%;
-  margin-top: 7.5rem;
+  margin-top: clamp(2.5rem, -12.5rem + 26.0416666667vw, 7.5rem);
 }
 @media only screen and (max-width: 576px) {
   main#main #index-s-five .wrapper .text-box.contact-section .body {
@@ -527,7 +527,7 @@ main#main #index-s-five .wrapper .text-box.contact-section .body > div.map-wrapp
   width: 100%;
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body > div.map-wrapper.f-item .map-box {
-  width: 80%;
+  width: clamp(90%, 11.8235294118% + -3.6764705882vw, 80%);
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body > div.map-wrapper.f-item .map-box #g-map {
   width: 100%;
@@ -546,7 +546,7 @@ main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item {
   width: 100%;
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item > * {
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1rem, 0.4285714286rem + 0.9920634921vw, 1.5rem);
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item input, main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item textarea {
   width: 85%;
@@ -558,7 +558,7 @@ main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item >
   width: 90%;
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item > div.form-content > * {
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(1rem, 0.4285714286rem + 0.9920634921vw, 1.5rem);
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item > div.form-content div > i {
   margin-left: 1rem;
