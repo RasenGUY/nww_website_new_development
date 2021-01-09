@@ -191,7 +191,7 @@ main#main #index-s-one .shapes .folder {
   width: 100%;
   position: absolute;
   z-index: 11;
-  transform: translateY(-15rem);
+  transform: translateY(-17rem);
 }
 main#main #index-s-one .shapes .folder > div {
   position: inherit;
@@ -334,23 +334,23 @@ main#main #index-s-one > div:nth-child(2) .img-box-wrapper .image-box {
 }
 main#main #index-s-two {
   height: 125vh;
-  margin-top: clamp(-32rem, -86.9974424552rem + 71.6112531969vw, 24rem);
+  margin-top: clamp(-34rem, -90.9616368286rem + 74.168797954vw, 24rem);
 }
 @media only screen and (max-width: 768px) {
   main#main #index-s-two {
-    margin-top: clamp(-22rem, -85.7736842105rem + 110.5263157895vw, -1rem);
+    margin-top: clamp(-25rem, -91.8105263158rem + 115.7894736842vw, -3rem);
   }
 }
 @media only screen and (max-width: 576px) {
   main#main #index-s-two {
-    margin-top: clamp(-34rem, -94.16rem + 160vw, -2rem);
+    margin-top: clamp(-34rem, -90.4rem + 150vw, -4rem);
   }
 }
 main#main #index-s-three {
   height: 100vh;
 }
 main#main #index-s-three .shapes {
-  margin-top: -16rem;
+  margin-top: -18rem;
   z-index: 1;
 }
 @media only screen and (max-width: 768px) {
@@ -425,7 +425,7 @@ main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members >
 }
 main#main #index-s-four {
   height: 125vh;
-  margin-top: clamp(-49rem, -89.1043024772rem + 52.1512385919vw, -9rem);
+  margin-top: clamp(-49rem, -88.1016949153rem + 50.8474576271vw, -10rem);
 }
 @media only screen and (max-width: 768px) {
   main#main #index-s-four {
@@ -451,7 +451,7 @@ main#main #index-s-five {
   height: 300vh;
 }
 main#main #index-s-five .shapes {
-  margin-top: clamp(-6rem, 1.3846153846rem + -9.6153846154vw, -9rem);
+  margin-top: -9rem;
 }
 main#main #index-s-five .shapes .index-s-five-sh-1 {
   width: 100%;
@@ -467,6 +467,11 @@ main#main #index-s-five .shapes .index-s-five-sh-1 object {
 @media only screen and (max-width: 576px) {
   main#main #index-s-five .shapes .index-s-five-sh-1 object {
     content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s5.svg");
+  }
+}
+@media only screen and (max-width: 768) {
+  main#main #index-s-five .shapes .shapes {
+    margin-top: -6rem;
   }
 }
 main#main #index-s-five .wrapper .text-box.reviews-section {
@@ -527,7 +532,7 @@ main#main #index-s-five .wrapper .text-box.contact-section .body > div.map-wrapp
   width: 100%;
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body > div.map-wrapper.f-item .map-box {
-  width: clamp(90%, 11.8235294118% + -3.6764705882vw, 80%);
+  width: 80%;
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body > div.map-wrapper.f-item .map-box #g-map {
   width: 100%;

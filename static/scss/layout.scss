@@ -226,7 +226,7 @@ main#main {
                 width: 100%;
                 position: absolute;
                 z-index: 11;
-                transform: translateY(-15rem);      
+                transform: translateY(-17rem);      
                 
                 & > div {
                     position: inherit;
@@ -355,12 +355,12 @@ main#main {
     // index section two explore vietnam
     & #index-s-two {
         height: 125vh;
-        margin-top: f.fontDynSize(768, 1550, -320, 240);
+        margin-top: f.fontDynSize(768, 1550, -340, 240);
         @include m.responsive("<", 768px){
-            margin-top: f.fontDynSize(577, 767, -220, -10);
+            margin-top: f.fontDynSize(577, 767, -250, -30);
         }
         @include m.responsive("<", 576px){
-            margin-top: f.fontDynSize(376, 576, -340, -20);
+            margin-top: f.fontDynSize(376, 576, -340, -40);
         }
     }
     
@@ -369,7 +369,7 @@ main#main {
     & #index-s-three {
         height: 100vh;
         & .shapes {
-            margin-top: -16rem;
+            margin-top: -18rem;
             z-index: 1;
             @include m.responsive("<", 768px){
                 margin-top: -20rem;
@@ -432,7 +432,7 @@ main#main {
     // section four experience vietnam
     & #index-s-four {
         height: 125vh;
-        margin-top: f.fontDynSize(769, 1536, -490, -90);
+        margin-top: f.fontDynSize(769, 1536, -490, -100);
         @include m.responsive("<", 768px){
             height: 150vh;
             background-position: 85%;
@@ -454,7 +454,7 @@ main#main {
     & #index-s-five {
         height: 300vh;
         & .shapes {
-            margin-top: f.fontDynSize(768, 1080, -60, -90);
+            margin-top: -9rem;
             & .index-s-five-sh-1 {
                 width: 100%;
                 & object {
@@ -472,7 +472,7 @@ main#main {
             }
             @include m.responsive("<", 768){
                 & .shapes {
-                    // margin-top: ;
+                    margin-top: -6rem;
                 }
             }
         }
@@ -523,7 +523,7 @@ main#main {
                         flex: 60%;
                         width: 100%; 
                         & .map-box {
-                            width: f.wDynSize(768, 1040, 90, 80);
+                            width: 80%;
                             & #g-map {
                                 width: 100%;
                                 height: 100%;
