@@ -436,7 +436,7 @@ main#main #index-s-four {
 }
 @media only screen and (max-width: 576px) {
   main#main #index-s-four {
-    margin-top: clamp(-21rem, -88.8292682927rem + 164.6341463415vw, 6rem);
+    margin-top: clamp(-22rem, -92.3414634146rem + 170.7317073171vw, 6rem);
   }
 }
 @media only screen and (max-width: 576px) and (max-width: 412px) {
@@ -447,8 +447,20 @@ main#main #index-s-four {
 main#main #index-s-four .wrapper .text-box header {
   margin-top: 10rem;
 }
-main#main #index-s-five {
-  height: 300vh;
+@media only screen and (min-width: 768) {
+  main#main #index-s-five {
+    height: 250vh;
+  }
+}
+@media only screen and (max-width: 768) {
+  main#main #index-s-five {
+    height: 200vh;
+  }
+}
+@media only screen and (max-width: 412) {
+  main#main #index-s-five {
+    height: 310vh;
+  }
 }
 main#main #index-s-five .shapes {
   margin-top: -9rem;
@@ -475,14 +487,14 @@ main#main #index-s-five .shapes .index-s-five-sh-1 object {
   }
 }
 main#main #index-s-five .wrapper .text-box.reviews-section {
-  margin-top: clamp(5rem, -1.1816720257rem + 8.038585209vw, 7.5rem);
+  margin-top: clamp(-2.5rem, -8.6676646707rem + 14.9700598802vw, 7.5rem);
 }
 main#main #index-s-five .wrapper .text-box.reviews-section header .spacer {
-  height: clamp(5rem, -1.1816720257rem + 8.038585209vw, 7.5rem);
+  height: clamp(2.5rem, -9.8633440514rem + 16.077170418vw, 7.5rem);
 }
 @media only screen and (max-width: 768px) {
   main#main #index-s-five .wrapper .text-box.reviews-section header .spacer {
-    height: 5rem;
+    height: clamp(2.5rem, -5rem + 13.0208333333vw, 5rem);
   }
 }
 @media only screen and (max-width: 576px) {
@@ -498,7 +510,7 @@ main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
 }
 @media only screen and (max-width: 768px) {
   main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
-    gap: 5rem;
+    gap: clamp(2.5rem, -5rem + 13.0208333333vw, 5rem) 0;
   }
 }
 @media only screen and (max-width: 576px) {
@@ -514,7 +526,7 @@ main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
   }
 }
 main#main #index-s-five .wrapper .text-box.contact-section {
-  margin-top: clamp(5rem, -32.0900321543rem + 48.231511254vw, 20rem);
+  margin-top: clamp(2.5rem, -8.2934131737rem + 26.1976047904vw, 20rem);
   width: 100%;
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body {

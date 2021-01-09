@@ -439,7 +439,7 @@ main#main {
             margin-top: f.fontDynSize(579, 768, -170, 70);
         }
         @include m.responsive("<", 576px){
-            margin-top: f.fontDynSize(412, 576, -210, 60);
+            margin-top: f.fontDynSize(412, 576, -220, 60);
             @include m.responsive("<", 412px){
                 margin-top: f.fontDynSize(379, 412, 150, 270);
             }
@@ -452,7 +452,15 @@ main#main {
 
     // section five reviews and contact
     & #index-s-five {
-        height: 300vh;
+        @include m.responsive(">", 768){
+            height: 250vh;
+        }
+        @include m.responsive("<", 768){
+            height: 200vh;
+        }
+        @include m.responsive("<", 412){
+            height: 310vh;
+        }
         & .shapes {
             margin-top: -9rem;
             & .index-s-five-sh-1 {
@@ -479,12 +487,12 @@ main#main {
         & .wrapper {
             
             & .text-box.reviews-section {
-                margin-top: f.fontDynSize(769, 1080, 50, 75);
+                margin-top: f.fontDynSize(412, 1080, -25, 75);
                 & header {
                     & .spacer {
-                        height: f.fontDynSize(769, 1080, 50, 75); 
+                        height: f.fontDynSize(769, 1080, 25, 75); 
                         @include m.responsive("<", 768px){
-                            height: 5rem;
+                            height: f.fontDynSize(576, 768  , 25, 50);
                         }
                         @include m.responsive("<", 576px){
                             height: 2.5rem;
@@ -497,7 +505,7 @@ main#main {
                 justify-content: center; 
                 gap: f.fontDynSize(769, 1080, 50, 200) 0; 
                 @include m.responsive("<", 768px){
-                    gap: 5rem; 
+                    gap: f.fontDynSize(576, 768, 25, 50) 0; 
                 }
                 @include m.responsive("<", 576px){
                     grid-template-columns: repeat(auto-fit, minmax((100%/2), 1fr));
@@ -510,7 +518,7 @@ main#main {
                 }
             }
             & .text-box.contact-section {
-                margin-top: f.fontDynSize(769, 1080, 50, 200);
+                margin-top: f.fontDynSize(412, 1080, 25, 200);
                 width: 100%;
                 & .body {
                     width: 100%;
