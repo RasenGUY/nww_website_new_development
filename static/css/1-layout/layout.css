@@ -143,15 +143,15 @@ nav#nav-mobile-links .nav-links-bottom, nav#nav-mobile-links::before {
 main#main {
   overflow: hidden;
 }
-main#main section {
+main#main section, main#main footer {
   position: relative;
   width: 100vw;
 }
-main#main section .shapes {
+main#main section .shapes, main#main footer .shapes {
   width: 100%;
   position: absolute;
 }
-main#main section > .wrapper {
+main#main section > .wrapper, main#main footer > .wrapper {
   position: relative;
   width: 80%;
   height: inherit;
@@ -159,22 +159,22 @@ main#main section > .wrapper {
   z-index: 11;
 }
 @media only screen and (max-width: 1040px) {
-  main#main section > .wrapper {
+  main#main section > .wrapper, main#main footer > .wrapper {
     width: 90%;
   }
 }
 @media only screen and (max-width: 576px) {
-  main#main section > .wrapper .text-box {
+  main#main section > .wrapper .text-box, main#main footer > .wrapper .text-box {
     text-align: center;
   }
 }
-main#main section > .wrapper .text-box header h1 {
+main#main section > .wrapper .text-box header h1, main#main footer > .wrapper .text-box header h1 {
   padding-bottom: 1rem;
 }
-main#main section > .wrapper .text-box .body > * {
+main#main section > .wrapper .text-box .body > *, main#main footer > .wrapper .text-box .body > * {
   padding-bottom: 0.75rem;
 }
-main#main section .overlay {
+main#main section .overlay, main#main footer .overlay {
   position: absolute;
   top: 0;
   height: 100%;
@@ -431,7 +431,7 @@ main#main #index-s-four {
   main#main #index-s-four {
     height: 150vh;
     background-position: 85%;
-    margin-top: clamp(-17rem, -90.5238095238rem + 126.9841269841vw, 7rem);
+    margin-top: clamp(-18rem, -94.5873015873rem + 132.2751322751vw, 7rem);
   }
 }
 @media only screen and (max-width: 576px) {
@@ -487,7 +487,7 @@ main#main #index-s-five .shapes .index-s-five-sh-1 object {
   }
 }
 main#main #index-s-five .wrapper .text-box.reviews-section {
-  margin-top: clamp(-2.5rem, -8.6676646707rem + 14.9700598802vw, 7.5rem);
+  margin-top: clamp(-2.5rem, -4.0419161677rem + 3.7425149701vw, 0rem);
 }
 main#main #index-s-five .wrapper .text-box.reviews-section header .spacer {
   height: clamp(2.5rem, -9.8633440514rem + 16.077170418vw, 7.5rem);
@@ -506,7 +506,7 @@ main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(33.3333333333%, 1fr));
   justify-content: center;
-  gap: clamp(5rem, -32.0900321543rem + 48.231511254vw, 20rem) 0;
+  gap: clamp(5rem, -1.6179001721rem + 8.6058519793vw, 10rem) 0;
 }
 @media only screen and (max-width: 768px) {
   main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
@@ -526,12 +526,12 @@ main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
   }
 }
 main#main #index-s-five .wrapper .text-box.contact-section {
-  margin-top: clamp(2.5rem, -8.2934131737rem + 26.1976047904vw, 20rem);
+  margin-top: clamp(2.5rem, -0.5838323353rem + 7.4850299401vw, 7.5rem);
   width: 100%;
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body {
   width: 100%;
-  margin-top: clamp(2.5rem, -12.5rem + 26.0416666667vw, 7.5rem);
+  margin-top: clamp(2.5rem, -9.5rem + 20.8333333333vw, 6.5rem);
 }
 @media only screen and (max-width: 576px) {
   main#main #index-s-five .wrapper .text-box.contact-section .body {
@@ -586,7 +586,7 @@ main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item >
   }
 }
 main#main footer {
-  width: 100%;
+  background-color: greenyellow;
 }
 
 /*# sourceMappingURL=layout.css.map */

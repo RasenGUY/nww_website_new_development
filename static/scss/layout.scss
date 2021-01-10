@@ -171,7 +171,7 @@ main#main {
     // background-image: f.gradient("linear", 135deg, $colors);
     overflow: hidden;
     
-    section {
+    section, footer {
         position: relative;
         width: 100vw;
         // z-index: 0;
@@ -364,7 +364,6 @@ main#main {
         }
     }
     
-
     // index section three team
     & #index-s-three {
         height: 100vh;
@@ -436,7 +435,7 @@ main#main {
         @include m.responsive("<", 768px){
             height: 150vh;
             background-position: 85%;
-            margin-top: f.fontDynSize(579, 768, -170, 70);
+            margin-top: f.fontDynSize(579, 768, -180, 70);
         }
         @include m.responsive("<", 576px){
             margin-top: f.fontDynSize(412, 576, -220, 60);
@@ -448,7 +447,6 @@ main#main {
             margin-top: 10rem;
         }
     }
-
 
     // section five reviews and contact
     & #index-s-five {
@@ -487,7 +485,7 @@ main#main {
         & .wrapper {
             
             & .text-box.reviews-section {
-                margin-top: f.fontDynSize(412, 1080, -25, 75);
+                margin-top: f.fontDynSize(412, 1080, -25, 0);
                 & header {
                     & .spacer {
                         height: f.fontDynSize(769, 1080, 25, 75); 
@@ -503,7 +501,7 @@ main#main {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax((100%/3), 1fr));
                 justify-content: center; 
-                gap: f.fontDynSize(769, 1080, 50, 200) 0; 
+                gap: f.fontDynSize(769, 1350, 50, 100) 0; 
                 @include m.responsive("<", 768px){
                     gap: f.fontDynSize(576, 768, 25, 50) 0; 
                 }
@@ -518,11 +516,11 @@ main#main {
                 }
             }
             & .text-box.contact-section {
-                margin-top: f.fontDynSize(412, 1080, 25, 200);
+                margin-top: f.fontDynSize(412, 1080, 25, 75);
                 width: 100%;
                 & .body {
                     width: 100%;
-                    margin-top: f.fontDynSize(576, 768, 25, 75);
+                    margin-top: f.fontDynSize(576, 768, 25, 65);
                     @include m.responsive("<", 576px){
                         flex-direction: column;
                         margin-top: 2.5rem;
@@ -577,8 +575,10 @@ main#main {
 
     }
 
+    // footer
     footer {
-        width: 100%;
+        background-color: greenyellow; 
+
     }
 
 }
