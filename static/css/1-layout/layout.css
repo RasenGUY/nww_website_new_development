@@ -334,7 +334,7 @@ main#main #index-s-one > div:nth-child(2) .img-box-wrapper .image-box {
 }
 main#main #index-s-two {
   height: 125vh;
-  margin-top: clamp(-34rem, -90.9616368286rem + 74.168797954vw, 24rem);
+  margin-top: clamp(-34rem, -88.9974424552rem + 71.6112531969vw, 22rem);
 }
 @media only screen and (max-width: 768px) {
   main#main #index-s-two {
@@ -425,7 +425,7 @@ main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members >
 }
 main#main #index-s-four {
   height: 125vh;
-  margin-top: clamp(-49rem, -88.1016949153rem + 50.8474576271vw, -10rem);
+  margin-top: clamp(-51rem, -91.1043024772rem + 52.1512385919vw, -11rem);
 }
 @media only screen and (max-width: 768px) {
   main#main #index-s-four {
@@ -467,19 +467,6 @@ main#main #index-s-five .shapes {
 }
 main#main #index-s-five .shapes .index-s-five-sh-1 {
   width: 100%;
-}
-main#main #index-s-five .shapes .index-s-five-sh-1 object {
-  content: url("/static/images/home/svg_web/compressed/home_sh_s5.svg");
-}
-@media only screen and (max-width: 768px) {
-  main#main #index-s-five .shapes .index-s-five-sh-1 object {
-    content: url("/static/images/home/svg_medium/compressed/index_medium_s5_sh.svg");
-  }
-}
-@media only screen and (max-width: 576px) {
-  main#main #index-s-five .shapes .index-s-five-sh-1 object {
-    content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s5.svg");
-  }
 }
 @media only screen and (max-width: 768) {
   main#main #index-s-five .shapes .shapes {
@@ -585,8 +572,14 @@ main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item >
     flex: 100%;
   }
 }
-main#main footer {
-  background-color: greenyellow;
+main#main footer .things {
+  position: absolute;
+  width: 80%;
+}
+main#main footer .things .wrap {
+  height: inherit;
+  margin: 0 auto;
+  z-index: 11;
 }
 
 /*# sourceMappingURL=layout.css.map */

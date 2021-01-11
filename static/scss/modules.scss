@@ -90,10 +90,8 @@
 }
 
 // other elements 
-
 // create circular shapes on the site
 .shapes {
-    
     .circle {
         border-radius: 50%;
         $colors: color.adjust(v.$primaryColor, $lightness: 10%, $hue: 5deg) 5%, color.adjust(v.$primaryColor, $lightness: 5%, $hue: 0deg), color.adjust(v.$primaryColor, $lightness: -5%, $hue: -5deg);
@@ -134,7 +132,7 @@
 .svg-image {
 
     width: 100%;
-    height: 100%;
+    // height: 100%;
 
     &.shadow-fg {
         @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$textColor, v.$opacityLg)));
@@ -175,6 +173,12 @@
     }
 }
 
+#svg-images {
+    & .border {
+        fill: v.$ctaColor;
+    }
+}
+
 // div-shapes for mugshots
 div.mugshot {
     border-radius: v.$cornerCircle;
@@ -186,7 +190,6 @@ div.mugshot {
 nav#nav-web{
     box-shadow: 5px 0px 5px color.adjust(v.$secondaryColor, $blackness: 30%, $alpha: v.$opacityXl);
 }
-
 
 // blur effect for navigation top and bottom
 nav#nav-web::before, nav#nav-mobile::before, nav#nav-mobile-links::before {
@@ -204,7 +207,6 @@ nav#nav-web::before, nav#nav-mobile::before, nav#nav-mobile-links::before {
 
 // nav items and logo web
 .logo {
-
     flex: 1 35%;
     @include m.responsive("<", 1036px){
         flex: 0.1;
@@ -224,7 +226,6 @@ nav#nav-web::before, nav#nav-mobile::before, nav#nav-mobile-links::before {
 }
 
 .nav-links {
-
     // nav-items
     list-style: none;
     & li a {
@@ -256,7 +257,6 @@ nav#nav-web::before, nav#nav-mobile::before, nav#nav-mobile-links::before {
 
 // mobile navigation bottom
 nav#nav-mobile {
-
     box-shadow: -5px 0px 5px color.adjust(v.$secondaryColor, $blackness: 30%, $alpha: v.$opacityXl);
     transition: all 0.33s ease-in-out;
     transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
@@ -308,55 +308,51 @@ nav#nav-mobile {
             &.animate-bottom{
                 transform: translateY(-0.125rem) rotate(45deg);
             }
-
         }
-
     }
 }
 
 // nav links bottom
 nav#nav-mobile-links {
-
     .nav-links-bottom {
-            list-style: none;
-            opacity: 0;
-            transition: all 0.33s ease-in-out;
-            transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
-            & li {
-                text-align: center;
+        list-style: none;
+        opacity: 0;
+        transition: all 0.33s ease-in-out;
+        transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
+        & li {
+            text-align: center;
 
-                & a {
-                    display: inline-block;
-                    width: 100%;
-                    height: 100%;
-                    padding: 1rem 0;
-                    color: v.$textColor;
+            & a {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                padding: 1rem 0;
+                color: v.$textColor;
 
-                    &:hover {
-                        background-color: color.adjust(v.$ctaColor, $blackness: 15%, $alpha: v.$opacityXl);
-                        color: color.adjust(v.$primaryColor, $blackness: 15%);
-                    }
-                    &:active {
-                        box-shadow: 1.5px 1.5px 3px color.adjust(v.$secondaryColor, $blackness: 15%, $alpha: v.$opacityXl);
-                        background-color: color.adjust(v.$ctaColor, $blackness: 15%, $alpha: v.$opacityXxl);
-                    }
-                }   
-            }
-            &.animate {
-                opacity: 1;
-                transform: translateY(-5.5rem);
-            }
-            
+                &:hover {
+                    background-color: color.adjust(v.$ctaColor, $blackness: 15%, $alpha: v.$opacityXl);
+                    color: color.adjust(v.$primaryColor, $blackness: 15%);
+                }
+                &:active {
+                    box-shadow: 1.5px 1.5px 3px color.adjust(v.$secondaryColor, $blackness: 15%, $alpha: v.$opacityXl);
+                    background-color: color.adjust(v.$ctaColor, $blackness: 15%, $alpha: v.$opacityXxl);
+                }
+            }   
         }
+        &.animate {
+            opacity: 1;
+            transform: translateY(-5.5rem);
+        }
+    }
     &::before {
         transition: all 0.33s ease-in-out;
         transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
     }
 }
 
+// section overlays
 section .overlay {
     background-color: color.adjust(v.$primaryColor, $alpha: v.$opacityXl, $blackness: 75%);
-    // background-color: black;
     backdrop-filter: blur(0.125rem);
 }
 
@@ -368,7 +364,6 @@ section .overlay {
     @include m.responsive("<", 412px){
         @include m.background(initial, "/static/images/home/jpeg_mobile/teach_2.jpg", center, cover);
     }
-
 }
     // arrows and hover animation
     .arrows {
@@ -422,11 +417,6 @@ section .overlay {
 
 }
 
-#svg-images {
-    & .border {
-        fill: v.$ctaColor;
-    }
-}
 
 // ------------ section s two ---------------- 
 #index-s-two {
@@ -438,7 +428,22 @@ section .overlay {
 
 // ------------- section s three ------------
 section#index-s-three {
-    // some stuff enters here 
+    
+    //shapes
+    & .shapes {
+        & .index-s-three-sh-1 {
+            & object {
+                content: url("/static/images/home/svg_web/compressed/home_sh_s3.svg");
+                @include m.responsive("<", 768px){
+                    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s3.svg");
+                }
+                @include m.responsive("<", 576px){
+                    content: url("/static/images/home/svg_mobile/compressed/index_mobile_sh_s3.svg");
+                }
+            }
+        }
+    } 
+    // some textbox
     & div.text-box {
         width: 100%;
         & > div.body > ul.team-members {
@@ -481,7 +486,21 @@ section#index-s-three {
 
 // ----------- section s five -----------------
 #index-s-five {
-    .wrapper {
+    & .shapes {
+        & .index-s-five-sh-1 {
+            // shapes    
+            & object {
+                content: url("/static/images/home/svg_web/compressed/home_sh_s5.svg");
+                @include m.responsive("<", 768px){
+                    content: url("/static/images/home/svg_medium/compressed/index_medium_s5_sh.svg");
+                }
+                @include m.responsive("<", 576px){
+                    content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s5.svg");
+                }
+            }
+        }
+    }
+    & .wrapper {
         height: 100%;
         .text-box {
             &.reviews-section{
@@ -681,4 +700,13 @@ section#index-s-three {
             }
         }
     }
+}
+
+// ---------- footer -----------
+footer {
+    // & .shapes {
+        object {
+            content: url("/static/images/general/svg/compressed/footer_sh.svg"); 
+        }
+    // }
 }

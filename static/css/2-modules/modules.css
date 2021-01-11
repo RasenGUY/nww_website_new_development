@@ -91,7 +91,6 @@
 
 .svg-image {
   width: 100%;
-  height: 100%;
 }
 .svg-image.shadow-fg {
   filter: drop-shadow(1.5px 2.5px 5px rgba(14, 19, 24, 0.45));
@@ -176,6 +175,10 @@
   -o-filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
   -moz-filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
   -webkit-filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
+}
+
+#svg-images .border {
+  fill: #22da4a;
 }
 
 div.mugshot {
@@ -417,10 +420,6 @@ section .overlay {
   }
 }
 
-#svg-images .border {
-  fill: #22da4a;
-}
-
 #index-s-two {
   background-attachment: initial;
   background-image: url("/static/images/home/jpeg_web/compressed/travel_5.jpg");
@@ -440,6 +439,19 @@ section .overlay {
   }
 }
 
+section#index-s-three .shapes .index-s-three-sh-1 object {
+  content: url("/static/images/home/svg_web/compressed/home_sh_s3.svg");
+}
+@media only screen and (max-width: 768px) {
+  section#index-s-three .shapes .index-s-three-sh-1 object {
+    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s3.svg");
+  }
+}
+@media only screen and (max-width: 576px) {
+  section#index-s-three .shapes .index-s-three-sh-1 object {
+    content: url("/static/images/home/svg_mobile/compressed/index_mobile_sh_s3.svg");
+  }
+}
 section#index-s-three div.text-box {
   width: 100%;
 }
@@ -509,6 +521,19 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-
   }
 }
 
+#index-s-five .shapes .index-s-five-sh-1 object {
+  content: url("/static/images/home/svg_web/compressed/home_sh_s5.svg");
+}
+@media only screen and (max-width: 768px) {
+  #index-s-five .shapes .index-s-five-sh-1 object {
+    content: url("/static/images/home/svg_medium/compressed/index_medium_s5_sh.svg");
+  }
+}
+@media only screen and (max-width: 576px) {
+  #index-s-five .shapes .index-s-five-sh-1 object {
+    content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s5.svg");
+  }
+}
 #index-s-five .wrapper {
   height: 100%;
 }
@@ -753,6 +778,9 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-
   #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li:nth-child(9) a .hover-box {
     z-index: 5;
   }
+}
+footer object {
+  content: url("/static/images/general/svg/compressed/footer_sh.svg");
 }
 
 /*# sourceMappingURL=modules.css.map */

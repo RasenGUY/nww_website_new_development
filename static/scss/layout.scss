@@ -168,12 +168,12 @@ nav#nav-mobile-links {
 // main content index page
 main#main {
     $colors: color.adjust(v.$secondaryColor, $blackness: 10%), v.$secondaryColor, color.adjust(v.$secondaryColor, $lightness: 10%), color.adjust(v.$secondaryColor, $lightness: 20%);
-    // background-image: f.gradient("linear", 135deg, $colors);
     overflow: hidden;
     
     section, footer {
         position: relative;
         width: 100vw;
+
         // z-index: 0;
         .shapes{
             width: 100%;
@@ -352,10 +352,10 @@ main#main {
         }
     }
 
-    // index section two explore vietnam
+    // index section two explore Vietnam
     & #index-s-two {
         height: 125vh;
-        margin-top: f.fontDynSize(768, 1550, -340, 240);
+        margin-top: f.fontDynSize(768, 1550, -340, 220);
         @include m.responsive("<", 768px){
             margin-top: f.fontDynSize(577, 767, -250, -30);
         }
@@ -431,7 +431,7 @@ main#main {
     // section four experience vietnam
     & #index-s-four {
         height: 125vh;
-        margin-top: f.fontDynSize(769, 1536, -490, -100);
+        margin-top: f.fontDynSize(769, 1536, -510, -110);
         @include m.responsive("<", 768px){
             height: 150vh;
             background-position: 85%;
@@ -463,18 +463,6 @@ main#main {
             margin-top: -9rem;
             & .index-s-five-sh-1 {
                 width: 100%;
-                & object {
-                    content: url("/static/images/home/svg_web/compressed/home_sh_s5.svg");
-                    @include m.responsive("<", 768px){
-                        content: url("/static/images/home/svg_medium/compressed/index_medium_s5_sh.svg");
-                    }
-                    @include m.responsive("<", 576px){
-                        content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s5.svg");
-                    }
-                }
-                @include m.responsive("<", 412px){
-                    // width: 170%;
-                }
             }
             @include m.responsive("<", 768){
                 & .shapes {
@@ -483,7 +471,6 @@ main#main {
             }
         }
         & .wrapper {
-            
             & .text-box.reviews-section {
                 margin-top: f.fontDynSize(412, 1080, -25, 0);
                 & header {
@@ -577,8 +564,17 @@ main#main {
 
     // footer
     footer {
-        background-color: greenyellow; 
-
+        & .things { 
+            position: absolute;
+            width: 80%;
+            .wrap {
+                // width: 80%;
+                height: inherit;
+                margin: 0 auto;
+                z-index: 11;          
+            }
+        }
+        
     }
 
 }
