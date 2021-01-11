@@ -500,6 +500,7 @@ section#index-s-three {
             }
         }
     }
+
     & .wrapper {
         height: 100%;
         .text-box {
@@ -704,9 +705,11 @@ section#index-s-three {
 
 // ---------- footer -----------
 footer {
-    // & .shapes {
-        object {
-            content: url("/static/images/general/svg/compressed/footer_sh.svg"); 
+        .sha{
+            width: 100%;
+            object {
+                content: url("/static/images/general/svg/compressed/footer_sh.svg"); 
+            }
+
         }
-    // }
 }

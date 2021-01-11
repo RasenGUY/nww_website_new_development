@@ -779,7 +779,10 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-
     z-index: 5;
   }
 }
-footer object {
+footer .sha {
+  width: 100%;
+}
+footer .sha object {
   content: url("/static/images/general/svg/compressed/footer_sh.svg");
 }
 

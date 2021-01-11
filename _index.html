@@ -12,7 +12,6 @@
     <!-- <link rel="stylesheet" href="/static/css/main.css"> main css -->
     <link rel="stylesheet" href="/static/css/0-base/base.css"> <!-- base css -->
     <link rel="stylesheet" href="/static/css/2-modules/modules.css"> <!-- modules css -->
-    
     <link rel="stylesheet" href="/static/css/1-layout/layout.css"> <!-- layout css -->
 
 </head>
@@ -129,10 +128,11 @@
         </ul>
     </nav>
 
-    <main id="main" class="l-flex col"> <!-- main -->
+    <main id="main"> <!-- main -->
 
-        <section id="index-hero"> <!-- section one hero section -->
-            <div class="wrapper l-flex items-align-center content-justify-center"> <!-- wrapper -->
+        <section id="index-hero" class="l-grid"> <!-- section one hero section -->
+            <div class="overlay"></div>
+            <div class="g-item align-center justify-center wrapper l-flex items-align-center content-justify-center"> <!-- wrapper -->
                 <div class="text-box l-flex col items-align-center content-justify-center">
                     <header>
                         <h1 class='to-upper shadow'>teach, travel <span class="primary">and</span> experience <span class="primary">vietnam!</span></h1> <!-- heading -->
@@ -150,30 +150,23 @@
                     </div>
                 </div>
             </div>
-            <div class="overlay"></div>
 
         </section> <!-- index-hero section -->
 
-        <section id="index-s-one"><!-- section one teach-->
+        <section id="index-s-one" class="l-grid"><!-- section one teach-->
             <div class="shapes">
                 <div class="folder"> <!-- folder shape-->
-                    <div class="back"  alt="folder-bg">
-                        <object class="svg-image" type="image/svg+xml"></object>
-                    </div>
-                    <div class="middle"  alt="folder-mg">
-                        <object class="svg-image" type="image/svg+xml"></object>
-                    </div>
-                    <div class="fore" alt="folder-fg">
-                        <object class="svg-image" type="image/svg+xml"></object>
-                    </div>
+                    <object class="back svg-image" type="image/svg+xml" alt="folder-bg"></object>
+                    <object class="middle svg-image" type="image/svg+xml" alt="folder-mg"></object>
+                    <object class="fore svg-image" type="image/svg+xml" alt="folder-fg"></object>
                 </div>
-                <div class="circles"> <!-- circles  -->
+                <div class="circles"><!-- circles  -->
                     <div class="circle lg"></div>
                     <div class="circle xs"></div>       
                     <div class="circle xl"></div>
                 </div>
             </div>
-            <div class="wrapper l-flex col"> <!-- texbox wrapper -->
+            <div class="g-item align-center justify-center wrapper l-flex col"> <!-- texbox wrapper -->
                 
                 <div class="text-box l-flex col">
                     <header>
@@ -214,8 +207,8 @@
         </section> <!-- end section one-->
 
         <!-- section two travel-->
-        <section id="index-s-two">
-            <div class="wrapper l-flex items-align-center">
+        <section id="index-s-two" class="l-grid">
+            <div class="g-item align-center justify-center wrapper l-flex items-align-center">
                 <div class="text-box t-align right">
                     <header>
                         <h1 class="to-upper shadow">explore <span class="primary">vietnam</span></h1>
@@ -233,16 +226,14 @@
             <div class="overlay"></div>
         </section> <!-- end section two-->
 
-
         <!-- section three the team-->
-        <section id="index-s-three">
+        <section id="index-s-three" class="l-grid">
             <div class="shapes">
-                <div class="index-s-three-sh-1">
-                    <object class="svg-image" type="image/svg+xml"></object>
-                </div>
+                <object class="index-s-three-sh-1 svg-image" type="image/svg+xml"></object>
             </div>
-            <div class="wrapper">
-                <div class="text-box l-flex col content-justify-center items-align-evenly">
+
+            <div class="g-item align-center justify-center wrapper l-flex">
+                <div class="f-item align-right text-box l-flex col content-justify-start items-align-evenly">
                     <header class="f-item align-center">
                         <h1 class="to-upper text shadow">the <span class="primary"> team</span></h1>
                         <div class="spacer wider"></div>
@@ -492,55 +483,50 @@
             </div>
         </section> <!-- end section five reviews and contact -->
 
-        <footer> <!-- footer -->
+        <footer class="l-grid"><!-- footer -->
 
-            <div class="things">
-
-                <div class="wrap"> <!-- wrapper -->
-
-                    <ul class="footer-links"> <!-- internal footer links -->
-                        <li>
-                            <a href="/about.html">About</a>
-                        </li>
-                        <li>
-                            <a href="/gallery.html">Gallery</a>
-                        </li>
-                        <li>
-                            <a href="https://goo.gl/forms/42PxcOgwkW21OsGr2">Join us</a>
-                        </li>
-                    </ul>
-
-                    <ul class"social"> <!-- social-media -->
-                        <li>
-                            <i class="fab fa-facebook-f"></i>
-                        </li>
-                        <li>
-                            <i class="fab fa-youtube"></i>
-                        </li>
-                        <li>
-                            <i class="fab fa-instagram"></i>
-                        </li>
-                        <li>
-                            <p><span class="copyright">&copy;</span> 2020 New World Education .co .ltd - all rights reserved</p>
-                        </li>
-                    </ul>
-                </div>
-
+            <!-- wrapper -->
+            <div class="wrap g-item justify-center align-center">
+                <ul class="footer-links"> <!-- internal footer links -->
+                    <li>
+                        <a href="/about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="/gallery.html">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="https://goo.gl/forms/42PxcOgwkW21OsGr2">Join us</a>
+                    </li>
+                </ul>
+                <ul class="social"> <!-- social-media -->
+                    <li>
+                        <i class="fab fa-facebook-f"></i>
+                    </li>
+                    <li>
+                        <i class="fab fa-youtube"></i>
+                    </li>
+                    <li>
+                        <i class="fab fa-instagram"></i>
+                    </li>
+                    <li>
+                        <p><span class="copyright">&copy;</span> 2020 New World Education .co .ltd - all rights reserved</p>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sha">
+                <!-- shapes  -->
+                <object class="svg-image" type="image/svg+xml"></object>
             </div>
 
-
-            <object class="svg-image" type="image/svg+xml"></object>
-            
         </footer>
-
     </main> <!-- end main -->
 
 
     <!-- js -->
     <script type="module" src="/static/js/main.js"></script>
     <script async defer src="/static/js/gmap.js"></script>
-    <script defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUVnVeHuvq12QTIG6cjXMG3qZ-mGA9DQU&callback=initMap"></script><!-- google map -->
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUVnVeHuvq12QTIG6cjXMG3qZ-mGA9DQU&callback=initMap"></script><!-- google map -->
 
     
 </body>

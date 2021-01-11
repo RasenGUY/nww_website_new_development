@@ -149,10 +149,9 @@ main#main section, main#main footer {
 }
 main#main section .shapes, main#main footer .shapes {
   width: 100%;
-  position: absolute;
 }
 main#main section > .wrapper, main#main footer > .wrapper {
-  position: relative;
+  position: absolute;
   width: 80%;
   height: inherit;
   margin: 0 auto;
@@ -175,7 +174,7 @@ main#main section > .wrapper .text-box .body > *, main#main footer > .wrapper .t
   padding-bottom: 0.75rem;
 }
 main#main section .overlay, main#main footer .overlay {
-  position: absolute;
+  position: relative;
   top: 0;
   height: 100%;
   width: 100%;
@@ -184,61 +183,53 @@ main#main section .overlay, main#main footer .overlay {
 main#main #index-hero {
   height: 100vh;
 }
-main#main #index-s-one {
-  height: 100vh;
-}
 main#main #index-s-one .shapes .folder {
   width: 100%;
   position: absolute;
   z-index: 11;
   transform: translateY(-17rem);
 }
-main#main #index-s-one .shapes .folder > div {
+main#main #index-s-one .shapes .folder object {
   position: inherit;
-  width: 100%;
 }
-main#main #index-s-one .shapes .folder > div.back {
+main#main #index-s-one .shapes .folder object.back {
   transform: translateY(-5rem);
-}
-main#main #index-s-one .shapes .folder > div.back object {
   content: url("/static/images/home/svg_web/compressed/home_sh_s2_bg.svg");
 }
 @media only screen and (max-width: 768px) {
-  main#main #index-s-one .shapes .folder > div.back object {
+  main#main #index-s-one .shapes .folder object.back {
     content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_back.svg");
   }
 }
 @media only screen and (max-width: 576px) {
-  main#main #index-s-one .shapes .folder > div.back object {
+  main#main #index-s-one .shapes .folder object.back {
     content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_bg.svg");
   }
 }
-main#main #index-s-one .shapes .folder > div.middle {
+main#main #index-s-one .shapes .folder object.middle {
   transform: translateY(-1rem);
-}
-main#main #index-s-one .shapes .folder > div.middle object {
   content: url("/static/images/home/svg_web/compressed/home_sh_s2_mg.svg");
 }
 @media only screen and (max-width: 768px) {
-  main#main #index-s-one .shapes .folder > div.middle object {
+  main#main #index-s-one .shapes .folder object.middle {
     content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_middle.svg");
   }
 }
 @media only screen and (max-width: 576px) {
-  main#main #index-s-one .shapes .folder > div.middle object {
+  main#main #index-s-one .shapes .folder object.middle {
     content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_mg.svg");
   }
 }
-main#main #index-s-one .shapes .folder > div.fore object {
+main#main #index-s-one .shapes .folder object.fore {
   content: url("/static/images/home/svg_web/compressed/home_sh_s2_fg.svg");
 }
 @media only screen and (max-width: 768px) {
-  main#main #index-s-one .shapes .folder > div.fore object {
+  main#main #index-s-one .shapes .folder object.fore {
     content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_fore.svg");
   }
 }
 @media only screen and (max-width: 576px) {
-  main#main #index-s-one .shapes .folder > div.fore object {
+  main#main #index-s-one .shapes .folder object.fore {
     content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_fg.svg");
   }
 }
@@ -255,18 +246,13 @@ main#main #index-s-one .shapes .circles > div {
 main#main #index-s-one .shapes .circles > div:nth-child(1) {
   top: 23rem;
   left: -6rem;
-}
-@media only screen and (max-width: 1350px) {
-  main#main #index-s-one .shapes .circles > div:nth-child(1) {
-    top: 3rem;
-    left: -6rem;
-  }
+  transform: translateY(clamp(-14rem, -60.9677419355rem + 45.1612903226vw, 0rem));
 }
 @media only screen and (max-width: 1040px) {
   main#main #index-s-one .shapes .circles > div:nth-child(1) {
-    top: 2rem;
+    top: 9rem;
     left: -12rem;
-    transform: translateY(clamp(-3rem, -6.724137931rem + 6.4655172414vw, 0rem));
+    transform: translateY(clamp(-13rem, -49.7058823529rem + 47.7941176471vw, 0rem));
   }
 }
 @media only screen and (max-width: 576px) {
@@ -301,7 +287,6 @@ main#main #index-s-one .shapes .circles > div:nth-child(3) {
   }
 }
 main#main #index-s-one > div:nth-child(2) {
-  margin-top: clamp(0rem, -12.3633440514rem + 16.077170418vw, 5rem);
   height: 100%;
 }
 main#main #index-s-one > div:nth-child(2) .text-box {
@@ -309,14 +294,10 @@ main#main #index-s-one > div:nth-child(2) .text-box {
   height: 100%;
   justify-content: center;
 }
-@media only screen and (max-width: 1350px) {
-  main#main #index-s-one > div:nth-child(2) .text-box {
-    justify-content: flex-start;
-  }
-}
 @media only screen and (max-width: 576px) {
   main#main #index-s-one > div:nth-child(2) .text-box .body {
     align-items: center;
+    justify-content: center;
   }
 }
 main#main #index-s-one > div:nth-child(2) .text-box .body > div > i {
@@ -330,81 +311,50 @@ main#main #index-s-one > div:nth-child(2) .text-box .body > div > i {
 main#main #index-s-one > div:nth-child(2) .img-box-wrapper .image-box {
   height: clamp(18.5rem, -3.12rem + 57.5vw, 30rem);
   width: clamp(18.5rem, -3.12rem + 57.5vw, 30rem);
-  transform: translateY(clamp(-20rem, -57.6rem + 100vw, 0rem));
 }
 main#main #index-s-two {
-  height: 125vh;
-  margin-top: clamp(-34rem, -88.9974424552rem + 71.6112531969vw, 22rem);
+  height: 150vh;
+  margin-top: -4rem;
 }
 @media only screen and (max-width: 768px) {
   main#main #index-s-two {
-    margin-top: clamp(-25rem, -91.8105263158rem + 115.7894736842vw, -3rem);
+    height: 100vh;
+    margin-top: clamp(18rem, -42.4188481675rem + 104.7120418848vw, 38rem);
   }
 }
 @media only screen and (max-width: 576px) {
   main#main #index-s-two {
-    margin-top: clamp(-34rem, -90.4rem + 150vw, -4rem);
+    height: 125vh;
+    margin-top: clamp(7rem, -47.52rem + 145vw, 36rem);
   }
 }
 main#main #index-s-three {
   height: 100vh;
+  margin-top: -17rem;
 }
 main#main #index-s-three .shapes {
-  margin-top: -18rem;
   z-index: 1;
 }
-@media only screen and (max-width: 768px) {
-  main#main #index-s-three .shapes {
-    margin-top: -20rem;
-  }
-}
-@media only screen and (max-width: 576px) {
-  main#main #index-s-three .shapes {
-    margin-top: -20rem;
-  }
-}
-main#main #index-s-three .shapes .index-s-three-sh-1 {
-  width: 100%;
-}
-main#main #index-s-three .shapes .index-s-three-sh-1 object {
+main#main #index-s-three .shapes object.index-s-three-sh-1 {
   content: url("/static/images/home/svg_web/compressed/home_sh_s3.svg");
 }
 @media only screen and (max-width: 768px) {
-  main#main #index-s-three .shapes .index-s-three-sh-1 object {
+  main#main #index-s-three .shapes object.index-s-three-sh-1 {
     content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s3.svg");
   }
 }
 @media only screen and (max-width: 576px) {
-  main#main #index-s-three .shapes .index-s-three-sh-1 object {
+  main#main #index-s-three .shapes object.index-s-three-sh-1 {
     content: url("/static/images/home/svg_mobile/compressed/index_mobile_sh_s3.svg");
   }
 }
-@media only screen and (max-width: 412px) {
-  main#main #index-s-three .shapes .index-s-three-sh-1 {
-    width: 170%;
-  }
-}
 main#main #index-s-three div.wrapper {
-  height: 85%;
-  margin-top: clamp(-22rem, -51.0309278351rem + 37.8006872852vw, 0rem);
+  height: 80%;
 }
 @media only screen and (max-width: 768px) {
   main#main #index-s-three div.wrapper {
-    margin-top: clamp(1.25rem, -35.5rem + 63.8020833333vw, 13.5rem);
+    margin-top: unset;
   }
-}
-@media only screen and (max-width: 576px) {
-  main#main #index-s-three div.wrapper {
-    margin-top: clamp(-6rem, -48.7073170732rem + 103.6585365854vw, 11rem);
-  }
-}
-@media only screen and (max-width: 412px) {
-  main#main #index-s-three div.wrapper {
-    margin-top: clamp(17rem, -45.6666666667rem + 166.6666666667vw, 23rem);
-  }
-}
-main#main #index-s-three div.wrapper > div.text-box {
-  height: 100%;
 }
 main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members > li.member {
   display: block;
@@ -572,11 +522,12 @@ main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item >
     flex: 100%;
   }
 }
-main#main footer .things {
+main#main footer {
+  width: 100vw;
+}
+main#main footer .wrap {
   position: absolute;
   width: 80%;
-}
-main#main footer .things .wrap {
   height: inherit;
   margin: 0 auto;
   z-index: 11;

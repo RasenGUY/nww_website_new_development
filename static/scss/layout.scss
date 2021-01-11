@@ -177,11 +177,11 @@ main#main {
         // z-index: 0;
         .shapes{
             width: 100%;
-            position: absolute;
         }
+
         // wrapper for all text-boxes in sections
         & > .wrapper {
-            position: relative;
+            position: absolute;
             width: 80%;
             height: inherit;
             margin: 0 auto;
@@ -205,7 +205,7 @@ main#main {
             }
         }
         .overlay {
-            position: absolute;
+            position: relative;
             top: 0;
             height: 100%;
             width: 100%;
@@ -214,60 +214,52 @@ main#main {
     }
 
     // index hero first section 
-    & #index-hero { // index section
+    & #index-hero { 
         height: 100vh;
     }
 
     // index section one teach in vietnam
     & #index-s-one {
-        height: 100vh;
         & .shapes {
             & .folder {
                 width: 100%;
                 position: absolute;
                 z-index: 11;
-                transform: translateY(-17rem);      
-                
-                & > div {
-                    position: inherit;
-                    width: 100%;
-                    &.back {
-                        transform: translateY(-5rem);      
-                        & object {
-                            content: url("/static/images/home/svg_web/compressed/home_sh_s2_bg.svg");
-                            @include m.responsive("<", 768px){
-                                content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_back.svg");
-                            }
-                            @include m.responsive("<", 576px){
-                                content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_bg.svg");
-                            }
-                        }
+                transform: translateY(-17rem);
+                & object {
+                    position: inherit; 
+                }      
+                & object.back {
+                    transform: translateY(-5rem);      
+                    content: url("/static/images/home/svg_web/compressed/home_sh_s2_bg.svg");
+                    @include m.responsive("<", 768px){
+                        content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_back.svg");
                     }
-                    &.middle {
-                        transform: translateY(-1rem);      
-                        & object {
-                            content: url("/static/images/home/svg_web/compressed/home_sh_s2_mg.svg");
-                            @include m.responsive("<", 768px){
-                                content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_middle.svg");
-                            }
-                            @include m.responsive("<", 576px){
-                                content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_mg.svg");
-                            }
-                        }
+                    @include m.responsive("<", 576px){
+                        content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_bg.svg");
                     }
-                    &.fore {
-                        & object {
-                            content: url("/static/images/home/svg_web/compressed/home_sh_s2_fg.svg");
-                            @include m.responsive("<", 768px){
-                                content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_fore.svg");
-                            }
-                            @include m.responsive("<", 576px){
-                                content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_fg.svg");
-                            }
-                        }
+                }
+                & object.middle {
+                    transform: translateY(-1rem);      
+                    content: url("/static/images/home/svg_web/compressed/home_sh_s2_mg.svg");
+                    @include m.responsive("<", 768px){
+                        content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_middle.svg");
+                    }
+                    @include m.responsive("<", 576px){
+                        content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_mg.svg");
+                    }
+                }
+                & object.fore {
+                    content: url("/static/images/home/svg_web/compressed/home_sh_s2_fg.svg");
+                    @include m.responsive("<", 768px){
+                        content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_fore.svg");
+                    }
+                    @include m.responsive("<", 576px){
+                        content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_fg.svg");
                     }
                 } 
             }
+            
             & .circles {
                 position: relative;
                 width: 80%;
@@ -281,14 +273,12 @@ main#main {
                     &:nth-child(1){ // top-left circle
                         top:23rem;
                         left: -6rem;
-                        @include m.responsive("<", 1350px) {
-                            top: 3rem;
-                            left: -6rem;
-                        }
+                        transform: translateY(f.fontDynSize(1040, 1350, -140, 0));
+
                         @include m.responsive("<", 1040px) {
-                            top: 2rem;
+                            top: 9rem;
                             left: -12rem;
-                            transform: translateY(f.fontDynSize(576, 1040, -30, 0));
+                            transform: translateY(f.fontDynSize(768, 1040, -130, 0));
                         }
                         @include m.responsive("<", 576px) {
                             left: -9rem;
@@ -320,18 +310,18 @@ main#main {
         }
 
         & > div:nth-child(2){ // text-box wrapper
-            margin-top: f.fontDynSize(769, 1080, 0, 50);
             height: 100%;
             & .text-box {
                 width: 100%;
                 height: 100%;
                 justify-content: center;
-                @include m.responsive("<", 1350px){
-                    justify-content: flex-start;
+                @include m.responsive("<", 576px){
+                    // margin-top: f.fontDynSize(376, 576, 130, 250);
                 }
                 & .body {
                     @include m.responsive("<", 576px){
                         align-items: center;
+                        justify-content: center;
                     }
                 }
                 & .body > div > i {
@@ -346,7 +336,7 @@ main#main {
                 & .image-box {
                     height: f.fontDynSize(376, 576, 185, 300);
                     width: f.fontDynSize(376, 576, 185, 300);
-                    transform: translateY(f.fontDynSize(376, 576, -200, 0)); 
+                    // transform: translateY(f.fontDynSize(376, 576, -200, 0)); 
                 }
             }
         }
@@ -354,58 +344,49 @@ main#main {
 
     // index section two explore Vietnam
     & #index-s-two {
-        height: 125vh;
-        margin-top: f.fontDynSize(768, 1550, -340, 220);
+        height: 150vh;
+        margin-top: -4rem;
         @include m.responsive("<", 768px){
-            margin-top: f.fontDynSize(577, 767, -250, -30);
+            height: 100vh;
+            margin-top: f.fontDynSize(577, 768, 180, 380);
         }
         @include m.responsive("<", 576px){
-            margin-top: f.fontDynSize(376, 576, -340, -40);
+            height: 125vh;
+            margin-top: f.fontDynSize(376, 576, 70, 360);
         }
     }
     
     // index section three team
     & #index-s-three {
         height: 100vh;
+        margin-top: -17rem;
         & .shapes {
-            margin-top: -18rem;
+            // margin-top: -29rem;
             z-index: 1;
-            @include m.responsive("<", 768px){
-                margin-top: -20rem;
-            }
-            @include m.responsive("<", 576px){
-                margin-top: -20rem;
-            }
-            & .index-s-three-sh-1 {
-                width: 100%;
-                & object {
-                    content: url("/static/images/home/svg_web/compressed/home_sh_s3.svg");
-                    @include m.responsive("<", 768px){
-                        content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s3.svg");
-                    }
-                    @include m.responsive("<", 576px){
-                        content: url("/static/images/home/svg_mobile/compressed/index_mobile_sh_s3.svg");
-                    }
+            & object.index-s-three-sh-1 {
+                content: url("/static/images/home/svg_web/compressed/home_sh_s3.svg");
+                @include m.responsive("<", 768px){
+                    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s3.svg");
                 }
-                @include m.responsive("<", 412px){
-                    width: 170%;
+                @include m.responsive("<", 576px){
+                    content: url("/static/images/home/svg_mobile/compressed/index_mobile_sh_s3.svg");
                 }
             }
         } 
         & div.wrapper {
-            height: 85%;
-            margin-top: f.fontDynSize(768, 1350, -220, 0);
+            height: 80%; 
+            // margin-top: f.fontDynSize(768, 1350, -345, 0);
+            
             @include m.responsive("<", 768px){
-                margin-top: f.fontDynSize(576, 768, 12.5, 135);
+                margin-top: unset;
             };
             @include m.responsive("<", 576px){
-                margin-top: f.fontDynSize(412, 576, -60, 110);
+                // margin-top: f.fontDynSize(412, 576, -60, 110);
             };
             @include m.responsive("<", 412px){
-                margin-top: f.fontDynSize(376, 412, 170, 230);
+                // margin-top: f.fontDynSize(376, 412, 170, 230);
             };
             & > div.text-box {
-               height: 100%; 
                 & div.body {
                     & > ul.team-members {
                         & > li.member {
@@ -564,17 +545,19 @@ main#main {
 
     // footer
     footer {
-        & .things { 
+        width: 100vw;
+        // wrapper
+        & .wrap {
             position: absolute;
             width: 80%;
-            .wrap {
-                // width: 80%;
-                height: inherit;
-                margin: 0 auto;
-                z-index: 11;          
-            }
+            height: inherit;
+            margin: 0 auto;
+            z-index: 11;          
         }
-        
-    }
 
+        // shapes
+        & object {
+            // position: relative;
+        }
+    }
 }
