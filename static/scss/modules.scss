@@ -456,7 +456,7 @@ section#index-s-three {
                     }
                 }
                 @include m.responsive("<", 768px){
-                    padding-bottom: 5rem;
+                    padding-bottom: f.fontDynSize(375, 412, 25, 50);
                 }
                 &:nth-child(1) > a div.mugshot { // director
                     @include m.background(initial, "/static/images/home/pngs/team/compressed/hong.png", center, cover);

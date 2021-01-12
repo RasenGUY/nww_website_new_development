@@ -362,7 +362,9 @@ main#main {
         margin-top: -17rem;
         @include m.responsive("<", 768px){
             margin-top: -20rem;
-
+        }
+        @include m.responsive("<", 412px){
+            margin-top: -18rem;
         }
         & .shapes {
             z-index: 1;
@@ -374,6 +376,9 @@ main#main {
                 @include m.responsive("<", 576px){
                     content: url("/static/images/home/svg_mobile/compressed/index_mobile_sh_s3.svg");
                 }
+                @include m.responsive("<", 412px){
+                    content: url("/static/images/home/svg_mobile/compressed/mobile_index_s3_sh_412px.svg");
+                }
             }
         } 
         & div.wrapper {
@@ -383,14 +388,15 @@ main#main {
                     margin-top: f.fontDynSize(768, 1040, -240, -50);
                 }
                 @include m.responsive("<", 768px){
-                    // margin-top: ;
                     align-self: flex-end;
                     transform: translateY(f.fontDynSize(576, 768, 50, 120));
                 }
                 @include m.responsive("<", 576px){
-                    // margin-top: ;
-                    align-self: flex-end;
                     transform: translateY(f.fontDynSize(412, 576, 20, 150));
+                }
+                @include m.responsive("<", 412px){
+                    align-self: flex-end;
+                    transform: translateY(f.fontDynSize(375, 412, 365, 475));
                 }
                 
                 & div.body {

@@ -466,7 +466,7 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member > a 
 }
 @media only screen and (max-width: 768px) {
   section#index-s-three div.text-box > div.body > ul.team-members > li.member {
-    padding-bottom: 5rem;
+    padding-bottom: clamp(2.5rem, -22.8378378378rem + 67.5675675676vw, 5rem);
   }
 }
 section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-child(1) > a div.mugshot {

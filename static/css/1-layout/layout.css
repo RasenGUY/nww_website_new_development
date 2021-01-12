@@ -336,6 +336,11 @@ main#main #index-s-three {
     margin-top: -20rem;
   }
 }
+@media only screen and (max-width: 412px) {
+  main#main #index-s-three {
+    margin-top: -18rem;
+  }
+}
 main#main #index-s-three .shapes {
   z-index: 1;
 }
@@ -350,6 +355,11 @@ main#main #index-s-three .shapes object.index-s-three-sh-1 {
 @media only screen and (max-width: 576px) {
   main#main #index-s-three .shapes object.index-s-three-sh-1 {
     content: url("/static/images/home/svg_mobile/compressed/index_mobile_sh_s3.svg");
+  }
+}
+@media only screen and (max-width: 412px) {
+  main#main #index-s-three .shapes object.index-s-three-sh-1 {
+    content: url("/static/images/home/svg_mobile/compressed/mobile_index_s3_sh_412px.svg");
   }
 }
 main#main #index-s-three div.wrapper > div.text-box {
@@ -368,8 +378,13 @@ main#main #index-s-three div.wrapper > div.text-box {
 }
 @media only screen and (max-width: 576px) {
   main#main #index-s-three div.wrapper > div.text-box {
-    align-self: flex-end;
     transform: translateY(clamp(2rem, -30.6585365854rem + 79.2682926829vw, 15rem));
+  }
+}
+@media only screen and (max-width: 412px) {
+  main#main #index-s-three div.wrapper > div.text-box {
+    align-self: flex-end;
+    transform: translateY(clamp(36.5rem, -74.9864864865rem + 297.2972972973vw, 47.5rem));
   }
 }
 main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members > li.member {
