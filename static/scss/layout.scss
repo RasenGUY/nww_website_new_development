@@ -347,11 +347,11 @@ main#main {
         height: 150vh;
         margin-top: -4rem;
         @include m.responsive("<", 768px){
-            height: 100vh;
+            height: 125vh;
             margin-top: f.fontDynSize(577, 768, 180, 380);
         }
         @include m.responsive("<", 576px){
-            height: 125vh;
+            // height: 125vh;
             margin-top: f.fontDynSize(376, 576, 70, 360);
         }
     }
@@ -360,8 +360,11 @@ main#main {
     & #index-s-three {
         height: 100vh;
         margin-top: -17rem;
+        @include m.responsive("<", 768px){
+            margin-top: -20rem;
+
+        }
         & .shapes {
-            // margin-top: -29rem;
             z-index: 1;
             & object.index-s-three-sh-1 {
                 content: url("/static/images/home/svg_web/compressed/home_sh_s3.svg");
@@ -374,19 +377,22 @@ main#main {
             }
         } 
         & div.wrapper {
-            height: 80%; 
-            // margin-top: f.fontDynSize(768, 1350, -345, 0);
-            
-            @include m.responsive("<", 768px){
-                margin-top: unset;
-            };
-            @include m.responsive("<", 576px){
-                // margin-top: f.fontDynSize(412, 576, -60, 110);
-            };
-            @include m.responsive("<", 412px){
-                // margin-top: f.fontDynSize(376, 412, 170, 230);
-            };
             & > div.text-box {
+                margin-top: f.fontDynSize(1041, 1350, -50, 250);
+                @include m.responsive("<", 1040px){
+                    margin-top: f.fontDynSize(768, 1040, -240, -50);
+                }
+                @include m.responsive("<", 768px){
+                    // margin-top: ;
+                    align-self: flex-end;
+                    transform: translateY(f.fontDynSize(576, 768, 50, 120));
+                }
+                @include m.responsive("<", 576px){
+                    // margin-top: ;
+                    align-self: flex-end;
+                    transform: translateY(f.fontDynSize(412, 576, 20, 150));
+                }
+                
                 & div.body {
                     & > ul.team-members {
                         & > li.member {
@@ -404,7 +410,7 @@ main#main {
                         }
                     }
                 }
-
+                
             }  
         } 
     }

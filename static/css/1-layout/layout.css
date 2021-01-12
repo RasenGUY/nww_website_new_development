@@ -318,19 +318,23 @@ main#main #index-s-two {
 }
 @media only screen and (max-width: 768px) {
   main#main #index-s-two {
-    height: 100vh;
+    height: 125vh;
     margin-top: clamp(18rem, -42.4188481675rem + 104.7120418848vw, 38rem);
   }
 }
 @media only screen and (max-width: 576px) {
   main#main #index-s-two {
-    height: 125vh;
     margin-top: clamp(7rem, -47.52rem + 145vw, 36rem);
   }
 }
 main#main #index-s-three {
   height: 100vh;
   margin-top: -17rem;
+}
+@media only screen and (max-width: 768px) {
+  main#main #index-s-three {
+    margin-top: -20rem;
+  }
 }
 main#main #index-s-three .shapes {
   z-index: 1;
@@ -348,12 +352,24 @@ main#main #index-s-three .shapes object.index-s-three-sh-1 {
     content: url("/static/images/home/svg_mobile/compressed/index_mobile_sh_s3.svg");
   }
 }
-main#main #index-s-three div.wrapper {
-  height: 80%;
+main#main #index-s-three div.wrapper > div.text-box {
+  margin-top: clamp(-5rem, -106.067961165rem + 97.0873786408vw, 25rem);
+}
+@media only screen and (max-width: 1040px) {
+  main#main #index-s-three div.wrapper > div.text-box {
+    margin-top: clamp(-24rem, -77.6470588235rem + 69.8529411765vw, -5rem);
+  }
 }
 @media only screen and (max-width: 768px) {
-  main#main #index-s-three div.wrapper {
-    margin-top: unset;
+  main#main #index-s-three div.wrapper > div.text-box {
+    align-self: flex-end;
+    transform: translateY(clamp(5rem, -16rem + 36.4583333333vw, 12rem));
+  }
+}
+@media only screen and (max-width: 576px) {
+  main#main #index-s-three div.wrapper > div.text-box {
+    align-self: flex-end;
+    transform: translateY(clamp(2rem, -30.6585365854rem + 79.2682926829vw, 15rem));
   }
 }
 main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members > li.member {
