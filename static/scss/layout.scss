@@ -310,8 +310,8 @@ main#main {
     & #index-s-two {
         height: 100vh;
         margin-top: 0rem;
-        @include m.responsive(">and<", (1175px, 1350px)){
-            margin-top: f.fontDynSize(1350, 1175, -30, 0);
+        @include m.responsive(">and<", (1175px, 1405px)){
+            margin-top: f.fontDynSize(1405, 1175, -40, 0);
         }
         @include m.responsive(">", 1500px){
             // margin-top: 9rem;

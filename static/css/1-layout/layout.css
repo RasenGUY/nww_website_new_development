@@ -281,9 +281,9 @@ main#main #index-s-two {
   height: 100vh;
   margin-top: 0rem;
 }
-@media (min-width: 1175px) and (max-width: 1350px) {
+@media (min-width: 1175px) and (max-width: 1405px) {
   main#main #index-s-two {
-    margin-top: clamp(-3rem, 20.1428571429rem + -17.1428571429vw, 0rem);
+    margin-top: clamp(-4rem, 20.4347826087rem + -17.3913043478vw, 0rem);
   }
 }
 @media only screen and (max-width: 768px) {
