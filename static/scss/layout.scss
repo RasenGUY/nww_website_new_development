@@ -173,12 +173,10 @@ main#main {
     section, footer {
         position: relative;
         width: 100vw;
-
         // z-index: 0;
         .shapes{
             width: 100%;
         }
-
         // wrapper for all text-boxes in sections
         & > .wrapper {
             position: absolute;
@@ -201,7 +199,6 @@ main#main {
                 & .body > * {
                     padding-bottom: 0.75rem;       
                 }
-    
             }
         }
         .overlay {
@@ -231,50 +228,23 @@ main#main {
                 }      
                 & object.back {
                     transform: translateY(-5rem);      
-                    content: url("/static/images/home/svg_web/compressed/home_sh_s2_bg.svg");
-                    @include m.responsive("<", 768px){
-                        content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_back.svg");
-                    }
-                    @include m.responsive("<", 576px){
-                        content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_bg.svg");
-                    }
                 }
                 & object.middle {
                     transform: translateY(-1rem);      
-                    content: url("/static/images/home/svg_web/compressed/home_sh_s2_mg.svg");
-                    @include m.responsive("<", 768px){
-                        content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_middle.svg");
-                    }
-                    @include m.responsive("<", 576px){
-                        content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_mg.svg");
-                    }
-                }
-                & object.fore {
-                    content: url("/static/images/home/svg_web/compressed/home_sh_s2_fg.svg");
-                    @include m.responsive("<", 768px){
-                        content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_fore.svg");
-                    }
-                    @include m.responsive("<", 576px){
-                        content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_fg.svg");
-                    }
                 } 
             }
-            
             & .circles {
                 position: relative;
                 width: 80%;
                 margin: 0px auto; 
                 height: f.fontDynSize(769, 1350, 300, 850);
                 z-index: 11;
-
                 & > div {
                     position: absolute;
-                    
                     &:nth-child(1){ // top-left circle
                         top:23rem;
                         left: -6rem;
                         transform: translateY(f.fontDynSize(1040, 1350, -140, 0));
-
                         @include m.responsive("<", 1040px) {
                             top: 9rem;
                             left: -12rem;
@@ -308,16 +278,12 @@ main#main {
                 } 
             }
         }
-
         & > div:nth-child(2){ // text-box wrapper
             height: 100%;
             & .text-box {
                 width: 100%;
                 height: 100%;
                 justify-content: center;
-                @include m.responsive("<", 576px){
-                    // margin-top: f.fontDynSize(376, 576, 130, 250);
-                }
                 & .body {
                     @include m.responsive("<", 576px){
                         align-items: center;
@@ -329,14 +295,12 @@ main#main {
                 }
             }
             & .img-box-wrapper {
-
                 @include m.responsive(">", 576px){ // show image at mobile screens 
                     display: none;
                 }
                 & .image-box {
                     height: f.fontDynSize(376, 576, 185, 300);
                     width: f.fontDynSize(376, 576, 185, 300);
-                    // transform: translateY(f.fontDynSize(376, 576, -200, 0)); 
                 }
             }
         }
@@ -344,14 +308,19 @@ main#main {
 
     // index section two explore Vietnam
     & #index-s-two {
-        height: 150vh;
-        margin-top: -4rem;
+        height: 100vh;
+        margin-top: 0rem;
+        @include m.responsive(">and<", (1175px, 1350px)){
+            margin-top: f.fontDynSize(1350, 1175, -30, 0);
+        }
+        @include m.responsive(">", 1500px){
+            // margin-top: 9rem;
+        }
         @include m.responsive("<", 768px){
             height: 125vh;
             margin-top: f.fontDynSize(577, 768, 180, 380);
         }
         @include m.responsive("<", 576px){
-            // height: 125vh;
             margin-top: f.fontDynSize(376, 576, 70, 360);
         }
     }
@@ -359,8 +328,9 @@ main#main {
     // index section three team
     & #index-s-three {
         height: 100vh;
-        margin-top: -17rem;
+        // margin-top: f.fontDynSize();
         @include m.responsive("<", 768px){
+            height: 50vh;
             margin-top: -20rem;
         }
         @include m.responsive("<", 412px){
@@ -368,18 +338,6 @@ main#main {
         }
         & .shapes {
             z-index: 1;
-            & object.index-s-three-sh-1 {
-                content: url("/static/images/home/svg_web/compressed/home_sh_s3.svg");
-                @include m.responsive("<", 768px){
-                    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s3.svg");
-                }
-                @include m.responsive("<", 576px){
-                    content: url("/static/images/home/svg_mobile/compressed/index_mobile_sh_s3.svg");
-                }
-                @include m.responsive("<", 412px){
-                    content: url("/static/images/home/svg_mobile/compressed/mobile_index_s3_sh_412px.svg");
-                }
-            }
         } 
         & div.wrapper {
             & > div.text-box {
@@ -389,14 +347,14 @@ main#main {
                 }
                 @include m.responsive("<", 768px){
                     align-self: flex-end;
-                    transform: translateY(f.fontDynSize(576, 768, 50, 120));
+                    transform: translateY(f.fontDynSize(576, 768, 360, 500));
                 }
                 @include m.responsive("<", 576px){
-                    transform: translateY(f.fontDynSize(412, 576, 20, 150));
+                    transform: translateY(f.fontDynSize(412, 576, 190, 385));
                 }
                 @include m.responsive("<", 412px){
                     align-self: flex-end;
-                    transform: translateY(f.fontDynSize(375, 412, 365, 475));
+                    transform: translateY(f.fontDynSize(375, 412, 560, 570));
                 }
                 
                 & div.body {
@@ -424,7 +382,7 @@ main#main {
     // section four experience vietnam
     & #index-s-four {
         height: 125vh;
-        margin-top: f.fontDynSize(769, 1536, -510, -110);
+        margin-top: f.fontDynSize(769, 1536, -510, 70);
         @include m.responsive("<", 768px){
             height: 150vh;
             background-position: 85%;

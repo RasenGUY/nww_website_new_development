@@ -185,6 +185,12 @@ div.mugshot {
     height: f.fontDynSize(768, 1050, 130, 150); 
     width: f.fontDynSize(768, 1050, 130, 150);
     border: solid v.$ctaColor 0.5rem;
+    @include m.responsive("<", 576px){
+        height: f.fontDynSize(412, 576, 100, 150); 
+        width: f.fontDynSize(412, 576, 100, 150);
+        border: solid v.$ctaColor f.fontDynSize(412, 576, 3.75, 5);
+        
+    }
 }
 // navigation menu
 nav#nav-web{
@@ -396,21 +402,60 @@ section .overlay {
 
 // ----------- section s one -----------------
 #index-s-one {
-    & .shapes .circles > .circle {
-        &:nth-child(3){ // big circle with image   
-            @include m.background(initial, "/static/images/home/jpeg_web/compressed/teach_6.jpg", center, cover);
-            border: solid v.$borderNm v.$primaryColor;
-            @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$textColor, v.$opacityLg)));
-            @include m.responsive("<", 768px) {
-                width: f.fontDynSize(576, 768, 200, (118.2 * 1.618 * 1.618 * 1.618)); 
-                height: f.fontDynSize(576, 768, 200, (118.2 * 1.618 * 1.618 * 1.618));
+    & .shapes {    
+        
+        // folder shape inject images
+        & .folder {
+            & object.back {
+
+                content: url("/static/images/home/svg_web/compressed/home_sh_s2_bg.svg");
+                @include m.responsive("<", 768px){
+                    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_back.svg");
+                }
+                @include m.responsive("<", 576px){
+                    content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_bg.svg");
+                }
+            }
+            & object.middle {
+
+                content: url("/static/images/home/svg_web/compressed/home_sh_s2_mg.svg");
+                @include m.responsive("<", 768px){
+                    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_middle.svg");
+                }
+                @include m.responsive("<", 576px){
+                    content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_mg.svg");
+                }
+            }
+            & object.fore {
+                content: url("/static/images/home/svg_web/compressed/home_sh_s2_fg.svg");
+                @include m.responsive("<", 768px){
+                    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_fore.svg");
+                }
+                @include m.responsive("<", 576px){
+                    content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_fg.svg");
+                }
             }
         }
 
-        &:nth-child(1){ // top-right circle
-            @include m.responsive("<", 1350px){ // make circle big at smaller screen sizes
-                width: (11.82rem * 1.618 * 1.618); 
-                height: (11.82rem * 1.618 * 1.618); 
+        // circles 
+        & .circles {
+            & > .circle {
+                &:nth-child(3){ // big circle with image   
+                    @include m.background(initial, "/static/images/home/jpeg_web/compressed/teach_6.jpg", center, cover);
+                    border: solid v.$borderNm v.$primaryColor;
+                    @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$textColor, v.$opacityLg)));
+                    @include m.responsive("<", 768px) {
+                        width: f.fontDynSize(576, 768, 200, (118.2 * 1.618 * 1.618 * 1.618)); 
+                        height: f.fontDynSize(576, 768, 200, (118.2 * 1.618 * 1.618 * 1.618));
+                    }
+                }
+        
+                &:nth-child(1){ // top-right circle
+                    @include m.responsive("<", 1350px){ // make circle big at smaller screen sizes
+                        width: (11.82rem * 1.618 * 1.618); 
+                        height: (11.82rem * 1.618 * 1.618); 
+                    }
+                }
             }
         }
     }
@@ -431,15 +476,16 @@ section#index-s-three {
     
     //shapes
     & .shapes {
-        & .index-s-three-sh-1 {
-            & object {
-                content: url("/static/images/home/svg_web/compressed/home_sh_s3.svg");
-                @include m.responsive("<", 768px){
-                    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s3.svg");
-                }
-                @include m.responsive("<", 576px){
-                    content: url("/static/images/home/svg_mobile/compressed/index_mobile_sh_s3.svg");
-                }
+        & object.index-s-three-sh-1 {
+            content: url("/static/images/home/svg_web/compressed/home_sh_s3.svg");
+            @include m.responsive("<", 768px){
+                content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s3.svg");
+            }
+            // @include m.responsive("<", 576px){
+            //     content: url("/static/images/home/svg_mobile/compressed/index_mobile_sh_s3.svg");
+            // }
+            @include m.responsive("<", 412px){
+                content: url("/static/images/home/svg_mobile/compressed/mobile_index_s3_sh_412px.svg");
             }
         }
     } 
@@ -449,14 +495,12 @@ section#index-s-three {
         & > div.body > ul.team-members {
             list-style: none;
             & > li.member {
+                padding-bottom: f.fontDynSize(375, 576, 25, 50);
                 & > a {
                     width: 100%;
-                    & h3.title {
-                        padding: 1.5rem 0 0 0;
+                    & h4.title {
+                        padding: 1rem 0 0 0;
                     }
-                }
-                @include m.responsive("<", 768px){
-                    padding-bottom: f.fontDynSize(375, 412, 25, 50);
                 }
                 &:nth-child(1) > a div.mugshot { // director
                     @include m.background(initial, "/static/images/home/pngs/team/compressed/hong.png", center, cover);
