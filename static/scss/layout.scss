@@ -314,7 +314,7 @@ main#main {
             margin-top: f.fontDynSize(1405, 1175, -50, 0);
         }
         @include m.responsive(">", 1405px){
-            margin-top: 0rem;
+            margin-top: f.fontDynSize(1405, 1500, 0, 90);
         }
         @include m.responsive("<", 768px){
             height: 125vh;
@@ -328,7 +328,7 @@ main#main {
     // index section three team
     & #index-s-three {
         height: 100vh;
-        // margin-top: f.fontDynSize();
+        margin-top: -16rem;
         @include m.responsive("<", 768px){
             height: 50vh;
             margin-top: -20rem;
@@ -341,16 +341,16 @@ main#main {
         } 
         & div.wrapper {
             & > div.text-box {
-                margin-top: f.fontDynSize(1041, 1350, -50, 250);
-                @include m.responsive("<", 1040px){
-                    margin-top: f.fontDynSize(768, 1040, -240, -50);
+                margin-top: f.fontDynSize(768, 1350, -260, 160);
+                & header > .spacer.wider {
+                    height: f.fontDynSize(768, 1350, 0, 20);
                 }
                 @include m.responsive("<", 768px){
                     align-self: flex-end;
-                    transform: translateY(f.fontDynSize(576, 768, 360, 500));
+                    transform: translateY(f.fontDynSize(576, 768, 350, 500));
                 }
                 @include m.responsive("<", 576px){
-                    transform: translateY(f.fontDynSize(412, 576, 190, 385));
+                    transform: translateY(f.fontDynSize(412, 576, 170, 350));
                 }
                 @include m.responsive("<", 412px){
                     align-self: flex-end;
@@ -382,16 +382,19 @@ main#main {
     // section four experience vietnam
     & #index-s-four {
         height: 125vh;
-        margin-top: f.fontDynSize(769, 1536, -510, 70);
+        margin-top: f.fontDynSize(769, 1536, -415, -100);
+        @include m.responsive("<", 1080px){
+            background-position: 70%;
+        }
         @include m.responsive("<", 768px){
             height: 150vh;
             background-position: 85%;
-            margin-top: f.fontDynSize(579, 768, -180, 70);
+            margin-top: f.fontDynSize(579, 768, 320, 530);
         }
         @include m.responsive("<", 576px){
-            margin-top: f.fontDynSize(412, 576, -220, 60);
+            margin-top: f.fontDynSize(412, 576, 120, 310);
             @include m.responsive("<", 412px){
-                margin-top: f.fontDynSize(379, 412, 150, 270);
+                margin-top: f.fontDynSize(379, 412, 520, 610);
             }
         }
         & .wrapper .text-box header {
@@ -401,37 +404,18 @@ main#main {
 
     // section five reviews and contact
     & #index-s-five {
-        @include m.responsive(">", 768){
-            height: 250vh;
-        }
-        @include m.responsive("<", 768){
-            height: 200vh;
-        }
-        @include m.responsive("<", 412){
-            height: 310vh;
-        }
-        & .shapes {
-            margin-top: -9rem;
-            & .index-s-five-sh-1 {
-                width: 100%;
-            }
-            @include m.responsive("<", 768){
-                & .shapes {
-                    margin-top: -6rem;
-                }
-            }
-        }
+        margin-top: f.fontDynSize(1080, 768, -50, -80);
         & .wrapper {
+            margin-top: f.fontDynSize(1440, 768, -100, 10);
             & .text-box.reviews-section {
-                margin-top: f.fontDynSize(412, 1080, -25, 0);
                 & header {
                     & .spacer {
-                        height: f.fontDynSize(769, 1080, 25, 75); 
+                        height: f.fontDynSize(769, 1080, 15, 50); 
                         @include m.responsive("<", 768px){
-                            height: f.fontDynSize(576, 768  , 25, 50);
+                            // height: f.fontDynSize(576, 768  , 25, 50);
                         }
                         @include m.responsive("<", 576px){
-                            height: 2.5rem;
+                            // height: 2.5rem;
                         }   
                     }
                 }
@@ -439,7 +423,7 @@ main#main {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax((100%/3), 1fr));
                 justify-content: center; 
-                gap: f.fontDynSize(769, 1350, 50, 100) 0; 
+                gap: f.fontDynSize(769, 1350, 25, 75) 0; 
                 @include m.responsive("<", 768px){
                     gap: f.fontDynSize(576, 768, 25, 50) 0; 
                 }

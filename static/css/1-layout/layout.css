@@ -288,7 +288,7 @@ main#main #index-s-two {
 }
 @media only screen and (min-width: 1405px) {
   main#main #index-s-two {
-    margin-top: 0rem;
+    margin-top: clamp(0rem, -133.1052631579rem + 94.7368421053vw, 9rem);
   }
 }
 @media only screen and (max-width: 768px) {
@@ -304,6 +304,7 @@ main#main #index-s-two {
 }
 main#main #index-s-three {
   height: 100vh;
+  margin-top: -16rem;
 }
 @media only screen and (max-width: 768px) {
   main#main #index-s-three {
@@ -320,22 +321,20 @@ main#main #index-s-three .shapes {
   z-index: 1;
 }
 main#main #index-s-three div.wrapper > div.text-box {
-  margin-top: clamp(-5rem, -106.067961165rem + 97.0873786408vw, 25rem);
+  margin-top: clamp(-26rem, -81.4226804124rem + 72.1649484536vw, 16rem);
 }
-@media only screen and (max-width: 1040px) {
-  main#main #index-s-three div.wrapper > div.text-box {
-    margin-top: clamp(-24rem, -77.6470588235rem + 69.8529411765vw, -5rem);
-  }
+main#main #index-s-three div.wrapper > div.text-box header > .spacer.wider {
+  height: clamp(0rem, -2.6391752577rem + 3.4364261168vw, 2rem);
 }
 @media only screen and (max-width: 768px) {
   main#main #index-s-three div.wrapper > div.text-box {
     align-self: flex-end;
-    transform: translateY(clamp(36rem, -6rem + 72.9166666667vw, 50rem));
+    transform: translateY(clamp(35rem, -10rem + 78.125vw, 50rem));
   }
 }
 @media only screen and (max-width: 576px) {
   main#main #index-s-three div.wrapper > div.text-box {
-    transform: translateY(clamp(19rem, -29.987804878rem + 118.9024390244vw, 38.5rem));
+    transform: translateY(clamp(17rem, -28.2195121951rem + 109.756097561vw, 35rem));
   }
 }
 @media only screen and (max-width: 412px) {
@@ -363,75 +362,47 @@ main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members >
 }
 main#main #index-s-four {
   height: 125vh;
-  margin-top: clamp(-51rem, -109.1512385919rem + 75.6192959583vw, 7rem);
+  margin-top: clamp(-41.5rem, -73.0821382008rem + 41.0691003911vw, -10rem);
+}
+@media only screen and (max-width: 1080px) {
+  main#main #index-s-four {
+    background-position: 70%;
+  }
 }
 @media only screen and (max-width: 768px) {
   main#main #index-s-four {
     height: 150vh;
     background-position: 85%;
-    margin-top: clamp(-18rem, -94.5873015873rem + 132.2751322751vw, 7rem);
+    margin-top: clamp(32rem, -32.3333333333rem + 111.1111111111vw, 53rem);
   }
 }
 @media only screen and (max-width: 576px) {
   main#main #index-s-four {
-    margin-top: clamp(-22rem, -92.3414634146rem + 170.7317073171vw, 6rem);
+    margin-top: clamp(12rem, -35.7317073171rem + 115.8536585366vw, 31rem);
   }
 }
 @media only screen and (max-width: 576px) and (max-width: 412px) {
   main#main #index-s-four {
-    margin-top: clamp(15rem, -122.8181818182rem + 363.6363636364vw, 27rem);
+    margin-top: clamp(52rem, -51.3636363636rem + 272.7272727273vw, 61rem);
   }
 }
 main#main #index-s-four .wrapper .text-box header {
   margin-top: 10rem;
 }
-@media only screen and (min-width: 768) {
-  main#main #index-s-five {
-    height: 250vh;
-  }
+main#main #index-s-five {
+  margin-top: clamp(-5rem, -15.3846153846rem + 9.6153846154vw, -8rem);
 }
-@media only screen and (max-width: 768) {
-  main#main #index-s-five {
-    height: 200vh;
-  }
-}
-@media only screen and (max-width: 412) {
-  main#main #index-s-five {
-    height: 310vh;
-  }
-}
-main#main #index-s-five .shapes {
-  margin-top: -9rem;
-}
-main#main #index-s-five .shapes .index-s-five-sh-1 {
-  width: 100%;
-}
-@media only screen and (max-width: 768) {
-  main#main #index-s-five .shapes .shapes {
-    margin-top: -6rem;
-  }
-}
-main#main #index-s-five .wrapper .text-box.reviews-section {
-  margin-top: clamp(-2.5rem, -4.0419161677rem + 3.7425149701vw, 0rem);
+main#main #index-s-five .wrapper {
+  margin-top: clamp(-10rem, 13.5714285714rem + -16.369047619vw, 1rem);
 }
 main#main #index-s-five .wrapper .text-box.reviews-section header .spacer {
-  height: clamp(2.5rem, -9.8633440514rem + 16.077170418vw, 7.5rem);
-}
-@media only screen and (max-width: 768px) {
-  main#main #index-s-five .wrapper .text-box.reviews-section header .spacer {
-    height: clamp(2.5rem, -5rem + 13.0208333333vw, 5rem);
-  }
-}
-@media only screen and (max-width: 576px) {
-  main#main #index-s-five .wrapper .text-box.reviews-section header .spacer {
-    height: 2.5rem;
-  }
+  height: clamp(1.5rem, -7.154340836rem + 11.2540192926vw, 5rem);
 }
 main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(33.3333333333%, 1fr));
   justify-content: center;
-  gap: clamp(5rem, -1.6179001721rem + 8.6058519793vw, 10rem) 0;
+  gap: clamp(2.5rem, -4.1179001721rem + 8.6058519793vw, 7.5rem) 0;
 }
 @media only screen and (max-width: 768px) {
   main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {

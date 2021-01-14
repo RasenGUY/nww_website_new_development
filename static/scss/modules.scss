@@ -130,45 +130,43 @@
 
 // svg-images (for all svg images)
 .svg-image {
-
     width: 100%;
     // height: 100%;
+}
+.shadow-fg {
+    @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$textColor, v.$opacityLg)));
+    &.primary {
+        @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$primaryColor, v.$opacityLg)));
+    }
+    &.secondary {
+        @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$secondaryColor, v.$opacityLg)));
+    }
+    &.cta {
+        @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$ctaColor, v.$opacityLg)));
+    }
 
-    &.shadow-fg {
-        @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$textColor, v.$opacityLg)));
-        &.primary {
-            @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$primaryColor, v.$opacityLg)));
+    &.sm {
+        @include m.compatible(filter, drop-shadow(f.shadows("figure-sm", v.$textColor, v.$opacityLg)));
+        .primary {
+            @include m.compatible(filter, drop-shadow(f.shadows("figure-sm", v.$primaryColor, v.$opacityLg)));
         }
-        &.secondary {
-            @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$secondaryColor, v.$opacityLg)));
+        .secondary {
+            @include m.compatible(filter, drop-shadow(f.shadows("figure-sm", v.$secondaryColor, v.$opacityLg)));
         }
-        &.cta {
-            @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$ctaColor, v.$opacityLg)));
+        .cta {
+            @include m.compatible(filter, drop-shadow(f.shadows("figure-sm", v.$secondaryColor, v.$opacityLg)));
         }
-
-        &.sm {
-            @include m.compatible(filter, drop-shadow(f.shadows("figure-sm", v.$textColor, v.$opacityLg)));
-            .primary {
-                @include m.compatible(filter, drop-shadow(f.shadows("figure-sm", v.$primaryColor, v.$opacityLg)));
-            }
-            .secondary {
-                @include m.compatible(filter, drop-shadow(f.shadows("figure-sm", v.$secondaryColor, v.$opacityLg)));
-            }
-            .cta {
-                @include m.compatible(filter, drop-shadow(f.shadows("figure-sm", v.$secondaryColor, v.$opacityLg)));
-            }
+    }
+    &.lg {
+        @include m.compatible(filter, drop-shadow(f.shadows("figure-lg", v.$textColor, v.$opacityLg)));
+        .primary {
+            @include m.compatible(filter, drop-shadow(f.shadows("figure-lg", v.$primaryColor, v.$opacityLg)));
         }
-        &.lg {
-            @include m.compatible(filter, drop-shadow(f.shadows("figure-lg", v.$textColor, v.$opacityLg)));
-            .primary {
-                @include m.compatible(filter, drop-shadow(f.shadows("figure-lg", v.$primaryColor, v.$opacityLg)));
-            }
-            .secondary {
-                @include m.compatible(filter, drop-shadow(f.shadows("figure-lg", v.$secondaryColor, v.$opacityLg)));
-            }
-            .cta {
-                @include m.compatible(filter, drop-shadow(f.shadows("figure-lg", v.$secondaryColor, v.$opacityLg)));
-            }
+        .secondary {
+            @include m.compatible(filter, drop-shadow(f.shadows("figure-lg", v.$secondaryColor, v.$opacityLg)));
+        }
+        .cta {
+            @include m.compatible(filter, drop-shadow(f.shadows("figure-lg", v.$secondaryColor, v.$opacityLg)));
         }
     }
 }
@@ -182,14 +180,13 @@
 // div-shapes for mugshots
 div.mugshot {
     border-radius: v.$cornerCircle;
-    height: f.fontDynSize(768, 1050, 130, 150); 
-    width: f.fontDynSize(768, 1050, 130, 150);
+    height: f.fontDynSize(768, 1920, 120, 150); 
+    width: f.fontDynSize(768, 1920, 120, 150);
     border: solid v.$ctaColor 0.5rem;
     @include m.responsive("<", 576px){
-        height: f.fontDynSize(412, 576, 100, 150); 
-        width: f.fontDynSize(412, 576, 100, 150);
-        border: solid v.$ctaColor f.fontDynSize(412, 576, 3.75, 5);
-        
+        height: f.fontDynSize(412, 576, 100, 125); 
+        width: f.fontDynSize(412, 576, 100, 125);
+        border: solid v.$ctaColor f.fontDynSize(412, 1920, 3.75, 5);
     }
 }
 // navigation menu
@@ -481,9 +478,6 @@ section#index-s-three {
             @include m.responsive("<", 768px){
                 content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s3.svg");
             }
-            // @include m.responsive("<", 576px){
-            //     content: url("/static/images/home/svg_mobile/compressed/index_mobile_sh_s3.svg");
-            // }
             @include m.responsive("<", 412px){
                 content: url("/static/images/home/svg_mobile/compressed/mobile_index_s3_sh_412px.svg");
             }
@@ -531,16 +525,18 @@ section#index-s-three {
 // ----------- section s five -----------------
 #index-s-five {
     & .shapes {
-        & .index-s-five-sh-1 {
-            // shapes    
-            & object {
-                content: url("/static/images/home/svg_web/compressed/home_sh_s5.svg");
-                @include m.responsive("<", 768px){
-                    content: url("/static/images/home/svg_medium/compressed/index_medium_s5_sh.svg");
-                }
-                @include m.responsive("<", 576px){
-                    content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s5.svg");
-                }
+        // shapes    
+        & object.index-s-five-sh-1 {
+            width: 100%;
+            content: url("/static/images/home/svg_web/compressed/home_sh_s5.svg");
+            @include m.responsive("<", 1440px){
+                content: url("/static/images/home/svg_web/compressed/index_normal_s5_sh_1440px.svg");
+            }
+            @include m.responsive("<", 768px){
+                content: url("/static/images/home/svg_medium/compressed/index_medium_s5_sh.svg");
+            }
+            @include m.responsive("<", 576px){
+                content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s5.svg");
             }
         }
     }

@@ -92,84 +92,85 @@
 .svg-image {
   width: 100%;
 }
-.svg-image.shadow-fg {
+
+.shadow-fg {
   filter: drop-shadow(1.5px 2.5px 5px rgba(14, 19, 24, 0.45));
   -ms-filter: drop-shadow(1.5px 2.5px 5px rgba(14, 19, 24, 0.45));
   -o-filter: drop-shadow(1.5px 2.5px 5px rgba(14, 19, 24, 0.45));
   -moz-filter: drop-shadow(1.5px 2.5px 5px rgba(14, 19, 24, 0.45));
   -webkit-filter: drop-shadow(1.5px 2.5px 5px rgba(14, 19, 24, 0.45));
 }
-.svg-image.shadow-fg.primary {
+.shadow-fg.primary {
   filter: drop-shadow(1.5px 2.5px 5px rgba(218, 74, 34, 0.45));
   -ms-filter: drop-shadow(1.5px 2.5px 5px rgba(218, 74, 34, 0.45));
   -o-filter: drop-shadow(1.5px 2.5px 5px rgba(218, 74, 34, 0.45));
   -moz-filter: drop-shadow(1.5px 2.5px 5px rgba(218, 74, 34, 0.45));
   -webkit-filter: drop-shadow(1.5px 2.5px 5px rgba(218, 74, 34, 0.45));
 }
-.svg-image.shadow-fg.secondary {
+.shadow-fg.secondary {
   filter: drop-shadow(1.5px 2.5px 5px rgba(34, 178, 218, 0.45));
   -ms-filter: drop-shadow(1.5px 2.5px 5px rgba(34, 178, 218, 0.45));
   -o-filter: drop-shadow(1.5px 2.5px 5px rgba(34, 178, 218, 0.45));
   -moz-filter: drop-shadow(1.5px 2.5px 5px rgba(34, 178, 218, 0.45));
   -webkit-filter: drop-shadow(1.5px 2.5px 5px rgba(34, 178, 218, 0.45));
 }
-.svg-image.shadow-fg.cta {
+.shadow-fg.cta {
   filter: drop-shadow(1.5px 2.5px 5px rgba(34, 218, 74, 0.45));
   -ms-filter: drop-shadow(1.5px 2.5px 5px rgba(34, 218, 74, 0.45));
   -o-filter: drop-shadow(1.5px 2.5px 5px rgba(34, 218, 74, 0.45));
   -moz-filter: drop-shadow(1.5px 2.5px 5px rgba(34, 218, 74, 0.45));
   -webkit-filter: drop-shadow(1.5px 2.5px 5px rgba(34, 218, 74, 0.45));
 }
-.svg-image.shadow-fg.sm {
+.shadow-fg.sm {
   filter: drop-shadow(5px 1.5px 3.5px rgba(14, 19, 24, 0.45));
   -ms-filter: drop-shadow(5px 1.5px 3.5px rgba(14, 19, 24, 0.45));
   -o-filter: drop-shadow(5px 1.5px 3.5px rgba(14, 19, 24, 0.45));
   -moz-filter: drop-shadow(5px 1.5px 3.5px rgba(14, 19, 24, 0.45));
   -webkit-filter: drop-shadow(5px 1.5px 3.5px rgba(14, 19, 24, 0.45));
 }
-.svg-image.shadow-fg.sm .primary {
+.shadow-fg.sm .primary {
   filter: drop-shadow(5px 1.5px 3.5px rgba(218, 74, 34, 0.45));
   -ms-filter: drop-shadow(5px 1.5px 3.5px rgba(218, 74, 34, 0.45));
   -o-filter: drop-shadow(5px 1.5px 3.5px rgba(218, 74, 34, 0.45));
   -moz-filter: drop-shadow(5px 1.5px 3.5px rgba(218, 74, 34, 0.45));
   -webkit-filter: drop-shadow(5px 1.5px 3.5px rgba(218, 74, 34, 0.45));
 }
-.svg-image.shadow-fg.sm .secondary {
+.shadow-fg.sm .secondary {
   filter: drop-shadow(5px 1.5px 3.5px rgba(34, 178, 218, 0.45));
   -ms-filter: drop-shadow(5px 1.5px 3.5px rgba(34, 178, 218, 0.45));
   -o-filter: drop-shadow(5px 1.5px 3.5px rgba(34, 178, 218, 0.45));
   -moz-filter: drop-shadow(5px 1.5px 3.5px rgba(34, 178, 218, 0.45));
   -webkit-filter: drop-shadow(5px 1.5px 3.5px rgba(34, 178, 218, 0.45));
 }
-.svg-image.shadow-fg.sm .cta {
+.shadow-fg.sm .cta {
   filter: drop-shadow(5px 1.5px 3.5px rgba(34, 178, 218, 0.45));
   -ms-filter: drop-shadow(5px 1.5px 3.5px rgba(34, 178, 218, 0.45));
   -o-filter: drop-shadow(5px 1.5px 3.5px rgba(34, 178, 218, 0.45));
   -moz-filter: drop-shadow(5px 1.5px 3.5px rgba(34, 178, 218, 0.45));
   -webkit-filter: drop-shadow(5px 1.5px 3.5px rgba(34, 178, 218, 0.45));
 }
-.svg-image.shadow-fg.lg {
+.shadow-fg.lg {
   filter: drop-shadow(5px 5px 10px rgba(14, 19, 24, 0.45));
   -ms-filter: drop-shadow(5px 5px 10px rgba(14, 19, 24, 0.45));
   -o-filter: drop-shadow(5px 5px 10px rgba(14, 19, 24, 0.45));
   -moz-filter: drop-shadow(5px 5px 10px rgba(14, 19, 24, 0.45));
   -webkit-filter: drop-shadow(5px 5px 10px rgba(14, 19, 24, 0.45));
 }
-.svg-image.shadow-fg.lg .primary {
+.shadow-fg.lg .primary {
   filter: drop-shadow(5px 5px 10px rgba(218, 74, 34, 0.45));
   -ms-filter: drop-shadow(5px 5px 10px rgba(218, 74, 34, 0.45));
   -o-filter: drop-shadow(5px 5px 10px rgba(218, 74, 34, 0.45));
   -moz-filter: drop-shadow(5px 5px 10px rgba(218, 74, 34, 0.45));
   -webkit-filter: drop-shadow(5px 5px 10px rgba(218, 74, 34, 0.45));
 }
-.svg-image.shadow-fg.lg .secondary {
+.shadow-fg.lg .secondary {
   filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
   -ms-filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
   -o-filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
   -moz-filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
   -webkit-filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
 }
-.svg-image.shadow-fg.lg .cta {
+.shadow-fg.lg .cta {
   filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
   -ms-filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
   -o-filter: drop-shadow(5px 5px 10px rgba(34, 178, 218, 0.45));
@@ -183,15 +184,15 @@
 
 div.mugshot {
   border-radius: 100px;
-  height: clamp(13rem, 7.5531914894rem + 7.0921985816vw, 15rem);
-  width: clamp(13rem, 7.5531914894rem + 7.0921985816vw, 15rem);
+  height: clamp(12rem, 10rem + 2.6041666667vw, 15rem);
+  width: clamp(12rem, 10rem + 2.6041666667vw, 15rem);
   border: solid #22da4a 0.5rem;
 }
 @media only screen and (max-width: 576px) {
   div.mugshot {
-    height: clamp(10rem, -2.5609756098rem + 30.487804878vw, 15rem);
-    width: clamp(10rem, -2.5609756098rem + 30.487804878vw, 15rem);
-    border: solid #22da4a clamp(0.375rem, 0.0609756098rem + 0.762195122vw, 0.5rem);
+    height: clamp(10rem, 3.7195121951rem + 15.243902439vw, 12.5rem);
+    width: clamp(10rem, 3.7195121951rem + 15.243902439vw, 12.5rem);
+    border: solid #22da4a clamp(0.375rem, 0.3408488064rem + 0.0828912467vw, 0.5rem);
   }
 }
 
@@ -565,16 +566,22 @@ section#index-s-three div.text-box > div.body > ul.team-members > li.member:nth-
   }
 }
 
-#index-s-five .shapes .index-s-five-sh-1 object {
+#index-s-five .shapes object.index-s-five-sh-1 {
+  width: 100%;
   content: url("/static/images/home/svg_web/compressed/home_sh_s5.svg");
 }
+@media only screen and (max-width: 1440px) {
+  #index-s-five .shapes object.index-s-five-sh-1 {
+    content: url("/static/images/home/svg_web/compressed/index_normal_s5_sh_1440px.svg");
+  }
+}
 @media only screen and (max-width: 768px) {
-  #index-s-five .shapes .index-s-five-sh-1 object {
+  #index-s-five .shapes object.index-s-five-sh-1 {
     content: url("/static/images/home/svg_medium/compressed/index_medium_s5_sh.svg");
   }
 }
 @media only screen and (max-width: 576px) {
-  #index-s-five .shapes .index-s-five-sh-1 object {
+  #index-s-five .shapes object.index-s-five-sh-1 {
     content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s5.svg");
   }
 }
