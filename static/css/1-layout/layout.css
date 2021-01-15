@@ -390,49 +390,98 @@ main#main #index-s-four .wrapper .text-box header {
   margin-top: 10rem;
 }
 main#main #index-s-five {
-  margin-top: clamp(-5rem, -15.3846153846rem + 9.6153846154vw, -8rem);
+  margin-top: -8rem;
+}
+@media only screen and (max-width: 576px) {
+  main#main #index-s-five {
+    margin-top: -12rem;
+  }
 }
 main#main #index-s-five .wrapper {
-  margin-top: clamp(-10rem, 13.5714285714rem + -16.369047619vw, 1rem);
+  margin-top: clamp(-10rem, 15.0332225914rem + -18.2724252492vw, 1rem);
+}
+@media only screen and (max-width: 768px) {
+  main#main #index-s-five .wrapper {
+    margin-top: clamp(2.5rem, 40rem + -65.1041666667vw, -10rem);
+  }
+}
+@media only screen and (max-width: 576px) {
+  main#main #index-s-five .wrapper {
+    margin-top: clamp(-10rem, 18.6567164179rem + -49.7512437811vw, 0rem);
+  }
 }
 main#main #index-s-five .wrapper .text-box.reviews-section header .spacer {
-  height: clamp(1.5rem, -7.154340836rem + 11.2540192926vw, 5rem);
+  height: 5rem;
+}
+@media only screen and (max-width: 1370px) {
+  main#main #index-s-five .wrapper .text-box.reviews-section header .spacer {
+    height: clamp(2.5rem, -3.8787375415rem + 8.3056478405vw, 7.5rem);
+  }
+}
+@media only screen and (max-width: 768px) {
+  main#main #index-s-five .wrapper .text-box.reviews-section header .spacer {
+    height: clamp(2.5rem, -5rem + 13.0208333333vw, 5rem);
+  }
+}
+@media only screen and (max-width: 576px) {
+  main#main #index-s-five .wrapper .text-box.reviews-section header .spacer {
+    height: clamp(1.5rem, -5.0298507463rem + 17.4129353234vw, 5rem);
+  }
 }
 main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(33.3333333333%, 1fr));
   justify-content: center;
-  gap: clamp(2.5rem, -4.1179001721rem + 8.6058519793vw, 7.5rem) 0;
+  gap: 7.5rem 0;
+}
+@media only screen and (max-width: 1370px) {
+  main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
+    gap: clamp(2.5rem, -7.0681063123rem + 12.4584717608vw, 10rem) 0;
+  }
 }
 @media only screen and (max-width: 768px) {
   main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
-    gap: clamp(2.5rem, -5rem + 13.0208333333vw, 5rem) 0;
+    gap: clamp(2.5rem, -20rem + 39.0625vw, 10rem) 0;
   }
 }
 @media only screen and (max-width: 576px) {
   main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
-    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
-    gap: 2.5rem 0;
-  }
-}
-@media only screen and (max-width: 412px) {
-  main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-    gap: 2.5rem 0;
+    gap: clamp(2.5rem, -6.828358209rem + 24.8756218905vw, 7.5rem) 0;
   }
 }
 main#main #index-s-five .wrapper .text-box.contact-section {
-  margin-top: clamp(2.5rem, -0.5838323353rem + 7.4850299401vw, 7.5rem);
+  margin-top: 10rem;
   width: 100%;
+}
+@media only screen and (max-width: 1370px) {
+  main#main #index-s-five .wrapper .text-box.contact-section {
+    margin-top: clamp(2.5rem, -19.8255813953rem + 29.0697674419vw, 20rem);
+  }
+}
+@media only screen and (max-width: 768px) {
+  main#main #index-s-five .wrapper .text-box.contact-section {
+    margin-top: clamp(5rem, -40rem + 78.125vw, 20rem);
+  }
+}
+@media only screen and (max-width: 576px) {
+  main#main #index-s-five .wrapper .text-box.contact-section {
+    margin-top: clamp(2.5rem, -6.828358209rem + 24.8756218905vw, 7.5rem);
+  }
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body {
   width: 100%;
-  margin-top: clamp(2.5rem, -9.5rem + 20.8333333333vw, 6.5rem);
+  margin-top: clamp(2.5rem, -7.2142857143rem + 12.6984126984vw, 6.5rem);
+}
+@media only screen and (max-width: 768px) {
+  main#main #index-s-five .wrapper .text-box.contact-section .body {
+    margin-top: clamp(2.5rem, -8.4714285714rem + 19.0476190476vw, 6.5rem);
+  }
 }
 @media only screen and (max-width: 576px) {
   main#main #index-s-five .wrapper .text-box.contact-section .body {
     flex-direction: column;
-    margin-top: 2.5rem;
+    margin-top: clamp(1.5rem, -5.0298507463rem + 17.4129353234vw, 5rem);
   }
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body > div.map-wrapper.f-item {
@@ -446,12 +495,17 @@ main#main #index-s-five .wrapper .text-box.contact-section .body > div.map-wrapp
   width: 100%;
   height: 100%;
 }
+@media only screen and (max-width: 768px) {
+  main#main #index-s-five .wrapper .text-box.contact-section .body > div.map-wrapper.f-item .map-box {
+    width: 90%;
+  }
+}
 @media only screen and (max-width: 576px) {
   main#main #index-s-five .wrapper .text-box.contact-section .body > div.map-wrapper.f-item {
     flex: 100%;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: clamp(2.5rem, -2.1641791045rem + 12.4378109453vw, 5rem);
   }
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item {

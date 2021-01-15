@@ -404,48 +404,71 @@ main#main {
 
     // section five reviews and contact
     & #index-s-five {
-        margin-top: f.fontDynSize(1080, 768, -50, -80);
+        margin-top: -8rem;
+        @include m.responsive("<", 576px){
+            margin-top: -12rem;
+        }
         & .wrapper {
-            margin-top: f.fontDynSize(1440, 768, -100, 10);
+            margin-top: f.fontDynSize(1370, 768, -100, 10);
+            @include m.responsive("<", 768px){
+                margin-top: f.fontDynSize(576, 768, 25, -100);
+            }
+            @include m.responsive("<", 576px){
+                margin-top: f.fontDynSize(576, 375, -100, 0);
+            }
             & .text-box.reviews-section {
                 & header {
                     & .spacer {
-                        height: f.fontDynSize(769, 1080, 15, 50); 
+                        height: 5rem; 
+                        @include m.responsive("<", 1370px){
+                            height: f.fontDynSize(768, 1370, 25, 75);
+                        }
                         @include m.responsive("<", 768px){
-                            // height: f.fontDynSize(576, 768  , 25, 50);
+                            height: f.fontDynSize(576, 768, 25, 50);
                         }
                         @include m.responsive("<", 576px){
-                            // height: 2.5rem;
+                            height: f.fontDynSize(375, 576, 15, 50);
                         }   
                     }
                 }
                 & .body ul.reviews {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax((100%/3), 1fr));
-                justify-content: center; 
-                gap: f.fontDynSize(769, 1350, 25, 75) 0; 
-                @include m.responsive("<", 768px){
-                    gap: f.fontDynSize(576, 768, 25, 50) 0; 
-                }
-                @include m.responsive("<", 576px){
-                    grid-template-columns: repeat(auto-fit, minmax((100%/2), 1fr));
-                    gap: 2.5rem 0;
-                }
-                @include m.responsive("<", 412px){
-                    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-                    gap: 2.5rem 0;
-                }
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax((100%/3), 1fr));
+                    justify-content: center; 
+                    gap: 7.5rem 0; 
+                    @include m.responsive("<", 1370px){
+                        gap: f.fontDynSize(768, 1370, 25, 100) 0; 
+                    }
+                    @include m.responsive("<", 768px){
+                        gap: f.fontDynSize(576, 768, 25, 100) 0; 
+                    }
+                    @include m.responsive("<", 576px){
+                        grid-template-columns: repeat(auto-fit, minmax((100%), 1fr));
+                        gap: f.fontDynSize(375, 576, 25, 75) 0;
+                    }
                 }
             }
             & .text-box.contact-section {
-                margin-top: f.fontDynSize(412, 1080, 25, 75);
+                margin-top: 10rem; 
+                @include m.responsive("<", 1370px){
+                    margin-top: f.fontDynSize(768, 1370, 25, 200);
+                }
+                @include m.responsive("<", 768px){
+                    margin-top: f.fontDynSize(576, 768, 50, 200);
+                }
+                @include m.responsive("<", 576px){
+                    margin-top: f.fontDynSize(375, 576, 25, 75);
+                }
                 width: 100%;
                 & .body {
                     width: 100%;
-                    margin-top: f.fontDynSize(576, 768, 25, 65);
+                    margin-top: f.fontDynSize(765, 1080, 25, 65);
+                    @include m.responsive("<", 768px){
+                        margin-top: f.fontDynSize(576, 786, 25, 65);
+                    }
                     @include m.responsive("<", 576px){
                         flex-direction: column;
-                        margin-top: 2.5rem;
+                        margin-top: f.fontDynSize(375, 576, 15, 50);
                     }
                     & > div.map-wrapper.f-item {
                         flex: 60%;
@@ -456,13 +479,15 @@ main#main {
                                 width: 100%;
                                 height: 100%;
                             }
+                            @include m.responsive("<", 768px){
+                                width: 90%;
+                            }
                         }
                         @include m.responsive("<", 576px){
                             flex: 100%;
                             align-items: center;
                             justify-content: center;
-                            margin-bottom: 2.5rem; 
-
+                            margin-bottom: f.fontDynSize(375, 576, 25, 50); 
                         }
                     }   
                     & > form.f-item {

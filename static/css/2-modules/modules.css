@@ -190,8 +190,8 @@ div.mugshot {
 }
 @media only screen and (max-width: 576px) {
   div.mugshot {
-    height: clamp(10rem, 3.7195121951rem + 15.243902439vw, 12.5rem);
-    width: clamp(10rem, 3.7195121951rem + 15.243902439vw, 12.5rem);
+    height: clamp(10rem, 1.2073170732rem + 21.3414634146vw, 13.5rem);
+    width: clamp(10rem, 1.2073170732rem + 21.3414634146vw, 13.5rem);
     border: solid #22da4a clamp(0.375rem, 0.3408488064rem + 0.0828912467vw, 0.5rem);
   }
 }
