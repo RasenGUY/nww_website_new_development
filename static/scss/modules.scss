@@ -89,6 +89,19 @@
     }
 }
 
+// carousel
+.carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    margin: auto;
+  }
+  
+  /* render nested items properly in 3D space. */
+  .carousel {
+      @include m.compatible(transform-style, preserve-3d);
+  }
+
+
 // other elements 
 // create circular shapes on the site
 .shapes {

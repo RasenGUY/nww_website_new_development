@@ -57,6 +57,21 @@
   padding: clamp(1.1780658rem, 0.6120780056rem + 0.9218042254vw, 1.5707544rem) clamp(2.617924rem, 1.108623215rem + 2.4581446009vw, 3.6650936rem);
 }
 
+.carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+  margin: auto;
+}
+
+/* render nested items properly in 3D space. */
+.carousel {
+  transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
 .shapes .circle {
   border-radius: 50%;
   background-image: linear-gradient(45deg, #e3794c 5%, #e05b36, #c4351f);
