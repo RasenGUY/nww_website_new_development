@@ -343,20 +343,20 @@ main#main #index-s-three div.wrapper > div.text-box header > .spacer.wider {
     transform: translateY(clamp(56rem, 45.8648648649rem + 27.027027027vw, 57rem));
   }
 }
-main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members > li.member {
+main#main #index-s-three div.wrapper > div.text-box div.body ul.team-members > li.member {
   display: block;
 }
-main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members > .f-item {
+main#main #index-s-three div.wrapper > div.text-box div.body ul.team-members > .f-item {
   flex: 1;
   flex-basis: auto;
 }
 @media only screen and (max-width: 768px) {
-  main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members > .f-item {
+  main#main #index-s-three div.wrapper > div.text-box div.body ul.team-members > .f-item {
     flex: 1 50%;
   }
 }
 @media only screen and (max-width: 412px) {
-  main#main #index-s-three div.wrapper > div.text-box div.body > ul.team-members > .f-item {
+  main#main #index-s-three div.wrapper > div.text-box div.body ul.team-members > .f-item {
     flex: 1 100%;
   }
 }

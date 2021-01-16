@@ -94,12 +94,32 @@
     overflow: hidden;
     width: 100%;
     margin: auto;
+    
+    /* render nested items properly in 3D space. */
+    .carousel {
+        @include m.compatible(transform-style, preserve-3d);
+    }
+    & .carousel-btn--next,& .carousel-btn--prev {
+        position: absolute;
+        top: 50%;
+        cursor: pointer;
+        z-index: 600;
+        & i {
+            font-size: 2.5rem;
+            color: v.$primaryColor;
+            height: 3rem;
+            width: 3rem;
+        }
+    }
+    & .carousel-btn--next {
+        right: 0;
+    }
+    & .carousel-btn--prev {
+        left: 0;
+    }
+
   }
   
-  /* render nested items properly in 3D space. */
-  .carousel {
-      @include m.compatible(transform-style, preserve-3d);
-  }
 
 
 // other elements 
@@ -469,7 +489,6 @@ section .overlay {
             }
         }
     }
-
 }
 
 
@@ -499,27 +518,31 @@ section#index-s-three {
     // some textbox
     & div.text-box {
         width: 100%;
-        & > div.body > ul.team-members {
-            list-style: none;
-            & > li.member {
-                padding-bottom: f.fontDynSize(375, 576, 25, 50);
-                & > a {
-                    width: 100%;
-                    & h4.title {
-                        padding: 1rem 0 0 0;
+        & > div.body {
+            ul.team-members {
+                display: block; 
+                list-style: none;
+                & > li.member {
+                    display: inherit;
+                    padding-bottom: f.fontDynSize(375, 576, 25, 50);
+                    & > a {
+                        width: 100%;
+                        & h4.title {
+                            padding: 1rem 0 0 0;
+                        }
                     }
-                }
-                &:nth-child(1) > a div.mugshot { // director
-                    @include m.background(initial, "/static/images/home/pngs/team/compressed/hong.png", center, cover);
-                }
-                &:nth-child(2) > a div.mugshot { // managing director
-                    @include m.background(initial, "/static/images/home/pngs/team/compressed/ly.png", center, cover);
-                }
-                &:nth-child(3) > a div.mugshot { // marketing
-                    @include m.background(initial, "/static/images/home/pngs/team/compressed/eva.png", center, cover);
-                }
-                &:nth-child(4) > a div.mugshot { // IT
-                    @include m.background(initial, "/static/images/home/pngs/team/compressed/fernando.png", center, cover);
+                    &:nth-child(1) > a div.mugshot { // director
+                        @include m.background(initial, "/static/images/home/pngs/team/compressed/hong.png", center, cover);
+                    }
+                    &:nth-child(2) > a div.mugshot { // managing director
+                        @include m.background(initial, "/static/images/home/pngs/team/compressed/ly.png", center, cover);
+                    }
+                    &:nth-child(3) > a div.mugshot { // marketing
+                        @include m.background(initial, "/static/images/home/pngs/team/compressed/eva.png", center, cover);
+                    }
+                    &:nth-child(4) > a div.mugshot { // IT
+                        @include m.background(initial, "/static/images/home/pngs/team/compressed/fernando.png", center, cover);
+                    }
                 }
             }
         }
