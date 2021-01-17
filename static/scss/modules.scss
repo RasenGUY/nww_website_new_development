@@ -102,15 +102,12 @@
     & .carousel-btn--next,& .carousel-btn--prev {
         position: absolute;
         top: 50%;
+        height: 3rem;
+        width: 3rem;
         cursor: pointer;
         z-index: 600;
-        & i {
-            font-size: 2.5rem;
-            color: v.$primaryColor;
-            height: 3rem;
-            width: 3rem;
-        }
     }
+
     & .carousel-btn--next {
         right: 0;
     }
@@ -164,7 +161,6 @@
 // svg-images (for all svg images)
 .svg-image {
     width: 100%;
-    // height: 100%;
 }
 .shadow-fg {
     @include m.compatible(filter, drop-shadow(f.shadows("figure-nm", v.$textColor, v.$opacityLg)));
@@ -207,6 +203,11 @@
 #svg-images {
     & .border {
         fill: v.$ctaColor;
+    }
+    &.carousel-arrows {
+        & .fill {
+            fill: v.$primaryColor;
+        }
     }
 }
 

@@ -73,14 +73,10 @@
 .carousel-wrapper .carousel-btn--next, .carousel-wrapper .carousel-btn--prev {
   position: absolute;
   top: 50%;
-  cursor: pointer;
-  z-index: 600;
-}
-.carousel-wrapper .carousel-btn--next i, .carousel-wrapper .carousel-btn--prev i {
-  font-size: 2.5rem;
-  color: #da4a22;
   height: 3rem;
   width: 3rem;
+  cursor: pointer;
+  z-index: 600;
 }
 .carousel-wrapper .carousel-btn--next {
   right: 0;
@@ -212,6 +208,9 @@
 
 #svg-images .border {
   fill: #22da4a;
+}
+#svg-images.carousel-arrows .fill {
+  fill: #da4a22;
 }
 
 div.mugshot {
