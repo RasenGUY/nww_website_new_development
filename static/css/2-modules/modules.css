@@ -64,11 +64,18 @@
   /* render nested items properly in 3D space. */
 }
 .carousel-wrapper .carousel {
+  position: relative;
   transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   -o-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
+}
+.carousel-wrapper .carousel .carousel-photo {
+  position: absolute;
+  top: 0;
+  margin: auto;
+  z-index: 500;
 }
 .carousel-wrapper .carousel-btn--next, .carousel-wrapper .carousel-btn--prev {
   position: absolute;
@@ -80,9 +87,11 @@
 }
 .carousel-wrapper .carousel-btn--next {
   right: 0;
+  transform: rotate(-90deg);
 }
 .carousel-wrapper .carousel-btn--prev {
   left: 0;
+  transform: rotate(90deg);
 }
 
 .shapes .circle {

@@ -97,7 +97,15 @@
     
     /* render nested items properly in 3D space. */
     .carousel {
+        position: relative;
         @include m.compatible(transform-style, preserve-3d);
+        & .carousel-photo {
+            // opacity: 0;
+            position: absolute;
+            top: 0;
+            margin: auto;
+            z-index: 500;
+        } 
     }
     & .carousel-btn--next,& .carousel-btn--prev {
         position: absolute;
@@ -110,9 +118,11 @@
 
     & .carousel-btn--next {
         right: 0;
+        transform: rotate(-90deg);
     }
     & .carousel-btn--prev {
         left: 0;
+        transform: rotate(90deg);
     }
 
   }
