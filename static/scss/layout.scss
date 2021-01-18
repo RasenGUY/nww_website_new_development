@@ -358,10 +358,7 @@ main#main {
                 }
                 
                 & div.body {
-                    ul.team-members {
-                        & > li.member {
-                            display: block;
-                        }
+                    .team-members {
                         & > .f-item {
                             flex: 1;
                             flex-basis: auto;
@@ -373,6 +370,7 @@ main#main {
                             }
                         }
                     }
+
                 }
                 
             }  

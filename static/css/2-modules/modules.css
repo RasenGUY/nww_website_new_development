@@ -60,11 +60,15 @@
 .carousel-wrapper {
   overflow: hidden;
   width: 100%;
+  height: 100%;
   margin: auto;
   /* render nested items properly in 3D space. */
 }
 .carousel-wrapper .carousel {
-  position: relative;
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  z-index: 500;
   transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   -o-transform-style: preserve-3d;
@@ -78,19 +82,20 @@
   z-index: 500;
 }
 .carousel-wrapper .carousel-btn--next, .carousel-wrapper .carousel-btn--prev {
+  display: block;
   position: absolute;
   top: 50%;
   height: 3rem;
   width: 3rem;
-  cursor: pointer;
   z-index: 600;
+  cursor: pointer;
 }
 .carousel-wrapper .carousel-btn--next {
-  right: 0;
+  right: 5%;
   transform: rotate(-90deg);
 }
 .carousel-wrapper .carousel-btn--prev {
-  left: 0;
+  left: 5%;
   transform: rotate(90deg);
 }
 
@@ -217,6 +222,9 @@
 
 #svg-images .border {
   fill: #22da4a;
+}
+#svg-images.carousel-arrows {
+  cursor: pointer;
 }
 #svg-images.carousel-arrows .fill {
   fill: #da4a22;
@@ -541,22 +549,25 @@ section#index-s-three .shapes object.index-s-three-sh-1 {
 }
 section#index-s-three div.text-box {
   width: 100%;
+  height: 100%;
 }
-section#index-s-three div.text-box > div.body ul.team-members {
-  display: block;
+section#index-s-three div.text-box > div.body {
+  height: 100%;
+}
+section#index-s-three div.text-box > div.body .team-members {
   list-style: none;
 }
-section#index-s-three div.text-box > div.body ul.team-members > li.member {
+section#index-s-three div.text-box > div.body .team-members > li.member {
   display: inherit;
   padding-bottom: clamp(2.5rem, -2.1641791045rem + 12.4378109453vw, 5rem);
 }
-section#index-s-three div.text-box > div.body ul.team-members > li.member > a {
+section#index-s-three div.text-box > div.body .team-members > li.member > a {
   width: 100%;
 }
-section#index-s-three div.text-box > div.body ul.team-members > li.member > a h4.title {
+section#index-s-three div.text-box > div.body .team-members > li.member > a h4.title {
   padding: 1rem 0 0 0;
 }
-section#index-s-three div.text-box > div.body ul.team-members > li.member:nth-child(1) > a div.mugshot {
+section#index-s-three div.text-box > div.body .team-members > li.member:nth-child(1) > a div.mugshot {
   background-attachment: initial;
   background-image: url("/static/images/home/pngs/team/compressed/hong.png");
   background-origin: border-box;
@@ -564,7 +575,7 @@ section#index-s-three div.text-box > div.body ul.team-members > li.member:nth-ch
   background-repeat: no-repeat;
   background-size: cover;
 }
-section#index-s-three div.text-box > div.body ul.team-members > li.member:nth-child(2) > a div.mugshot {
+section#index-s-three div.text-box > div.body .team-members > li.member:nth-child(2) > a div.mugshot {
   background-attachment: initial;
   background-image: url("/static/images/home/pngs/team/compressed/ly.png");
   background-origin: border-box;
@@ -572,7 +583,7 @@ section#index-s-three div.text-box > div.body ul.team-members > li.member:nth-ch
   background-repeat: no-repeat;
   background-size: cover;
 }
-section#index-s-three div.text-box > div.body ul.team-members > li.member:nth-child(3) > a div.mugshot {
+section#index-s-three div.text-box > div.body .team-members > li.member:nth-child(3) > a div.mugshot {
   background-attachment: initial;
   background-image: url("/static/images/home/pngs/team/compressed/eva.png");
   background-origin: border-box;
@@ -580,7 +591,7 @@ section#index-s-three div.text-box > div.body ul.team-members > li.member:nth-ch
   background-repeat: no-repeat;
   background-size: cover;
 }
-section#index-s-three div.text-box > div.body ul.team-members > li.member:nth-child(4) > a div.mugshot {
+section#index-s-three div.text-box > div.body .team-members > li.member:nth-child(4) > a div.mugshot {
   background-attachment: initial;
   background-image: url("/static/images/home/pngs/team/compressed/fernando.png");
   background-origin: border-box;

@@ -93,11 +93,15 @@
 .carousel-wrapper {
     overflow: hidden;
     width: 100%;
+    height: 100%;
     margin: auto;
     
     /* render nested items properly in 3D space. */
     .carousel {
-        position: relative;
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        z-index: 500;
         @include m.compatible(transform-style, preserve-3d);
         & .carousel-photo {
             // opacity: 0;
@@ -108,20 +112,22 @@
         } 
     }
     & .carousel-btn--next,& .carousel-btn--prev {
+        display: block;
         position: absolute;
         top: 50%;
         height: 3rem;
         width: 3rem;
-        cursor: pointer;
         z-index: 600;
+        cursor: pointer;
+
     }
 
     & .carousel-btn--next {
-        right: 0;
+        right: 5%;
         transform: rotate(-90deg);
     }
     & .carousel-btn--prev {
-        left: 0;
+        left: 5%;
         transform: rotate(90deg);
     }
 
@@ -215,6 +221,7 @@
         fill: v.$ctaColor;
     }
     &.carousel-arrows {
+        cursor: pointer; 
         & .fill {
             fill: v.$primaryColor;
         }
@@ -529,9 +536,10 @@ section#index-s-three {
     // some textbox
     & div.text-box {
         width: 100%;
+        height: 100%;
         & > div.body {
-            ul.team-members {
-                display: block; 
+            height: 100%;
+            & .team-members {
                 list-style: none;
                 & > li.member {
                     display: inherit;
