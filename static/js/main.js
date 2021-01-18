@@ -32,8 +32,12 @@ animateMenu.addEventListener("click", () => {
     f.togglePseudo(htmlEl, pseudo, cssRule);
 });
 
-
 // queries section one index page
 const indexSOneQ1 = f.medQueries(`412px`, "<"); 
 indexSOneQ1.addEventListener("change", f.queriesIndex);
+
+ 
+
+
+    
 

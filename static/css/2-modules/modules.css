@@ -76,10 +76,28 @@
   -webkit-transform-style: preserve-3d;
 }
 .carousel-wrapper .carousel .carousel-photo {
+  opacity: 0;
   position: absolute;
   top: 0;
   margin: auto;
-  z-index: 500;
+  z-index: 100;
+  transition: transform 0.5s, opacity 0.5s, z-index 0.5s, visibility 0.5s;
+}
+.carousel-wrapper .carousel .carousel-photo.next, .carousel-wrapper .carousel .carousel-photo.prev {
+  z-index: 800;
+}
+.carousel-wrapper .carousel .carousel-photo.prev {
+  transform: translateX(-125%);
+  visibility: hidden;
+}
+.carousel-wrapper .carousel .carousel-photo.next {
+  transform: translateX(125%);
+  visibility: hidden;
+}
+.carousel-wrapper .carousel .carousel-photo.initial, .carousel-wrapper .carousel .carousel-photo.active {
+  opacity: 1;
+  z-index: 900;
+  visibility: initial;
 }
 .carousel-wrapper .carousel-btn--next, .carousel-wrapper .carousel-btn--prev {
   display: block;
@@ -90,13 +108,22 @@
   z-index: 600;
   cursor: pointer;
 }
+.carousel-wrapper .carousel-btn--next::after, .carousel-wrapper .carousel-btn--prev::after {
+  position: absolute;
+  top: 50%;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #da4a22;
+  border-bottom: 2px solid #da4a22;
+  transform: translate(-50%, -50%) rotate(135deg);
+}
 .carousel-wrapper .carousel-btn--next {
   right: 5%;
-  transform: rotate(-90deg);
+  transform: rotate(180deg);
 }
 .carousel-wrapper .carousel-btn--prev {
   left: 5%;
-  transform: rotate(90deg);
 }
 
 .shapes .circle {

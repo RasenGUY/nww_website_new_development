@@ -104,11 +104,30 @@
         z-index: 500;
         @include m.compatible(transform-style, preserve-3d);
         & .carousel-photo {
-            // opacity: 0;
+
+            opacity: 0;
             position: absolute;
             top: 0;
             margin: auto;
-            z-index: 500;
+            z-index: 100;
+            transition: transform .5s, opacity .5s, z-index .5s, visibility .5s;
+
+            &.next, &.prev {
+                z-index: 800;
+            }
+            &.prev {
+                transform: translateX(-125%);
+                visibility: hidden;
+            }
+            &.next {
+                transform: translateX(125%);
+                visibility: hidden; 
+            }
+            &.initial, &.active {
+                opacity: 1;
+                z-index: 900;
+                visibility: initial;
+            }
         } 
     }
     & .carousel-btn--next,& .carousel-btn--prev {
@@ -119,22 +138,27 @@
         width: 3rem;
         z-index: 600;
         cursor: pointer;
-
+    }
+    & .carousel-btn--next::after, & .carousel-btn--prev::after {
+        position: absolute;
+        top: 50%;
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-right: 2px solid v.$primaryColor;
+        border-bottom: 2px solid v.$primaryColor;
+        transform: translate(-50%, -50%) rotate(135deg);
     }
 
     & .carousel-btn--next {
         right: 5%;
-        transform: rotate(-90deg);
+        transform: rotate(180deg);
     }
     & .carousel-btn--prev {
         left: 5%;
-        transform: rotate(90deg);
     }
-
   }
   
-
-
 // other elements 
 // create circular shapes on the site
 .shapes {
