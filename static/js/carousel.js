@@ -1,148 +1,147 @@
 // --------------- carousell -------------------
-var 
-itemClassName = "member carousel-photo", 
-items = document.getElementsByClassName(itemClassName), 
-totalItems = items.length, 
-slide = 0, 
-moving = true;
-
-
-// ------------ carousel functions ------------------
-// initialize carousel photo classes
-function setCarouInitialClass(){
-    // target current previous, current and next items
-    // assuming there are at least 3 items
+function Carousel(carousel){  // object instance function carousel function
     
-    items[totalItems - 1].classList.add("prev"); 
-    items[0].classList.add("active");
-    items[1].classList.add("next");
-};
+    // this.carousel = carousel; 
+    this.itemClassName = carousel.querySelector(".carousel-photo").className;
+    this.items = document.getElementsByClassName(this.itemClassName);
+    this.totalItems = this.items.length; 
+    this.slide = 0;
+    this.moving = true;
 
-// add click events to the next and previous buttons 
-function setCarouListeners(){
     
-    const 
+    // ------------ carousel functions ------------------
+    // const carousel = {};
     
-    next = document.querySelectorAll(".carousel-btn--next")[0], 
-    prev = document.querySelectorAll(".carousel-btn--prev")[0];
+    // initialize carousel photo classes
+    this.setInitialClass = () => { 
+        // target current previous, current and next items
+        // assuming there are at least 3 items
+        this.items[this.totalItems - 1].classList.add("prev");
+        this.items[0].classList.add("active");
+        this.items[1].classList.add("next");
+    };
+    
+    // add click events to the next and previous buttons 
+    this.setListeners = () => {
+        const 
+        next = document.querySelector(".carousel-btn--next"), 
+        prev = document.querySelector(".carousel-btn--prev");
+        next.addEventListener("click", this.moveNext);
+        prev.addEventListener("click", this.movePrev);
+    };
 
-    next.addEventListener("click", moveNext);
-    prev.addEventListener("click", movePrev);
-          
-}
-
-// move items right
-function moveNext(){
-    // check if moving 
-    if (!moving){
-
+    // move items right
+    this.moveNext = () => {
+        // check if moving 
+        if (!this.moving){
+            // if it is the last slide, reset to 0, else +1
+            if (this.slide === (this.totalItems - 1 )){
+                this.slide = 0; 
+            } else {
+                this.slide++;
+            }
+            // move carousel to updated slide
+            this.moveCarouselTo(this.slide);
+        }
+    };
+     
+    // move items left
+    this.movePrev = () => {
+           
+        // check if moving 
+        if (!this.moving){
         // if it is the last slide, reset to 0, else +1
-        if (slide === (totalItems - 1 )){
-            slide = 0; 
+        if (this.slide === 0){
+            this.slide = (this.totalItems - 1); 
         } else {
-            slide++;
+            this.slide--;
+        }
+        // move carousel to updated slide
+        this.moveCarouselTo(this.slide);
         }
 
-        // move carousel to updated slide
-        moveCarouselTo(slide);
+    };
 
+    // disable interaction 
+    this.disableInteraction = () => {
+        // Set 'moving' to true for the same duration as our transition.
+        // (0.5s = 500ms)
+        this.moving = true; 
+         
+        // setTimeout runs its function once after the given time
+        setTimeout(() => {
+            this.moving = false
+        }, 500);
     }
-};
-
-// move items left
-function movePrev(){
-       
-       // check if moving 
-       if (!moving){
-   
-        // if it is the last slide, reset to 0, else +1
-        if (slide === 0){
-            slide = (totalItems - 1); 
-        } else {
-            slide--;
-        }
-   
-        // move carousel to updated slide
-        moveCarouselTo(slide);
-
-           
-           
-       }
-}
-
-// disable interaction 
-function disableInteraction(){
-
-    // Set 'moving' to true for the same duration as our transition.
-    // (0.5s = 500ms)
     
-    moving = true;  
-    
-    // setTimeout runs its function once after the given time
-    setTimeout(() => {
-        moving = false
-    }, 500);
-
-}
-
-// main carousel function 
-function moveCarouselTo(slide) {
-    
-    // if slide not moving then allow interaction
-    if (!moving){
-
-        // disable interaction for 5 seconds
-        disableInteraction()
-
-        // update old adjacent slides with new ones
-        var 
-        newPrevious = slide - 1,
-        newNext = slide + 1, 
-        oldPrevious = slide - 2,
-        oldNext = slide + 2; 
+    // main carousel function 
+    this.moveCarouselTo = () => {
         
-        // test if carousel has more then 3 items
-        if ((totalItems - 1) > 2) {
+        // if slide not moving then allow interaction
+        if (!this.moving){
+    
+            // disable interaction for 5 seconds
+            this.disableInteraction()
+    
+            // update old adjacent slides with new ones
+            var 
+            newPrevious = this.slide - 1,
+            newNext = this.slide + 1, 
+            oldPrevious = this.slide - 2,
+            oldNext = this.slide + 2; 
+            
+            // test if carousel has more then 3 items
             // Checks and updates if the new slides are out of bounds
             if (newPrevious <= 0) {
-                oldPrevious = (totalItems - 1);
-            } else if (newNext >= (totalItems - 1)) {
+                oldPrevious = (this.totalItems - 1);
+            } else if (newNext >= (this.totalItems - 1)) {
                 oldNext = 0;
             }
 
             // checks and updates if the slide is at the beginning/end
-            if (slide === 0){
-                newPrevious = (totalItems - 1);
-                oldPrevious = (totalItems - 2);
-                oldNext = (slide + 1);
-            } else if (slide === (totalItems - 1)) {
-                newPrevious = (slide - 1);
+            if (this.slide === 0){
+                newPrevious = (this.totalItems - 1);
+                oldPrevious = (this.totalItems - 2);
+                oldNext = (this.slide + 1);
+            } else if (this.slide === (this.totalItems - 1)) {
+                newPrevious = (this.slide - 1);
                 newNext = 0;
                 oldNext = 1;
             }
 
             // reset old next/prev elements to default classes
-            items[oldPrevious].className = itemClassName;
-            items[oldNext].className = itemClassName;
+            this.items[oldPrevious].className = this.itemClassName;
+            this.items[oldNext].className = this.itemClassName;
 
 
             // add new classes
-            items[newPrevious].className = itemClassName + " prev";
-            items[slide].className = itemClassName + " active";
-            items[newNext].className = itemClassName + " next";
-        };  
+            this.items[newPrevious].className = this.itemClassName + " prev";
+            this.items[this.slide].className = this.itemClassName + " active";
+            this.items[newNext].className = this.itemClassName + " next";
+
+        }
     }
-}
 
-// initialize
-function initCarousel(){
-
-    setCarouInitialClass();
-    setCarouListeners();
+    // initialize
+    this.initCarousel = () => {
     
-    // set moving to false
-    moving = false;
+        this.setInitialClass();
+        this.setListeners();
+        
+        // set moving to false
+        this.moving = false;
+    }
+    
 }
 
-// initialize carousel 
-initCarousel();
+// initialize carousel instance for each carousel on the site
+const
+carousels = document.querySelectorAll(".carousel-wrapper"); // all carousels
+carousels.forEach( (carousel) => {
+    let carou = new Carousel(carousel);
+    carou.initCarousel();
+});
+
+
+
+
