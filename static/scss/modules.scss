@@ -93,8 +93,8 @@
 .carousel-wrapper {
     overflow: hidden;
     width: 100%;
-    height: 100%;
-    margin: auto;
+    // height: 100%;
+    // margin: auto;
     
     /* render nested items properly in 3D space. */
     .carousel {
@@ -104,7 +104,6 @@
         z-index: 500;
         @include m.compatible(transform-style, preserve-3d);
         & .carousel-photo {
-
             opacity: 0;
             position: absolute;
             top: 0;
@@ -129,35 +128,35 @@
                 visibility: initial;
             }
         } 
-    }
-    & .carousel-btn--next,& .carousel-btn--prev {
-        display: block;
-        position: absolute;
-        top: 50%;
-        height: 3rem;
-        width: 3rem;
-        z-index: 600;
-        cursor: pointer;
-    }
-    & .carousel-btn--next::after, & .carousel-btn--prev::after {
-        position: absolute;
-        top: 50%;
-        content: "";
-        width: 10px;
-        height: 10px;
-        border-right: 2px solid v.$primaryColor;
-        border-bottom: 2px solid v.$primaryColor;
-        transform: translate(-50%, -50%) rotate(135deg);
-    }
+        & .carousel-btn--next,& .carousel-btn--prev {
+            display: block;
+            position: absolute;
+            top: 50%;
+            height: 3rem;
+            width: 3rem;
+            z-index: 600;
+            cursor: pointer;
+        }
+        & .carousel-btn--next::after, & .carousel-btn--prev::after {
+            position: absolute;
+            top: 50%;
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid v.$primaryColor;
+            border-bottom: 2px solid v.$primaryColor;
+            transform: translate(-50%, -50%) rotate(135deg);
+        }
 
-    & .carousel-btn--next {
-        right: 5%;
-        transform: rotate(180deg);
+        & .carousel-btn--next {
+            right: 5%;
+            transform: rotate(180deg);
+        }
+        & .carousel-btn--prev {
+            left: 5%;
+        }
     }
-    & .carousel-btn--prev {
-        left: 5%;
-    }
-  }
+}
   
 // other elements 
 // create circular shapes on the site
@@ -243,12 +242,6 @@
 #svg-images {
     & .border {
         fill: v.$ctaColor;
-    }
-    &.carousel-arrows {
-        cursor: pointer; 
-        & .fill {
-            fill: v.$primaryColor;
-        }
     }
 }
 
@@ -552,22 +545,22 @@ section#index-s-three {
             @include m.responsive("<", 768px){
                 content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s3.svg");
             }
-            @include m.responsive("<", 412px){
-                content: url("/static/images/home/svg_mobile/compressed/mobile_index_s3_sh_412px.svg");
-            }
         }
     } 
     // some textbox
     & div.text-box {
         width: 100%;
-        height: 100%;
+        height: 50%;
+        @include m.responsive("<", 768px){
+            height: 100%;
+        }
         & > div.body {
             height: 100%;
             & .team-members {
                 list-style: none;
                 & > li.member {
                     display: inherit;
-                    padding-bottom: f.fontDynSize(375, 576, 25, 50);
+                    padding-bottom: f.fontDynSize(576, 768, 25, 100);
                     & > a {
                         width: 100%;
                         & h4.title {
@@ -646,7 +639,6 @@ section#index-s-three {
                                 top: 50%;
                                 left: 0;
                                 height: 0%;
-                                
                                 transition: opacity 0.33s ease-in;
                                 & blockquote {
                                     position: relative;
@@ -673,7 +665,6 @@ section#index-s-three {
                                 visibility: initial;
                                 opacity: 1;
                             }
-
                         }
                         & li:first-child a { // Anne
                             & > div.mugshot { 
@@ -682,8 +673,6 @@ section#index-s-three {
                             & .hover-box {
                                 z-index: 14;
                             }
-                            
-
                         }   
                         & li:nth-child(2) a { // Tobi
                             & > div.mugshot { 

@@ -60,8 +60,6 @@
 .carousel-wrapper {
   overflow: hidden;
   width: 100%;
-  height: 100%;
-  margin: auto;
   /* render nested items properly in 3D space. */
 }
 .carousel-wrapper .carousel {
@@ -99,7 +97,7 @@
   z-index: 900;
   visibility: initial;
 }
-.carousel-wrapper .carousel-btn--next, .carousel-wrapper .carousel-btn--prev {
+.carousel-wrapper .carousel .carousel-btn--next, .carousel-wrapper .carousel .carousel-btn--prev {
   display: block;
   position: absolute;
   top: 50%;
@@ -108,7 +106,7 @@
   z-index: 600;
   cursor: pointer;
 }
-.carousel-wrapper .carousel-btn--next::after, .carousel-wrapper .carousel-btn--prev::after {
+.carousel-wrapper .carousel .carousel-btn--next::after, .carousel-wrapper .carousel .carousel-btn--prev::after {
   position: absolute;
   top: 50%;
   content: "";
@@ -118,11 +116,11 @@
   border-bottom: 2px solid #da4a22;
   transform: translate(-50%, -50%) rotate(135deg);
 }
-.carousel-wrapper .carousel-btn--next {
+.carousel-wrapper .carousel .carousel-btn--next {
   right: 5%;
   transform: rotate(180deg);
 }
-.carousel-wrapper .carousel-btn--prev {
+.carousel-wrapper .carousel .carousel-btn--prev {
   left: 5%;
 }
 
@@ -249,12 +247,6 @@
 
 #svg-images .border {
   fill: #22da4a;
-}
-#svg-images.carousel-arrows {
-  cursor: pointer;
-}
-#svg-images.carousel-arrows .fill {
-  fill: #da4a22;
 }
 
 div.mugshot {
@@ -569,14 +561,14 @@ section#index-s-three .shapes object.index-s-three-sh-1 {
     content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s3.svg");
   }
 }
-@media only screen and (max-width: 412px) {
-  section#index-s-three .shapes object.index-s-three-sh-1 {
-    content: url("/static/images/home/svg_mobile/compressed/mobile_index_s3_sh_412px.svg");
-  }
-}
 section#index-s-three div.text-box {
   width: 100%;
-  height: 100%;
+  height: 50%;
+}
+@media only screen and (max-width: 768px) {
+  section#index-s-three div.text-box {
+    height: 100%;
+  }
 }
 section#index-s-three div.text-box > div.body {
   height: 100%;
@@ -586,7 +578,7 @@ section#index-s-three div.text-box > div.body .team-members {
 }
 section#index-s-three div.text-box > div.body .team-members > li.member {
   display: inherit;
-  padding-bottom: clamp(2.5rem, -2.1641791045rem + 12.4378109453vw, 5rem);
+  padding-bottom: clamp(2.5rem, -20rem + 39.0625vw, 10rem);
 }
 section#index-s-three div.text-box > div.body .team-members > li.member > a {
   width: 100%;

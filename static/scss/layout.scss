@@ -341,35 +341,46 @@ main#main {
         } 
         & div.wrapper {
             & > div.text-box {
-                margin-top: f.fontDynSize(768, 1350, -260, 160);
+                margin-top: f.fontDynSize(768, 1350, -160, 160);
                 & header > .spacer.wider {
-                    height: f.fontDynSize(768, 1350, 0, 20);
+                    height: f.fontDynSize(769, 1350, 0, 20);
+                    @include m.responsive("<", 768px){
+                        height: f.fontDynSize(576, 768, 10, 40);
+                    }
+                    @include m.responsive("<", 576px){
+                        height: f.fontDynSize(375, 576, 15, 40);
+                    }
                 }
                 @include m.responsive("<", 768px){
                     align-self: flex-end;
-                    transform: translateY(f.fontDynSize(576, 768, 350, 500));
+                    transform: translateY(f.fontDynSize(576, 768, 245, 320));
                 }
                 @include m.responsive("<", 576px){
-                    transform: translateY(f.fontDynSize(412, 576, 170, 350));
+                    transform: translateY(f.fontDynSize(412, 576, 200, 320));
                 }
-                @include m.responsive("<", 412px){
-                    align-self: flex-end;
-                    transform: translateY(f.fontDynSize(375, 412, 560, 570));
-                }
-                
                 & div.body {
-                    .team-members {
+                    & > :nth-child(2) { // team members
                         & > .f-item {
                             flex: 1;
                             flex-basis: auto;
                             @include m.responsive("<", 768px){
                                 flex: 1 50%;
                             }
-                            @include m.responsive("<", 412px){
-                                flex: 1 100%;
-                            }
+                        }
+                        // hide for mobile screen
+                        @include m.responsive("<", 576px){
+                            display: none;
                         }
                     }
+
+                    // hide for bigger bigger screens
+                    @include m.responsive(">", 576px){
+                        // carousel
+                        .carousel-wrapper.l-grid {
+                            display: none;    
+                        }
+                    }
+
 
                 }
                 
@@ -390,10 +401,8 @@ main#main {
             margin-top: f.fontDynSize(579, 768, 320, 530);
         }
         @include m.responsive("<", 576px){
+            height: 125vh;
             margin-top: f.fontDynSize(412, 576, 120, 310);
-            @include m.responsive("<", 412px){
-                margin-top: f.fontDynSize(379, 412, 520, 610);
-            }
         }
         & .wrapper .text-box header {
             margin-top: 10rem;
@@ -403,9 +412,6 @@ main#main {
     // section five reviews and contact
     & #index-s-five {
         margin-top: -8rem;
-        @include m.responsive("<", 576px){
-            margin-top: -12rem;
-        }
         & .wrapper {
             margin-top: f.fontDynSize(1370, 768, -100, 10);
             @include m.responsive("<", 768px){
@@ -429,22 +435,31 @@ main#main {
                         }   
                     }
                 }
-                & .body ul.reviews {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax((100%/3), 1fr));
-                    justify-content: center; 
-                    gap: 7.5rem 0; 
-                    @include m.responsive("<", 1370px){
-                        gap: f.fontDynSize(768, 1370, 25, 100) 0; 
+                & .body {
+  
+                    & > ul.reviews {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax((100%/3), 1fr));
+                        justify-content: center; 
+                        gap: 7.5rem 0; 
+                        @include m.responsive("<", 1370px){
+                            gap: f.fontDynSize(768, 1370, 25, 100) 0; 
+                        }
+                        @include m.responsive("<", 768px){
+                            gap: f.fontDynSize(576, 768, 25, 100) 0; 
+                        }
+                        @include m.responsive("<", 576px){
+                            display: none;
+                        }
                     }
-                    @include m.responsive("<", 768px){
-                        gap: f.fontDynSize(576, 768, 25, 100) 0; 
-                    }
-                    @include m.responsive("<", 576px){
-                        grid-template-columns: repeat(auto-fit, minmax((100%), 1fr));
-                        gap: f.fontDynSize(375, 576, 25, 75) 0;
-                    }
-                }
+
+                    & > div.carousel-wrapper {
+                        @include m.responsive(">", 576px){
+                            display: none; 
+                        }
+                    } 
+                } 
+                
             }
             & .text-box.contact-section {
                 margin-top: 10rem; 
@@ -452,10 +467,10 @@ main#main {
                     margin-top: f.fontDynSize(768, 1370, 25, 200);
                 }
                 @include m.responsive("<", 768px){
-                    margin-top: f.fontDynSize(576, 768, 50, 200);
+                    margin-top: f.fontDynSize(576, 768, 50, 100);
                 }
                 @include m.responsive("<", 576px){
-                    margin-top: f.fontDynSize(375, 576, 25, 75);
+                    margin-top: f.fontDynSize(375, 576, 130, 75);
                 }
                 width: 100%;
                 & .body {
@@ -517,7 +532,6 @@ main#main {
                 }
             }
         }   
-
     }
 
     // footer

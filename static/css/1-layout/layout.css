@@ -321,40 +321,49 @@ main#main #index-s-three .shapes {
   z-index: 1;
 }
 main#main #index-s-three div.wrapper > div.text-box {
-  margin-top: clamp(-26rem, -81.4226804124rem + 72.1649484536vw, 16rem);
+  margin-top: clamp(-16rem, -58.2268041237rem + 54.9828178694vw, 16rem);
 }
 main#main #index-s-three div.wrapper > div.text-box header > .spacer.wider {
-  height: clamp(0rem, -2.6391752577rem + 3.4364261168vw, 2rem);
+  height: clamp(0rem, -2.6471600688rem + 3.4423407917vw, 2rem);
+}
+@media only screen and (max-width: 768px) {
+  main#main #index-s-three div.wrapper > div.text-box header > .spacer.wider {
+    height: clamp(1rem, -8rem + 15.625vw, 4rem);
+  }
+}
+@media only screen and (max-width: 576px) {
+  main#main #index-s-three div.wrapper > div.text-box header > .spacer.wider {
+    height: clamp(1.5rem, -3.1641791045rem + 12.4378109453vw, 4rem);
+  }
 }
 @media only screen and (max-width: 768px) {
   main#main #index-s-three div.wrapper > div.text-box {
     align-self: flex-end;
-    transform: translateY(clamp(35rem, -10rem + 78.125vw, 50rem));
+    transform: translateY(clamp(24.5rem, 2rem + 39.0625vw, 32rem));
   }
 }
 @media only screen and (max-width: 576px) {
   main#main #index-s-three div.wrapper > div.text-box {
-    transform: translateY(clamp(17rem, -28.2195121951rem + 109.756097561vw, 35rem));
+    transform: translateY(clamp(20rem, -10.1463414634rem + 73.1707317073vw, 32rem));
   }
 }
-@media only screen and (max-width: 412px) {
-  main#main #index-s-three div.wrapper > div.text-box {
-    align-self: flex-end;
-    transform: translateY(clamp(56rem, 45.8648648649rem + 27.027027027vw, 57rem));
-  }
-}
-main#main #index-s-three div.wrapper > div.text-box div.body .team-members > .f-item {
+main#main #index-s-three div.wrapper > div.text-box div.body > :nth-child(2) > .f-item {
   flex: 1;
   flex-basis: auto;
 }
 @media only screen and (max-width: 768px) {
-  main#main #index-s-three div.wrapper > div.text-box div.body .team-members > .f-item {
+  main#main #index-s-three div.wrapper > div.text-box div.body > :nth-child(2) > .f-item {
     flex: 1 50%;
   }
 }
-@media only screen and (max-width: 412px) {
-  main#main #index-s-three div.wrapper > div.text-box div.body .team-members > .f-item {
-    flex: 1 100%;
+@media only screen and (max-width: 576px) {
+  main#main #index-s-three div.wrapper > div.text-box div.body > :nth-child(2) {
+    display: none;
+  }
+}
+@media only screen and (min-width: 576px) {
+  main#main #index-s-three div.wrapper > div.text-box div.body .carousel-wrapper.l-grid {
+    display: none;
   }
 }
 main#main #index-s-four {
@@ -375,12 +384,8 @@ main#main #index-s-four {
 }
 @media only screen and (max-width: 576px) {
   main#main #index-s-four {
+    height: 125vh;
     margin-top: clamp(12rem, -35.7317073171rem + 115.8536585366vw, 31rem);
-  }
-}
-@media only screen and (max-width: 576px) and (max-width: 412px) {
-  main#main #index-s-four {
-    margin-top: clamp(52rem, -51.3636363636rem + 272.7272727273vw, 61rem);
   }
 }
 main#main #index-s-four .wrapper .text-box header {
@@ -388,11 +393,6 @@ main#main #index-s-four .wrapper .text-box header {
 }
 main#main #index-s-five {
   margin-top: -8rem;
-}
-@media only screen and (max-width: 576px) {
-  main#main #index-s-five {
-    margin-top: -12rem;
-  }
 }
 main#main #index-s-five .wrapper {
   margin-top: clamp(-10rem, 15.0332225914rem + -18.2724252492vw, 1rem);
@@ -425,26 +425,30 @@ main#main #index-s-five .wrapper .text-box.reviews-section header .spacer {
     height: clamp(1.5rem, -5.0298507463rem + 17.4129353234vw, 5rem);
   }
 }
-main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
+main#main #index-s-five .wrapper .text-box.reviews-section .body > ul.reviews {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(33.3333333333%, 1fr));
   justify-content: center;
   gap: 7.5rem 0;
 }
 @media only screen and (max-width: 1370px) {
-  main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
+  main#main #index-s-five .wrapper .text-box.reviews-section .body > ul.reviews {
     gap: clamp(2.5rem, -7.0681063123rem + 12.4584717608vw, 10rem) 0;
   }
 }
 @media only screen and (max-width: 768px) {
-  main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
+  main#main #index-s-five .wrapper .text-box.reviews-section .body > ul.reviews {
     gap: clamp(2.5rem, -20rem + 39.0625vw, 10rem) 0;
   }
 }
 @media only screen and (max-width: 576px) {
-  main#main #index-s-five .wrapper .text-box.reviews-section .body ul.reviews {
-    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-    gap: clamp(2.5rem, -6.828358209rem + 24.8756218905vw, 7.5rem) 0;
+  main#main #index-s-five .wrapper .text-box.reviews-section .body > ul.reviews {
+    display: none;
+  }
+}
+@media only screen and (min-width: 576px) {
+  main#main #index-s-five .wrapper .text-box.reviews-section .body > div.carousel-wrapper {
+    display: none;
   }
 }
 main#main #index-s-five .wrapper .text-box.contact-section {
@@ -458,12 +462,12 @@ main#main #index-s-five .wrapper .text-box.contact-section {
 }
 @media only screen and (max-width: 768px) {
   main#main #index-s-five .wrapper .text-box.contact-section {
-    margin-top: clamp(5rem, -40rem + 78.125vw, 20rem);
+    margin-top: clamp(5rem, -10rem + 26.0416666667vw, 10rem);
   }
 }
 @media only screen and (max-width: 576px) {
   main#main #index-s-five .wrapper .text-box.contact-section {
-    margin-top: clamp(2.5rem, -6.828358209rem + 24.8756218905vw, 7.5rem);
+    margin-top: clamp(13rem, 23.2611940299rem + -27.3631840796vw, 7.5rem);
   }
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body {

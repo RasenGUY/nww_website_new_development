@@ -1,8 +1,8 @@
 // --------------- carousell -------------------
 function Carousel(carousel){  // object instance function carousel function
     
-    // this.carousel = carousel; 
-    this.itemClassName = carousel.querySelector(".carousel-photo").className;
+    this.carousel = carousel; 
+    this.itemClassName = this.carousel.querySelector(".carousel-photo").className;
     this.items = document.getElementsByClassName(this.itemClassName);
     this.totalItems = this.items.length; 
     this.slide = 0;
@@ -10,7 +10,6 @@ function Carousel(carousel){  // object instance function carousel function
 
     
     // ------------ carousel functions ------------------
-    // const carousel = {};
     
     // initialize carousel photo classes
     this.setInitialClass = () => { 
@@ -24,8 +23,8 @@ function Carousel(carousel){  // object instance function carousel function
     // add click events to the next and previous buttons 
     this.setListeners = () => {
         const 
-        next = document.querySelector(".carousel-btn--next"), 
-        prev = document.querySelector(".carousel-btn--prev");
+        next = this.carousel.querySelector(".carousel-btn--next"), 
+        prev = this.carousel.querySelector(".carousel-btn--prev");
         next.addEventListener("click", this.moveNext);
         prev.addEventListener("click", this.movePrev);
     };
