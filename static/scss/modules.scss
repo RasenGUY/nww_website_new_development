@@ -93,8 +93,6 @@
 .carousel-wrapper {
     overflow: hidden;
     width: 100%;
-    // height: 100%;
-    // margin: auto;
     
     /* render nested items properly in 3D space. */
     .carousel {
@@ -131,21 +129,23 @@
         & .carousel-btn--next,& .carousel-btn--prev {
             display: block;
             position: absolute;
-            top: 50%;
+            top: 33%;
             height: 3rem;
             width: 3rem;
             z-index: 600;
             cursor: pointer;
+            
         }
         & .carousel-btn--next::after, & .carousel-btn--prev::after {
             position: absolute;
             top: 50%;
             content: "";
-            width: 10px;
-            height: 10px;
+            width: 15px;
+            height: 15px;
             border-right: 2px solid v.$primaryColor;
             border-bottom: 2px solid v.$primaryColor;
             transform: translate(-50%, -50%) rotate(135deg);
+            @include m.shadow("drop-shadow", none, 1.5px, 1.5px, 3px, color.adjust(v.$primaryColor, $alpha: v.$opacityXxl))
         }
 
         & .carousel-btn--next {
@@ -252,8 +252,8 @@ div.mugshot {
     width: f.fontDynSize(768, 1920, 120, 150);
     border: solid v.$ctaColor 0.5rem;
     @include m.responsive("<", 576px){
-        height: f.fontDynSize(412, 576, 100, 135); 
-        width: f.fontDynSize(412, 576, 100, 135);
+        height: f.fontDynSize(412, 576, 115, 135); 
+        width: f.fontDynSize(412, 576, 115, 135);
         border: solid v.$ctaColor f.fontDynSize(412, 1920, 3.75, 5);
     }
 }
@@ -801,11 +801,14 @@ section#index-s-three {
                                     z-index: 5;
                                 }
                             }
-                        }   
+                        }
+                        @include m.responsive("<", 576px){
+                            & .review {
+                                width: 100%;
+                            }
+                        } 
                     }
                 }
-            }
-            &.contact-section{
             }
         }
     }

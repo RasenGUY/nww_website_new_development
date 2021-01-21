@@ -100,7 +100,7 @@
 .carousel-wrapper .carousel .carousel-btn--next, .carousel-wrapper .carousel .carousel-btn--prev {
   display: block;
   position: absolute;
-  top: 50%;
+  top: 33%;
   height: 3rem;
   width: 3rem;
   z-index: 600;
@@ -110,11 +110,12 @@
   position: absolute;
   top: 50%;
   content: "";
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   border-right: 2px solid #da4a22;
   border-bottom: 2px solid #da4a22;
   transform: translate(-50%, -50%) rotate(135deg);
+  filter: drop-shadow(1.5px 1.5px 3px rgba(218, 74, 34, 0.16));
 }
 .carousel-wrapper .carousel .carousel-btn--next {
   right: 5%;
@@ -257,8 +258,8 @@ div.mugshot {
 }
 @media only screen and (max-width: 576px) {
   div.mugshot {
-    height: clamp(10rem, 1.2073170732rem + 21.3414634146vw, 13.5rem);
-    width: clamp(10rem, 1.2073170732rem + 21.3414634146vw, 13.5rem);
+    height: clamp(11.5rem, 6.4756097561rem + 12.1951219512vw, 13.5rem);
+    width: clamp(11.5rem, 6.4756097561rem + 12.1951219512vw, 13.5rem);
     border: solid #22da4a clamp(0.375rem, 0.3408488064rem + 0.0828912467vw, 0.5rem);
   }
 }
@@ -902,6 +903,12 @@ section#index-s-three div.text-box > div.body .team-members > li.member:nth-chil
     z-index: 5;
   }
 }
+@media only screen and (max-width: 576px) {
+  #index-s-five .wrapper .text-box.reviews-section .body ul.reviews .review {
+    width: 100%;
+  }
+}
+
 footer .sha {
   width: 100%;
 }

@@ -223,6 +223,9 @@ main#main {
                 position: absolute;
                 z-index: 11;
                 transform: translateY(-17rem);
+                @include m.responsive("<", 576px){
+                    transform: translateY(-10rem);
+                }
                 & object {
                     position: inherit; 
                 }      
@@ -294,6 +297,7 @@ main#main {
                     margin-right: 0.75rem;
                 }
             }
+
             & .img-box-wrapper {
                 @include m.responsive(">", 576px){ // show image at mobile screens 
                     display: none;
@@ -338,6 +342,10 @@ main#main {
         }
         & .shapes {
             z-index: 1;
+            @include m.responsive("<", 576px){
+                margin-top: f.fontDynSize(576, 375, 50, 0);
+            }
+            
         } 
         & div.wrapper {
             & > div.text-box {
@@ -412,13 +420,16 @@ main#main {
     // section five reviews and contact
     & #index-s-five {
         margin-top: -8rem;
+        @include m.responsive("<", 576px){
+            margin-bottom: f.fontDynSize(576, 375, -150, 50); 
+        }
         & .wrapper {
             margin-top: f.fontDynSize(1370, 768, -100, 10);
             @include m.responsive("<", 768px){
                 margin-top: f.fontDynSize(576, 768, 25, -100);
             }
             @include m.responsive("<", 576px){
-                margin-top: f.fontDynSize(576, 375, -100, 0);
+                margin-top: f.fontDynSize(576, 375, -100, 50);
             }
             & .text-box.reviews-section {
                 & header {
@@ -431,7 +442,7 @@ main#main {
                             height: f.fontDynSize(576, 768, 25, 50);
                         }
                         @include m.responsive("<", 576px){
-                            height: f.fontDynSize(375, 576, 15, 50);
+                            height: f.fontDynSize(375, 576, 15, 40);
                         }   
                     }
                 }
@@ -454,6 +465,9 @@ main#main {
                     }
 
                     & > div.carousel-wrapper {
+                            & .carousel {
+                                height: 15%;
+                            }
                         @include m.responsive(">", 576px){
                             display: none; 
                         }
@@ -470,7 +484,7 @@ main#main {
                     margin-top: f.fontDynSize(576, 768, 50, 100);
                 }
                 @include m.responsive("<", 576px){
-                    margin-top: f.fontDynSize(375, 576, 130, 75);
+                    margin-top: f.fontDynSize(375, 576, 150, 250);
                 }
                 width: 100%;
                 & .body {
@@ -531,24 +545,24 @@ main#main {
                     } 
                 }
             }
-        }   
+        }
+        
+        
     }
 
     // footer
     footer {
-        width: 100vw;
-        // wrapper
-        & .wrap {
-            position: absolute;
-            width: 80%;
-            height: inherit;
-            margin: 0 auto;
-            z-index: 11;          
+        @include m.responsive("<", 576px){
+            & > .shapes, .wrapper {
+                display: none; 
+            }
+            // & .spacer {
+            //     display: initial;
+            // }
+            // height: 5rem; 
+            // $gradColors: v.$primaryColor, v.$primaryLight, v.$primaryColor 105%;
+            // background-image: f.gradient("linear", 135deg, $gradColors); 
         }
-
-        // shapes
-        & object {
-            // position: relative;
-        }
+        display: none;
     }
 }
