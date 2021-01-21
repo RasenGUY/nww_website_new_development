@@ -555,10 +555,32 @@ main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item >
   }
 }
 main#main footer {
-  display: none;
+  margin-top: -8rem;
+}
+main#main footer .shapes {
+  margin-bottom: -1rem;
+}
+main#main footer .wrapper {
+  margin-top: 15rem;
+}
+main#main footer .wrapper > ul {
+  padding-bottom: 7.5rem;
+}
+main#main footer .wrapper .footer-links li > a:hover {
+  color: #e36d4c;
+}
+main#main footer .wrapper .footer-links li > a:active, main#main footer .wrapper .footer-links li > a:focus {
+  outline: none;
+  color: #a73f22;
+}
+main#main footer .wrapper .social > li:nth-child(2) {
+  padding: 0 2.5rem;
+}
+main#main footer .wrapper .copyright {
+  margin-top: 1rem;
 }
 @media only screen and (max-width: 576px) {
-  main#main footer > .shapes, main#main footer .wrapper {
+  main#main footer {
     display: none;
   }
 }

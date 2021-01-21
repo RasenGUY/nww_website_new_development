@@ -174,7 +174,7 @@ main#main {
         position: relative;
         width: 100vw;
         // z-index: 0;
-        .shapes{
+        .shapes {
             width: 100%;
         }
         // wrapper for all text-boxes in sections
@@ -552,17 +552,39 @@ main#main {
 
     // footer
     footer {
-        @include m.responsive("<", 576px){
-            & > .shapes, .wrapper {
-                display: none; 
-            }
-            // & .spacer {
-            //     display: initial;
-            // }
-            // height: 5rem; 
-            // $gradColors: v.$primaryColor, v.$primaryLight, v.$primaryColor 105%;
-            // background-image: f.gradient("linear", 135deg, $gradColors); 
+        
+        margin-top: -8rem;
+        .shapes {
+            margin-bottom: -1rem;
         }
-        display: none;
+        .wrapper {
+            margin-top: 15rem;
+            & > ul {
+                padding-bottom: 7.5rem; 
+            }
+            & .footer-links {
+                & li > a {
+                    
+                    &:hover {
+                        color: color.adjust(v.$primaryColor, $lightness: 10%);
+                    }
+                    &:active, &:focus {
+                        outline: none; 
+                        color: color.adjust(v.$primaryColor, $blackness: 20%);
+                    }
+                }
+            }
+            & .social {
+                & > li:nth-child(2) {
+                    padding: 0 2.5rem;
+                }
+            }
+            & .copyright {
+                margin-top: 1rem;
+            }   
+        }
+        @include m.responsive("<", 576px){
+            display: none; 
+        }
     }
 }

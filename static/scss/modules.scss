@@ -244,6 +244,10 @@
         fill: v.$ctaColor;
     }
 }
+// socials 
+.social {
+    list-style: none;
+}
 
 // div-shapes for mugshots
 div.mugshot {
@@ -331,11 +335,6 @@ nav#nav-mobile {
     box-shadow: -5px 0px 5px color.adjust(v.$secondaryColor, $blackness: 30%, $alpha: v.$opacityXl);
     transition: all 0.33s ease-in-out;
     transition-timing-function: cubic-bezier(0.5, 0.5, 0.7, 1);
-
-    // socials
-    .social {
-        list-style: none;
-    }
 
     // hamburger
     // hamburger animate burger
@@ -816,11 +815,25 @@ section#index-s-three {
 
 // ---------- footer -----------
 footer {
-        .sha{
-            width: 100%;
-            object {
-                content: url("/static/images/general/svg/compressed/footer_sh.svg"); 
-            }
-
+    
+    .shapes {
+        object {
+            content: url("/static/images/general/svg/compressed/footer_sh.svg"); 
         }
+    }
+    .wrapper {
+
+        & .footer-links {
+            list-style: none;
+            & li > a {               
+                &:hover {
+                    color: color.adjust(v.$primaryColor, $lightness: 10%);
+                }
+                &:active, &:focus {
+                    outline: none; 
+                    color: color.adjust(v.$primaryColor, $blackness: 20%);
+                }
+            }
+        }
+    }
 }
