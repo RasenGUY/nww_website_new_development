@@ -99,7 +99,7 @@ nav, main {
     }
 }
 
-nav#nav-web, main#main-content {
+nav#nav-web {
     
     // center wrapper and create gap on the cides of the wrapper
     .wrapper {
@@ -173,7 +173,6 @@ main#main {
     section, footer {
         position: relative;
         width: 100vw;
-        // z-index: 0;
         .shapes {
             width: 100%;
         }
@@ -554,6 +553,9 @@ main#main {
     footer {
         
         margin-top: -8rem;
+        @include m.responsive("<", 1080px){
+            margin-top: -6rem; 
+        }
         .shapes {
             margin-bottom: -1rem;
         }
@@ -561,18 +563,6 @@ main#main {
             margin-top: 15rem;
             & > ul {
                 padding-bottom: 7.5rem; 
-            }
-            & .footer-links {
-                & li > a {
-                    
-                    &:hover {
-                        color: color.adjust(v.$primaryColor, $lightness: 10%);
-                    }
-                    &:active, &:focus {
-                        outline: none; 
-                        color: color.adjust(v.$primaryColor, $blackness: 20%);
-                    }
-                }
             }
             & .social {
                 & > li:nth-child(2) {
@@ -582,6 +572,33 @@ main#main {
             & .copyright {
                 margin-top: 1rem;
             }   
+            @include m.responsive("<", 1500px){
+                margin-top: f.fontDynSize(1080, 1500, 80, 150);
+                & > ul {
+                    padding-bottom: f.fontDynSize(1080, 1500, 50, 75); 
+                }
+                & .copyright {
+                    margin-top: -2rem;
+                }   
+            }
+            @include m.responsive("<", 1080px){
+                margin-top: f.fontDynSize(768, 1080, 60, 80);
+                & > ul {
+                    padding-bottom: f.fontDynSize(768, 1080, 30, 50); 
+                }
+                & .copyright {
+                    margin-top: f.fontDynSize(1080, 768, -20, 0);
+                } 
+            }
+            @include m.responsive("<", 768px){
+                margin-top: f.fontDynSize(576, 768, 50, 60);
+                & > ul {
+                    padding-bottom: f.fontDynSize(576, 768, 15, 30); 
+                }
+                & .copyright {
+                    margin-top: 0rem;
+                } 
+            }
         }
         @include m.responsive("<", 576px){
             display: none; 
