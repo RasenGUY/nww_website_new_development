@@ -420,11 +420,41 @@ nav#nav-mobile-links {
     }
 }
 
-// section overlays
-section .overlay {
-    background-color: color.adjust(v.$primaryColor, $alpha: v.$opacityXl, $blackness: 75%);
-    backdrop-filter: blur(0.125rem);
+section {
+    
+    // section overlays
+    .overlay {
+        background-color: color.adjust(v.$primaryColor, $alpha: v.$opacityXl, $blackness: 75%);
+        backdrop-filter: blur(0.125rem);
+    }
+
+    // svg shapes in sections
+    .shapes {
+        object {
+            &.mobile, &.medium {
+                display: none;
+            }
+            @include m.responsive("<", 768px){
+                &.large, &.mobile {
+                    display: none;
+                }
+                &.medium {
+                    display: inherit;
+                }
+            }
+            @include m.responsive("<", 576px){
+                &.large, &.medium  {
+                    display: none;
+                }
+                &.mobile {
+                    display: inherit;
+                }
+            }
+        }
+    }
 }
+
+
 
 // --------------------  index page -------------------------------
 
@@ -466,77 +496,8 @@ section .overlay {
 
 // ----------- section s one -----------------
 #index-s-one {
+    // all shapes in sections
     & .shapes {    
-        
-        // folder shape inject images
-        & .folder {
-            & object.back {
-                &.mobile, &.medium {
-                    display: none;
-                }
-                @include m.responsive("<", 768px){
-                    &.large, &.mobile {
-                        display: none;
-                    }
-                    &.medium {
-                        display: inherit;
-                    }
-                }
-                @include m.responsive("<", 576px){
-                    &.large, &.medium  {
-                        display: none;
-                    }
-                    &.mobile {
-                        display: inherit;
-                    }
-                }
-            }
-            & object.middle {
-
-                &.mobile, &.medium {
-                    display: none;
-                }
-                @include m.responsive("<", 768px){
-                    &.large, &.mobile {
-                        display: none;
-                    }
-                    &.medium {
-                        display: inherit;
-                    }
-                }
-                @include m.responsive("<", 576px){
-                    &.large, &.medium  {
-                        display: none;
-                    }
-                    &.mobile {
-                        display: inherit;
-                    }
-                }
-            }
-            & object.fore {
-                
-                &.mobile, &.medium {
-                    display: none;
-                }
-                @include m.responsive("<", 768px){
-                    &.large, &.mobile {
-                        display: none;
-                    }
-                    &.medium {
-                        display: inherit;
-                    }
-                }
-                @include m.responsive("<", 576px){
-                    &.large, &.medium  {
-                        display: none;
-                    }
-                    &.mobile {
-                        display: inherit;
-                    }
-                }
-            }
-        }
-
         // circles 
         & .circles {
             & > .circle {
@@ -572,16 +533,7 @@ section .overlay {
 
 // ------------- section s three ------------
 section#index-s-three {
-    
-    //shapes
-    & .shapes {
-        & object.index-s-three-sh-1 {
-            content: url("/static/images/home/svg_web/compressed/home_sh_s3.svg");
-            @include m.responsive("<", 768px){
-                content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s3.svg");
-            }
-        }
-    } 
+ 
     // some textbox
     & div.text-box {
         width: 100%;
@@ -633,17 +585,23 @@ section#index-s-three {
 #index-s-five {
     & .shapes {
         // shapes    
-        & object.index-s-five-sh-1 {
+        & object {
             width: 100%;
-            content: url("/static/images/home/svg_web/compressed/home_sh_s5.svg");
+            &[class='1440px'] {
+                display: none;
+            }
             @include m.responsive("<", 1440px){
-                content: url("/static/images/home/svg_web/compressed/index_normal_s5_sh_1440px.svg");
+                &.large {
+                    display: none;
+                }
+                &[class='1440px'] {
+                    display: inherit;
+                }
             }
             @include m.responsive("<", 768px){
-                content: url("/static/images/home/svg_medium/compressed/index_medium_s5_sh.svg");
-            }
-            @include m.responsive("<", 576px){
-                content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s5.svg");
+                &[class='1440px'] {
+                    display: none;
+                }
             }
         }
     }

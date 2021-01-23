@@ -420,6 +420,25 @@ section .overlay {
   background-color: rgba(33, 33, 33, 0.3);
   backdrop-filter: blur(0.125rem);
 }
+section .shapes object.mobile, section .shapes object.medium {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  section .shapes object.large, section .shapes object.mobile {
+    display: none;
+  }
+  section .shapes object.medium {
+    display: inherit;
+  }
+}
+@media only screen and (max-width: 576px) {
+  section .shapes object.large, section .shapes object.medium {
+    display: none;
+  }
+  section .shapes object.mobile {
+    display: inherit;
+  }
+}
 
 #index-hero {
   background-attachment: initial;
@@ -470,63 +489,6 @@ section .overlay {
   transform: translateY(1rem);
 }
 
-#index-s-one .shapes .folder object.back.mobile, #index-s-one .shapes .folder object.back.medium {
-  display: none;
-}
-@media only screen and (max-width: 768px) {
-  #index-s-one .shapes .folder object.back.large, #index-s-one .shapes .folder object.back.mobile {
-    display: none;
-  }
-  #index-s-one .shapes .folder object.back.medium {
-    display: inherit;
-  }
-}
-@media only screen and (max-width: 576px) {
-  #index-s-one .shapes .folder object.back.large, #index-s-one .shapes .folder object.back.medium {
-    display: none;
-  }
-  #index-s-one .shapes .folder object.back.mobile {
-    display: inherit;
-  }
-}
-#index-s-one .shapes .folder object.middle.mobile, #index-s-one .shapes .folder object.middle.medium {
-  display: none;
-}
-@media only screen and (max-width: 768px) {
-  #index-s-one .shapes .folder object.middle.large, #index-s-one .shapes .folder object.middle.mobile {
-    display: none;
-  }
-  #index-s-one .shapes .folder object.middle.medium {
-    display: inherit;
-  }
-}
-@media only screen and (max-width: 576px) {
-  #index-s-one .shapes .folder object.middle.large, #index-s-one .shapes .folder object.middle.medium {
-    display: none;
-  }
-  #index-s-one .shapes .folder object.middle.mobile {
-    display: inherit;
-  }
-}
-#index-s-one .shapes .folder object.fore.mobile, #index-s-one .shapes .folder object.fore.medium {
-  display: none;
-}
-@media only screen and (max-width: 768px) {
-  #index-s-one .shapes .folder object.fore.large, #index-s-one .shapes .folder object.fore.mobile {
-    display: none;
-  }
-  #index-s-one .shapes .folder object.fore.medium {
-    display: inherit;
-  }
-}
-@media only screen and (max-width: 576px) {
-  #index-s-one .shapes .folder object.fore.large, #index-s-one .shapes .folder object.fore.medium {
-    display: none;
-  }
-  #index-s-one .shapes .folder object.fore.mobile {
-    display: inherit;
-  }
-}
 #index-s-one .shapes .circles > .circle:nth-child(3) {
   background-attachment: initial;
   background-image: url("/static/images/home/jpeg_web/compressed/teach_6.jpg");
@@ -573,14 +535,6 @@ section .overlay {
   }
 }
 
-section#index-s-three .shapes object.index-s-three-sh-1 {
-  content: url("/static/images/home/svg_web/compressed/home_sh_s3.svg");
-}
-@media only screen and (max-width: 768px) {
-  section#index-s-three .shapes object.index-s-three-sh-1 {
-    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s3.svg");
-  }
-}
 section#index-s-three div.text-box {
   width: 100%;
   height: 50%;
@@ -658,23 +612,23 @@ section#index-s-three div.text-box > div.body .team-members > li.member:nth-chil
   }
 }
 
-#index-s-five .shapes object.index-s-five-sh-1 {
+#index-s-five .shapes object {
   width: 100%;
-  content: url("/static/images/home/svg_web/compressed/home_sh_s5.svg");
+}
+#index-s-five .shapes object[class="1440px"] {
+  display: none;
 }
 @media only screen and (max-width: 1440px) {
-  #index-s-five .shapes object.index-s-five-sh-1 {
-    content: url("/static/images/home/svg_web/compressed/index_normal_s5_sh_1440px.svg");
+  #index-s-five .shapes object.large {
+    display: none;
+  }
+  #index-s-five .shapes object[class="1440px"] {
+    display: inherit;
   }
 }
 @media only screen and (max-width: 768px) {
-  #index-s-five .shapes object.index-s-five-sh-1 {
-    content: url("/static/images/home/svg_medium/compressed/index_medium_s5_sh.svg");
-  }
-}
-@media only screen and (max-width: 576px) {
-  #index-s-five .shapes object.index-s-five-sh-1 {
-    content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s5.svg");
+  #index-s-five .shapes object[class="1440px"] {
+    display: none;
   }
 }
 #index-s-five .wrapper {
