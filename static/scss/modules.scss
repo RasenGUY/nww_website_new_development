@@ -471,32 +471,68 @@ section .overlay {
         // folder shape inject images
         & .folder {
             & object.back {
-
-                content: url("/static/images/home/svg_web/compressed/home_sh_s2_bg.svg");
+                &.mobile, &.medium {
+                    display: none;
+                }
                 @include m.responsive("<", 768px){
-                    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_back.svg");
+                    &.large, &.mobile {
+                        display: none;
+                    }
+                    &.medium {
+                        display: inherit;
+                    }
                 }
                 @include m.responsive("<", 576px){
-                    content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_bg.svg");
+                    &.large, &.medium  {
+                        display: none;
+                    }
+                    &.mobile {
+                        display: inherit;
+                    }
                 }
             }
             & object.middle {
 
-                content: url("/static/images/home/svg_web/compressed/home_sh_s2_mg.svg");
+                &.mobile, &.medium {
+                    display: none;
+                }
                 @include m.responsive("<", 768px){
-                    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_middle.svg");
+                    &.large, &.mobile {
+                        display: none;
+                    }
+                    &.medium {
+                        display: inherit;
+                    }
                 }
                 @include m.responsive("<", 576px){
-                    content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_mg.svg");
+                    &.large, &.medium  {
+                        display: none;
+                    }
+                    &.mobile {
+                        display: inherit;
+                    }
                 }
             }
             & object.fore {
-                content: url("/static/images/home/svg_web/compressed/home_sh_s2_fg.svg");
+                
+                &.mobile, &.medium {
+                    display: none;
+                }
                 @include m.responsive("<", 768px){
-                    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_fore.svg");
+                    &.large, &.mobile {
+                        display: none;
+                    }
+                    &.medium {
+                        display: inherit;
+                    }
                 }
                 @include m.responsive("<", 576px){
-                    content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_fg.svg");
+                    &.large, &.medium  {
+                        display: none;
+                    }
+                    &.mobile {
+                        display: inherit;
+                    }
                 }
             }
         }

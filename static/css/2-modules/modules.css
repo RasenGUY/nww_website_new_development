@@ -470,43 +470,61 @@ section .overlay {
   transform: translateY(1rem);
 }
 
-#index-s-one .shapes .folder object.back {
-  content: url("/static/images/home/svg_web/compressed/home_sh_s2_bg.svg");
+#index-s-one .shapes .folder object.back.mobile, #index-s-one .shapes .folder object.back.medium {
+  display: none;
 }
 @media only screen and (max-width: 768px) {
-  #index-s-one .shapes .folder object.back {
-    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_back.svg");
+  #index-s-one .shapes .folder object.back.large, #index-s-one .shapes .folder object.back.mobile {
+    display: none;
+  }
+  #index-s-one .shapes .folder object.back.medium {
+    display: inherit;
   }
 }
 @media only screen and (max-width: 576px) {
-  #index-s-one .shapes .folder object.back {
-    content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_bg.svg");
+  #index-s-one .shapes .folder object.back.large, #index-s-one .shapes .folder object.back.medium {
+    display: none;
+  }
+  #index-s-one .shapes .folder object.back.mobile {
+    display: inherit;
   }
 }
-#index-s-one .shapes .folder object.middle {
-  content: url("/static/images/home/svg_web/compressed/home_sh_s2_mg.svg");
+#index-s-one .shapes .folder object.middle.mobile, #index-s-one .shapes .folder object.middle.medium {
+  display: none;
 }
 @media only screen and (max-width: 768px) {
-  #index-s-one .shapes .folder object.middle {
-    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_middle.svg");
+  #index-s-one .shapes .folder object.middle.large, #index-s-one .shapes .folder object.middle.mobile {
+    display: none;
+  }
+  #index-s-one .shapes .folder object.middle.medium {
+    display: inherit;
   }
 }
 @media only screen and (max-width: 576px) {
-  #index-s-one .shapes .folder object.middle {
-    content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_mg.svg");
+  #index-s-one .shapes .folder object.middle.large, #index-s-one .shapes .folder object.middle.medium {
+    display: none;
+  }
+  #index-s-one .shapes .folder object.middle.mobile {
+    display: inherit;
   }
 }
-#index-s-one .shapes .folder object.fore {
-  content: url("/static/images/home/svg_web/compressed/home_sh_s2_fg.svg");
+#index-s-one .shapes .folder object.fore.mobile, #index-s-one .shapes .folder object.fore.medium {
+  display: none;
 }
 @media only screen and (max-width: 768px) {
-  #index-s-one .shapes .folder object.fore {
-    content: url("/static/images/home/svg_medium/compressed/index_medium_sh_s1_fore.svg");
+  #index-s-one .shapes .folder object.fore.large, #index-s-one .shapes .folder object.fore.mobile {
+    display: none;
+  }
+  #index-s-one .shapes .folder object.fore.medium {
+    display: inherit;
   }
 }
 @media only screen and (max-width: 576px) {
-  #index-s-one .shapes .folder object.fore {
-    content: url("/static/images/home/svg_mobile/compressed/mobile_home_sh_s1_fg.svg");
+  #index-s-one .shapes .folder object.fore.large, #index-s-one .shapes .folder object.fore.medium {
+    display: none;
+  }
+  #index-s-one .shapes .folder object.fore.mobile {
+    display: inherit;
   }
 }
 #index-s-one .shapes .circles > .circle:nth-child(3) {
