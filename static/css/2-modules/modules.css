@@ -612,22 +612,24 @@ section#index-s-three div.text-box > div.body .team-members > li.member:nth-chil
   }
 }
 
-#index-s-five .shapes object {
-  width: 100%;
-}
-#index-s-five .shapes object[class="1440px"] {
+#index-s-five .shapes object:nth-child(2) {
   display: none;
 }
 @media only screen and (max-width: 1440px) {
+  #index-s-five .shapes object:nth-child(2) {
+    display: inherit;
+  }
   #index-s-five .shapes object.large {
     display: none;
   }
-  #index-s-five .shapes object[class="1440px"] {
-    display: inherit;
-  }
 }
 @media only screen and (max-width: 768px) {
-  #index-s-five .shapes object[class="1440px"] {
+  #index-s-five .shapes object:nth-child(2) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 576px) {
+  #index-s-five .shapes object:nth-child(2) {
     display: none;
   }
 }
@@ -882,9 +884,6 @@ section#index-s-three div.text-box > div.body .team-members > li.member:nth-chil
   }
 }
 
-footer .shapes object {
-  content: url("/static/images/general/svg/compressed/footer_sh.svg");
-}
 footer .wrapper .footer-links {
   list-style: none;
 }
@@ -894,6 +893,11 @@ footer .wrapper .footer-links li > a:hover {
 footer .wrapper .footer-links li > a:active, footer .wrapper .footer-links li > a:focus {
   outline: none;
   color: #a73f22;
+}
+@media only screen and (max-width: 576px) {
+  footer {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=modules.css.map */

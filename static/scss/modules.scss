@@ -584,22 +584,26 @@ section#index-s-three {
 // ----------- section s five -----------------
 #index-s-five {
     & .shapes {
-        // shapes    
+        // shapes   
         & object {
-            width: 100%;
-            &[class='1440px'] {
+            &:nth-child(2){ // hide image for larger screens
                 display: none;
             }
-            @include m.responsive("<", 1440px){
+            @include m.responsive("<", 1440px){ // show image for smaller than 1440px
+                &:nth-child(2) {
+                    display: inherit;
+                }
                 &.large {
                     display: none;
                 }
-                &[class='1440px'] {
-                    display: inherit;
+            }
+            @include m.responsive("<", 768px){ // hide for smaller than 768px
+                &:nth-child(2) {
+                    display: none;
                 }
             }
-            @include m.responsive("<", 768px){
-                &[class='1440px'] {
+            @include m.responsive("<", 576px){ // hide for smaller than 576px
+                &:nth-child(2) {
                     display: none;
                 }
             }
@@ -809,14 +813,8 @@ section#index-s-three {
 
 // ---------- footer -----------
 footer {
-    
-    .shapes {
-        object {
-            content: url("/static/images/general/svg/compressed/footer_sh.svg"); 
-        }
-    }
-    .wrapper {
 
+    .wrapper {
         & .footer-links {
             list-style: none;
             & li > a {               
@@ -829,5 +827,8 @@ footer {
                 }
             }
         }
+    }
+    @include m.responsive("<", 576px){
+        display: none; 
     }
 }
