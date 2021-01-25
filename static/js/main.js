@@ -1,5 +1,11 @@
 // main js for the new new world website
-import * as f from "./functions.js"; 
+import * as f from "./functions.js";
+import * as g from "./gmap.js";
+import * as c from "./carousel.js";
+
+// intilialize map
+let map; 
+g.initMap(map);
 
 // menu-mobile-animation
 const animateMenu = document.querySelector("#nav-mobile .hamburger");
@@ -35,9 +41,12 @@ animateMenu.addEventListener("click", () => {
 // queries section one index page
 const indexSOneQ1 = f.medQueries(`412px`, "<"); 
 indexSOneQ1.addEventListener("change", f.queriesIndex);
-
  
-
-
-    
+// initialize carousel instance for each carousel on the site
+const
+carousels = document.querySelectorAll(".carousel-wrapper"); // all carousels
+carousels.forEach( (carousel) => {
+    let carou = new c.Carousel(carousel);
+    carou.initCarousel();
+});
 

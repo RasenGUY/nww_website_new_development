@@ -101,7 +101,7 @@ nav, main {
 
 nav#nav-web {
     
-    // center wrapper and create gap on the cides of the wrapper
+    // center wrapper and create gap on the sde of the wrapper
     .wrapper {
         width: 80%;
         margin: 0 auto;
@@ -175,15 +175,12 @@ main#main {
         width: 100vw;
         .shapes {
             width: 100%;
-
-            // make object svgs responsive
         }
         // wrapper for all text-boxes in sections
         & > .wrapper {
             position: absolute;
             width: 80%;
             height: inherit;
-            margin: 0 auto;
             z-index: 11;           
             @include m.responsive('<', 1040px){
                 width: 90%;

@@ -14,7 +14,6 @@ export function togglePseudo(htmlEl, pseudo, cssRule){ //function for animating 
 
     // remove existing style
     children.forEach((child, index) =>{
-        console.log(child['innerHTML']);
         if (child['innerHTML'] == pseudoEl){
             ruleExists = true; 
             childIndex = index;

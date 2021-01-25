@@ -1,5 +1,5 @@
 // --------------- carousell -------------------
-function Carousel(carousel){  // object instance function carousel function
+export function Carousel(carousel){  // object instance function carousel function
     
     this.carousel = carousel; 
     this.itemClassName = this.carousel.querySelector(".carousel-photo").className;
@@ -133,13 +133,6 @@ function Carousel(carousel){  // object instance function carousel function
     
 }
 
-// initialize carousel instance for each carousel on the site
-const
-carousels = document.querySelectorAll(".carousel-wrapper"); // all carousels
-carousels.forEach( (carousel) => {
-    let carou = new Carousel(carousel);
-    carou.initCarousel();
-});
 
 
 
