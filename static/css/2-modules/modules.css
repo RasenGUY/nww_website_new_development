@@ -280,12 +280,17 @@ nav#nav-web::before, nav#nav-mobile::before, nav#nav-mobile-links::before {
   width: 100%;
   height: 100%;
   z-index: -3;
-  backdrop-filter: blur(1rem);
-  -ms-backdrop-filter: blur(1rem);
-  -o-backdrop-filter: blur(1rem);
-  -moz-backdrop-filter: blur(1rem);
-  -webkit-backdrop-filter: blur(1rem);
-  background-color: rgba(238, 249, 252, 0.6);
+  background-image: linear-gradient(135deg, #baeff4 5%, #a4e7f1, #78d6ea);
+}
+@supports (backdrop-filter: blur(1rem)) {
+  nav#nav-web::before, nav#nav-mobile::before, nav#nav-mobile-links::before {
+    backdrop-filter: blur(1rem);
+    -ms-backdrop-filter: blur(1rem);
+    -o-backdrop-filter: blur(1rem);
+    -moz-backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+    background-image: linear-gradient(135deg, rgba(186, 239, 244, 0.75) 5%, rgba(164, 231, 241, 0.75), rgba(120, 214, 234, 0.75));
+  }
 }
 
 .logo {
