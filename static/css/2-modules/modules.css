@@ -686,7 +686,7 @@ section#index-s-three div.text-box > div.body .team-members > li.member:nth-chil
   display: none;
 }
 #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li > div .hover-box blockquote span {
-  padding: 0rem 2.5rem 2.5rem 2rem;
+  padding: 0rem 2.5rem 2.5rem 1rem;
 }
 #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li > div div.mugshot:hover + .hover-box, #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li > div .hover-box:hover {
   visibility: initial;
