@@ -36,7 +36,7 @@
         box-shadow: f.shadows("btn-active", v.$ctaColor, v.$opacityLg);
         // outline: none;
     }
-    &.primary{
+    &.primary {
         color: v.$textColor;
 
         // create gradient color
@@ -54,7 +54,7 @@
             // outline: none;
         }
     }
-    &.secondary{
+    &.secondary {
         color: v.$textColor;
         // create gradient color
         $gradColors: v.$secondaryColor, v.$secondaryLight, v.$secondaryColor 105%;
@@ -71,19 +71,19 @@
             // outline: none;
         }
     }
-    &.small{
+    &.small {
         font-size: f.fontDynSize(412, 1040, (15.85/1.618), (19.85/1.618));
         padding: f.fontDynSize(614, 1040, (4.5/1.618), (6/1.618)) f.fontDynSize(614, 1040, (10/1.618), (14/1.618));
         border-radius: v.$cornerSm;
 
     }
-    &.large{
+    &.large {
         font-size: f.fontDynSize(412, 1040, (15.85*1.618), (19.85*1.618));
         padding: f.fontDynSize(614, 1040, (4.5*1.618), (6*1.618)) f.fontDynSize(614, 1040, (10*1.618), (14*1.618));
         border-radius: v.$cornerXlg;
 
     }
-    &.x-large{
+    &.x-large {
         font-size: f.fontDynSize(412, 1040, (15.85*1.618*1.618), (19.85*1.618*1.618));
         padding: f.fontDynSize(614, 1040, (4.5*1.618*1.618), (6*1.618*1.618)) f.fontDynSize(614, 1040, (10*1.618*1.618), (14*1.618*1.618));
     }
@@ -131,7 +131,7 @@
             top: 33%;
             height: 3rem;
             width: 3rem;
-            z-index: 600;
+            z-index: 901;
             cursor: pointer;
             
         }
@@ -627,7 +627,7 @@ section#index-s-three {
                     width: 100%;    
                     & ul.reviews {
                         list-style: none;
-                        & li > a {
+                        & li > div {
                             z-index: 15;
                             position: relative;
                             display: grid;
@@ -635,9 +635,8 @@ section#index-s-three {
                             width: 100%;
                             height: 100%;
                             & > div.mugshot {
-                                z-index: inherit;
+                                z-index: 16;
                             }
-
                             & .hover-box {
                                 visibility: collapse; 
                                 position: absolute;
@@ -650,8 +649,8 @@ section#index-s-three {
                                     position: relative;
                                     top: 0;
                                     left: 0;
-                                    height: 35vh;
-                                    padding: 9rem 2rem 2rem 2rem;
+                                    max-height: 35vh;
+                                    padding-top: 9rem;
                                     background-color: v.$secondaryLighter;
                                     border-radius: v.$cornerNm;
                                     overflow-y: scroll;
@@ -659,20 +658,23 @@ section#index-s-three {
                                     scrollbar-width: none;
                                     i, p {
                                         font-size: f.fontDynSize(412, 1040, 11.85, 15.85);
-                                        color: color.adjust(v.$textColor, $lightness: 30%); 
+                                        color: color.adjust(v.$textColor, $lightness: 30%);  
                                     }
                                     // hide scrollbar
                                     &::-webkit-scrollbar {
                                         display: none;
                                     }
+                                    span {
+                                        padding: 0rem 2.5rem 2.5rem 2rem;
+                                    }
                                 }
                             }
-                            &:hover .hover-box {
+                            & div.mugshot:hover + .hover-box, .hover-box:hover{
                                 visibility: initial;
                                 opacity: 1;
                             }
                         }
-                        & li:first-child a { // Anne
+                        & li:first-child div { // Anne
                             & > div.mugshot { 
                                 @include m.background(initial, "/static/images/home/pngs/reviews/compressed/anne.png", center, cover);
                             }
@@ -680,7 +682,7 @@ section#index-s-three {
                                 z-index: 14;
                             }
                         }   
-                        & li:nth-child(2) a { // Tobi
+                        & li:nth-child(2) div { // Tobi
                             & > div.mugshot { 
                                 @include m.background(initial, "/static/images/home/pngs/reviews/compressed/tobias.png", center, cover);
                             }
@@ -689,32 +691,29 @@ section#index-s-three {
                             }
                             @include m.responsive("<", 412px){
                                 z-index: 14;
-                                
                                 & .hover-box {
                                     z-index: 13;
                                 }
                             }
                         }   
-                        & li:nth-child(3) a { // Eva
+                        & li:nth-child(3) div { // Eva
                             & > div.mugshot { 
                                 @include m.background(initial, "/static/images/home/pngs/reviews/compressed/eva.png", center, cover);
                             }
                             @include m.responsive("<", 768px){
                                 z-index: 13;
-                                
                                 & .hover-box {
                                     z-index: 12;
                                 }
                             }
                             @include m.responsive("<", 412px){
                                 z-index: 12;
-
                                 & .hover-box {
                                     z-index: 11;
                                 }
                             }
                         }   
-                        & li:nth-child(4) a { // Dani
+                        & li:nth-child(4) div { // Dani
                             z-index: 13;
                             & > div.mugshot { 
                                 @include m.background(initial, "/static/images/home/pngs/reviews/compressed/daniella.png", center, cover);
@@ -728,7 +727,7 @@ section#index-s-three {
                             }
 
                         }   
-                        & li:nth-child(5) a { // Chuck
+                        & li:nth-child(5) div { // Chuck
                             z-index: 13;
                             & > div.mugshot { 
                             @include m.background(initial, "/static/images/home/pngs/reviews/compressed/chuck.png", center, cover);
@@ -744,7 +743,7 @@ section#index-s-three {
                                 }
                             }
                         }   
-                        & li:nth-child(6) a { // Johana
+                        & li:nth-child(6) div { // Johana
                             z-index: 13;
                             & > div.mugshot { 
                             @include m.background(initial, "/static/images/home/pngs/reviews/compressed/johana.png", center, cover);
@@ -760,7 +759,7 @@ section#index-s-three {
                                 }
                             }
                         }   
-                        & li:nth-child(7) a { // Karen
+                        & li:nth-child(7) div { // Karen
                             z-index: 12;
                             & > div.mugshot { 
                             @include m.background(initial, "/static/images/home/pngs/reviews/compressed/karen.png", center, cover);
@@ -776,7 +775,7 @@ section#index-s-three {
                                 }
                             }
                         }   
-                        & li:nth-child(8) a { // Marion
+                        & li:nth-child(8) div { // Marion
                             z-index: 12;
                             & > div.mugshot { 
                             @include m.background(initial, "/static/images/home/pngs/reviews/compressed/marion.png", center, cover);
@@ -792,7 +791,7 @@ section#index-s-three {
                                 }
                             }
                         }   
-                        & li:nth-child(9) a { // Oksana
+                        & li:nth-child(9) div { // Oksana
                             z-index: 12;
                             & > div.mugshot { 
                             @include m.background(initial, "/static/images/home/pngs/reviews/compressed/oksana.png", center, cover);

@@ -168,11 +168,11 @@ nav#nav-mobile-links {
 // main content index page
 main#main {
     $colors: color.adjust(v.$secondaryColor, $blackness: 10%), v.$secondaryColor, color.adjust(v.$secondaryColor, $lightness: 10%), color.adjust(v.$secondaryColor, $lightness: 20%);
-    overflow: hidden;
+    width: 100vw;
     
     section, footer {
         position: relative;
-        width: 100vw;
+        width: 100%;
         .shapes {
             width: 100%;
         }
@@ -528,6 +528,7 @@ main#main {
                         }
                         & textarea {
                             height: 15vh;
+                            resize: none; 
                         }
                         & > div.form-content {
                             width: 90%;

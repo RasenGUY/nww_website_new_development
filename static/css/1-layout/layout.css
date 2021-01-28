@@ -141,11 +141,11 @@ nav#nav-mobile-links .nav-links-bottom, nav#nav-mobile-links::before {
 }
 
 main#main {
-  overflow: hidden;
+  width: 100vw;
 }
 main#main section, main#main footer {
   position: relative;
-  width: 100vw;
+  width: 100%;
 }
 main#main section .shapes, main#main footer .shapes {
   width: 100%;
@@ -539,6 +539,7 @@ main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item i
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item textarea {
   height: 15vh;
+  resize: none;
 }
 main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item > div.form-content {
   width: 90%;
