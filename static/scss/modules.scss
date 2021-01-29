@@ -275,17 +275,14 @@ nav#nav-web::before, nav#nav-mobile::before, nav#nav-mobile-links::before {
     width: 100%;
     height: 100%;
     z-index: -3;
-    // $colors: color.adjust(v.$secondaryColor, $lightness: 35%, $hue: -7.5deg ) 5%, color.adjust(v.$secondaryColor, $lightness: 30%, $hue: -5deg ), color.adjust(v.$secondaryColor, $lightness: 20%, $hue: -2.5deg );
-    $colors: v.$secondaryLight, v.$secondaryColor;
-    background-image: f.gradient("linear", 180deg, $colors);
+    $colors: v.$secondaryLight, color.adjust(v.$secondaryColor, $lightness: 25%, $hue: 0.5deg);
+    background-image: f.gradient("linear", 135deg, $colors);
     
     
     // if supports backdrop filter then else then ignore 
     @supports (backdrop-filter: blur(1rem)){
         @include m.compatible(backdrop-filter, blur(1rem));
-        // background-color: color.adjust(v.$secondaryColor, $alpha: v.$opacityNm);
-        // $colors: color.adjust(v.$secondaryColor, $lightness: 35%, $hue: -7.5deg, $alpha: v.$opacitySm) 5%, color.adjust(v.$secondaryColor, $lightness: 30%, $hue: -5deg, $alpha: v.$opacitySm), color.adjust(v.$secondaryColor, $lightness: 20%, $hue: -2.5deg, $alpha: v.$opacitySm);
-        $colors: color.adjust(v.$secondaryLighter, $alpha: v.$opacitySm), color.adjust(v.$secondaryLight, $alpha: v.$opacitySm), color.adjust(v.$secondaryColor, $alpha: v.$opacitySm);
+        $colors: color.adjust(v.$secondaryLight, $alpha: v.$opacitySm), color.adjust(v.$secondaryColor, $lightness: 25%, $hue: 0.5deg, $alpha: v.$opacitySm);
         background-image: f.gradient("linear", 135deg, $colors);
         // background-image: none; 
     }
@@ -435,8 +432,8 @@ section {
     
     // section overlays
     .overlay {
-        background-color: color.adjust(v.$primaryColor, $alpha: v.$opacityXl, $blackness: 75%);
-        backdrop-filter: blur(0.125rem);
+        background-color: color.adjust(v.$primaryColor, $alpha: v.$opacityLg, $blackness: 75%);
+        backdrop-filter: blur(0.25rem);
     }
 
     // svg shapes in sections
@@ -473,7 +470,7 @@ section {
 #index-hero { // background
     @include m.background(initial, "/static/images/home/jpeg_web/compressed/teach_2.jpg", center, cover);
     @include m.responsive("<", 412px){
-        @include m.background(initial, "/static/images/home/jpeg_mobile/teach_2.jpg", center, cover);
+        background-position: 35%; 
     }
 }
     // arrows and hover animation
@@ -667,7 +664,7 @@ section#index-s-three {
                                         display: none;
                                     }
                                     span {
-                                        padding: 0rem 2.5rem 2.5rem 1rem;
+                                        padding: 0rem 2.5rem;
                                     }
                                 }
                             }

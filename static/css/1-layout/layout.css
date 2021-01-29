@@ -135,8 +135,10 @@ nav#nav-mobile-links {
   bottom: 0;
   left: 0;
   right: 0;
+  visibility: collapse;
 }
 nav#nav-mobile-links .nav-links-bottom, nav#nav-mobile-links::before {
+  visibility: initial;
   transform: translateY(28rem);
 }
 

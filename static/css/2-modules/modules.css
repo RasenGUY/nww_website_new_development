@@ -280,7 +280,7 @@ nav#nav-web::before, nav#nav-mobile::before, nav#nav-mobile-links::before {
   width: 100%;
   height: 100%;
   z-index: -3;
-  background-image: linear-gradient(180deg, #afe2ec, #22b2da);
+  background-image: linear-gradient(135deg, #afe2ec, #8ed8ed);
 }
 @supports (backdrop-filter: blur(1rem)) {
   nav#nav-web::before, nav#nav-mobile::before, nav#nav-mobile-links::before {
@@ -289,7 +289,7 @@ nav#nav-web::before, nav#nav-mobile::before, nav#nav-mobile-links::before {
     -o-backdrop-filter: blur(1rem);
     -moz-backdrop-filter: blur(1rem);
     -webkit-backdrop-filter: blur(1rem);
-    background-image: linear-gradient(135deg, rgba(238, 249, 252, 0.75), rgba(175, 226, 236, 0.75), rgba(34, 178, 218, 0.75));
+    background-image: linear-gradient(135deg, rgba(175, 226, 236, 0.75), rgba(142, 216, 237, 0.75));
   }
 }
 
@@ -421,8 +421,8 @@ nav#nav-mobile-links::before {
 }
 
 section .overlay {
-  background-color: rgba(33, 33, 33, 0.3);
-  backdrop-filter: blur(0.125rem);
+  background-color: rgba(33, 33, 33, 0.45);
+  backdrop-filter: blur(0.25rem);
 }
 section .shapes object.mobile, section .shapes object.medium {
   display: none;
@@ -454,12 +454,7 @@ section .shapes object.mobile, section .shapes object.medium {
 }
 @media only screen and (max-width: 412px) {
   #index-hero {
-    background-attachment: initial;
-    background-image: url("/static/images/home/jpeg_mobile/teach_2.jpg");
-    background-origin: border-box;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-position: 35%;
   }
 }
 
@@ -686,7 +681,7 @@ section#index-s-three div.text-box > div.body .team-members > li.member:nth-chil
   display: none;
 }
 #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li > div .hover-box blockquote span {
-  padding: 0rem 2.5rem 2.5rem 1rem;
+  padding: 0rem 2.5rem;
 }
 #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li > div div.mugshot:hover + .hover-box, #index-s-five .wrapper .text-box.reviews-section .body ul.reviews li > div .hover-box:hover {
   visibility: initial;

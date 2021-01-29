@@ -2,6 +2,8 @@
 html, *, *::before, *::after {
   padding: 0px;
   margin: 0px;
+  box-shadow: unset;
+  outline: unset;
 }
 
 html {
@@ -124,11 +126,13 @@ input, textarea {
   background-color: #eef9fc;
   border: solid 2px #eef9fc;
   color: #212d38;
-  box-shadow: 1px 1px 0.5px #bfbfbf;
+  box-shadow: 3px 3px 5px rgba(191, 191, 191, 0.75);
 }
 input:focus, textarea:focus {
-  box-shadow: unset;
   border: solid 2px #22da4a;
+}
+input:invalid, textarea:invalid {
+  border: solid 2px #da4a22;
 }
 
 ::placeholder {
