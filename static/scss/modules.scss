@@ -854,11 +854,12 @@ nav#nav-mobile-links {
 
 // ----------------------Gallery Page -------------------- //
 // -- section s four --
-#gallery-s-gallery {
+#gallery-hero {
+    height: 50vh;
 
     // set bg image
     & .bg-image {
-        @include m.background(initial, "/static/images/home/jpeg_web/compressed/experience_4.jpg", center, cover);
+        @include m.background(initial, "/static/images/gallery/jpeg_web/compressed/experience_1.jpg", center, cover);
         @include m.responsive("<", 1080px){
             background-position: 70%;
         }

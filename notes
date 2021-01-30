@@ -27,8 +27,8 @@
         - where to deploy to ?
 
 TODO - today
-- make fonts dynamic 
-    - for web and for mobile
+- create a js function that injects images into the image gallery in the gallery page
+- 
 
 
 ------- some font guidelines ---------

@@ -2,13 +2,15 @@
 import * as f from "./functions.js";
 import * as g from "./gmap.js";
 import * as c from "./carousel.js";
-import as * gal from "./gallery.js";
+import * as gal from "./gallery.js";
 
 window.onload = (()=>{
 
-    // intilialize map
-    let map; 
-    g.initMap(map);
+    // intilialize map only if index page
+    if (window.location.pathname === "/"){
+        let map; 
+        g.initMap(map);
+    }
 
     // menu-mobile-animation
     const animateMenu = document.querySelector("#nav-mobile .hamburger");
@@ -51,6 +53,17 @@ window.onload = (()=>{
     carousels.forEach( (carousel) => {
         let carou = new c.Carousel(carousel);
         carou.initCarousel();
-});
+    });
+
+    // initialize gallery (missing some code here)
+    const galWrapper = document.querySelectorAll("#gallery-s-gallery .wrapper");
+    const imgSz = {
+        "square" : "450/450",
+        "rectV" : "450/600",
+        "rectH" : "450/300"
+    }; 
+    let gallery = new gal.Gallery(galWrapper, 50, 3, "https://picsum.photos/", imgSz);
+
+
 
 })()

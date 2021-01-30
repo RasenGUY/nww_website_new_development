@@ -914,6 +914,28 @@ nav#nav-mobile-links::before {
   }
 }
 
+#gallery-hero {
+  height: 50vh;
+}
+#gallery-hero .bg-image {
+  background-attachment: initial;
+  background-image: url("/static/images/gallery/jpeg_web/compressed/experience_1.jpg");
+  background-origin: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media only screen and (max-width: 1080px) {
+  #gallery-hero .bg-image {
+    background-position: 70%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #gallery-hero .bg-image {
+    background-position: 85%;
+  }
+}
+
 footer {
   filter: drop-shadow(0px -3px 5px rgba(34, 218, 74, 0.3));
 }
