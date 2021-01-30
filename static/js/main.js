@@ -58,12 +58,9 @@ window.onload = (()=>{
     // initialize gallery (missing some code here)
     const galWrapper = document.querySelectorAll("#gallery-s-gallery .wrapper");
     const imgSz = {
-        "square" : "450/450",
+        "square" : "450",
         "rectV" : "450/600",
         "rectH" : "450/300"
     }; 
-    let gallery = new gal.Gallery(galWrapper, 50, 3, "https://picsum.photos/", imgSz);
-
-
-
+    let gallery = new gal.Gallery(galWrapper, 90, 3, "https://picsum.photos/", imgSz);
 })()
