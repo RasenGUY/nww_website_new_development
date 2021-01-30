@@ -428,51 +428,75 @@ nav#nav-mobile-links {
     }
 }
 
-section {
-    
-    // section overlays
-    .overlay {
-        background-color: color.adjust(v.$primaryColor, $alpha: v.$opacityLg, $blackness: 75%);
-        backdrop-filter: blur(0.25rem);
-    }
+// background images 
+.bg-image {
+    width: 100%; 
+    height: 100%; 
+    position: absolute;
+    top: 0; 
+    @include m.compatible(filter, blur(0.25rem)); 
+}
 
-    // svg shapes in sections
-    .shapes {
-        object {
-            &.mobile, &.medium {
+// overlays
+.overlay {
+    background-color: color.adjust(v.$primaryColor, $alpha: v.$opacityLg, $blackness: 75%);
+}
+
+// shapes
+.shapes {
+    object {
+        &.mobile, &.medium {
+            display: none;
+        }
+        @include m.responsive("<", 768px){
+            &.large, &.mobile {
                 display: none;
             }
-            @include m.responsive("<", 768px){
-                &.large, &.mobile {
-                    display: none;
-                }
-                &.medium {
-                    display: inherit;
-                }
+            &.medium {
+                display: inherit;
             }
-            @include m.responsive("<", 576px){
-                &.large, &.medium  {
-                    display: none;
-                }
-                &.mobile {
-                    display: inherit;
-                }
+        }
+        @include m.responsive("<", 576px){
+            &.large, &.medium  {
+                display: none;
+            }
+            &.mobile {
+                display: inherit;
             }
         }
     }
 }
 
 
+// If browser supports backdrop filter then use that
+@supports(backdrop-filter: blur(0.25rem)){
 
-// --------------------  index page -------------------------------
+    // background images 
+    .bg-image {
+        @include m.compatible(filter, none);
+    }
 
-// ------- hero section ---------------    
-#index-hero { // background
-    @include m.background(initial, "/static/images/home/jpeg_web/compressed/teach_2.jpg", center, cover);
-    @include m.responsive("<", 412px){
-        background-position: 35%; 
+    // section overlays
+    .overlay {
+        @include m.compatible(backdrop-filter, blur(0.25rem));
     }
 }
+
+
+
+// -------------------- index page -------------------------// 
+
+// -- hero section --     
+#index-hero { // background
+
+    & .bg-image {
+        @include m.background(initial, "/static/images/home/jpeg_web/compressed/teach_2.jpg", center, cover);
+        @include m.responsive("<", 412px){
+            background-position: 35%; 
+        }
+    }
+
+
     // arrows and hover animation
     .arrows {
         transform: translateY(2rem);
@@ -501,9 +525,11 @@ section {
             }
         } 
     }
+}
 
-// ----------- section s one -----------------
+// -- section s one --  
 #index-s-one {
+    
     // all shapes in sections
     & .shapes {    
         // circles 
@@ -530,17 +556,19 @@ section {
     }
 }
 
-
-// ------------ section s two ---------------- 
+// -- section s two --  
 #index-s-two {
-    @include m.background(initial, "/static/images/home/jpeg_web/compressed/travel_5.jpg", center, cover);
-    @include m.responsive("<", 412px){
-        @include m.background(initial, "/static/images/home/jpeg_mobile/travel_2.jpg", center, cover);
+    
+    & .bg-image {
+        @include m.background(initial, "/static/images/home/jpeg_web/compressed/travel_5.jpg", center, cover);
+        @include m.responsive("<", 412px){
+            @include m.background(initial, "/static/images/home/jpeg_mobile/travel_2.jpg", center, cover);
+        }    
     }
 }
 
-// ------------- section s three ------------
-section#index-s-three {
+// -- section s three --
+#index-s-three {
  
     // some textbox
     & div.text-box {
@@ -580,16 +608,22 @@ section#index-s-three {
     }
 }
 
-// ------------ section s four ---------------- 
+// -- section s four --
 #index-s-four {
-    @include m.background(initial, "/static/images/home/jpeg_web/compressed/experience_4.jpg", center, cover);
-    @include m.responsive("<", 412px){
-        @include m.background(initial, "/static/images/home/jpeg_mobile/experience_4.jpg", center, cover);
-    }
 
+    // set bg image
+    & .bg-image {
+        @include m.background(initial, "/static/images/home/jpeg_web/compressed/experience_4.jpg", center, cover);
+        @include m.responsive("<", 1080px){
+            background-position: 70%;
+        }
+        @include m.responsive("<", 768px){
+            background-position: 85%;
+        }   
+    }
 }
 
-// ----------- section s five -----------------
+// -- section s five --
 #index-s-five {
     & .shapes {
         // shapes   
@@ -818,7 +852,24 @@ section#index-s-three {
     }
 }
 
-// ---------- footer -----------
+// ----------------------Gallery Page -------------------- //
+// -- section s four --
+#gallery-s-gallery {
+
+    // set bg image
+    & .bg-image {
+        @include m.background(initial, "/static/images/home/jpeg_web/compressed/experience_4.jpg", center, cover);
+        @include m.responsive("<", 1080px){
+            background-position: 70%;
+        }
+        @include m.responsive("<", 768px){
+            background-position: 85%;
+        }   
+    }
+}
+
+
+// -- footer --
 footer {
     
     @include m.shadow("drop-shadow", none, 0px, -3px, 5px, color.adjust(v.$ctaColor, $alpha: v.$opacityXl));  

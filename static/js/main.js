@@ -2,6 +2,7 @@
 import * as f from "./functions.js";
 import * as g from "./gmap.js";
 import * as c from "./carousel.js";
+import as * gal from "./gallery.js";
 
 window.onload = (()=>{
 

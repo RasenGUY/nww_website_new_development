@@ -127,9 +127,11 @@ input, textarea {
   border: solid 2px #eef9fc;
   color: #212d38;
   box-shadow: 3px 3px 5px rgba(191, 191, 191, 0.75);
+  transition: border ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 input:focus, textarea:focus {
   border: solid 2px #22da4a;
+  box-shadow: unset;
 }
 input:invalid, textarea:invalid {
   border: solid 2px #da4a22;

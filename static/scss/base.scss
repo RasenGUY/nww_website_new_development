@@ -162,8 +162,10 @@ html {
         border: solid 2px v.$textAreaColor; 
         color: color.adjust(v.$textColor, $lightness: 10%);
         @include m.shadow("box-shadow", none, 3px, 3px, 5px, color.adjust(v.$textAreaColor, $blackness: 30%, $alpha: v.$opacitySm));    
+        transition: border ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
         &:focus {
             border: solid 2px v.$ctaColor; 
+            box-shadow: unset;
         }
         &:invalid {
             border: solid 2px v.$primaryColor; 

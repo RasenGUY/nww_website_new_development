@@ -170,7 +170,8 @@ nav#nav-mobile-links {
 main#main {
     $colors: color.adjust(v.$secondaryColor, $blackness: 10%), v.$secondaryColor, color.adjust(v.$secondaryColor, $lightness: 10%), color.adjust(v.$secondaryColor, $lightness: 20%);
     width: 100vw;
-    
+
+    // base layout for all sections
     section, footer {
         position: relative;
         width: 100%;
@@ -209,6 +210,7 @@ main#main {
         }
     }
 
+    // ----------------- index page  ---------------------- // 
     // index hero first section 
     & #index-hero { 
         height: 100vh;
@@ -550,6 +552,12 @@ main#main {
         
         
     }
+
+    // -----------------  Gallery Page  ---------------------- // 
+    & #gallery-s-gallery {
+        
+    }
+    // -----------------  About Page  ------------------------ // 
 
     // footer
     footer {
