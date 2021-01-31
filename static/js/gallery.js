@@ -13,105 +13,61 @@ export function Gallery(gallery, imageN, colN, imgSrc, imgSz) {
     this.colN = colN;
 
 
-    this.generateMainList = (imageN) => { // generates 3 lists of image links for the gallery    
+    this.generateMainList = async () => { // generates 3 lists of image links for the gallery    
+        
         // initialize empty list
-        var mainList = [];
-
+        let mainList = [];
         // generate main list
         let i = 1
-        for (i;i <= imageN; i++){
+        for (i;i <= imageN; i++) {    
             
             // create img src 
             let imgSrc = this.imgSrc + String(this.imgSzs[this.randomInt(0, 2)]); 
-            mainList.push(imgSrc);
-        };
-        this.mainList = mainList; 
-        // console.log(this.mainList);
-    }
-
-
-    this.generateImgUrls = () => {
-
-        // sends requests http resquests to image generator and return a list of imgUrls     
-        let imgUrls = []; // empty list
-        var count = 0; 
-        const createImgUrls = new Promise ((UrlList) => { // create list with links
-            
-            this.mainList.forEach((url)=> {
-                const getLink = new Promise ((resolve)=> {
-                
-                    this.getImgLink(url).then(imgUrl => {
-    
-                        return resolve(imgUrl);
-    
-                    }).catch(fail => {
-                        console.log(fail); 
-                    })
-    
-                }); 
-                
-                getLink.then(newUrl => {
-                    imgUrls.push(newUrl);
-                    count++;
-                    if (count === imageN) {
-                        return UrlList(imgUrls)
-                    }
-                })
-            });
-        });
-
-        createImgUrls.then(linkList => {
-            this.mainList = linkList;
-            this.genImgLinkCols();
-            this.populateGal(this.indexLists); 
-        })
-    }
-
-    this.genImgLinkCols = () => {
-        //  populates columns for images on the gallery page
-
-        // if there is only one column then return mainList
-        if (this.colN != 1) { // if there is more the one column then create list of img sources appropriately
-
-            // generate lists depending on number of columns
-            var indexLists = [];
-            
-            // create empty lists based on the colN
-            let i = 1;
-            for (i; i <= this.colN; i++) {
-                indexLists.push(Array())
+            try {
+                let imgUrl = await this.makeRequest(imgSrc);
+                mainList.push(imgUrl);
+            } catch (e) {
+                console.log(e);
             }
-            
-            // loop through mainlist
-            // consequtively add srcs to index
-            // counter to record what index to push to
-            
-            let count = 0; // for arrays in indexLists
-            // create list of image sources
-            this.mainList.forEach((src) => {
+        };
+        return mainList
+    }
 
-                let img = this.generateImgEL();
-                img.firstChild.src = src;
-                indexLists[count].push(img)
-                if (count === indexLists.length - 1){
-                    count = 0; 
-                } else {
-                    count++; 
-                }
-            });
-            this.indexLists = indexLists;
-            // console.log(indexLists);
+    this.genImgLinkCols = (mainList) => {
+
+        //  populates columns for images on the gallery page
+        // generate lists depending on number of columns
+        var indexLists = [];
+        // create empty lists based on the colN
+        let i = 1;
+        for (i; i <= this.colN; i++) {
+            indexLists.push(Array())
         }
         
+        // create list of image sources
+        let count = 0; // for arrays in indexLists 
+        mainList.forEach((src)=>{
+            let img = this.generateImgEL();
+            img.firstChild.src = src;
+            indexLists[count].push(img)
+            
+            if (count === indexLists.length - 1){
+                count = 0; 
+            } else {
+                count++; 
+            }
+        });
+
+        return indexLists
+
     }; 
 
     this.randomInt = (min, max) => {
         let num = Math.random() * (max - min) + min;
         return Math.floor(num);
     }
-
-    this.getImgLink = async (url) => { // use ajax to make http requests to fetch the url of image i want to display -> just to see if the function above works haha <-- procrastination 
-        const promise = new Promise((resolve, reject) => {
+    this.makeRequest = (url) => {
+        return new Promise((resolve, reject)=>{
             // create xhr request and return the url 
             const xhr = new XMLHttpRequest();
             xhr.open("GET", url, true);
@@ -121,28 +77,36 @@ export function Gallery(gallery, imageN, colN, imgSrc, imgSz) {
                 resolve(xhr.responseURL);
             };
             xhr.onerror = () => {
-                reject("Failed")
-                this.getImgLink(url);
+                reject("Connection Error"); 
             }
             xhr.send();
-        }) 
-        return promise;
+        });
     }
 
-    this.populateGal = (imgNodesList) => {
+    this.populateGal = async () => {
         // populates the gallery columns on the gallery page
-
-        // create columns based on colN
-        imgNodesList.forEach((imgEls, index) => {
+        
+        try {
+            // create mainList 
+            const mainList = await this.generateMainList();
+            const imgElList = this.genImgLinkCols(mainList);  
+            console.log(imgElList); 
             
-            // generate column
-            let column = this.generateCol();
-            imgEls.forEach((imgEl, index)=>{
-                column.append(imgEl);
+            // generate columns and inject into DOM
+            imgElList.forEach((imgEls) => {
+                
+                // generate column
+                let column = this.generateCol();
+                imgEls.forEach((imgEl, index)=>{
+                    column.append(imgEl);
+                })
+                this.gallery.append(column);
             })
-            this.gallery.append(column)
-        })
-           
+
+        } catch (e) {
+            console.log(e); 
+        }
+
     }
 
     this.generateCol = () => {
@@ -165,10 +129,7 @@ export function Gallery(gallery, imageN, colN, imgSrc, imgSz) {
 
     }
 
-    // this.generateLists(imageN, colN);
-    this.generateMainList(imageN); 
-    this.generateImgUrls();
-
+    this.populateGal();
 };
 
 

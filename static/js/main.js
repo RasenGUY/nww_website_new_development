@@ -63,6 +63,5 @@ window.onload = (()=>{
         "rectH" : "450/300"
     }; 
     let gallery = new gal.Gallery(galWrapper, 60, 3, "https://picsum.photos/", imgSz);
-    var wrapper = gallery.gallery; 
-    // console.log(gallery.indexlists)
+    
 })()
