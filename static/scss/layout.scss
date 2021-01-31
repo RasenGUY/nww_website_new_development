@@ -555,7 +555,28 @@ main#main {
 
     // -----------------  Gallery Page  ---------------------- // 
     & #gallery-s-gallery {
-
+        & .wrapper {
+            position: relative;
+            padding: 5rem 0;
+            & .f-item {
+                flex: 1 30%;
+                padding: 0rem 1rem;
+                @include m.responsive("<", 768px){
+                    flex: 1 50%; 
+                }
+                @include m.responsive("<", 576px){
+                    flex: 1 100%; 
+                }
+                & a {
+                    display: block;
+                    width: 100%;
+                    padding: 1rem 0rem; 
+                    img {
+                        width: 100%
+                    }
+                } 
+            }
+        }
     }
     // -----------------  About Page  ------------------------ // 
 

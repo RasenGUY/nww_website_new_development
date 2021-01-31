@@ -855,7 +855,7 @@ nav#nav-mobile-links {
 // ----------------------Gallery Page -------------------- //
 // -- section s four --
 #gallery-hero {
-    height: 50vh;
+    height: 75vh;
 
     // set bg image
     & .bg-image {
@@ -866,6 +866,34 @@ nav#nav-mobile-links {
         @include m.responsive("<", 768px){
             background-position: 85%;
         }   
+    }
+}
+#gallery-s-gallery {
+    // margin-top: -20rem;
+    $colors: v.$secondaryLight, color.adjust(v.$secondaryColor, $lightness: 25%, $hue: 0.5deg);
+    background-image: f.gradient("linear", 135deg, $colors);
+    // & .shapes {
+    //     position: relative; 
+    //     top: -5rem;
+    //     background-color:  color.adjust(v.$secondaryColor, $lightness: 25%, $hue: 0.5deg);
+    //     border-radius: 15% 15% 0 0;
+    //     & .box {
+    //         height: 5rem;
+    //         width: 100%;
+    //     }
+    // }
+    @include m.shadow("drop-shadow", none, 0px, -3px, 5px, color.adjust(v.$secondaryColor, $alpha: v.$opacityXl)); 
+    margin-top: -10rem; 
+    & .wrapper {
+        & a {
+            & img {
+                border: solid v.$primaryColor 0.5rem;
+                @include m.responsive("<", 576px){
+                    border: solid v.$primaryColor f.fontDynSize(412, 1920, 3.75, 5);
+                }
+
+            }
+        }
     }
 }
 

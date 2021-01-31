@@ -915,7 +915,7 @@ nav#nav-mobile-links::before {
 }
 
 #gallery-hero {
-  height: 50vh;
+  height: 75vh;
 }
 #gallery-hero .bg-image {
   background-attachment: initial;
@@ -933,6 +933,20 @@ nav#nav-mobile-links::before {
 @media only screen and (max-width: 768px) {
   #gallery-hero .bg-image {
     background-position: 85%;
+  }
+}
+
+#gallery-s-gallery {
+  background-image: linear-gradient(135deg, #afe2ec, #8ed8ed);
+  filter: drop-shadow(0px -3px 5px rgba(34, 178, 218, 0.3));
+  margin-top: -10rem;
+}
+#gallery-s-gallery .wrapper a img {
+  border: solid #da4a22 0.5rem;
+}
+@media only screen and (max-width: 576px) {
+  #gallery-s-gallery .wrapper a img {
+    border: solid #da4a22 clamp(0.375rem, 0.3408488064rem + 0.0828912467vw, 0.5rem);
   }
 }
 

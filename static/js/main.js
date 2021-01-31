@@ -56,11 +56,13 @@ window.onload = (()=>{
     });
 
     // initialize gallery (missing some code here)
-    const galWrapper = document.querySelectorAll("#gallery-s-gallery .wrapper");
+    const galWrapper = document.querySelector("#gallery-s-gallery .wrapper");
     const imgSz = {
         "square" : "450",
         "rectV" : "450/600",
         "rectH" : "450/300"
     }; 
-    let gallery = new gal.Gallery(galWrapper, 90, 3, "https://picsum.photos/", imgSz);
+    let gallery = new gal.Gallery(galWrapper, 60, 3, "https://picsum.photos/", imgSz);
+    var wrapper = gallery.gallery; 
+    // console.log(gallery.indexlists)
 })()

@@ -557,6 +557,32 @@ main#main #index-s-five .wrapper .text-box.contact-section .body > form.f-item >
     flex: 100%;
   }
 }
+main#main #gallery-s-gallery .wrapper {
+  position: relative;
+  padding: 5rem 0;
+}
+main#main #gallery-s-gallery .wrapper .f-item {
+  flex: 1 30%;
+  padding: 0rem 1rem;
+}
+@media only screen and (max-width: 768px) {
+  main#main #gallery-s-gallery .wrapper .f-item {
+    flex: 1 50%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  main#main #gallery-s-gallery .wrapper .f-item {
+    flex: 1 100%;
+  }
+}
+main#main #gallery-s-gallery .wrapper .f-item a {
+  display: block;
+  width: 100%;
+  padding: 1rem 0rem;
+}
+main#main #gallery-s-gallery .wrapper .f-item a img {
+  width: 100%;
+}
 main#main footer {
   margin-top: -8rem;
 }
