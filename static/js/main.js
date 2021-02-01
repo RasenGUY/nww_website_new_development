@@ -55,13 +55,39 @@ window.onload = (()=>{
         carou.initCarousel();
     });
 
-    // initialize gallery (missing some code here)
+    
+    // initialize gallery
     const galWrapper = document.querySelector("#gallery-s-gallery .wrapper");
     const imgSz = {
         "square" : "450",
         "rectV" : "450/600",
         "rectH" : "450/300"
     }; 
-    let gallery = new gal.Gallery(galWrapper, 60, 3, "https://picsum.photos/", imgSz);
     
+    const gallery = new gal.Gallery(galWrapper, 60, "https://picsum.photos/", imgSz);
+    gallery.initialize(false);
+    
+    // create queries
+    const queries = [f.medQueries(">", "768px"), f.medQueries("<", "768px"), f.medQueries("<", "576px")];
+
+    // callback and reverse
+    const callBack = () => {
+        gallery.initialize(true);
+        f.removeChilds(gallery.gallery);
+    }
+    const reverse = () => {
+        f.removeChilds(gallery.gallery);
+        gallery.initialize(true);
+    }
+    // initialize queries 
+    queries.forEach(q =>{ 
+        
+        let handler = () => {
+            f.callQueries(q, callBack, reverse);
+        };
+
+        q.addListener(handler);
+    })
+
+
 })()

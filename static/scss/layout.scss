@@ -560,19 +560,19 @@ main#main {
             padding: 5rem 0;
             & .f-item {
                 flex: 1 30%;
-                padding: 0rem 1rem;
                 @include m.responsive("<", 768px){
-                    flex: 1 50%; 
+                    flex: 1 50%;
                 }
                 @include m.responsive("<", 576px){
-                    flex: 1 100%; 
+                    flex: 1 100%;
                 }
                 & a {
                     display: block;
-                    width: 100%;
-                    padding: 1rem 0rem;
+                    padding: 1rem;
                     img {
-                        width: 100%
+                        display: block;
+                        width: 100%;
+                        height: auto; 
                     }
                 } 
             }

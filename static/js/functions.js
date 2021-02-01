@@ -40,32 +40,36 @@ export function togglePseudo(htmlEl, pseudo, cssRule){ //function for animating 
 };
 
 // function for doing media queries on site 
-export function medQueries(width, minMax){
+export function medQueries(minMax, width){
     
     let query = null; 
+
     // max or min
-    if (minMax == ">"){ // if min then create min-width query
+    if (minMax === ">"){ // if min then create min-width query
         query = `(min-width: ${width})`;
     }
-    else if (minMax == "<"){ // if min then create max-width query
+    else if (minMax === "<"){ // if min then create max-width query
         query = `(max-width: ${width})`;
     }
-
     // initialize and listen to changes on page
     return window.matchMedia(query);
 };
 
 // queries for index page
-export function queriesIndex(window){
-    
-    // select elements
-    // section one
-    const sOneTopRCir = document.querySelector("#index-s-one .shapes .circles .wrapper > div:nth-child(1)");
+export function callQueries(window, callBack, reverse){
 
+    // will execute callBack and reverseFunction on matched or unmatched window
     if (window.matches){ // section one 
-        
+        callBack(); 
+        console.log("hit callback");
     } else {
-
+        reverse(); 
+        console.log("hit reverse");
     }
-    return;
+};
+
+export function removeChilds(parent){
+    while (parent.lastChild) {
+        parent.removeChild(parent.lastChild);
+    }
 };
