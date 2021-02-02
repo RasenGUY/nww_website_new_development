@@ -61,14 +61,14 @@ export function callQueries(window, callBack, reverse){
     // will execute callBack and reverseFunction on matched or unmatched window
     if (window.matches){ // section one 
         callBack(); 
-        console.log("hit callback");
-    } else {
+    } 
+    else {
         reverse(); 
-        console.log("hit reverse");
     }
 };
 
 export function removeChilds(parent){
+    console.log("removing children");
     while (parent.lastChild) {
         parent.removeChild(parent.lastChild);
     }

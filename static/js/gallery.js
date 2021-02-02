@@ -34,22 +34,20 @@ export function Gallery(gallery, imageN, imgSrc, imgSz) {
 
     this.generateImgElsList = () => { //  generate page {a > img} els depending on number of columns
         
-        var colN;
-        console.log(window.innerWidth);
-        console.log(window.innerWidth > 768);
-        if (window.innerWidth > 768){
-            colN = 3; 
-        } 
-        if (window.innerWidth < 768 && window.innerWidth > 576) {
-            colN = 2;
-        }
-        if (window.innerWidth < 576) {
+    
+        var colN = 0;
+        if (window.innerWidth <= 575) {
             colN = 1;
         }
-        console.log(colN)
+        else if (window.innerWidth <= 767) {
+            colN = 2;
+        }
+        else if (window.innerWidth >= 768) {
+            colN = 3; 
+        } 
         
         var indexLists = [];
-        // create empty lists based on the colN  <-- code here needs to execute faster --->
+        // create empty lists based on the colN  <-- code h--->
         let i = 0;
         for (i; i < colN; i++) {
             indexLists.push(Array())
@@ -72,7 +70,6 @@ export function Gallery(gallery, imageN, imgSrc, imgSz) {
             }
         });
 
-        console.log(indexLists)
         return indexLists;
 
     }; 
@@ -147,7 +144,6 @@ export function Gallery(gallery, imageN, imgSrc, imgSz) {
     };
 
     this.generateImgCols = () => { // generate column and inject it 
-        
         // generate columns and inject into DOM
         this.injectList.forEach((imgEls) => {
 
