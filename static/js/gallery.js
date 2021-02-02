@@ -4,12 +4,13 @@ import { medQueries } from "./functions.js";
 // import libary for modal  
 
 // gallery class
-export function Gallery(gallery, imageN, imgSrc, imgSz) {
+export function Gallery(gallery, imageN, imgSrc, imgSz, lightBox) {
     // function for generating a random gallery layout based on a random amount of images
     
     this.gallery = gallery; // dom selection of the main gallery element
     this.imgSrc = imgSrc; // image source 
     this.imgSzs = [imgSz.square, imgSz.rectV, imgSz.rectH]; // imgsize
+    this.lightBox = lightBox;
     this.colN;
 
     this.generateMainList = async () => { // generates 3 lists of image links for the gallery    
@@ -155,7 +156,7 @@ export function Gallery(gallery, imageN, imgSrc, imgSz) {
             this.gallery.append(column);
         })  
     };
-
+    this.observer = 
     this.initialize = async (loaded) => {
         
         // create columns based on window width
@@ -163,7 +164,7 @@ export function Gallery(gallery, imageN, imgSrc, imgSz) {
             
             // retrieveLinks and add in el boxes
             await this.createEls(loaded);
-            this.generateImgCols(); //creates columns based on windowwidth
+            this.generateImgCols(); //creates columns based on window width
 
             // inject
             // check screen size, generate columns based on screen size

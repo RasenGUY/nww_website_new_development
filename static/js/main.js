@@ -60,18 +60,17 @@ window.onload = (()=>{
     const galWrapper = document.querySelector("#gallery-s-gallery .wrapper");
     const imgSz = {
         "square" : "450",
-        "rectV" : "450",
-        "rectH" : "450"
+        "rectV" : "450/600",
+        "rectH" : "450/300"
     }; 
     
+    // initiate gallery 
     const gallery = new gal.Gallery(galWrapper, 60, "https://picsum.photos/", imgSz);
     gallery.initialize(false);
     
     // create queries
     const queries = [f.medQueries(">", "768px"), f.medQueries("<", "767px"), f.medQueries("<", "575px")];
 
-    var call = 0; 
-    var re = 0;
     // callback and reverse
     const callBack = () => {
         f.removeChilds(gallery.gallery);
