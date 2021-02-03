@@ -1,6 +1,5 @@
 // all js functions used in the newworld site
 
-// general 
 // function for toggling pseudo elements on and off
 export function togglePseudo(htmlEl, pseudo, cssRule){ //function for animating pseudo-elements 
      
@@ -89,5 +88,5 @@ export function observeEl(el, config, callBack) {
         }
     }
     
-    return {config: config, el: el, inst: new MutationObserver(observerCallB)}; // create new observer obj instance 
+    return {config: config, el: el, inst: new MutationObserver(observerCallB), lb: new SimpleLightbox(el)}; // create new observer obj instance 
 }

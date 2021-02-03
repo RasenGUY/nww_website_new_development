@@ -60,6 +60,7 @@ export function Gallery(galWrapper, imageN, imgSrc, imgSz) {
         
             // create img tag
             let img = this.createImgEl();
+            img.href = src; 
             img.firstChild.src = src;
             
             indexLists[count].push(img)
@@ -125,7 +126,7 @@ export function Gallery(galWrapper, imageN, imgSrc, imgSz) {
     this.createCol = () => { //creates one img column 
         let col; 
         col = document.createElement("div");
-        col.className = "f-item image-column"
+        col.className = "f-item image-column";
         return col; 
     };
 
@@ -135,7 +136,7 @@ export function Gallery(galWrapper, imageN, imgSrc, imgSz) {
         let imgTag, imgEl;
 
         imgEl = document.createElement("a");
-        imgEl.className = "l-flex content-justify-between";
+        imgEl.className = "gal-item l-flex content-justify-between";
         imgTag = document.createElement("img");
         imgEl.append(imgTag); 
         
@@ -143,7 +144,7 @@ export function Gallery(galWrapper, imageN, imgSrc, imgSz) {
 
     };
 
-    this.generateImgCols = () => { // generate column and inject it 
+    this.generateImgCols = async () => { // generate column and inject it 
         // generate columns and inject into DOM
         this.injectList.forEach((imgEls) => {
 
@@ -153,21 +154,18 @@ export function Gallery(galWrapper, imageN, imgSrc, imgSz) {
                 column.append(imgEl);
             })
             this.wrapper.append(column);
-        })  
+        }) 
     };
      
     this.initialize = async (loaded, obsObj) => {
         
         // create columns based on window width
         try {
-            
             // retrieveLinks and add in el boxes
             await this.createEls(loaded);
-            this.generateImgCols(); //creates columns based on window width
-            
-            console.log("initialized observer instance");
+            await this.generateImgCols(); //creates columns based on window width
             obsObj.inst.observe(obsObj.el, obsObj.config); // observes changes in el
-                
+
         } catch (e) {
             console.log(e)
         }

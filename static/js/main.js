@@ -79,9 +79,11 @@ window.onload = (()=>{
     const observerCallB = () => { // callback for changes in wrapper
             
             console.log('observed a change');
-            // run lightbox function 
             
-            // do something 
+            // run lightbox function 
+            observer.lb = new SimpleLightbox("a.gal-item");
+            console.log("initialized lightbox")
+            // run lightbox function 
             console.log('observer instance disconnected');
 
     };
@@ -89,9 +91,20 @@ window.onload = (()=>{
     // initiate gallery 
     const gallery = new gal.Gallery(galWrapper, 60, "https://picsum.photos/", imgSz);
     const observer = f.observeEl(gallery.wrapper, config, observerCallB); // intialize observer
-    
-    gallery.initialize(false, observer);
+    (async ()=>{
 
+        try {
+            
+            await gallery.initialize(false, observer);
+            observer.lb = new SimpleLightbox("a.gal-item");
+            console.log("initialized lightbox")
+
+        } catch (e){
+            console.log(e);
+        }
+
+    })()
+    
     // initialize queries 
     queries.forEach(q =>{ 
         
