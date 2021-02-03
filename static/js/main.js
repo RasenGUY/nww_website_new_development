@@ -56,31 +56,41 @@ window.onload = (()=>{
     });
 
     
-    // initialize gallery
+    // settings for gallery 
     const galWrapper = document.querySelector("#gallery-s-gallery .wrapper");
     const imgSz = {
         "square" : "450",
         "rectV" : "450/600",
         "rectH" : "450/300"
     }; 
+    const queries = [f.medQueries(">", "768px"), f.medQueries("<", "767px"), f.medQueries("<", "575px")]; // create queries
+
+    const callBack = () => { // query callback 
+        f.removeChilds(gallery.wrapper);
+        gallery.initialize(true, observer);
+    }
+    const reverse = () => { // query reverse 
+        f.removeChilds(gallery.wrapper);
+        gallery.initialize(true, observer);
+    }
+
+    // settings for mutation observer
+    const config = {attributes: false, childList: true, subtree: false };
+    const observerCallB = () => { // callback for changes in wrapper
+            
+            console.log('observed a change');
+            // run lightbox function 
+            
+            // do something 
+            console.log('observer instance disconnected');
+
+    };
     
     // initiate gallery 
     const gallery = new gal.Gallery(galWrapper, 60, "https://picsum.photos/", imgSz);
-    gallery.initialize(false);
+    const observer = f.observeEl(gallery.wrapper, config, observerCallB); // intialize observer
     
-    // create queries
-    const queries = [f.medQueries(">", "768px"), f.medQueries("<", "767px"), f.medQueries("<", "575px")];
-
-    // callback and reverse
-    const callBack = () => {
-        f.removeChilds(gallery.gallery);
-        gallery.initialize(true);
-    }
-    const reverse = () => {
-        f.removeChilds(gallery.gallery);
-        gallery.initialize(true);
-
-    }
+    gallery.initialize(false, observer);
 
     // initialize queries 
     queries.forEach(q =>{ 

@@ -708,6 +708,7 @@ nav#nav-mobile-links {
 
 // -- section s five --
 #index-s-five {
+
     & .shapes {
         // shapes   
         & object {
@@ -936,6 +937,7 @@ nav#nav-mobile-links {
 }
 
 // ----------------------Gallery Page -------------------- //
+
 // -- section s four --
 #gallery-hero {
     height: 75vh;
@@ -951,6 +953,7 @@ nav#nav-mobile-links {
         }   
     }
 }
+
 #gallery-s-gallery {
     // margin-top: -20rem;
     $colors: v.$secondaryLight, color.adjust(v.$secondaryColor, $lightness: 25%, $hue: 0.5deg);

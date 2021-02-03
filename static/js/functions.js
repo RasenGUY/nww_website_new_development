@@ -73,3 +73,21 @@ export function removeChilds(parent){
         parent.removeChild(parent.lastChild);
     }
 };
+
+// mutationObserver -> creates instance of element observer and executes given callBack function -> returns the created instance
+export function observeEl(el, config, callBack) {
+    
+    const observerCallB = (mutationList, observer) => { // check for changes in DOM el
+        
+        // loop trough mutationlist and call the callBackfunction  
+        for (const mutation of mutationList){
+            
+            // call callback if child has been added or removed
+            if (mutation.type === 'childList') {
+                callBack();
+            }
+        }
+    }
+    
+    return {config: config, el: el, inst: new MutationObserver(observerCallB)}; // create new observer obj instance 
+}

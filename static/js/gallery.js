@@ -4,13 +4,12 @@ import { medQueries } from "./functions.js";
 // import libary for modal  
 
 // gallery class
-export function Gallery(gallery, imageN, imgSrc, imgSz, lightBox) {
+export function Gallery(galWrapper, imageN, imgSrc, imgSz) {
     // function for generating a random gallery layout based on a random amount of images
     
-    this.gallery = gallery; // dom selection of the main gallery element
+    this.wrapper = galWrapper; // dom selection of the main gallery element
     this.imgSrc = imgSrc; // image source 
     this.imgSzs = [imgSz.square, imgSz.rectV, imgSz.rectH]; // imgsize
-    this.lightBox = lightBox;
     this.colN;
 
     this.generateMainList = async () => { // generates 3 lists of image links for the gallery    
@@ -153,11 +152,11 @@ export function Gallery(gallery, imageN, imgSrc, imgSz, lightBox) {
             imgEls.forEach((imgEl)=>{
                 column.append(imgEl);
             })
-            this.gallery.append(column);
+            this.wrapper.append(column);
         })  
     };
-    this.observer = 
-    this.initialize = async (loaded) => {
+     
+    this.initialize = async (loaded, obsObj) => {
         
         // create columns based on window width
         try {
@@ -165,10 +164,10 @@ export function Gallery(gallery, imageN, imgSrc, imgSz, lightBox) {
             // retrieveLinks and add in el boxes
             await this.createEls(loaded);
             this.generateImgCols(); //creates columns based on window width
-
-            // inject
-            // check screen size, generate columns based on screen size
-        
+            
+            console.log("initialized observer instance");
+            obsObj.inst.observe(obsObj.el, obsObj.config); // observes changes in el
+                
         } catch (e) {
             console.log(e)
         }
