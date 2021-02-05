@@ -81,7 +81,8 @@ export function Gallery(galWrapper, imageN, imgSrc, imgSz) {
     };
 
     this.makeRequest = (url) => { // makes ajax request
-        return new Promise((resolve, reject)=>{
+        return new Promise((resolve, reject)=> {
+
             // create xhr request and return the url 
             const xhr = new XMLHttpRequest();
             xhr.open("GET", url, true);
@@ -100,8 +101,8 @@ export function Gallery(galWrapper, imageN, imgSrc, imgSz) {
     this.createEls = async (loaded) => { // sends ajax requests for images splits them into {a > img} els
 
         try {
-            let loading = true;
             
+            var loading = true;
             while (loading){
                 
                 if (!loaded){
@@ -110,11 +111,9 @@ export function Gallery(galWrapper, imageN, imgSrc, imgSz) {
                 
                 // will split mainlist based on columns
                 this.injectList = this.generateImgElsList();
-
-                
                 // inject loading code
                 // loaderFunc();
-
+                
                 loading = false;   
             }
             

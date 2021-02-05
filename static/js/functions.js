@@ -88,5 +88,56 @@ export function observeEl(el, config, callBack) {
         }
     }
     
-    return {config: config, el: el, inst: new MutationObserver(observerCallB), lb: new SimpleLightbox(el)}; // create new observer obj instance 
+    return {config: config, el: el, inst: new MutationObserver(observerCallB), lb: null}; // create new observer obj instance 
+}
+
+// loader function 
+export function loaderFunc(loader){
+    
+    // create the loader wrapper and contents if it is the first time loading
+    var loaderWrapper = document.createElement("div");
+    var circlesWrapper = document.createElement("div");
+    
+    // add loader settings to inject targe
+    loader.injectTarget.className = "loader-settings";
+
+    // create loader if it not already exists 
+    if (loader.exists === false) {
+
+        // create 4 loader circles and add them to the circles wrapper  
+        let count = 1; 
+        for (let i = 0; i <= 3; i++){
+            
+            // add to the circles wrapper 
+            circlesWrapper.append(document.createElement("span")); 
+            count++;
+
+            // add once all balls are created
+            if (count === 4){
+                
+                // create classes and add to loader wrapper 
+                loaderWrapper.className = "loader-wrapper";
+                loaderWrapper.id = "Loader";
+                circlesWrapper.className = "loader";
+                loaderWrapper.append(circlesWrapper);
+                
+                // inject loader into target element
+                loader.loaderWrapper.append(loaderWrapper); 
+                loader.injectTarget.append(loaderWrapper);
+            };  
+        }; 
+
+    } else { // just inject into target if the wrapper already exists
+        
+        // remove the existing loader and loaderSettings from the dom, and reinject into injTarget 
+        const oldTarget = document.querySelector(loader.sel);
+        oldTarget.parentElement.classList.toggle("loader-settings"); 
+        oldTarget.remove()
+
+        // then inject new loader
+        loader.injectTarget.append(loader.loaderWrapper);
+        
+    }
+
+    return loader; 
 }
