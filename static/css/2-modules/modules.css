@@ -127,6 +127,7 @@
 .loader-wrapper {
   height: 100vh;
   width: 100vw;
+  opacity: 1;
   position: absolute;
   top: 0;
   left: 0;
@@ -135,6 +136,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 1.5s ease-in-out;
 }
 .loader-wrapper .loader {
   text-align: center;
@@ -166,6 +168,10 @@
 }
 .loader-wrapper .loader span:last-child {
   animation: loader-jump 0.75s ease-in-out infinite;
+}
+.loader-wrapper.deactivate {
+  opacity: 0;
+  visibility: collapse;
 }
 
 @keyframes loader-move-right {

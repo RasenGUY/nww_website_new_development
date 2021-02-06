@@ -29,7 +29,7 @@ export function togglePseudo(htmlEl, pseudo, cssRule){ //function for animating 
     else {
 
         // add child
-        var el = document.createElement("style");
+        let el = document.createElement("style");
         el.innerHTML = pseudoEl;
         console.log(el);
         document.querySelector("head").appendChild(el);
@@ -64,6 +64,8 @@ export function callQueries(window, callBack, reverse){
     else {
         reverse(); 
     }
+
+    return 0;
 };
 
 export function removeChilds(parent){
@@ -92,52 +94,27 @@ export function observeEl(el, config, callBack) {
 }
 
 // loader function 
-export function loaderFunc(loader){
+export function loaderFunc(ldrObj){
+    // function that starts loader or removes loader 
     
-    // create the loader wrapper and contents if it is the first time loading
-    var loaderWrapper = document.createElement("div");
-    var circlesWrapper = document.createElement("div");
+    // select loader
+    const loader = document.querySelector(ldrObj.sel);
+
+    // deactivate loader if settings is deactivate
+    if (ldrObj.deactivate == "deactivate"){
+        
+        // hide loader and remove settings to parent element
+        loader.classList.toggle(ldrObj.deactivate);
+        loader.parentElement.classList.remove(ldrObj.parentSettings);
     
-    // add loader settings to inject targe
-    loader.injectTarget.className = "loader-settings";
-
-    // create loader if it not already exists 
-    if (loader.exists === false) {
-
-        // create 4 loader circles and add them to the circles wrapper  
-        let count = 1; 
-        for (let i = 0; i <= 3; i++){
-            
-            // add to the circles wrapper 
-            circlesWrapper.append(document.createElement("span")); 
-            count++;
-
-            // add once all balls are created
-            if (count === 4){
-                
-                // create classes and add to loader wrapper 
-                loaderWrapper.className = "loader-wrapper";
-                loaderWrapper.id = "Loader";
-                circlesWrapper.className = "loader";
-                loaderWrapper.append(circlesWrapper);
-                
-                // inject loader into target element
-                loader.loaderWrapper.append(loaderWrapper); 
-                loader.injectTarget.append(loaderWrapper);
-            };  
-        }; 
-
-    } else { // just inject into target if the wrapper already exists
-        
-        // remove the existing loader and loaderSettings from the dom, and reinject into injTarget 
-        const oldTarget = document.querySelector(loader.sel);
-        oldTarget.parentElement.classList.toggle("loader-settings"); 
-        oldTarget.remove()
-
-        // then inject new loader
-        loader.injectTarget.append(loader.loaderWrapper);
-        
+    // activate if settings are not deactivate
+    } else {
+        // select and add settings to inject target 
+        const injTarget = document.querySelector(ldrObj.injectTarget)
+        injTarget.classList.append(ldrObj.parentSettings);
+        loader.classList.toggle(ldrObj.deactivate);
+        injTarget.append(loader);
     }
-
-    return loader; 
+    
+    return 0;
 }

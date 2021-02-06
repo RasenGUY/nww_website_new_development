@@ -1,6 +1,6 @@
 // ----------- Gallery -----------
 // liebraries
-import { medQueries } from "./functions.js";
+import { loaderFunc } from "./functions.js";
 // import libary for modal  
 
 // gallery class
@@ -111,8 +111,15 @@ export function Gallery(galWrapper, imageN, imgSrc, imgSz) {
                 
                 // will split mainlist based on columns
                 this.injectList = this.generateImgElsList();
-                // inject loading code
-                // loaderFunc();
+                if (!loaded){
+                    // inject loading code
+                    loaderFunc({
+                        injectTarget: "#main",
+                        sel: "#loader", 
+                        parentSettings: "loader-settings",
+                        deactivate: "deactivate"
+                    });
+                }
                 
                 loading = false;   
             }
