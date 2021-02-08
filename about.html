@@ -3,11 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <link rel="stylesheet" href="/static/css/main.css"> <!-- main css -->
+    <title>Home</title>
+
+    <!-- libraries -->
+    <script src="https://kit.fontawesome.com/77ede35369.js" crossorigin="anonymous"></script> <!-- font awesome icons  -->
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUVnVeHuvq12QTIG6cjXMG3qZ-mGA9DQU&callback=initMap"></script><!-- google map -->
+
+    
+    <!-- <link rel="stylesheet" href="/static/css/main.css"> main css -->
+    <link rel="stylesheet" href="/static/css/0-base/base.css"> <!-- base css -->
+    <link rel="stylesheet" href="/static/css/1-layout/layout.css"> <!-- layout css -->
+    <link rel="stylesheet" href="/static/css/2-modules/modules.css"> <!-- modules css -->
+
 </head>
-<body>
-    <h1>Hello world</h1>
-    <h2 class="hidden">hidden</h2>
+<body class="loader-settings">
+    <!-- loader -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+    </div>
+
+    <!-- navigation -->
+    <nav id="nav-web" class="blur">
+        <div class="wrapper l-flex items-align-center">
+            <div class="f-item logo">
+                <!-- logo-side -->
+                <!-- logo -->
+                <a href="/">
+                    <img src="/static/images/logo/logo.png" alt="new world logo">
+                </a>
+            </div> <!-- end logo -->
+            
+            <!--links  -->
+            <ul class="nav-links f-item l-flex content-justify-between items-align-center">  
+                <li>
+                    <!-- https://goo.gl/forms/42PxcOgwkW21OsGr2 -->
+                    <a href="#" class="btn">Join us!</a> <!-- apply button--> 
+                </li>
+                <li class="active">
+                    <a href="#section-1" class="capitalize">teach</a>
+                </li>
+                <li>
+                    <a href="#section-2" class="capitalize">travel</a>
+                </li>
+                <li>
+                    <a href="#section-3" class="capitalize">experience</a>
+                </li>
+                <li>
+                    <a href="/contact.html" class="capitalize">contact</a>
+                </li>
+                <li>
+                    <a href="/gallery.html" class="capitalize">gallery</a>
+                </li>
+                <li>
+                    <a href="/about.html" class="capitalize">about</a>
+                </li>
+            </ul>
+
+            <!-- mobile links -->
+            <div class="nav-links-mob-top f-item l-flex content-justify-right items-align-center">
+                <a href="#" class="btn">Join us!</a> 
+            </div>
+        </div>
+
+    </nav>
+    
+    <nav id="nav-mobile">
+
+        <!-- wrapper-bottom-menu -->
+        <div class="wrapper l-flex items-align-center">
+    
+            <!-- social icons -->
+            <ul class="social f-item l-flex items-align-center content-justify-between"> 
+                <li>
+                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                    
+                    <a href=""><i class="fab fa-youtube"></i></a>
+                    
+                </li>
+                <li>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                </li>
+            </ul>
+            
+            
+            <!--hamburger -->
+            <div class="hamburger f-item l-flex items-align-center content-justify-right" onclick="animateMenu()">
+                <div class="burger l-flex col content-justify-center items-align-center">
+                    <div class="burger-top">
+                    </div>
+                    <div class="burger-middle">
+                    </div>
+                    <div class="burger-bottom">
+                    </div>
+                </div>
+            </div>
+        </div>        
+        
+    </nav>
+
+    <nav id="nav-mobile-links">
+        
+        <!-- links bottom -->
+        <ul class="nav-links-bottom">
+            <li class="active">
+                <a href="#section-1" class="capitalize">teach</a>
+            </li>
+            <li>
+                <a href="#section-2" class="capitalize">travel</a>
+            </li>
+            <li>
+                <a href="#section-3" class="capitalize">experience</a>
+            </li>
+            <li>
+                <a href="/contact.html" class="capitalize">contact</a>
+            </li>
+            <li>
+                <a href="/gallery.html" class="capitalize">gallery</a>
+            </li>
+            <li>
+                <a href="/about.html" class="capitalize">about</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="main"> <!-- main -->
+
+        section
+
+        
+    </main> <!-- end main -->
+    
+    
+    <!-- js -->
+    <script type="module" src="/static/js/main.js"></script> <!-- main -->
+    
+
 </body>
 </html>

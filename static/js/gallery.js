@@ -108,18 +108,7 @@ export function Gallery(galWrapper, imageN, imgSrc, imgSz) {
                 if (!loaded){
                     this.mainList = await this.generateMainList();
                 }
-                
-                // will split mainlist based on columns
                 this.injectList = this.generateImgElsList();
-                if (!loaded){
-                    // inject loading code
-                    loaderFunc({
-                        injectTarget: "#main",
-                        sel: "#loader", 
-                        parentSettings: "loader-settings",
-                        deactivate: "deactivate"
-                    });
-                }
                 
                 loading = false;   
             }
@@ -130,6 +119,7 @@ export function Gallery(galWrapper, imageN, imgSrc, imgSz) {
     };
 
     this.createCol = () => { //creates one img column 
+        
         let col; 
         col = document.createElement("div");
         col.className = "f-item image-column";
@@ -145,15 +135,14 @@ export function Gallery(galWrapper, imageN, imgSrc, imgSz) {
         imgEl.className = "gal-item l-flex content-justify-between";
         imgTag = document.createElement("img");
         imgEl.append(imgTag); 
-        
         return imgEl; 
 
     };
 
     this.generateImgCols = async () => { // generate column and inject it 
+        
         // generate columns and inject into DOM
         this.injectList.forEach((imgEls) => {
-
             // creat column
             let column = this.createCol();
             imgEls.forEach((imgEl)=>{
@@ -163,7 +152,7 @@ export function Gallery(galWrapper, imageN, imgSrc, imgSz) {
         }) 
     };
      
-    this.initialize = async (loaded, obsObj) => {
+    this.initialize = async (loaded, obsObj) => { // initialize the site
         
         // create columns based on window width
         try {

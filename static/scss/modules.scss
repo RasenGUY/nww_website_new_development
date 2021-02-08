@@ -172,7 +172,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 1.5s ease-in-out; 
+    transition: collapse, opacity, 1.5s ease-in-out; 
     & .loader {
         text-align: center;
         vertical-align: middle;
