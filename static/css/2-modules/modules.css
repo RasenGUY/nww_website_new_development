@@ -1020,6 +1020,7 @@ nav#nav-mobile-links::before {
   }
 }
 
+/* gallery page */
 #gallery-s-gallery {
   background-image: linear-gradient(135deg, #afe2ec, #8ed8ed);
   filter: drop-shadow(0px -3px 5px rgba(34, 178, 218, 0.3));
@@ -1034,6 +1035,7 @@ nav#nav-mobile-links::before {
   }
 }
 
+/* about page */
 footer {
   filter: drop-shadow(0px -3px 5px rgba(34, 218, 74, 0.3));
 }

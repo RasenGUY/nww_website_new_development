@@ -583,6 +583,19 @@ main#main #gallery-s-gallery .wrapper .f-item a img {
   width: 100%;
   height: auto;
 }
+main#main #about-s1 .wrapper {
+  height: 100%;
+}
+main#main #about-s1 .wrapper .f-item {
+  flex: 1 50%;
+}
+main#main #about-s1 .wrapper .story .paragraph.f-item {
+  flex: 1 55%;
+  padding-right: 5%;
+}
+main#main #about-s1 .wrapper .story .image-box.f-item {
+  flex: 1 45%;
+}
 main#main footer {
   margin-top: -8rem;
 }
