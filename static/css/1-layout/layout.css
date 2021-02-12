@@ -589,12 +589,17 @@ main#main #about-s1 .wrapper {
 main#main #about-s1 .wrapper .f-item {
   flex: 1 50%;
 }
-main#main #about-s1 .wrapper .story .paragraph.f-item {
+main#main #about-s1 .wrapper .story .paragraph.f-item, main#main #about-s1 .wrapper .mission .paragraph.f-item {
   flex: 1 55%;
+}
+main#main #about-s1 .wrapper .story .image-box.f-item, main#main #about-s1 .wrapper .mission .image-box.f-item {
+  flex: 1 45%;
+}
+main#main #about-s1 .wrapper .story .paragraph.f-item {
   padding-right: 5%;
 }
-main#main #about-s1 .wrapper .story .image-box.f-item {
-  flex: 1 45%;
+main#main #about-s1 .wrapper .mission .image-box.f-item {
+  padding-right: 5%;
 }
 main#main footer {
   margin-top: -8rem;

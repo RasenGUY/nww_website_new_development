@@ -586,14 +586,23 @@ main#main {
             & .f-item {
                 flex: 1 50%; 
             }
-            & .story {
+            & .story, .mission {
 
                 & .paragraph.f-item {
                     flex: 1 55%;
-                    padding-right: 5%;
                 }
                 & .image-box.f-item {
                     flex: 1 45%;
+                }
+            }
+            & .story {
+                & .paragraph.f-item {
+                    padding-right: 5%;
+                }
+            }
+            & .mission {
+                & .image-box.f-item {
+                    padding-right: 5%;
                 }
             }
         }
