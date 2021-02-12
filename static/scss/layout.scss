@@ -590,19 +590,41 @@ main#main {
 
                 & .paragraph.f-item {
                     flex: 1 55%;
+                    
                 }
                 & .image-box.f-item {
                     flex: 1 45%;
+                    @include m.responsive("<", 768px){
+                        flex: 1 20%;
+                    }
                 }
             }
             & .story {
                 & .paragraph.f-item {
+                    height: 40%;
                     padding-right: 5%;
+                }
+                @include m.responsive("<", 850px){
+                    // & .paragraph {
+                    //     margin-top: 5rem;
+                    // }
+                    & .image-box {
+                        margin-top: 8rem;
+                    }
                 }
             }
             & .mission {
                 & .image-box.f-item {
                     padding-right: 5%;
+                }
+                @include m.responsive("<", 850px){
+                    & .paragraph {
+                        margin-top: f.fontDynSize(576, 768, 30, 50);
+
+                    }   
+                    & .image-box {
+                        margin-top: 10rem;
+                    }
                 }
             }
         }

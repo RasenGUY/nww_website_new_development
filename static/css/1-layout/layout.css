@@ -595,11 +595,30 @@ main#main #about-s1 .wrapper .story .paragraph.f-item, main#main #about-s1 .wrap
 main#main #about-s1 .wrapper .story .image-box.f-item, main#main #about-s1 .wrapper .mission .image-box.f-item {
   flex: 1 45%;
 }
+@media only screen and (max-width: 768px) {
+  main#main #about-s1 .wrapper .story .image-box.f-item, main#main #about-s1 .wrapper .mission .image-box.f-item {
+    flex: 1 20%;
+  }
+}
 main#main #about-s1 .wrapper .story .paragraph.f-item {
+  height: 40%;
   padding-right: 5%;
+}
+@media only screen and (max-width: 850px) {
+  main#main #about-s1 .wrapper .story .image-box {
+    margin-top: 8rem;
+  }
 }
 main#main #about-s1 .wrapper .mission .image-box.f-item {
   padding-right: 5%;
+}
+@media only screen and (max-width: 850px) {
+  main#main #about-s1 .wrapper .mission .paragraph {
+    margin-top: clamp(3rem, -3rem + 10.4166666667vw, 5rem);
+  }
+  main#main #about-s1 .wrapper .mission .image-box {
+    margin-top: 10rem;
+  }
 }
 main#main footer {
   margin-top: -8rem;
