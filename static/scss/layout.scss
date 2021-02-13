@@ -590,40 +590,84 @@ main#main {
 
                 & .paragraph.f-item {
                     flex: 1 55%;
+                    @include m.responsive("<", 768px){
+                        flex: 1 75%;
+                    }
+                    @include m.responsive("<", 576px){
+                        text-align: center;
+                    }
+
                     
                 }
                 & .image-box.f-item {
                     flex: 1 45%;
                     @include m.responsive("<", 768px){
-                        flex: 1 20%;
+                        flex: 1 25%;
                     }
+                }
+                @include m.responsive("<", 576px){
+                    & > .paragraph.f-item, .image-box.f-item {
+                        flex: 1 100%;
+                    } 
                 }
             }
             & .story {
                 & .paragraph.f-item {
                     height: 40%;
-                    padding-right: 5%;
+                    & .body > p {
+                        padding-right: 5rem;
+                        @include m.responsive("<", 576px){
+                            padding-right: 0rem;
+                        }
+                    }
+                    @include m.responsive("<", 576px){
+                        height: 0; 
+                    }
+                }
+                & .image-box {
+                    margin-top: 5rem;
                 }
                 @include m.responsive("<", 850px){
-                    // & .paragraph {
-                    //     margin-top: 5rem;
-                    // }
+                   
                     & .image-box {
                         margin-top: 8rem;
                     }
                 }
+                @include m.responsive("<", 576px){
+                    margin-top: 5rem;
+                    & .image-box {
+                        margin-top: f.fontDynSize(576, 375, 30, 150);
+                    }
+                }
             }
             & .mission {
-                & .image-box.f-item {
-                    padding-right: 5%;
+                & .paragraph {
+                    & .body > p {
+                        padding-left: 5rem;
+                        @include m.responsive("<", 576px){
+                            padding-left: 0rem;
+                        }
+                    }
                 }
                 @include m.responsive("<", 850px){
                     & .paragraph {
                         margin-top: f.fontDynSize(576, 768, 30, 50);
-
                     }   
                     & .image-box {
                         margin-top: 10rem;
+                    }
+                }
+                @include m.responsive("<", 576px){
+                    & .image-box {
+                        margin-top: -10rem;
+                    }
+                    & div:first-child {
+                        display: none; 
+                    }
+                }
+                @include m.responsive(">", 576px){
+                    & div.image-box:last-child {
+                        display: none; 
                     }
                 }
             }

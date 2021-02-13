@@ -592,25 +592,68 @@ main#main #about-s1 .wrapper .f-item {
 main#main #about-s1 .wrapper .story .paragraph.f-item, main#main #about-s1 .wrapper .mission .paragraph.f-item {
   flex: 1 55%;
 }
+@media only screen and (max-width: 768px) {
+  main#main #about-s1 .wrapper .story .paragraph.f-item, main#main #about-s1 .wrapper .mission .paragraph.f-item {
+    flex: 1 75%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  main#main #about-s1 .wrapper .story .paragraph.f-item, main#main #about-s1 .wrapper .mission .paragraph.f-item {
+    text-align: center;
+  }
+}
 main#main #about-s1 .wrapper .story .image-box.f-item, main#main #about-s1 .wrapper .mission .image-box.f-item {
   flex: 1 45%;
 }
 @media only screen and (max-width: 768px) {
   main#main #about-s1 .wrapper .story .image-box.f-item, main#main #about-s1 .wrapper .mission .image-box.f-item {
-    flex: 1 20%;
+    flex: 1 25%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  main#main #about-s1 .wrapper .story > .paragraph.f-item, main#main #about-s1 .wrapper .story .image-box.f-item, main#main #about-s1 .wrapper .mission > .paragraph.f-item, main#main #about-s1 .wrapper .mission .image-box.f-item {
+    flex: 1 100%;
   }
 }
 main#main #about-s1 .wrapper .story .paragraph.f-item {
   height: 40%;
-  padding-right: 5%;
+}
+main#main #about-s1 .wrapper .story .paragraph.f-item .body > p {
+  padding-right: 5rem;
+}
+@media only screen and (max-width: 576px) {
+  main#main #about-s1 .wrapper .story .paragraph.f-item .body > p {
+    padding-right: 0rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  main#main #about-s1 .wrapper .story .paragraph.f-item {
+    height: 0;
+  }
+}
+main#main #about-s1 .wrapper .story .image-box {
+  margin-top: 5rem;
 }
 @media only screen and (max-width: 850px) {
   main#main #about-s1 .wrapper .story .image-box {
     margin-top: 8rem;
   }
 }
-main#main #about-s1 .wrapper .mission .image-box.f-item {
-  padding-right: 5%;
+@media only screen and (max-width: 576px) {
+  main#main #about-s1 .wrapper .story {
+    margin-top: 5rem;
+  }
+  main#main #about-s1 .wrapper .story .image-box {
+    margin-top: clamp(3rem, 37.3880597015rem + -59.7014925373vw, 15rem);
+  }
+}
+main#main #about-s1 .wrapper .mission .paragraph .body > p {
+  padding-left: 5rem;
+}
+@media only screen and (max-width: 576px) {
+  main#main #about-s1 .wrapper .mission .paragraph .body > p {
+    padding-left: 0rem;
+  }
 }
 @media only screen and (max-width: 850px) {
   main#main #about-s1 .wrapper .mission .paragraph {
@@ -618,6 +661,19 @@ main#main #about-s1 .wrapper .mission .image-box.f-item {
   }
   main#main #about-s1 .wrapper .mission .image-box {
     margin-top: 10rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  main#main #about-s1 .wrapper .mission .image-box {
+    margin-top: -10rem;
+  }
+  main#main #about-s1 .wrapper .mission div:first-child {
+    display: none;
+  }
+}
+@media only screen and (min-width: 576px) {
+  main#main #about-s1 .wrapper .mission div.image-box:last-child {
+    display: none;
   }
 }
 main#main footer {
