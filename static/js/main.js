@@ -9,9 +9,10 @@ import * as gal from "./gallery.js";
 window.onload = (()=>{
 
     // intilialize map only if index page
-    if (window.location.pathname === "/"){
+    if (window.location.pathname === "/index.html"){
         // let map; 
         g.initMap();
+        console.log("initialized map")
     };
     
 
