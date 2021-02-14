@@ -27,8 +27,22 @@
         - where to deploy to ?
 
 TODO - today
-- create a js function that injects images into the image gallery in the gallery page
-- 
+- Animation day
+    - figure out how to install GSAP
+    - create different styles of animation
+        - top to bottom
+        - bottom to top 
+        - left to right
+        - right to left 
+    - create function for inject css on given scrollTrigger position 
+    - paralax effect for heros
+    - paralax effect for background bubbles
+ 
+- function flow
+    - add scrollTo event listeners to targets (list of targets)
+    - trigger callback function 
+        - in this case the gsap.from() tween 
+        
 
 
 ------- some font guidelines ---------
