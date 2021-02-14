@@ -28,7 +28,7 @@
 
 TODO - today
 - Animation day
-    - figure out how to install GSAP
+    - figure out how to install GSAP (done)
     - create different styles of animation
         - top to bottom
         - bottom to top 
@@ -42,7 +42,7 @@ TODO - today
     - add scrollTo event listeners to targets (list of targets)
     - trigger callback function 
         - in this case the gsap.from() tween 
-        
+
 
 
 ------- some font guidelines ---------

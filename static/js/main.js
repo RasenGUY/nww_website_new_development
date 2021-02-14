@@ -3,6 +3,7 @@ import * as f from "./functions.js";
 import * as g from "./gmap.js";
 import * as c from "./carousel.js";
 import * as gal from "./gallery.js";
+import * as an from "./animations.js";
 
 
 // function to be run after the whole page is loaded 
@@ -65,6 +66,28 @@ window.onload = (()=>{
             deactivate: "deactivate"
         });
     }
+
+    // animations
+    const els = document.querySelectorAll(".animate");
+    const animList = ["-from-", '-fromTo-', '-to-'];
+    const set = 
+    {
+        to: 
+        {
+            x: 100,
+            y: 100,
+            opacity: 1,
+        },
+        from: 
+        {
+            x: 100,
+            y: 100, 
+            opacity: 0,
+        }
+
+    }
+    const animation = new an.Animation();
+    animation.animInit(els, set, animList);
 
 })()
 
@@ -138,3 +161,5 @@ if (window.location.pathname === "/gallery.html"){
     });
 
 };
+
+
