@@ -80,14 +80,14 @@ window.onload = (()=>{
         },
         from: 
         {
-            x: 100,
+            x: 300,
             y: 100, 
             opacity: 0,
         }
 
     }
-    const animation = new an.Animation();
-    animation.animInit(els, set, animList);
+    const animation = new an.Animation(set, animList);
+    animation.animInit(els);
 
 })()
 

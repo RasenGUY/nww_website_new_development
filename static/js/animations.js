@@ -1,30 +1,35 @@
 // ----------------- animations -----------------
-export function Animation () {
+export function Animation (set, animList) {
+    
+    this.set = set, // main settings
+    this.classList = animList;  
 
     // animation function
-    this.createAnim = async (sel, set) => {
-        
+    this.createAnim = async (sel, settings) => {
+        // console.log(set)
+        // console.log(sel)
         // creates GsapTween based on given class
         try {
-
-            // find out what tween to create first -> set tween type 
+            // find out what tween to create first -> set tween type    
             if (sel.includes("-to-") === true){ // for to tweens
                 
                 // create settings and initialize animation
-                const tweenSet = await this.createAnimSet("to", sel, set); 
+                const tweenSet = await this.createAnimSet("to", sel); 
                 gsap.to(sel, tweenSet);
+
             }
             else if (sel.includes("-fromTo-") === true){
                 
                 // create settings and intialize animation
-                const tweenSet = await this.createAnimSet("fromTo", sel, set); 
-                gsap(sel, tweenSet[0], tweenSet[1]);
+                const tweenSet = await this.createAnimSet("fromTo", sel); 
+                gsap.fromTo(sel, tweenSet[0], tweenSet[1]);
             }
             else if (sel.includes("-from-") === true){
                 
                 // create settings and initialize animation 
-                const tweenSet = await this.createAnimSet("from", sel, set); 
-                gsap.to(sel, tweenSet);
+                const tweenSet = await this.createAnimSet("from", sel); 
+                gsap.from(sel, tweenSet);
+                console.log(set);
             }
 
         } catch (e) {
@@ -34,24 +39,23 @@ export function Animation () {
     };
 
     // creates settings
-    this.createAnimSet = async (type, sel, set) => { 
+    this.createAnimSet = async (type, sel) => { 
         
         // creates settings for animation based on element thing-them 
-    
         const baseSet = {
             duration: 0.5,
             ease: "power4.inOut",
             scrollTrigger: {
                 trigger: sel,
-                start: "top top"
+                start: "top center"
             }
         } 
     
-        if (type === "to"){ // to triggers have all settings set in the set variable 
-            const settings = Object.assign(set.to, baseSet);
+        if (type === "to"){ // to triggers one settings object for tween
+            const settings = Object.assign(this.set.to, baseSet);
             return settings; 
         }
-        else if (type === "fromTo"){ // fromTo triggers two settings blocks for tween 
+        else if (type === "fromTo"){ // fromTo triggers two settings object for tween 
             const setFrom = {};
             const setTo = {};
     
@@ -87,19 +91,22 @@ export function Animation () {
             }
     
         }
-        else if (type === "from"){ // from triggers contain one settings variable
+        else if (type === "from"){ // from triggers contain one settings object for tween
             
             if (sel.includes('rtl')){
-                
-                set.from.x = `+=${set.from.x}`;
-                set.from.opacity = 0;  
-                const settings = Object.assign(set.from, baseSet);
+                const newSet = {
+                    from: {}
+                };
+
+                newSet.from.x = `-=${this.set.from.x}`; // set starting point
+                newSet.from.opacity = this.set.from.opacity;
+                const settings = Object.assign(newSet.from, baseSet);
                 return settings;
                 
             } else if (sel.includes("ltr")){
                 
-                set.from.x = `-=${set.from.x}`;
-                set.from.opacity = 0;  
+                set.from.x = `+=${set.from.x}`;
+                set.from.opacity = 1;  
                 const settings = Object.assign(set.from, baseSet);
                 return settings;
                 
@@ -122,26 +129,29 @@ export function Animation () {
     }; 
 
     // initiates animations
-    this.animInit = (els, set, animList) => {
+    this.animInit = (els) => {
 
         // initiates based on list of selectors, settings for for tweens and from tweens
-        
+    
         els.forEach((el)=>{
             
             // get class name and append .infront of classname
-            animList.forEach((classN)=>{
-                
-                if (el.classList.contains(classN)){
-                    console.log("."+ animClassN);
-                    this.createAnim("." + animClassN, set);
+            this.classList.forEach((classN)=>{
+                // console.log(classN + " : " + String(el.classList).includes(classN));                 
+
+                console.log(classN + "; " + String(el.classList).includes(classN))
+                if (String(el.classList).includes(classN)){
+                    (() => {
+                        return new Promise ((animClassN, reject) => {
+                            animClassN(el.className.replaceAll(" ", ".")); 
+                            reject("couldn't create class selector")
+                        })
+                    })().then ((classSel)=>{
+                        this.createAnim("." + classSel);
+                    })
                 }
             }) 
 
         })
     }
-
-
-
-
-
 }
