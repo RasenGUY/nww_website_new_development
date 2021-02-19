@@ -41,15 +41,11 @@ export function Animation (set, animList) {
     // creates settings
     this.createAnimSet = async (type, sel) => { 
         
-        // creates settings for animation based on element thing-them 
-        const baseSet = {
-            duration: 0.5,
-            ease: "power4.inOut",
-            scrollTrigger: {
-                trigger: sel,
-                start: "top center"
-            }
-        } 
+        // set scrollTrigger if not set at initiation
+        if (this.set.base.scrollTrigger.trigger === null){
+            this.set.base.scrollTrigger.trigger = sel;
+        };
+
     
         if (type === "to"){ // to triggers one settings object for tween
             const settings = Object.assign(this.set.to, baseSet);
@@ -100,28 +96,28 @@ export function Animation (set, animList) {
 
                 newSet.from.x = `-=${this.set.from.x}`; // set starting point
                 newSet.from.opacity = this.set.from.opacity;
-                const settings = Object.assign(newSet.from, baseSet);
+                const settings = Object.assign(newSet.from, this.set.base);
                 return settings;
                 
             } else if (sel.includes("ltr")){
                 
                 set.from.x = `+=${set.from.x}`;
                 set.from.opacity = 1;  
-                const settings = Object.assign(set.from, baseSet);
+                const settings = Object.assign(set.from, this.set.base);
                 return settings;
                 
             } else if (sel.includes("ttb")){
                 
                 set.from.y = `+=${set.from.y}`;
                 set.from.opacity = 0;  
-                const settings = Object.assign(set.from, baseSet);
+                const settings = Object.assign(set.from, this.set.base);
                 return settings;
                 
             } else if (sel.includes("ttb")){
                 
                 set.from.y = `-=${set.from.x}`;
                 set.from.opacity = 0;  
-                const settings = Object.assign(set.from, baseSet);
+                const settings = Object.assign(set.from, this.set.base);
                 return settings;
     
             }

@@ -83,6 +83,19 @@ window.onload = (()=>{
             x: 300,
             y: 100, 
             opacity: 0,
+        },
+        base: {
+            duration: 2,
+            ease: "expo.inOut",
+            scrollTrigger: {
+                trigger: ".animate-trigger",
+                start: "top bottom",
+                markers: {
+                    startColor: "green", 
+                    endColor: "red", 
+                    fontSize: "12px"
+                } 
+            }
         }
 
     }
