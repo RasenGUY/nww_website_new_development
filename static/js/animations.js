@@ -130,31 +130,38 @@ export function Animation (set) {
         
         // get elements class names in list and split animation settings and type from the list into arrays of settings and animation type
         els.forEach((el) => {
-            let animObj = {
-                set: {},
-            }; 
             
-            for (let classN of el.classList.entries()){
-                
-                if (classN[1].includes("type:")){
-                    animObj.type = classN[1].split("-").find(val => val.includes("type")).split(":")[1];
-                    animObj.direction = classN[1].split("-").find(val => val.includes("direction")).split(":")[1];
-                } 
+            (()=>{
+                return new Promise((resolve, reject) => {
 
-                if (classN[1].includes("set-")){
+                    let animObj = {
+                        set: {},
+                    }; 
                     
-                    // create set then add to object 
-                    for (let val  of classN[1].replace("set-", "").split("-")){
-                        animObj.set[val.split(':')[0]] = val.split(':')[1];  
-                    };
+                    for (let classN of el.classList.entries()){
+                        
+                        if (classN[1].includes("type:")){
+                            animObj.type = classN[1].split("-").find(val => val.includes("type")).split(":")[1];
+                            animObj.direction = classN[1].split("-").find(val => val.includes("direction")).split(":")[1];
+                        } 
+    
+                        if (classN[1].includes("set-")){
                             
+                            // create set then add to object 
+                            for (let val  of classN[1].replace("set-", "").split("-")){
+                                animObj.set[val.split(':')[0]] = val.split(':')[1];  
+                            };
+                                    
+    
+                        } else {
+                            continue;
+                        }    
+                    }
+                    resolve(animObj)
+                })
+            })().then( animObj => console.log(animObj)) // create animation
 
-                } else {
-                    continue;
-                }    
-            }
-            console.log(`type: ${animObj.type}\ndirection: ${animObj.direction}\nsettings: \n`);
-            console.log(animObj.set);
         })
+
     }
 }
