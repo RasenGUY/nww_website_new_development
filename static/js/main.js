@@ -70,13 +70,14 @@ window.onload = (()=>{
     // animations
     const sel = ".anim"
     const els = document.querySelectorAll(sel);
-    // const animList = [":from-", ':fromTo-', ':to:'];
     const baseSet = {
         duration: 2,
         ease: "circ.inOut",
         scrollTrigger: {
             trigger: ".anim-trigger",
-            start: "top bottom",
+            start: "center bottom",
+            once: true, 
+            // invalidateOnRefresh: true,
             markers: {
                 startColor: "green", 
                 endColor: "red", 

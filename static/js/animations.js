@@ -6,25 +6,27 @@ export function Animation (baseSet) {
     // animation function
     this.createAnim = (obj) => {
         // find out what tween to create first -> set tween type    
-        if (obj.type === "to"){ // for to tweens
+        
+        this.baseSet.onComplete = () => { // remove styles on completion of tweens
+            // console.log(obj.sel);
+            document.querySelector(obj.sel).removeAttribute("style");
+            document.querySelector(obj.sel).classList.remove(obj.sel.replace(".", ""));
+        }
+
+        if (obj.type === "to"){ // create to tween
 
             // create settings and initialize animation 
-            // console.log(Object.assign(obj.set, this.baseSet))
-            // console.log(Object.assign(obj.sel, this.baseSet))
             gsap.to(obj.sel, Object.assign(obj.set, this.baseSet));
         }
         else if (obj.type === "fromTo"){
             
             // create settings and intialize animation
-            // console.log(obj.sel, obj.set.from)
-            // console.log(Object.assign(obj.set.to, this.baseSet))
             gsap.fromTo(obj.sel, obj.set.from, Object.assign(obj.set.to, this.baseSet));
             
         }
         else if (obj.type === "from"){
             
             // create settings and initialize animation  
-            // console.log(Object.assign(obj.set, this.baseSet))
             gsap.from(obj.sel, Object.assign(obj.set, this.baseSet));
 
         }
@@ -33,8 +35,8 @@ export function Animation (baseSet) {
     
     this.animInit = (els, sel) => { // initiates animations on websit, selects targets create animation settings and tween instances
         
+        var animN = 0; 
         // get elements class names in list and split animation settings and type from the list into arrays of settings and animation type
-        var animN = 0;
         els.forEach((el) => {
             
             // transform class selector into settings obj for animation
@@ -44,8 +46,11 @@ export function Animation (baseSet) {
                     let animObj = {
                         set: {},
                     }; 
-                    animObj.sel = sel + "-" + animN;
-                    animN++; 
+                    
+                    // create animation selector for gsap
+                    el.className += " anim-" + String(animN);
+                    animObj.sel = ".anim-" + String(animN); 
+                    animN++;
 
                     for (let classN of el.classList.entries()){
                         
