@@ -1,8 +1,8 @@
 // ----------------- animations -----------------
-export function Animation (set, animList) {
+export function Animation (set) {
     
     this.set = set, // main settings
-    this.classList = animList;  
+    // this.classList = animList;  
 
     // animation function
     this.createAnim = async (sel, settings) => {
@@ -39,26 +39,29 @@ export function Animation (set, animList) {
     };
 
     // creates settings
-    this.createAnimSet = async (type, sel) => { 
-        
+    this.createAnimSet = async (type, settings, sel) => { 
+        // object for storing settings
+        const newSet = {
+            from: {},
+            to: {}
+        };
+
         // set scrollTrigger if not set at initiation
         if (this.set.base.scrollTrigger.trigger === null){
             this.set.base.scrollTrigger.trigger = sel;
         };
 
-    
         if (type === "to"){ // to triggers one settings object for tween
             const settings = Object.assign(this.set.to, baseSet);
             return settings; 
         }
         else if (type === "fromTo"){ // fromTo triggers two settings object for tween 
-            const setFrom = {};
-            const setTo = {};
     
             if (sel.includes("rtl")){ // right to left
-                setFrom.x = -100; 
-                setFrom.opacity = 0; 
-                setTo.x = 0;
+                
+                newSet.from.x = `-=${this.fromTo.from.x}`; 
+                newSet.from.opacity = this.fromTo.from.opacity; 
+                newSet.to.x = 0;
                 setTo.opacity = 1;
                 const newSetTo = Object.assign(setTo, baseSet);
                 return [setFrom, newSetTo];
@@ -90,9 +93,7 @@ export function Animation (set, animList) {
         else if (type === "from"){ // from triggers contain one settings object for tween
             
             if (sel.includes('rtl')){
-                const newSet = {
-                    from: {}
-                };
+                
 
                 newSet.from.x = `-=${this.set.from.x}`; // set starting point
                 newSet.from.opacity = this.set.from.opacity;
@@ -124,30 +125,36 @@ export function Animation (set, animList) {
         }
     }; 
 
-    // initiates animations
-    this.animInit = (els) => {
-
-        // initiates based on list of selectors, settings for for tweens and from tweens
     
-        els.forEach((el)=>{
+    this.animInit = (els) => { // initiates animations on websit, selects targets create animation settings and tween instances
+        
+        // get elements class names in list and split animation settings and type from the list into arrays of settings and animation type
+        els.forEach((el) => {
+            let animObj = {
+                set: {},
+            }; 
             
-            // get class name and append .infront of classname
-            this.classList.forEach((classN)=>{
-                // console.log(classN + " : " + String(el.classList).includes(classN));                 
+            for (let classN of el.classList.entries()){
+                
+                if (classN[1].includes("type:")){
+                    animObj.type = classN[1].split("-").find(val => val.includes("type")).split(":")[1];
+                    animObj.direction = classN[1].split("-").find(val => val.includes("direction")).split(":")[1];
+                } 
 
-                console.log(classN + "; " + String(el.classList).includes(classN))
-                if (String(el.classList).includes(classN)){
-                    (() => {
-                        return new Promise ((animClassN, reject) => {
-                            animClassN(el.className.replaceAll(" ", ".")); 
-                            reject("couldn't create class selector")
-                        })
-                    })().then ((classSel)=>{
-                        this.createAnim("." + classSel);
-                    })
-                }
-            }) 
+                if (classN[1].includes("set-")){
+                    
+                    // create set then add to object 
+                    for (let val  of classN[1].replace("set-", "").split("-")){
+                        animObj.set[val.split(':')[0]] = val.split(':')[1];  
+                    };
+                            
 
+                } else {
+                    continue;
+                }    
+            }
+            console.log(`type: ${animObj.type}\ndirection: ${animObj.direction}\nsettings: \n`);
+            console.log(animObj.set);
         })
     }
 }

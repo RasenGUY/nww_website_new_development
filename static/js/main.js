@@ -68,8 +68,8 @@ window.onload = (()=>{
     }
 
     // animations
-    const els = document.querySelectorAll(".animate");
-    const animList = ["-from-", '-fromTo-', '-to-'];
+    const els = document.querySelectorAll(".anim");
+    // const animList = [":from-", ':fromTo-', ':to:'];
     const set = 
     {
         to: 
@@ -84,9 +84,21 @@ window.onload = (()=>{
             y: 100, 
             opacity: 0,
         },
+        fromTo: {
+            from: {
+                x: 100,
+                y: 100,
+                opacity: 0
+            },
+            to: {
+                x: 100,
+                y: 100,
+                opacity: 1
+            }
+        },
         base: {
             duration: 2,
-            ease: "expo.inOut",
+            ease: "circ.inOut",
             scrollTrigger: {
                 trigger: ".animate-trigger",
                 start: "top bottom",
@@ -99,7 +111,7 @@ window.onload = (()=>{
         }
 
     }
-    const animation = new an.Animation(set, animList);
+    const animation = new an.Animation(set);
     animation.animInit(els);
 
 })()
