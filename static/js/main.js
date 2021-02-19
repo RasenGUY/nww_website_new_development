@@ -68,51 +68,24 @@ window.onload = (()=>{
     }
 
     // animations
-    const els = document.querySelectorAll(".anim");
+    const sel = ".anim"
+    const els = document.querySelectorAll(sel);
     // const animList = [":from-", ':fromTo-', ':to:'];
-    const set = 
-    {
-        to: 
-        {
-            x: 100,
-            y: 100,
-            opacity: 1,
-        },
-        from: 
-        {
-            x: 300,
-            y: 100, 
-            opacity: 0,
-        },
-        fromTo: {
-            from: {
-                x: 100,
-                y: 100,
-                opacity: 0
-            },
-            to: {
-                x: 100,
-                y: 100,
-                opacity: 1
-            }
-        },
-        base: {
-            duration: 2,
-            ease: "circ.inOut",
-            scrollTrigger: {
-                trigger: ".animate-trigger",
-                start: "top bottom",
-                markers: {
-                    startColor: "green", 
-                    endColor: "red", 
-                    fontSize: "12px"
-                } 
-            }
+    const baseSet = {
+        duration: 2,
+        ease: "circ.inOut",
+        scrollTrigger: {
+            trigger: ".anim-trigger",
+            start: "top bottom",
+            markers: {
+                startColor: "green", 
+                endColor: "red", 
+                fontSize: "12px"
+            } 
         }
-
     }
-    const animation = new an.Animation(set);
-    animation.animInit(els);
+    const animation = new an.Animation(baseSet);
+    animation.animInit(els, sel);
 
 })()
 
