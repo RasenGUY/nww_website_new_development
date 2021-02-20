@@ -71,13 +71,13 @@ window.onload = (()=>{
     const sel = ".anim"
     const els = document.querySelectorAll(sel);
     const baseSet = {
-        duration: 2,
+        duration: 0.75,
         ease: "circ.inOut",
+        clearProps: "true", 
         scrollTrigger: {
-            trigger: ".anim-trigger",
-            start: "center bottom",
+            // trigger: ".anim-trigger",
+            start: "top 75%",
             once: true, 
-            // invalidateOnRefresh: true,
             markers: {
                 startColor: "green", 
                 endColor: "red", 
@@ -87,6 +87,8 @@ window.onload = (()=>{
     }
     const animation = new an.Animation(baseSet);
     animation.animInit(els, sel);
+
+
 
 })()
 
@@ -114,9 +116,7 @@ if (window.location.pathname === "/gallery.html"){
     // settings for mutation observer
     const config = {attributes: false, childList: true, subtree: false };
     const observerCallB = () => { // callback for changes in wrapper
-            
-            console.log('observed a change');
-            
+                       
             // run lightbox function 
             observer.lb = new SimpleLightbox("a.gal-item");
             console.log("initialized lightbox")

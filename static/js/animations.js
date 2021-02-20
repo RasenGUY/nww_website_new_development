@@ -7,27 +7,63 @@ export function Animation (baseSet) {
     this.createAnim = (obj) => {
         // find out what tween to create first -> set tween type    
         
-        this.baseSet.onComplete = () => { // remove styles on completion of tweens
-            // console.log(obj.sel);
-            document.querySelector(obj.sel).removeAttribute("style");
-            document.querySelector(obj.sel).classList.remove(obj.sel.replace(".", ""));
-        }
-
+        // add scroll trigger
+        this.baseSet.scrollTrigger.trigger = obj.sel; 
+        
         if (obj.type === "to"){ // create to tween
+            
+            if (obj.baseSet != null){
+                
+                console.log(Object.assign(obj.baseSet, this.baseSet));
+                
+                let newBaseSet = Object.assign(obj.baseSet, this.baseSet)
 
-            // create settings and initialize animation 
-            gsap.to(obj.sel, Object.assign(obj.set, this.baseSet));
+                // create settings and initialize animation 
+                gsap.to(obj.sel, Object.assign(obj.set, newBaseSet));
+            
+            } else {
+
+                // create settings and initialize animation 
+                gsap.to(obj.sel, Object.assign(obj.set, this.baseSet));
+            }
+            
+            
         }
         else if (obj.type === "fromTo"){
             
-            // create settings and intialize animation
-            gsap.fromTo(obj.sel, obj.set.from, Object.assign(obj.set.to, this.baseSet));
+            if (obj.baseSet != null){
+
+                console.log(Object.assign(obj.baseSet, this.baseSet));
+                
+                // create settings and intialize animation
+                let newBaseSet = Object.assign(obj.baseSet, this.baseSet)
+                gsap.fromTo(obj.sel, obj.set.from, Object.assign(obj.set.to, newBaseSet));
+            
+            } else {
+    
+                // create settings and initialize animation 
+                gsap.fromTo(obj.sel, obj.set.from, Object.assign(obj.set.to, this.baseSet));
+            }
+            
             
         }
         else if (obj.type === "from"){
             
-            // create settings and initialize animation  
-            gsap.from(obj.sel, Object.assign(obj.set, this.baseSet));
+            if (obj.baseSet != null){
+
+                console.log(Object.assign(obj.baseSet, this.baseSet));
+                
+                // create settings and initialize animation  
+                let newBaseSet = Object.assign(obj.baseSet, this.baseSet)                
+                gsap.from(obj.sel, Object.assign(obj.set, newBaseSet));
+                
+            
+            } else {
+    
+                // create settings and initialize animation  
+                gsap.from(obj.sel, Object.assign(obj.set, this.baseSet));
+
+            }
 
         }
 
@@ -45,6 +81,7 @@ export function Animation (baseSet) {
 
                     let animObj = {
                         set: {},
+                        baseSet: null
                     }; 
                     
                     // create animation selector for gsap
@@ -82,6 +119,15 @@ export function Animation (baseSet) {
                             // create set then add to object 
                             for (let val  of classN[1].replace("setTo|", "").split("|")){
                                 animObj.set.to[val.split(':')[0]] = val.split(':')[1];  
+                            };
+                        } 
+                        if (classN[1].includes("baseSet|")){
+                            
+                            animObj.baseSet = {};
+
+                            // create set then add to object 
+                            for (let val  of classN[1].replace("baseSet|", "").split("|")){
+                                animObj.baseSet[val.split(':')[0]] = val.split(':')[1];  
                             };
                         } 
                         

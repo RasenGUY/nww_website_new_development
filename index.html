@@ -32,7 +32,6 @@
     <nav id="nav-web" class="blur">
         <div class="wrapper l-flex items-align-center">
             <div class="f-item logo">
-                <!-- logo-side -->
                 <!-- logo -->
                 <a href="/">
                     <img src="/static/images/logo/logo.png" alt="new world logo">
@@ -42,20 +41,19 @@
             <!--links  -->
             <ul class="nav-links f-item l-flex content-justify-between items-align-center">  
                 <li>
-                    <!-- https://goo.gl/forms/42PxcOgwkW21OsGr2 -->
-                    <a href="#" class="btn">Join us!</a> <!-- apply button--> 
+                    <a href="https://goo.gl/forms/42PxcOgwkW21OsGr2" class="btn">Join us!</a> <!-- apply button--> 
                 </li>
                 <li class="active">
-                    <a href="#section-1" class="capitalize">teach</a>
+                    <a href="#index-s-one" class="capitalize">teach</a>
                 </li>
                 <li>
-                    <a href="#section-2" class="capitalize">travel</a>
+                    <a href="#index-s-two" class="capitalize">travel</a>
                 </li>
                 <li>
-                    <a href="#section-3" class="capitalize">experience</a>
+                    <a href="#index-s-four" class="capitalize">experience</a>
                 </li>
                 <li>
-                    <a href="/contact.html" class="capitalize">contact</a>
+                    <a href="#index-s-five" class="capitalize">contact</a>
                 </li>
                 <li>
                     <a href="/gallery.html" class="capitalize">gallery</a>
@@ -166,7 +164,7 @@
         </section> <!-- index-hero section -->
 
         <section id="index-s-one" class="l-grid"><!-- section one teach-->
-            <div class="shapes anim-trigger">
+            <div class="shapes">
                 <div class="folder"> <!-- folder shape-->
                     
                     <!-- large -->
@@ -192,7 +190,7 @@
                     <!-- type:fromTo setFrom|x:10|y:90|opacity:1 setTo|x:10|y:90|opacity:1 -->
                 </div>
             </div>
-            <div class="g-item align-center justify-center wrapper l-flex col anim-trigger"> <!-- texbox wrapper -->
+            <div class="g-item align-center justify-center wrapper l-flex col"> <!-- texbox wrapper -->
                 
                 <div class="text-box l-flex col anim type:from set|x:-=100|opacity:0">
                     <header>
@@ -237,13 +235,13 @@
             <div class="bg-image"></div>
             <div class="g-item align-center justify-center wrapper l-flex items-align-center">
                 <div class="text-box t-align right">
-                    <header>
+                    <header class="anim type:from set|x:+=100|opacity:0">
                         <h1 class="to-upper shadow">explore <span class="primary">vietnam</span></h1>
                         <div class="spacer wide"></div>
                     </header>
-                    <div class="body">
+                    <div class="body anim type:from set|x:+=100|opacity:0">
                         <h3>Weekends off, this means that you will have plenty of time for exploring Vietnam. Places that are close to where we center is located, include Ninh Binh, Hai Phong, Ha Long Bay and Ha Noi. Furthermore, occasionally go on school trips to faraway places (ex. Quanh Binh and Sapa amongst others).</h3>
-                        <div>
+                        <div class="anim type:from set|y:-=100|opacity:0">
                             <div class="spacer widest"></div>
                             <a href="/gallery.html" class="btn large primary">Gallery</a>
                         </div>
@@ -263,12 +261,12 @@
 
             <div class="g-item align-center justify-center wrapper l-flex">
                 <div class="f-item align-center text-box l-flex col content-justify-start items-align-evenly">
-                    <header class="f-item align-center">
+                    <header class="f-item align-center anim type:from set|y:+=50|opacity:0">
                         <h1 class="to-upper text shadow">the <span class="primary"> team</span></h1>
                         <div class="spacer wider"></div>
                     </header>
                     
-                    <div class="body"><!-- team members row --> 
+                    <div class="body anim type:from set|y:-=50|opacity:0"><!-- team members row --> 
                         
                         <!-- carousel -->
                         <div class="carousel-wrapper l-grid items-justify-center">
@@ -362,13 +360,13 @@
             <div class="bg-image"></div>
             <div class="g-item align-center justify-center wrapper l-flex items-align-center">
                 <div class="text-box t-align left">
-                    <header>
+                    <header class="anim type:from set|x:-=100|opacity:0">
                         <h1 class="to-upper shadow">experience <span class="primary">vietnamese</span> culture</h1>
                         <div class="spacer wide"></div>
                     </header>
-                    <div class="body">
+                    <div class="body anim type:from set|x:-=100|opacity:0">
                         <h3>Teaching at our school will not only provide you with the opportunity to gain valuable ESL Teaching Experience. But it will also allow you to experience the Vietnamese culture first hand. You will get to meet locals and if your open enough, make some new friends along the way</h3>
-                        <div>
+                        <div class="anim type:from set|y:-=100|opacity:0">
                             <div class="spacer widest"></div>
                             <a href="/gallery.html" class="btn large primary">Gallery</a>
                         </div>
@@ -388,12 +386,12 @@
 
             <div class="g-item align-center justify-center wrapper l-flex col">
                 <div class="text-box reviews-section f-item l-flex col wrap items-align-center">
-                    <header>
+                    <header class="anim type:from set|y:+=50|opacity:0">
                         <h1 class="to-upper text shadow">volunteer <span class="primary">reviews</span></h1>
                         <div class="spacer widest"></div>
                     </header>
 
-                    <div class="body">
+                    <div class="body anim type:from set|y:-=50|opacity:0">
                         
                         <ul class="reviews">
                             <li class="review">
@@ -674,10 +672,10 @@
                     </div>
                 </div>
                 <div class="text-box contact-section f-item l-flex col items-align-center">
-                    <header>
+                    <header class="anim type:from set|y:+=50|opacity:0">
                         <h1 class="to-upper text shadow"><span class="primary">find</span> us or <span class="primary">shoot</span> us a message<span class="primary">!</span></h1>
                     </header>
-                    <div class="body l-flex">
+                    <div class="body l-flex anim type:from set|y:-=50|opacity:0">
                         <div class="map-wrapper f-item l-flex justify-items-right items-align-left">
                             <div class="map-box">
                                 <svg class="svg-image shadow-fg" id="svg-images"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
