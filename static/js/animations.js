@@ -10,10 +10,12 @@ export function Animation (baseSet) {
         this.baseSet.scrollTrigger.trigger = obj.sel; 
         
         if (obj.type === "to"){ // create to tween
+            console.log("type: " + obj.type)
             
             if (obj.baseSet != null){
                                 
                 let newBaseSet = Object.assign(obj.baseSet, this.baseSet)
+
                 // create settings and initialize animation 
                 gsap.to(obj.sel, Object.assign(obj.set, newBaseSet));
             
@@ -26,7 +28,8 @@ export function Animation (baseSet) {
             
         }
         else if (obj.type === "fromTo"){ // create fromTo tween
-            
+            console.log("type: " + obj.type)
+
             if (obj.baseSet != null){
                 
                 // create settings and intialize animation
@@ -42,7 +45,8 @@ export function Animation (baseSet) {
             
         }
         else if (obj.type === "from"){ // create from tween
-            
+            console.log("type: " + obj.type)
+
             if (obj.baseSet != null){
 
                 // create settings and initialize animation  
@@ -58,46 +62,39 @@ export function Animation (baseSet) {
             }
 
         }
-        else if (obj.type === "scroll"){ // createScrollTo tween
+        else if (obj.type === "scroll"){ // create ScrollTo tween
             
+            // scroll type doesn't take any base settings
+            // create scrollTo instance, add event listener to trigger it
+            // you have to set scrollTo in the className if you don't put href 
+            // window scroll by default
+ 
+            console.log("type: " + obj.type)
+            
+            // link item to be clicked
             const navBtn = document.querySelector(obj.sel);
-
-            if (obj.baseSet != null){
-    
-                // create settings and initialize animation  
-                let newBaseSet = Object.assign(obj.baseSet, this.baseSet)
-                if (obj.scrollSet != null && obj.scrollSet.scrollStart == null){
-                    // listen to nav click event 
-                    navBtn.addEventListener('click', ()=>{
-                        gsap.to(obj.scrollSet.scrollStart, Object.assign(obj.scrollSet.to, newBaseSet));
-                    })
-                } else {
-
-                    navBtn.addEventListener('click', ()=>{
-                        gsap.to(window, Object.assign(obj.scrollSet.to, newBaseSet));
-                    })
-                }
-                
-            
-            } else {
-
-                if (obj.scrollSet != null && obj.scrollSet.scrollStart == null){
-                    // listen to nav click event 
-                    navBtn.addEventListener('click', ()=>{
-                        // create settings and initialize animation  
-                        gsap.to(window, Object.assign(obj.scrollSet.to, this.baseSet));
-                    })
-
-                } else {
-
-                    navBtn.addEventListener('click', ()=>{
-                        // create settings and initialize animation  
-                        gsap.to(obj.sel, Object.assign(obj.scrollSet.to, this.baseSet));
-                    })
-                }
-
+            console.log(navBtn.href.split("/")[navBtn.href.split("/").length -1]);
+            if (navBtn.href != undefined){ // if there is a reference link 
+                // set scroll target
+                obj.scrollSet.to.scrollTo = navBtn.href.split('/')[navBtn.href.split('/').length - 1];
             }
 
+            if (obj.scrollSet.scrollStart != null){
+                
+                // listen to nav click event 
+                navBtn.addEventListener('click', ()=> {
+                    gsap.to(obj.scrollSet.scrollStart, obj.scrollSet.to);
+                })
+                
+            } else {
+
+                navBtn.addEventListener("click", ()=>{
+                    console.log("clicked event");
+                    gsap.to(window, obj.scrollSet.to);
+                    console.log(gsap.to(window, obj.scrollSet.to))
+                })
+            }
+        
         }
 
     };
@@ -114,7 +111,9 @@ export function Animation (baseSet) {
 
                     let animObj = {
                         set: {},
-                        baseSet: null
+                        baseSet: null,
+                        scrollStart: null,
+                        scrollSet: null,
                     }; 
                     
                     // create animation selector for gsap
@@ -131,7 +130,8 @@ export function Animation (baseSet) {
                             
                             animObj.scrollSet = {}; 
                             animObj.scrollSet.scrollStart = classN[1].split(":").find(val => val.includes("scrollStart")).split(":")[1];
-                        } 
+
+                        }
                         if (classN[1].includes("set|")){
                             
                             // create set then add to object 
@@ -170,12 +170,16 @@ export function Animation (baseSet) {
                         } 
                         if (classN[1].includes("scrollSet|")){
                             
+                            // create settings for animation 
                             animObj.scrollSet = {};
+                            animObj.scrollSet.to = {};
 
                             // create set then add to object 
                             for (let val  of classN[1].replace("scrollSet|", "").split("|")){
                                 animObj.scrollSet.to[val.split(':')[0]] = val.split(':')[1];  
                             };
+
+                            console.log(animObj.scrollSet);
                         } 
                         
                         

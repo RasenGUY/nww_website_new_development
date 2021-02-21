@@ -87,7 +87,7 @@ window.onload = (()=>{
     }
     const animation = new an.Animation(baseSet);
     animation.animInit(els, sel);
-    gsap.to(window, {duration: 2, scrollTo: "#index-s-one"})
+
 
 
 
