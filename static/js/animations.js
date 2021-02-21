@@ -6,18 +6,14 @@ export function Animation (baseSet) {
     // animation function
     this.createAnim = (obj) => {
         // find out what tween to create first -> set tween type    
-        
         // add scroll trigger
         this.baseSet.scrollTrigger.trigger = obj.sel; 
         
         if (obj.type === "to"){ // create to tween
             
             if (obj.baseSet != null){
-                
-                console.log(Object.assign(obj.baseSet, this.baseSet));
-                
+                                
                 let newBaseSet = Object.assign(obj.baseSet, this.baseSet)
-
                 // create settings and initialize animation 
                 gsap.to(obj.sel, Object.assign(obj.set, newBaseSet));
             
@@ -29,11 +25,9 @@ export function Animation (baseSet) {
             
             
         }
-        else if (obj.type === "fromTo"){
+        else if (obj.type === "fromTo"){ // create fromTo tween
             
             if (obj.baseSet != null){
-
-                console.log(Object.assign(obj.baseSet, this.baseSet));
                 
                 // create settings and intialize animation
                 let newBaseSet = Object.assign(obj.baseSet, this.baseSet)
@@ -47,12 +41,10 @@ export function Animation (baseSet) {
             
             
         }
-        else if (obj.type === "from"){
+        else if (obj.type === "from"){ // create from tween
             
             if (obj.baseSet != null){
 
-                console.log(Object.assign(obj.baseSet, this.baseSet));
-                
                 // create settings and initialize animation  
                 let newBaseSet = Object.assign(obj.baseSet, this.baseSet)                
                 gsap.from(obj.sel, Object.assign(obj.set, newBaseSet));
@@ -62,6 +54,47 @@ export function Animation (baseSet) {
     
                 // create settings and initialize animation  
                 gsap.from(obj.sel, Object.assign(obj.set, this.baseSet));
+
+            }
+
+        }
+        else if (obj.type === "scroll"){ // createScrollTo tween
+            
+            const navBtn = document.querySelector(obj.sel);
+
+            if (obj.baseSet != null){
+    
+                // create settings and initialize animation  
+                let newBaseSet = Object.assign(obj.baseSet, this.baseSet)
+                if (obj.scrollSet != null && obj.scrollSet.scrollStart == null){
+                    // listen to nav click event 
+                    navBtn.addEventListener('click', ()=>{
+                        gsap.to(obj.scrollSet.scrollStart, Object.assign(obj.scrollSet.to, newBaseSet));
+                    })
+                } else {
+
+                    navBtn.addEventListener('click', ()=>{
+                        gsap.to(window, Object.assign(obj.scrollSet.to, newBaseSet));
+                    })
+                }
+                
+            
+            } else {
+
+                if (obj.scrollSet != null && obj.scrollSet.scrollStart == null){
+                    // listen to nav click event 
+                    navBtn.addEventListener('click', ()=>{
+                        // create settings and initialize animation  
+                        gsap.to(window, Object.assign(obj.scrollSet.to, this.baseSet));
+                    })
+
+                } else {
+
+                    navBtn.addEventListener('click', ()=>{
+                        // create settings and initialize animation  
+                        gsap.to(obj.sel, Object.assign(obj.scrollSet.to, this.baseSet));
+                    })
+                }
 
             }
 
@@ -93,6 +126,11 @@ export function Animation (baseSet) {
                         
                         if (classN[1].includes("type:")){ // find type and direction-> always string
                             animObj.type = classN[1].split("|").find(val => val.includes("type")).split(":")[1];
+                        } 
+                        if (classN[1].includes("scrollStart:")){ // find scrollStart for scroll type animations
+                            
+                            animObj.scrollSet = {}; 
+                            animObj.scrollSet.scrollStart = classN[1].split(":").find(val => val.includes("scrollStart")).split(":")[1];
                         } 
                         if (classN[1].includes("set|")){
                             
@@ -130,6 +168,16 @@ export function Animation (baseSet) {
                                 animObj.baseSet[val.split(':')[0]] = val.split(':')[1];  
                             };
                         } 
+                        if (classN[1].includes("scrollSet|")){
+                            
+                            animObj.scrollSet = {};
+
+                            // create set then add to object 
+                            for (let val  of classN[1].replace("scrollSet|", "").split("|")){
+                                animObj.scrollSet.to[val.split(':')[0]] = val.split(':')[1];  
+                            };
+                        } 
+                        
                         
                         else {
                             continue;
