@@ -73,10 +73,10 @@ export function Animation (baseSet) {
             
             // link item to be clicked
             const navBtn = document.querySelector(obj.sel);
-            console.log(navBtn.href.split("/")[navBtn.href.split("/").length -1]);
+            console.log(navBtn.dataset.href);
             if (navBtn.href != undefined){ // if there is a reference link 
                 // set scroll target
-                obj.scrollSet.to.scrollTo = navBtn.href.split('/')[navBtn.href.split('/').length - 1];
+                obj.scrollSet.to.scrollTo = navBtn.dataset.href;
             }
 
             if (obj.scrollSet.scrollStart != null){
