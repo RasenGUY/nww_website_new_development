@@ -85,11 +85,15 @@ window.onload = (()=>{
             } 
         }
     }
-    const animation = new an.Animation(baseSet);
-    animation.animInit(els, sel);
-
-
-
+    // const animation = new an.Animation(baseSet);
+    // animation.animInit(els, sel);
+    const btn = document.querySelector(".some-shit")
+    btn.addEventListener("click", ()=>{
+        console.log("clicked event");
+        gsap.to(window, {scrollTo: "#index-s-one" ,duration: 1.5});
+        console.log(gsap.to(window, {scrollTo: "#index-s-one", duration: 1.5}))
+    })
+    
 
 })()
 
