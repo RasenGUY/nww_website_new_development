@@ -78,11 +78,11 @@ window.onload = (()=>{
             // trigger: ".anim-trigger",
             start: "top 75%",
             once: true, 
-            markers: {
-                startColor: "green", 
-                endColor: "red", 
-                fontSize: "12px"
-            } 
+            // markers: {
+            //     startColor: "green", 
+            //     endColor: "red", 
+            //     fontSize: "12px"
+            // } 
         }
     }
     const animation = new an.Animation(baseSet);
