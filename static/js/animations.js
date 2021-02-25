@@ -10,8 +10,7 @@ export function Animation (baseSet) {
         this.baseSet.scrollTrigger.trigger = obj.sel; 
         
         if (obj.type === "to"){ // create to tween
-            console.log("type: " + obj.type)
-            
+
             if (obj.baseSet != null){
                                 
                 let newBaseSet = Object.assign(obj.baseSet, this.baseSet)
@@ -28,7 +27,6 @@ export function Animation (baseSet) {
             
         }
         else if (obj.type === "fromTo"){ // create fromTo tween
-            console.log("type: " + obj.type)
 
             if (obj.baseSet != null){
                 
@@ -45,7 +43,6 @@ export function Animation (baseSet) {
             
         }
         else if (obj.type === "from"){ // create from tween
-            console.log("type: " + obj.type)
 
             if (obj.baseSet != null){
 
@@ -67,13 +64,9 @@ export function Animation (baseSet) {
             // scroll type doesn't take any base settings
             // create scrollTo instance, add event listener to trigger it
             // you have to set scrollTo in the className if you don't put href 
-            // window scroll by default
- 
-            console.log("type: " + obj.type)
-            
+            // window scroll by default            
             // link item to be clicked
             const navBtn = document.querySelector(obj.sel);
-            console.log(navBtn.dataset.href);
             if (navBtn.href != undefined){ // if there is a reference link 
                 // set scroll target
                 obj.scrollSet.to.scrollTo = navBtn.dataset.href;
@@ -87,11 +80,10 @@ export function Animation (baseSet) {
                 })
                 
             } else {
-
+                
+                // listen to nav click event 
                 navBtn.addEventListener("click", ()=>{
-                    console.log("clicked event");
                     gsap.to(window, obj.scrollSet.to);
-                    console.log(gsap.to(window, obj.scrollSet.to))
                 })
             }
         
@@ -178,8 +170,6 @@ export function Animation (baseSet) {
                             for (let val  of classN[1].replace("scrollSet|", "").split("|")){
                                 animObj.scrollSet.to[val.split(':')[0]] = val.split(':')[1];  
                             };
-
-                            console.log(animObj.scrollSet);
                         } 
                         
                         
