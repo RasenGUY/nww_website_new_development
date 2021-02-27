@@ -66,24 +66,34 @@ export function Animation (baseSet) {
             // you have to set scrollTo in the className if you don't put href 
             // window scroll by default            
             // link item to be clicked
+
+
             const navBtn = document.querySelector(obj.sel);
-            if (navBtn.href != undefined){ // if there is a reference link 
+            
+            if (navBtn.href != undefined ){ // if there is a reference link 
                 // set scroll target
-                obj.scrollSet.to.scrollTo = navBtn.dataset.href;
+
+                if (obj.scrollSet.scrollTo == null){ // create scrollTo obj if not exist yet
+                    obj.scrollSet.scrollTo == {};
+                };
+
+                // set data attribute href as scrolltarget
+                obj.scrollSet.scrollTo.y = navBtn.dataset.href;
             }
 
-            if (obj.scrollSet.scrollStart != null){
+            if (obj.scrollSet.scrollStart != null){ // set scroll start as element where scrollTo animation should begin
                 
                 // listen to nav click event 
                 navBtn.addEventListener('click', ()=> {
-                    gsap.to(obj.scrollSet.scrollStart, obj.scrollSet.to);
+
+                    gsap.to(obj.scrollSet.scrollStart, Object.assign({scrollTo: obj.scrollSet.scrollTo}, obj.scrollSet.base));
                 })
                 
-            } else {
+            } else { // if no scroll start the use the window object
                 
                 // listen to nav click event 
                 navBtn.addEventListener("click", ()=>{
-                    gsap.to(window, obj.scrollSet.to);
+                    gsap.to(window, Object.assign({scrollTo: obj.scrollSet.scrollTo}, obj.scrollSet.base));
                 })
             }
         
@@ -104,8 +114,11 @@ export function Animation (baseSet) {
                     let animObj = {
                         set: {},
                         baseSet: null,
-                        scrollStart: null,
-                        scrollSet: null,
+                        scrollSet: {
+                            scrollStart: null,
+                            scrollTo: null,
+                            base: null,
+                        }
                     }; 
                     
                     // create animation selector for gsap
@@ -160,15 +173,26 @@ export function Animation (baseSet) {
                                 animObj.baseSet[val.split(':')[0]] = val.split(':')[1];  
                             };
                         } 
-                        if (classN[1].includes("scrollSet|")){
+                        if (classN[1].includes("scrollBase|")){
                             
                             // create settings for animation 
                             animObj.scrollSet = {};
-                            animObj.scrollSet.to = {};
+                            animObj.scrollSet.base = {};
 
                             // create set then add to object 
-                            for (let val  of classN[1].replace("scrollSet|", "").split("|")){
-                                animObj.scrollSet.to[val.split(':')[0]] = val.split(':')[1];  
+                            for (let val  of classN[1].replace("scrollBase|", "").split("|")){
+                                animObj.scrollSet.base[val.split(':')[0]] = val.split(':')[1];  
+                            };
+                        } 
+                        if (classN[1].includes("scrollTo|")){
+                            
+                            // create settings for animation 
+                            animObj.scrollSet = {};
+                            animObj.scrollSet.scrollTo = {};
+
+                            // create set then add to object 
+                            for (let val  of classN[1].replace("scrollTo|", "").split("|")){
+                                animObj.scrollSet.scrollTo[val.split(':')[0]] = val.split(':')[1];  
                             };
                         } 
                         
