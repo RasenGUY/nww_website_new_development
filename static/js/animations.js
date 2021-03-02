@@ -13,10 +13,8 @@ export function Animation (baseSet) {
 
             if (obj.baseSet != null){
                                 
-                let newBaseSet = Object.assign(obj.baseSet, this.baseSet)
-
                 // create settings and initialize animation 
-                gsap.to(obj.sel, Object.assign(obj.set, newBaseSet));
+                gsap.to(obj.sel, Object.assign(obj.set, Object.assign(obj.baseSet, this.baseSet)));
             
             } else {
 
@@ -31,8 +29,7 @@ export function Animation (baseSet) {
             if (obj.baseSet != null){
                 
                 // create settings and intialize animation
-                let newBaseSet = Object.assign(obj.baseSet, this.baseSet)
-                gsap.fromTo(obj.sel, obj.set.from, Object.assign(obj.set.to, newBaseSet));
+                gsap.fromTo(obj.sel, obj.set.from, Object.assign(obj.set.to, Object.assign(obj.baseSet, this.baseSet)));
             
             } else {
     
@@ -47,8 +44,7 @@ export function Animation (baseSet) {
             if (obj.baseSet != null){
 
                 // create settings and initialize animation  
-                let newBaseSet = Object.assign(obj.baseSet, this.baseSet)                
-                gsap.from(obj.sel, Object.assign(obj.set, newBaseSet));
+                gsap.from(obj.sel, Object.assign(obj.set, Object.assign(obj.baseSet, this.baseSet)));
                 
             
             } else {
@@ -66,24 +62,33 @@ export function Animation (baseSet) {
             // you have to set scrollTo in the className if you don't put href 
             // window scroll by default            
             // link item to be clicked
+
             const navBtn = document.querySelector(obj.sel);
-            if (navBtn.href != undefined){ // if there is a reference link 
+
+            if (navBtn.dataset.href != undefined){ // if there is a reference link 
                 // set scroll target
-                obj.scrollSet.to.scrollTo = navBtn.dataset.href;
+
+                if (obj.scrollSet.to == null){ // create an object for scrollTo settings
+                    obj.scrollSet.to = {};
+                }
+
+                obj.scrollSet.to.y = navBtn.dataset.href;
             }
 
-            if (obj.scrollSet.scrollStart != null){
-                
+            if (obj.scrollSet.start != null){
+                 
                 // listen to nav click event 
                 navBtn.addEventListener('click', ()=> {
-                    gsap.to(obj.scrollSet.scrollStart, obj.scrollSet.to);
+                    gsap.to(obj.scrollSet.start, Object.assign({scrollTo: obj.scrollSet.to}, obj.scrollSet.base));
                 })
                 
             } else {
                 
                 // listen to nav click event 
                 navBtn.addEventListener("click", ()=>{
-                    gsap.to(window, obj.scrollSet.to);
+                    console.log(obj.scrollSet.to)
+                    console.log(obj.scrollSet.base)
+                    gsap.to(window, Object.assign({scrollTo: obj.scrollSet.to}, obj.scrollSet.base));
                 })
             }
         
@@ -99,13 +104,16 @@ export function Animation (baseSet) {
             
             // transform class selector into settings obj for animation
             (()=>{
-                return new Promise((resolve, reject) => {
+                return new Promise((resolve) => {
 
                     let animObj = {
                         set: {},
                         baseSet: null,
-                        scrollStart: null,
-                        scrollSet: null,
+                        scrollSet: {
+                            start: null,
+                            base: null,
+                            to: null, 
+                        }
                     }; 
                     
                     // create animation selector for gsap
@@ -121,7 +129,7 @@ export function Animation (baseSet) {
                         if (classN[1].includes("scrollStart:")){ // find scrollStart for scroll type animations
                             
                             animObj.scrollSet = {}; 
-                            animObj.scrollSet.scrollStart = classN[1].split(":").find(val => val.includes("scrollStart")).split(":")[1];
+                            animObj.scrollSet.start = classN[1].split(":").find(val => val.includes("scrollStart")).split(":")[1];
 
                         }
                         if (classN[1].includes("set|")){
@@ -160,18 +168,28 @@ export function Animation (baseSet) {
                                 animObj.baseSet[val.split(':')[0]] = val.split(':')[1];  
                             };
                         } 
-                        if (classN[1].includes("scrollSet|")){
+                        if (classN[1].includes("scrollBase|")){
                             
                             // create settings for animation 
-                            animObj.scrollSet = {};
+                            animObj.scrollSet.base = {};
+
+                            // create set then add to object 
+                            for (let val  of classN[1].replace("scrollBase|", "").split("|")){
+                                animObj.scrollSet.base[val.split(':')[0]] = val.split(':')[1];  
+                            };
+                        } 
+                        if (classN[1].includes("scrollTo|")){
+                            
+                            // create settings for animation 
                             animObj.scrollSet.to = {};
 
                             // create set then add to object 
-                            for (let val  of classN[1].replace("scrollSet|", "").split("|")){
+                            for (let val  of classN[1].replace("scrollTo|", "").split("|")){
                                 animObj.scrollSet.to[val.split(':')[0]] = val.split(':')[1];  
                             };
                         } 
                         
+
                         
                         else {
                             continue;
