@@ -71,10 +71,10 @@ window.onload = (()=>{
     const baseSet = {
         duration: 0.75,
         ease: "circ.inOut",
-        clearProps: "true", 
+        clearProps: true, 
         scrollTrigger: {
             start: "top 75%",
-            once: true, 
+            // once: true, 
             // markers: {
             //     startColor: "green", 
             //     endColor: "red", 
