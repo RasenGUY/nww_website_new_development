@@ -15,6 +15,7 @@ export function Carousel(carousel){  // object instance function carousel functi
     this.setInitialClass = () => { 
         // target current previous, current and next items
         // assuming there are at least 3 items
+        
         this.items[this.totalItems - 1].classList.add("prev");
         this.items[0].classList.add("active");
         this.items[1].classList.add("next");
