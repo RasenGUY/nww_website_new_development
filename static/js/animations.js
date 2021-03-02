@@ -86,8 +86,6 @@ export function Animation (baseSet) {
                 
                 // listen to nav click event 
                 navBtn.addEventListener("click", ()=>{
-                    console.log(obj.scrollSet.to)
-                    console.log(obj.scrollSet.base)
                     gsap.to(window, Object.assign({scrollTo: obj.scrollSet.to}, obj.scrollSet.base));
                 })
             }
@@ -95,7 +93,23 @@ export function Animation (baseSet) {
         }
 
     };
-    
+    this.stringConvert = (input) => { // converts strings into numbers, floats and bools
+        
+        // check for bools
+        if (input === "true" || input === "false"){
+            return Boolean(input);
+        } 
+        // check for numbers or floats
+        else if (!isNaN(+input)){
+            return +input;
+
+        // return string if no boolean number or float
+        } else {
+
+            return input; 
+        }
+        
+    }    
     this.animInit = (els, sel) => { // initiates animations on websit, selects targets create animation settings and tween instances
         
         var animN = 0; 
@@ -136,7 +150,7 @@ export function Animation (baseSet) {
                             
                             // create set then add to object 
                             for (let val  of classN[1].replace("set|", "").split("|")){
-                                animObj.set[val.split(':')[0]] = val.split(':')[1];  
+                                animObj.set[val.split(':')[0]] = this.stringConvert(val.split(':')[1]);  
                             };
                                         
                         } 
@@ -146,7 +160,7 @@ export function Animation (baseSet) {
 
                             // create set then add to object 
                             for (let val  of classN[1].replace("setFrom|", "").split("|")){
-                                animObj.set.from[val.split(':')[0]] = (val.split(':')[1]);  
+                                animObj.set.from[val.split(':')[0]] = this.stringConvert(val.split(':')[1]);  
                             };
                             
                         } 
@@ -156,7 +170,7 @@ export function Animation (baseSet) {
 
                             // create set then add to object 
                             for (let val  of classN[1].replace("setTo|", "").split("|")){
-                                animObj.set.to[val.split(':')[0]] = val.split(':')[1];  
+                                animObj.set.to[val.split(':')[0]] = this.stringConvert(val.split(':')[1]);  
                             };
                         } 
                         if (classN[1].includes("baseSet|")){
@@ -165,7 +179,7 @@ export function Animation (baseSet) {
 
                             // create set then add to object 
                             for (let val  of classN[1].replace("baseSet|", "").split("|")){
-                                animObj.baseSet[val.split(':')[0]] = val.split(':')[1];  
+                                animObj.baseSet[val.split(':')[0]] = this.stringConvert(val.split(':')[1]);  
                             };
                         } 
                         if (classN[1].includes("scrollBase|")){
@@ -175,7 +189,7 @@ export function Animation (baseSet) {
 
                             // create set then add to object 
                             for (let val  of classN[1].replace("scrollBase|", "").split("|")){
-                                animObj.scrollSet.base[val.split(':')[0]] = val.split(':')[1];  
+                                animObj.scrollSet.base[val.split(':')[0]] = this.stringConvert(val.split(':')[1]);  
                             };
                         } 
                         if (classN[1].includes("scrollTo|")){
@@ -185,11 +199,9 @@ export function Animation (baseSet) {
 
                             // create set then add to object 
                             for (let val  of classN[1].replace("scrollTo|", "").split("|")){
-                                animObj.scrollSet.to[val.split(':')[0]] = val.split(':')[1];  
+                                animObj.scrollSet.to[val.split(':')[0]] = this.stringConvert(val.split(':')[1]);  
                             };
                         } 
-                        
-
                         
                         else {
                             continue;
@@ -202,4 +214,5 @@ export function Animation (baseSet) {
         })
 
     }
+
 }
