@@ -22,47 +22,71 @@ export function Animation (baseSet) {
         
         if (obj.type === "to"){ // create to tween
 
-            if (obj.base !== null){ // if there is a costum baseSetting use that one instead
-                                
-                // create settings and initialize animation 
-                gsap.to(obj.sel, Object.assign(obj.set, Object.assign(obj.base, this.baseSet)));
-            
-            } else {
+            if (obj.useBase === false){ // add costum basettings to original tween 
 
+                if (obj.base !== null){ // if there is a costum baseSetting use that one instead
+                                    
+                    // create settings and initialize animation 
+                    gsap.to(obj.sel, Object.assign(obj.set, Object.assign(obj.base, this.baseSet)));
+                
+                } else {
+    
+                    // create settings and initialize animation 
+                    gsap.to(obj.sel, Object.assign(obj.set, this.baseSet));
+                    
+                }
+            } else {
+                
                 // create settings and initialize animation 
-                gsap.to(obj.sel, Object.assign(obj.set, this.baseSet));
+                gsap.to(obj.sel, Object.assign(obj.set, Object.assign(obj.base, obj.scrollTrigger)));
 
             }
             
             
         }
         else if (obj.type === "fromTo"){ // create fromTo tween
-
-            if (obj.baseSet.base != null){
-                
-                // create settings and intialize animation
-                gsap.fromTo(obj.sel, obj.set.from, Object.assign(obj.set.to, Object.assign(obj.base, this.baseSet)));
             
+            if (obj.useBase === false){ // add costum basettings to original tween 
+            
+                if (obj.baseSet.base != null){
+                    
+                    // create settings and intialize animation
+                    gsap.fromTo(obj.sel, obj.set.from, Object.assign(obj.set.to, Object.assign(obj.base, this.baseSet)));
+                
+                } else {
+    
+                    // create settings and initialize animation 
+                    gsap.fromTo(obj.sel, obj.set.from, Object.assign(obj.set.to, this.baseSet));
+                }
+                
             } else {
 
                 // create settings and initialize animation 
-                gsap.fromTo(obj.sel, obj.set.from, Object.assign(obj.set.to, this.baseSet));
+                gsap.fromTo(obj.sel, obj.set.from, Object.assign(obj.set.to, Object.assign(obj.base, obj.scrollTrigger)));
+                
             }
-            
-            
         }
         else if (obj.type === "from"){ // create from tween
-
-            if (obj.base !== null){
-                
-                // create settings and initialize animation  
-                gsap.from(obj.sel, Object.assign(obj.set, Object.assign(obj.base, this.baseSet)));
-                
             
-            } else {
+            if (obj.useBase === false){ // add costum basettings to original tween 
+            
+                if (obj.base !== null){
     
+                    // create settings and initialize animation  
+                    gsap.from(obj.sel, Object.assign(obj.set, Object.assign(obj.base, this.baseSet)));
+                    
+                
+                } else {
+        
+                    // create settings and initialize animation  
+                    gsap.from(obj.sel, Object.assign(obj.set, this.baseSet));
+                    
+                }
+                
+            } else { // just use costum base settings instead
+                console.log(obj.scrollTrigger);
                 // create settings and initialize animation  
-                gsap.from(obj.sel, Object.assign(obj.set, this.baseSet));
+                gsap.from(obj.sel, Object.assign(obj.set, Object.assign(obj.base, obj.scrollTrigger)));
 
             }
 
@@ -82,7 +106,7 @@ export function Animation (baseSet) {
                 if (obj.set == null){ // create an object for scrollTo settings if it doesn't exist yet
                     obj.set= {};
                 }
-                
+
                 // set scroll target
                 obj.set.y = navBtn.dataset.href;
             }
@@ -128,8 +152,11 @@ export function Animation (baseSet) {
     this.stringConvert = (input) => { // converts strings into numbers, floats and bools
         
         // check for bools
-        if (input === "true" || input === "false"){
+        if (input === "true"){
             return Boolean(input);
+
+        } else if (input === "false"){
+            return !Boolean(input);
         } 
         // check for numbers or floats
         else if (!isNaN(+input)){
@@ -155,6 +182,7 @@ export function Animation (baseSet) {
                     let animObj = {
                         set: {},
                         hasTrigger: true, 
+                        useBase: true,
                         start: null,
                         base: null,
                         scrollTrigger: null,
@@ -180,10 +208,15 @@ export function Animation (baseSet) {
                             animObj.hasTrigger = this.stringConvert(classN[1].split(":")[1]);
 
                         }
+                        if (classN[1].includes("useBase:")){ // if true add scrollTrigger settings -> default is true
+                            
+                            animObj.useBase = this.stringConvert(classN[1].split(":")[1]);
+
+                        }
                         if (classN[1].includes("set|")){ // create settings object for animation
                             
                             // create set then add to object 
-                            for (let val of classN[1].replace("set|", "").split("|")){
+                            for (let val of classN[1].replace("set|", "").replace("-", " ").split("|")){
                                 animObj.set[val.split(':')[0]] = this.stringConvert(val.split(':')[1]);  
                             };
                                         
@@ -193,7 +226,7 @@ export function Animation (baseSet) {
                             animObj.set.from = {};
 
                             // create set then add to object 
-                            for (let val of classN[1].replace("setFrom|", "").split("|")){
+                            for (let val of classN[1].replace("setFrom|", "").replace("-", " ").split("|")){
                                 animObj.set.from[val.split(':')[0]] = this.stringConvert(val.split(':')[1]);  
                             };
                             
@@ -203,7 +236,7 @@ export function Animation (baseSet) {
                             animObj.set.to = {};
 
                             // create set then add to object 
-                            for (let val of classN[1].replace("setTo|", "").split("|")){
+                            for (let val of classN[1].replace("setTo|", "").replace("-", " ").split("|")){
                                 animObj.set.to[val.split(':')[0]] = this.stringConvert(val.split(':')[1]);  
                             };
                         } 
@@ -212,7 +245,7 @@ export function Animation (baseSet) {
                             animObj.base = {};
 
                             // create set then add to object 
-                            for (let val  of classN[1].replace("base|", "").split("|")){
+                            for (let val  of classN[1].replace("base|", "").replace("-", " ").split("|")){
                                 animObj.base[val.split(':')[0]] = this.stringConvert(val.split(':')[1]);  
                             };
                         } 
@@ -222,7 +255,7 @@ export function Animation (baseSet) {
                             animObj.scrollTrigger = {};
 
                             // create set then add to object 
-                            for (let val of classN[1].replace("scrollTrigger|", "").split("|")){
+                            for (let val of classN[1].replace("scrollTrigger|", "").replace("-", " ").split("|")){
                                 animObj.scrollTrigger[val.split(':')[0]] = this.stringConvert(val.split(':')[1]);  
                             };
                         } 
