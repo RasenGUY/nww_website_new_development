@@ -22,6 +22,8 @@ export function Animation (baseSet) {
         
         if (obj.type === "to"){ // create to tween
 
+            console.log(obj.useBase)
+            
             if (obj.useBase === false){ // add costum basettings to original tween 
 
                 if (obj.base !== null){ // if there is a costum baseSetting use that one instead
@@ -67,7 +69,7 @@ export function Animation (baseSet) {
             }
         }
         else if (obj.type === "from"){ // create from tween
-            
+            console.log(obj.useBase)
             if (obj.useBase === false){ // add costum basettings to original tween 
             
                 if (obj.base !== null){
@@ -84,6 +86,7 @@ export function Animation (baseSet) {
                 }
                 
             } else { // just use costum base settings instead
+
                 console.log(obj.scrollTrigger);
                 // create settings and initialize animation  
                 gsap.from(obj.sel, Object.assign(obj.set, Object.assign(obj.base, obj.scrollTrigger)));
@@ -182,7 +185,7 @@ export function Animation (baseSet) {
                     let animObj = {
                         set: {},
                         hasTrigger: true, 
-                        useBase: true,
+                        useBase: false,
                         start: null,
                         base: null,
                         scrollTrigger: null,
