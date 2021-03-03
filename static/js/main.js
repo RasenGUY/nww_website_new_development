@@ -13,7 +13,6 @@ window.onload = (()=>{
     if (window.location.pathname === "/index.html" || window.location.pathname === "/"){
         // let map; 
         g.initMap();
-        console.log("initialized map")
     };
     
 
