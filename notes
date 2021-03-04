@@ -29,14 +29,57 @@
 TODO - today
 - Animation day
     - figure out how to install GSAP (done)
-    - create different styles of animation
+    - create different styles of animation (deprecated) changed approach 
         - top to bottom
         - bottom to top 
         - left to right
-        - right to left 
-    - create function for inject css on given scrollTrigger position 
+        - right to left
+         
+    - create function for injecting css on given scrollTrigger position
+        - custom library based on gsap (partly)
+        - Library (gsap css) 
+            
+            - function
+                - create tween animations inline - connects with gsap library - that trigger from the perspective of the inline styled element 
+            
+            - types of gsap tweens the library can create
+                - from (s, m) 
+                    - components
+                        - targetSel
+                        - fromVars -> css properties 
+                        - special -> basic settings (duration etc. but it also includes some special settings e.g. scrollTrigger)
+                - to (s, m)
+                    - components
+                        - targetSel
+                        - toVars -> css properties 
+                        - special -> basic settings (duration etc. but it also includes some special settings e.g. scrollTrigger)
+                - fromTo (s, m)
+                    - components
+                        - targetSel
+                        - fromVars -> css properties 
+                        - toVars -> css properties + special (base)
+                - simple scrollTo animations (specifically for navigation buttons)
+                    - components
+                        - scrollPerspective (window, costumDomElement)
+                        - special settings (e.g. duration, ease etc.)
+                        - scrollTo settings
+                            - scrollTarget
+                            - settings related to scrollTo 
+            
+            - Params
+            
+                - all css properties 
+                - special properties (duration, ease)
+                    - specificic (these are related to scrollTrigger)
+                - targets -> these are the elements that are targeted for animations
+
+
+
     - paralax effect for heros
-    - paralax effect for background bubbles
+        - scales in or out ? -> check up on some already utilized ways
+    - paralax effect for background bubbles 
+        - bubbles animation with gradients
+        - rotation of the circles
  
 - function flow
     - add scrollTo event listeners to targets (list of targets)

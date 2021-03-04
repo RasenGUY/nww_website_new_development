@@ -5,94 +5,122 @@ export function Animation (baseSet) {
 
     // animation function
     this.createAnim = (obj) => {
-        // creates gsap tween settings and initializes instances of these tweens
+        // creates gsap tween settings and initializes instances of these tweens //
 
-        if (obj.hasTrigger === true){ // add element as trigger if scrolltrigger is true
-            
-            if (this.baseSet['scrollTrigger'] === undefined){ // create scrollTrigger set object if it does not already exists
-                this.baseSet.scrollTrigger = {}; 
-            }
-
-            this.baseSet.scrollTrigger.trigger = obj.sel; 
-
-            if (obj.scrollTrigger !== null){ // add custom scrollTrigger settings if exists 
-                this.baseSet.scrollTrigger = Object.assign({trigger: obj.sel}, obj.scrollTrigger);
-            }
+        // automatically add trigger to scrollTrigger
+        if (this.baseSet.scrollTrigger === undefined){ // add element as trigger if scrolltrigger is true
+            this.baseSet.scrollTrigger = {}; 
         }
+        this.baseSet.scrollTrigger.trigger = obj.sel; 
         
-        if (obj.type === "to"){ // create to tween
+        if (obj.type === "to" || obj.type === "from"){ // create to tween
 
             console.log(obj.useBase)
-            
-            if (obj.useBase === false){ // add costum basettings to original tween 
 
-                if (obj.base !== null){ // if there is a costum baseSetting use that one instead
-                                    
-                    // create settings and initialize animation 
-                    gsap.to(obj.sel, Object.assign(obj.set, Object.assign(obj.base, this.baseSet)));
+            if (obj.useBase === false){ // use base settings set in main js
+
+                if (obj.base !== null){ // update base settings if provided inline
+                    
+                    if (obj.hasTrigger === false ){ // use scroll trigger set in main js 
+
+                        if (obj.scrollTrigger !== null ){ // update base.scrollTrigger if scrollTrigger is present 
+                            
+                            gsap.to(obj.sel, Object.assign(obj.set, Object.assign(Object.assign(this.baseSet, obj.base), obj.scrollTrigger))); 
+                            
+                        } else { // dont update scrollTrigger if it isn't present 
+                            
+                            gsap.to(obj.sel, Object.assign(obj.set, Object.assign(this.baseSet, obj.base))); 
+                            
+                        }
+ 
+                    } else { // replace scrolTrigger object in base settings with scrollTrigger settings set inline
+                        
+                        // udate base settings and 
+                        // change updated basesettings scrollTrigger to obj scrollTrigger
+                        let updatedBase = Object.assign(this.baseSet, obj.base);
+                        updatedBase.scrollTrigger = obj.scrollTrigger; 
+                        
+                        // create the gsap animation
+                        gsap.to(obj.sel, updatedBase);
+                        
+                    }
                 
-                } else {
-    
+                } else { // no update of baseSettings
+
+                    if (obj.hasTrigger === false){ // use scrollTrigger settings from baseSettings
+                        
+                        gsap.to(obj.sel, Object.assign(this.baseSet, obj.set));
+
+                    } else { // use scrollTrigger settings set inline 
+
+                        // create settings and initialize animation 
+                        gsap.to(obj.sel, Object.assign(Object.assign(this.baseSet, {scrollTrigger: obj.scrollTrigger}), obj.set));
+                        
+                    }
+                }
+
+            } else { // only use baseSettings set inlne 
+
+                if (obj.hasTrigger === false){ // use scrollTrigger settings from baseSettings
+                        
+                    gsap.to(obj.sel, Object.assign(Oject.assign(obj.base, {scrollTrigger: this.baseSet.scrollTrigger}), obj.set));
+
+                } else { // use scrollTrigger settings set inline 
+
                     // create settings and initialize animation 
-                    gsap.to(obj.sel, Object.assign(obj.set, this.baseSet));
+                    gsap.to(obj.sel, Object.assign(Object.assign(obj.base, {scrollTrigger: obj.scrollTrigger}), obj.set));
                     
                 }
-            } else {
-                
-                // create settings and initialize animation 
-                gsap.to(obj.sel, Object.assign(obj.set, Object.assign(obj.base, obj.scrollTrigger)));
-
-            }
-            
-            
+            }   
         }
         else if (obj.type === "fromTo"){ // create fromTo tween
             
-            if (obj.useBase === false){ // add costum basettings to original tween 
+            if (obj.useBase === false){ // use base settings set in main js
             
-                if (obj.baseSet.base != null){
+                if (obj.base !== null){ // update main js base settings with baseSettings provided inline
                     
-                    // create settings and intialize animation
-                    gsap.fromTo(obj.sel, obj.set.from, Object.assign(obj.set.to, Object.assign(obj.base, this.baseSet)));
-                
-                } else {
-    
+                    if (obj.hasTrigger === false ){ // use scroll trigger set in main js 
+
+                        if (obj.scrollTrigger !== null ){ // update scrollTrigger in baseSettings with st set inline 
+                            
+                            // create settings and intialize animation
+                            gsap.fromTo(obj.sel, obj.set.from, Object.assign(obj.set.to, Object.assign(Object.assign(this.baseSet, obj.base), {scrollTrigger: obj.scrollTrigger})));
+                            
+                        } else { // dont update scrollTrigger if it isn't present 
+                            
+                            // create settings and intialize animation
+                            gsap.fromTo(obj.sel, obj.set.from, Object.assign(obj.set.to, Object.assign(this.baseSet, obj.base)));
+                            
+                        }
+ 
+                    } else { // replace scrolTrigger object in base settings with scrollTrigger settings set inline
+                        
+                        // udate base settings and 
+                        // change updated basesettings scrollTrigger to obj scrollTrigger
+                        let updatedBase = Object.assign(this.baseSet, obj.base);
+                        updatedBase.scrollTrigger = obj.scrollTrigger; 
+                        
+                        // create the gsap animation
+                        gsap.fromTo(obj.sel, obj.set.from, Object.assign(obj.set.to, updatedBase));
+                        
+                    }
+                    
+                } else { // use baseSettings from main js without updating
+                    if (obj.hasTrigger === false){ // use scroll trigger set in main js
+
+                    } else { // replace scrolTrigger object in base settings with scrollTrigger settings set inline
+
+                    }
                     // create settings and initialize animation 
                     gsap.fromTo(obj.sel, obj.set.from, Object.assign(obj.set.to, this.baseSet));
                 }
                 
-            } else {
+            } else { // use baseSettings set inline
 
                 // create settings and initialize animation 
                 gsap.fromTo(obj.sel, obj.set.from, Object.assign(obj.set.to, Object.assign(obj.base, obj.scrollTrigger)));
                 
             }
-        }
-        else if (obj.type === "from"){ // create from tween
-            console.log(obj.useBase)
-            if (obj.useBase === false){ // add costum basettings to original tween 
-            
-                if (obj.base !== null){
-    
-                    // create settings and initialize animation  
-                    gsap.from(obj.sel, Object.assign(obj.set, Object.assign(obj.base, this.baseSet)));
-                    
-                
-                } else {
-        
-                    // create settings and initialize animation  
-                    gsap.from(obj.sel, Object.assign(obj.set, this.baseSet));
-                    
-                }
-                
-            } else { // just use costum base settings instead
-
-                console.log(obj.scrollTrigger);
-                // create settings and initialize animation  
-                gsap.from(obj.sel, Object.assign(obj.set, Object.assign(obj.base, obj.scrollTrigger)));
-
-            }
-
         }
         else if (obj.type === "scroll"){ // create ScrollTo tween
             
@@ -183,12 +211,12 @@ export function Animation (baseSet) {
                 return new Promise((resolve) => {
 
                     let animObj = {
-                        set: {},
-                        hasTrigger: true, 
-                        useBase: false,
+                        useBase: false, // if true then only use inline base settings for tween
+                        hasTrigger: true, // if true then use set trigger to start animation ? 
                         start: null,
                         base: null,
                         scrollTrigger: null,
+                        set: {},
                     }; 
                     
                     // create animation selector for gsap
