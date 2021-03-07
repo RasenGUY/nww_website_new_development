@@ -5,14 +5,6 @@ export function Animation (baseSet) {
     // animation function
     this.createAnim = (obj) => {
         // creates gsap tween settings and initializes instances of these tweens //
-
-        // console.log("\n ----------------------- PRE animation information -----------------");
-        // console.log("animNum: " + obj.sel);
-        // console.log("type: " + obj.type);
-        // console.log(obj.set);
-        // console.log("\n");
-        
-        // console.log("---------------- GSAP animation information ---------------");
         
         // set scrollTrigger trigger
         if (obj.scrollTrigger == null ){ // create empty object for scrollTrigger settings if not provided
@@ -73,7 +65,6 @@ export function Animation (baseSet) {
                             mergedBase.scrollTrigger = obj.scrollTrigger; // replace scrollTrigger settings                
                         }
                     }
-                    // console.log(mergedBase);
                     resolve(mergedBase);
                 }
             })
@@ -82,57 +73,44 @@ export function Animation (baseSet) {
             // initiate animations
             if (obj.type === "to"){ 
                 gsap.to(obj.sel, Object.assign(settings, obj.set));
-                console.log(Object.assign(settings, obj.set))
             }
             if (obj.type === "from"){
                 gsap.from(obj.sel, Object.assign(settings, obj.set));
-                console.log(Object.assign(settings, obj.set));
             }
             if (obj.type === "fromTo"){                        
                 gsap.fromTo(obj.sel, obj.set.from, Object.assign(settings, obj.set.to));
-                console.log("----------- toSettings -----------:\n");
-                console.log(Object.assign({}, settings, obj.set.to)); 
             }
-
-            if (obj.type === "scroll"){ // create ScrollTo tween
-                // scrollTo tween requires its own base settings set inline scrollTo settings don't have to be included but will be used when set inline
-    
-                const navBtn = document.querySelector(obj.sel);
-    
-                if (navBtn.dataset.href !== undefined){ // automatically add scrollTo target
-                    
-                    if (obj.set == null){ // create an object for scrollTo settings if it doesn't exist yet
-                        obj.set= {};
-                    }
-    
-                    // set scroll target
-                    obj.set.y = navBtn.dataset.href;
-                }
-    
-                if (obj.start !== null){ //set start position if exists
-                     
-                    // listen to click event 
-                    navBtn.addEventListener('click', ()=> {
-                        gsap.to(obj.start, Object.assign({scrollTo: obj.set}, obj.base));
-                    })
-                    
-                } else {
-                    
-                    // listen to click event 
-                    navBtn.addEventListener("click", ()=>{
-                        gsap.to(window, Object.assign({scrollTo: obj.set}, obj.base));
-                    })
-                }
-            }
-            
-            console.log(`---------------- END ANIMTION  ${obj.sel}---------------`);
         })
+        if (obj.type === "scroll"){ // create ScrollTo tween
+            // scrollTo tween requires its own base settings set inline scrollTo settings don't have to be included but will be used when set inline
 
+            const navBtn = document.querySelector(obj.sel);
 
+            if (navBtn.dataset.href !== undefined){ // automatically add scrollTo target
+                
+                if (obj.set == null){ // create an object for scrollTo settings if it doesn't exist yet
+                    obj.set= {};
+                }
 
+                // set scroll target
+                obj.set.y = navBtn.dataset.href;
+            }
 
-
-        
+            if (obj.start !== null){ //set start position if exists
+                 
+                // listen to click event 
+                navBtn.addEventListener('click', ()=> {
+                    gsap.to(obj.start, Object.assign({scrollTo: obj.set}, obj.base));
+                })
+                
+            } else {
+                
+                // listen to click event 
+                navBtn.addEventListener("click", ()=>{
+                    gsap.to(window, Object.assign({scrollTo: obj.set}, obj.base));
+                })
+            }
+        }
     };
 
     this.stringConvert = (input) => { // converts strings into numbers, floats and bools
