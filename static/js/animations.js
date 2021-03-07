@@ -6,201 +6,130 @@ export function Animation (baseSet) {
     this.createAnim = (obj) => {
         // creates gsap tween settings and initializes instances of these tweens //
 
+        // console.log("\n ----------------------- PRE animation information -----------------");
+        // console.log("animNum: " + obj.sel);
+        // console.log("type: " + obj.type);
+        // console.log(obj.set);
+        // console.log("\n");
         
-        // console.log("type: "+ obj.type);
-        // console.log("animObj: \n");
-        // console.log(obj);
-        // console.log("base: \n");
-        // console.log(this.baseSet);
-
-        console.log("\n ----------------------- PRE animation information -----------------");
-        console.log("animNum: " + obj.sel);
-        console.log("type: " + obj.type);
-        console.log(this.baseSet);
-        console.log(obj.set);
-        console.log("\n");
-        
-        console.log("---------------- GSAP animation information ---------------");
+        // console.log("---------------- GSAP animation information ---------------");
         
         // set scrollTrigger trigger
-        obj.scrollTrigger = {};
+        if (obj.scrollTrigger == null ){ // create empty object for scrollTrigger settings if not provided
+            obj.scrollTrigger = {};
+        };
+
         obj.scrollTrigger.trigger = obj.sel; 
 
-        if (obj.useBase === false){ // use base settings set in main js
-            
-            if (obj.base !== null){ // update base settings if provided inline
-                
-                if (obj.hasTrigger === false ){ // use scroll trigger set in main js 
+        (()=>{
+            return new Promise((resolve)=>{
+
+                if (obj.type != "scroll"){
                     
-                    if (obj.type === "to"){ 
+                    let mergedBase = {};
+                    if (obj.useBase === false){ // use base settings set in main js
+                        
+                        mergedBase = Object.assign({}, this.baseSet);
+
+                        if (obj.base !== null){ // update base settings if provided inline
+
+                            mergedBase = Object.assign({}, mergedBase, obj.base);
                             
-                        //update baseSet and scrollTrigger and initiate gsap                            
-                        gsap.to(obj.sel, Object.assign(Object.assign(Object.assign(Object.assign({}, this.baseSet), obj.base), {scrollTrigger: {trigger: obj.scrollTrigger}}), obj.set)); 
-                        
-                        console.log(Object.assign(Object.assign(Object.assign(Object.assign({}, this.baseSet), obj.base), {scrollTrigger: {trigger: obj.scrollTrigger}}), obj.set));
-                    }
-                    if (obj.type === "from"){
-                        
-                        //update baseSet and scrollTrigger and initiate gsap                            
-                        gsap.from(obj.sel, Object.assign(Object.assign(Object.assign(Object.assign({}, this.baseSet), obj.base), {scrollTrigger: {trigger: obj.scrollTrigger}}), obj.set)); 
+                            if (obj.hasTrigger === false ){ // use scroll trigger set in main js and update if provided  
+                                mergedBase.scrollTrigger = Object.assign({}, mergedBase.scrollTrigger, obj.scrollTrigger);
+                                
+                            } else { // replace scrollTrigger with the one set inline                    
+                                
+                                // replace scrollTrigger settings
+                                mergedBase.scrollTrigger = obj.scrollTrigger;                                
+                            }
 
-                        console.log(Object.assign(Object.assign(Object.assign(Object.assign({}, this.baseSet), obj.base), obj.scrollTrigger), obj.set));
+                            
+                        } else { // use baseSettings from main js
+                            
+                            // don't update baseSettings with those provided inline
+                            
+                            if (obj.hasTrigger === false){ // use scrollTrigger settings from baseSettings
+                                
+                                mergedBase.scrollTrigger = Object.assign({}, mergedBase.scrollTrigger, obj.scrollTrigger); // update scrolltrigger if present
 
-                    }
-                    if (obj.type === "fromTo"){
-                        
-                        //update baseSet and scrollTrigger and initiate gsap                            
-                        gsap.fromTo(obj.sel, obj.set.from, Object.assign(Object.assign(Object.assign(Object.assign({}, this.baseSet), obj.base), {scrollTrigger: {trigger: obj.scrollTrigger}}), obj.set.to))
+                            } else { // replace scrollTrigger of base from main, don't update base
 
-                        console.log("----------- toSettings -----------:\n"); 
-                        console.log(Object.assign(Object.assign(Object.assign(Object.assign({}, this.baseSet), obj.base), {scrollTrigger: {trigger: obj.scrollTrigger}}), obj.set.to));
-                    }
-                    
-                } else { // update baseSettings, replace scrollTrigger with the one set inline
-                    
-                    let updatedBase = Object.assign(Object.assign({}, this.baseSet), obj.base); 
-                    updatedBase.scrollTrigger = obj.scrollTrigger; // replace scrollTrigger settings
+                                mergedBase.scrollTrigger = obj.scrollTrigger; // replace scrollTrigger settings
+                            }
+                        }
 
-                    if (obj.type === "to"){ 
-                        //update baseSet and scrollTrigger and initiate gsap                            
-                        gsap.to(obj.sel, Object.assign(updatedBase, obj.set)); 
-                        console.log(Object.assign(updatedBase, obj.set));
+                    } else { // only use baseSettings set inline 
+
+                        mergedBase = Object.assign({}, obj.base);
+                        mergedBase.scrollTrigger = Object.assign({}, this.baseSet.scrollTrigger); 
+
+                        if (obj.hasTrigger === false){ // update scrollTrigger settings use inlineSet
+                            
+                            mergedBase.scrollTrigger = Object.assign({}, mergedBase.scrollTrigger, obj.scrollTrigger); // updates scrollTrigger settings   
+
+                        } else { // replace scrollTrigger set use inline set 
+                            
+                            mergedBase.scrollTrigger = obj.scrollTrigger; // replace scrollTrigger settings                
+                        }
                     }
-                    if (obj.type === "from"){
-                        //update baseSet and scrollTrigger and initiate gsap                            
-                        gsap.from(obj.sel, Object.assign(updatedBase, obj.set)); 
-                        console.log(Object.assign(updatedBase, obj.set));
-                    }
-                    if (obj.type === "fromTo"){
-                        //update baseSet and scrollTrigger and initiate gsap                            
-                        gsap.fromTo(obj.sel, obj.set.from, Object.assign(updatedBase, obj.set.to))
-                        console.log("----------- toSettings -----------:\n"); 
-                        console.log(Object.assign(updatedBase, obj.set.to));
-                    }
+                    // console.log(mergedBase);
+                    resolve(mergedBase);
                 }
-            
-            } else { // use baseSettings from main js
+            })
+        })().then(settings => {
 
-                if (obj.hasTrigger === false){ // use scrollTrigger settings from baseSettings
-                    
-                    // initiate animations
-                    if (obj.type === "to"){ 
-                        // create settings and initiate gsap
-                        gsap.to(obj.sel, Object.assign(Object.assign(Object.assign({}, this.baseSet), {scrollTrigger: {trigger: obj.scrollTrigger}}), obj.set));
-                        console.log(Object.assign(Object.assign(Object.assign({}, this.baseSet), {scrollTrigger: {trigger: obj.scrollTrigger}}), obj.set))
-                    }
-                    if (obj.type === "from"){
-                        // create settings and initiate gsap
-                        gsap.from(obj.sel, Object.assign(Object.assign(Object.assign({}, this.baseSet), {scrollTrigger: {trigger: obj.scrollTrigger}}), obj.set));
-                        console.log(obj.sel, Object.assign(Object.assign(Object.assign({}, this.baseSet), {scrollTrigger: {trigger: obj.scrollTrigger}}), obj.set));
-                    }
-                    if (obj.type === "fromTo"){                        
-                        // create settings and initiate gsap
-                        gsap.fromTo(obj.sel, obj.set.from, Object.assign(Object.assign(Object.assign({}, this.baseSet), {scrollTrigger: {trigger: obj.scrollTrigger}}), obj.set.to));
-                        console.log("----------- toSettings -----------:\n"); 
-                        console.log(Object.assign(Object.assign(Object.assign({}, this.baseSet), {scrollTrigger: {trigger: obj.scrollTrigger}}), obj.set.to))
-                    } 
-
-                } else { // replace scrollTrigger of base from main, don't update base
-
-                    let updatedBase = Object.assign({}, this.baseSet); // use baseSet from main js
-                    updatedBase.scrollTrigger = obj.scrollTrigger; // replace scrollTrigger settings
-
-                    if (obj.type === "to"){ 
-                        // initiate animations
-                        gsap.to(obj.sel, Object.assign(updatedBase, obj.set));
-                        console.log(Object.assign(updatedBase, obj.set));
-                    }
-                    if (obj.type === "from"){
-                        // initiate animations
-                        gsap.from(obj.sel, Object.assign(updatedBase, obj.set));
-                        console.log(Object.assign(updatedBase, obj.set))
-                    }
-                    if (obj.type === "fromTo"){                        
-                        // initiate animations
-                        gsap.fromTo(obj.sel, obj.set.from, Object.assign(updatedBase, obj.set.to));
-                        console.log("----------- toSettings -----------:\n"); 
-                        console.log(Object.assign(updatedBase, obj.set.to));                       
-                    } 
-                }
+            // initiate animations
+            if (obj.type === "to"){ 
+                gsap.to(obj.sel, Object.assign(settings, obj.set));
+                console.log(Object.assign(settings, obj.set))
+            }
+            if (obj.type === "from"){
+                gsap.from(obj.sel, Object.assign(settings, obj.set));
+                console.log(Object.assign(settings, obj.set));
+            }
+            if (obj.type === "fromTo"){                        
+                gsap.fromTo(obj.sel, obj.set.from, Object.assign(settings, obj.set.to));
+                console.log("----------- toSettings -----------:\n");
+                console.log(Object.assign({}, settings, obj.set.to)); 
             }
 
-        } else { // only use baseSettings set inline 
-
-            if (obj.hasTrigger === false){ // update scrolltrigger settings use inlineSet
-                
-                if (obj.type === "to"){ 
-                    // initiate animations
-                    gsap.to(obj.sel, Object.assign(Object.assign(obj.base, obj.set), {scrollTrigger: {trigger: obj.scrollTrigger}}));
-                    console.log(Object.assign(Object.assign(obj.base, obj.set), {scrollTrigger: {trigger: obj.scrollTrigger}}));
+            if (obj.type === "scroll"){ // create ScrollTo tween
+                // scrollTo tween requires its own base settings set inline scrollTo settings don't have to be included but will be used when set inline
+    
+                const navBtn = document.querySelector(obj.sel);
+    
+                if (navBtn.dataset.href !== undefined){ // automatically add scrollTo target
+                    
+                    if (obj.set == null){ // create an object for scrollTo settings if it doesn't exist yet
+                        obj.set= {};
+                    }
+    
+                    // set scroll target
+                    obj.set.y = navBtn.dataset.href;
                 }
-                if (obj.type === "from"){
-                    // initiate animations
-                    gsap.from(obj.sel, Object.assign(Object.assign(obj.base, obj.set), {scrollTrigger: {trigger: obj.scrollTrigger}}));
-                    console.log(Object.assign(Object.assign(obj.base, obj.set), {scrollTrigger: {trigger: obj.scrollTrigger}}));
+    
+                if (obj.start !== null){ //set start position if exists
+                     
+                    // listen to click event 
+                    navBtn.addEventListener('click', ()=> {
+                        gsap.to(obj.start, Object.assign({scrollTo: obj.set}, obj.base));
+                    })
+                    
+                } else {
+                    
+                    // listen to click event 
+                    navBtn.addEventListener("click", ()=>{
+                        gsap.to(window, Object.assign({scrollTo: obj.set}, obj.base));
+                    })
                 }
-                if (obj.type === "fromTo"){                        
-                    // initiate animations
-                    gsap.fromoT(obj.sel, obj.set.from, Object.assign(Object.assign(obj.base, obj.set.to), {scrollTrigger: {trigger: obj.scrollTrigger}}));
-                    console.log("----------- toSettings -----------:\n"); 
-                    console.log(Object.assign(Object.assign(obj.base, obj.set.to), {scrollTrigger: {trigger: obj.scrollTrigger}}));
-                }     
-
-            } else { // replace scrolltrigger set use inline set 
-                
-                let updatedBase = Object.assign(obj.base, {scrollTrigger: obj.scrollTrigger})
-
-                if (obj.type === "to"){ 
-                    // initiate animations
-                    gsap.to(obj.sel, Object.assign(updatedBase, obj.set));
-                    console.log(Object.assign(updatedBase, obj.set))
-                }
-                if (obj.type === "from"){
-                    // initiate animations
-                    gsap.from(obj.sel, Object.assign(updatedBase, obj.set));
-                    console.log(Object.assign(updatedBase, obj.set));
-                }
-                if (obj.type === "fromTo"){                        
-                    // initiate animations
-                    gsap.fromTo(obj.sel, obj.set.from, Object.assign(updatedBase, obj.set.to));
-                    console.log("----------- toSettings -----------:\n");
-                    console.log(Object.assign(updatedBase, obj.set.to)); 
-                }                  
-            }
-        } 
-
-        if (obj.type === "scroll"){ // create ScrollTo tween
-            // scrollTo tween requires its own base settings set inline scrollTo settings don't have to be included but will be used when set inline
-
-            const navBtn = document.querySelector(obj.sel);
-
-            if (navBtn.dataset.href !== undefined){ // automatically add scrollTo target
-                
-                if (obj.set == null){ // create an object for scrollTo settings if it doesn't exist yet
-                    obj.set= {};
-                }
-
-                // set scroll target
-                obj.set.y = navBtn.dataset.href;
-            }
-
-            if (obj.start !== null){ //set start position if exists
-                 
-                // listen to click event 
-                navBtn.addEventListener('click', ()=> {
-                    gsap.to(obj.start, Object.assign({scrollTo: obj.set}, obj.base));
-                })
-                
-            } else {
-                
-                // listen to click event 
-                navBtn.addEventListener("click", ()=>{
-                    gsap.to(window, Object.assign({scrollTo: obj.set}, obj.base));
-                })
             }
             
-        }
-        console.log(`---------------- END ANIMTION  ${obj.sel}---------------`);
+            console.log(`---------------- END ANIMTION  ${obj.sel}---------------`);
+        })
+
+
+
 
 
         

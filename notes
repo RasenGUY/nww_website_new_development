@@ -73,7 +73,11 @@ TODO - today
                     - specificic (these are related to scrollTrigger)
                 - targets -> these are the elements that are targeted for animations
 
-
+    - bugs
+        - figure a different way to update the nested object 
+            - try using lodash -> https://www.jsdelivr.com/package/npm/lodash for deepmerging of things - drawback: dependency on a library 
+        - merge the objects first and then change things
+        
 
     - paralax effect for heros
         - scales in or out ? -> check up on some already utilized ways
