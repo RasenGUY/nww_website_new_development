@@ -180,7 +180,7 @@ export function Animation (baseSet) {
                         if (classN[1].includes("set|")){ // create settings object for animation
                             
                             // create set then add to object 
-                            for (let val of classN[1].replace("set|", "").replace("_", " ").split("|")){
+                            for (let val of classN[1].replace("set|", "").replaceAll("_", " ").split("|")){
                                 animObj.set[val.split(':')[0]] = this.stringConvert(val.split(':')[1]);  
                             };
                                         
@@ -190,7 +190,7 @@ export function Animation (baseSet) {
                             animObj.set.from = {};
 
                             // create set then add to object 
-                            for (let val of classN[1].replace("setFrom|", "").replace("_", " ").split("|")){
+                            for (let val of classN[1].replace("setFrom|", "").replaceAll("_", " ").split("|")){
                                 animObj.set.from[val.split(':')[0]] = this.stringConvert(val.split(':')[1]);  
                             };
                             
@@ -200,7 +200,7 @@ export function Animation (baseSet) {
                             animObj.set.to = {};
 
                             // create set then add to object 
-                            for (let val of classN[1].replace("setTo|", "").replace("_", " ").split("|")){
+                            for (let val of classN[1].replace("setTo|", "").replaceAll("_", " ").split("|")){
                                 animObj.set.to[val.split(':')[0]] = this.stringConvert(val.split(':')[1]);  
                             };
                         } 
@@ -209,7 +209,7 @@ export function Animation (baseSet) {
                             animObj.base = {};
 
                             // create set then add to object 
-                            for (let val  of classN[1].replace("base|", "").replace("_", " ").split("|")){
+                            for (let val  of classN[1].replace("base|", "").replaceAll("_", " ").split("|")){
                                 animObj.base[val.split(':')[0]] = this.stringConvert(val.split(':')[1]);  
                             };
                         } 
@@ -219,7 +219,7 @@ export function Animation (baseSet) {
                             animObj.scrollTrigger = {};
 
                             // create set then add to object 
-                            for (let val of classN[1].replace("scrollTrigger|", "").replace("_", " ").split("|")){
+                            for (let val of classN[1].replace("scrollTrigger|", "").replaceAll("_", " ").split("|")){
                                 animObj.scrollTrigger[val.split(':')[0]] = this.stringConvert(val.split(':')[1]);  
                             };
                         } 
