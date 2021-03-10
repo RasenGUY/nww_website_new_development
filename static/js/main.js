@@ -84,22 +84,26 @@ window.onload = (()=>{
     const animation = new an.Animation(baseSet);
     animation.animInit(els, sel); 
 
+
+    
     // animate circles in svg
-    const svgS = document.querySelectorAll(".svg-image.animate"); 
 
-    for (let shape of svgS){
-        const svgCircles = shape.contentDocument.querySelectorAll(".svg-circle");
-        let count = 1; 
-        for (let circ of svgCircles){
-            if (count % 2 == 0){
-                gsap.to(circ, {y:30, duration: 1.5, repeat:-1, yoyo:true, ease:"sine.inOut"});
-            } else {
-                gsap.to(circ, {x:30, duration: 1.5, repeat:-1, yoyo:true, ease:"sine.inOut"});
+    window.addEventListener("DOMContentLoaded", () => {
+        const svgS = document.querySelectorAll(".svg-image.animate"); 
+
+        for (let shape of svgS){
+            const svgCircles = shape.contentDocument.querySelectorAll(".svg-circle");
+            let count = 1; 
+            for (let circ of svgCircles){
+                if (count % 2 == 0){
+                    gsap.to(circ, {y:30, duration: 1.5, repeat:-1, yoyo:true, ease:"sine.inOut"});
+                } else {
+                    gsap.to(circ, {x:30, duration: 1.5, repeat:-1, yoyo:true, ease:"sine.inOut"});
+                }
+                count++; 
             }
-            count++; 
         }
-
-    }
+    }); 
 
 })()
 
